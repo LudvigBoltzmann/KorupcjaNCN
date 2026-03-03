@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://drkilarski.github.io/sitemap.xml
