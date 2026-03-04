@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ludvigboltzmann.github.io/KorupcjaNCN/sitemap.xml
