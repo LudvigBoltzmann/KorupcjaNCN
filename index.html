@@ -453,34 +453,25 @@ main {
   margin-bottom: var(--space-3);
   transition: all 0.18s ease;
   background: var(--color-doc-bg);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  color: var(--color-text);
 }
 .doc-item:hover {
   background: var(--color-doc-hover);
   border-color: var(--color-border-strong);
   box-shadow: 0 2px 8px var(--color-shadow);
 }
-.doc-link {
-  display: flex; align-items: flex-start; gap: var(--space-3);
-  padding: var(--space-4);
-  text-decoration: none;
-  color: var(--color-text);
-}
-.doc-icon {
-  flex-shrink: 0;
-  width: 36px; height: 36px;
-  background: var(--color-surface);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 2px;
-}
-.doc-icon svg { width: 18px; height: 18px; color: var(--color-text-faint); }
+.doc-icon { display: none; }
 .doc-label {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   line-height: 1.5;
   color: var(--color-text-muted);
 }
-.doc-label:hover { color: var(--color-text); }
+
 .doc-ext {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -497,37 +488,114 @@ main {
   text-transform: none;
   opacity: 0.7;
 }
+.doc-ext .doc-preview-btn {
+  display: none;
+}
 .doc-thumb {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
   object-fit: cover;
   border: 1px solid var(--color-border);
-  margin-top: 2px;
 }
-.doc-preview-btn {
+.doc-type-badge {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--color-border);
+}
+.doc-type-badge svg {
+  width: 28px;
+  height: 28px;
+  opacity: 0.7;
+}
+.doc-type-badge-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.doc-type-badge.badge-docx {
+  background: linear-gradient(135deg, #e8f0fe 0%, #d2e3fc 100%);
+  color: #1a56db;
+}
+.doc-type-badge.badge-pdf {
+  background: linear-gradient(135deg, #fce8e6 0%, #f8d0cc 100%);
+  color: #c5221f;
+}
+.doc-type-badge.badge-jpg {
+  background: linear-gradient(135deg, #e6f4ea 0%, #ceead6 100%);
+  color: #1e8e3e;
+}
+[data-theme="dark"] .doc-type-badge.badge-docx {
+  background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 100%);
+  color: #8ab4f8;
+}
+[data-theme="dark"] .doc-type-badge.badge-pdf {
+  background: linear-gradient(135deg, #3c1f1f 0%, #4a2222 100%);
+  color: #f28b82;
+}
+[data-theme="dark"] .doc-type-badge.badge-jpg {
+  background: linear-gradient(135deg, #1a3325 0%, #1e4d2b 100%);
+  color: #81c995;
+}
+.doc-number {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-faint);
+  min-width: 20px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.doc-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+.doc-btn {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
   font-family: var(--font-sans);
-  font-size: 10px;
-  color: var(--color-accent);
-  background: var(--color-badge-bg);
+  font-size: var(--text-xs);
+  font-weight: 500;
   border: none;
-  border-radius: 3px;
-  padding: 2px 6px;
+  border-radius: 4px;
+  padding: 5px 10px;
   cursor: pointer;
   text-decoration: none;
   text-transform: none;
-  transition: opacity 0.18s ease;
+  transition: all 0.18s ease;
+  line-height: 1;
 }
-.doc-preview-btn:hover {
-  opacity: 0.8;
+.doc-btn svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
 }
-.doc-preview-btn svg {
-  width: 10px;
-  height: 10px;
+.doc-btn-preview {
+  color: var(--color-accent);
+  background: var(--color-badge-bg);
+}
+.doc-btn-preview:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+.doc-btn-download {
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+}
+.doc-btn-download:hover {
+  background: var(--color-text-faint);
+  color: #fff;
 }
 .timeline {
   position: relative;
@@ -712,21 +780,30 @@ main {
 @media (max-width: 480px) {
   .header-logo-text { display: none; }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .section {
-  opacity: 0;
-  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-  }
-  .section:nth-child(1) { animation-delay: 0.1s; }
-  .section:nth-child(2) { animation-delay: 0.15s; }
-  .section:nth-child(3) { animation-delay: 0.2s; }
-  .section:nth-child(4) { animation-delay: 0.25s; }
-  .section:nth-child(5) { animation-delay: 0.3s; }
-}
+/* Animation removed - sections always visible */
+.section { opacity: 1 !important; }
+/* Force light theme colors for all elements */
+html { background: #fafaf8 !important; }
+body { background: #fafaf8 !important; color: #1a1a2e !important; }
+[data-theme="dark"] { background: #fafaf8 !important; }
+[data-theme="dark"] body { background: #fafaf8 !important; color: #1a1a2e !important; }
+.section { background: #fafaf8 !important; color: #1a1a2e !important; }
+.doc-item { background: #ffffff !important; color: #1a1a2e !important; border: 1px solid rgba(26,26,46,0.12) !important; }
+.doc-label { color: #1a1a2e !important; }
+.doc-type-badge { color: #ffffff !important; }
+.doc-type-badge.badge-docx { background: #2563eb !important; color: #ffffff !important; }
+.doc-type-badge.badge-pdf { background: #dc2626 !important; color: #ffffff !important; }
+.doc-type-badge.badge-img { background: #16a34a !important; color: #ffffff !important; }
+.doc-number { color: #6b7280 !important; }
+.doc-ext { color: #6b7280 !important; }
+.section-label { color: #c0392b !important; }
+.section h2 { color: #1a1a2e !important; }
+.section h3 { color: #1a1a2e !important; }
+.section p { color: #1a1a2e !important; }
+.doc-list { background: transparent !important; }
+.doc-btn { border: 1px solid rgba(26,26,46,0.2) !important; background: #ffffff !important; }
+.doc-btn-preview { background: #c0392b !important; color: #ffffff !important; border-color: #c0392b !important; }
+.doc-btn-download { background: #f2f1ed !important; color: #1a1a2e !important; }
 </style>
 </head>
 <body>
@@ -738,6 +815,7 @@ main {
 <symbol id="icon-pdf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
 <symbol id="icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></symbol>
 <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
 </svg>
 
 <header class="site-header" id="site-header">
@@ -1161,18 +1239,18 @@ main {
   <div class="evidence-caption">Ultimatum NCN — e-mail Laury Bandury-Morgan z oficjalnego konta NCN, 1 czerwca 2020 r.</div>
   </div>
 <ul class="doc-list">
-<li class="doc-item"><a class="doc-link" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">Ultimatum NCN — mail Laury Bandury-Morgan z 1 czerwca 2020</span><div class="doc-ext">JPG</div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Chronologiczna korespondencja mailowa Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/analiza_nagran_audio_kompletna.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Kompletna analiza 10 nagrań audio — dowody szantażu i korupcji w NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Uzupełnienie apelacji od wyroku Sądu Okręgowego z 15 listopada 2024</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Wnioski-Procesowe-Apelacja.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Wnioski procesowe — apelacja</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Analiza powiązań: Babik, Liana, Zwonek, Błocki — nepotyzm w NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Załącznik do zawiadomienia do prokuratury</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Postanowienie Prokuratury — odmowa wszczęcia śledztwa (Ochońska-Wróbel)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Wyrok w sprawie Laura B-M vs. Kilarski (sędzia Chmielarz)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Opinia psychiatryczno-psychologiczna</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">CV i lista publikacji naukowych dr. Witolda Kilarskiego</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
+<li class="doc-item"><span class="doc-number">1.</span><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">Ultimatum NCN — mail Laury Bandury-Morgan z 1 czerwca 2020</span><div class="doc-ext">JPG</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Chronologiczna korespondencja mailowa Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Kompletna analiza 10 nagrań audio — dowody szantażu i korupcji w NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Uzupełnienie apelacji od wyroku Sądu Okręgowego z 15 listopada 2024</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Wnioski procesowe — apelacja</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Wnioski-Procesowe-Apelacja.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analiza powiązań: Babik, Liana, Zwonek, Błocki — nepotyzm w NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Załącznik do zawiadomienia do prokuratury</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">9.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Postanowienie Prokuratury — odmowa wszczęcia śledztwa (Ochońska-Wróbel)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">10.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Wyrok w sprawie Laura B-M vs. Kilarski (sędzia Chmielarz)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/wwyrok-laura-chmielarz.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">11.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Opinia psychiatryczno-psychologiczna</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">12.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">CV i lista publikacji naukowych dr. Witolda Kilarskiego</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
 </ul>
   </div>
   <div class="lang-block" data-lang="en">
@@ -1184,18 +1262,18 @@ main {
   <div class="evidence-caption">NCN Ultimatum — Laura Bandura-Morgan's email from official NCN account, 1 June 2020</div>
   </div>
 <ul class="doc-list">
-<li class="doc-item"><a class="doc-link" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">NCN Ultimatum — Laura Bandura-Morgan's email, 1 June 2020</span><div class="doc-ext">JPG</div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Chronological email correspondence Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/analiza_nagran_audio_kompletna.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Complete analysis of 10 audio recordings — evidence of blackmail and corruption at NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Supplementary appeal against Kraków District Court verdict of 15 November 2024</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Wnioski-Procesowe-Apelacja.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Procedural motions — appeal</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Analysis of connections: Babik, Liana, Zwonek, Błocki — nepotism at NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Attachment to criminal complaint filed with prosecutor</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Prosecutor's decision — refusal to investigate (Ochońska-Wróbel)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Verdict in Laura B-M vs. Kilarski case (Judge Chmielarz)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Psychiatric-psychological expert opinion</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">CV and list of scientific publications of Dr. Witold Kilarski</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
+<li class="doc-item"><span class="doc-number">1.</span><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">NCN Ultimatum — Laura Bandura-Morgan's email, 1 June 2020</span><div class="doc-ext">JPG</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Chronological email correspondence Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Complete analysis of 10 audio recordings — evidence of blackmail and corruption at NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Supplementary appeal against Kraków District Court verdict of 15 November 2024</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Procedural motions — appeal</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Wnioski-Procesowe-Apelacja.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analysis of connections: Babik, Liana, Zwonek, Błocki — nepotism at NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Attachment to criminal complaint filed with prosecutor</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">9.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Prosecutor's decision — refusal to investigate (Ochońska-Wróbel)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">10.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Verdict in Laura B-M vs. Kilarski case (Judge Chmielarz)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/wwyrok-laura-chmielarz.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">11.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Psychiatric-psychological expert opinion</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">12.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">CV and list of scientific publications of Dr. Witold Kilarski</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
 </ul>
   </div>
   <div class="lang-block" data-lang="fr">
@@ -1207,18 +1285,18 @@ main {
   <div class="evidence-caption">Ultimatum du NCN — e-mail de Laura Bandura-Morgan depuis le compte officiel du NCN, 1er juin 2020</div>
   </div>
 <ul class="doc-list">
-<li class="doc-item"><a class="doc-link" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">Ultimatum du NCN — e-mail de Laura Bandura-Morgan, 1er juin 2020</span><div class="doc-ext">JPG</div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Correspondance chronologique Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/analiza_nagran_audio_kompletna.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Analyse complète de 10 enregistrements audio — preuves de chantage et corruption au NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Appel du verdict II K 321/23/P (NCN/Błocki c. Kilarski)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Complément d'appel contre le verdict du tribunal régional du 15 novembre 2024</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Wnioski-Procesowe-Apelacja.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Conclusions de procédure — appel</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Analyse des liens : Babik, Liana, Zwonek, Błocki — népotisme au NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Pièce jointe à la plainte pénale déposée au parquet</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Décision du procureur — refus d'enquête (Ochońska-Wróbel)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Verdict Laura B-M c. Kilarski (juge Chmielarz)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Expertise psychiatrique et psychologique</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">CV et liste de publications du Dr Witold Kilarski</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
+<li class="doc-item"><span class="doc-number">1.</span><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">Ultimatum du NCN — e-mail de Laura Bandura-Morgan, 1er juin 2020</span><div class="doc-ext">JPG</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Correspondance chronologique Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analyse complète de 10 enregistrements audio — preuves de chantage et corruption au NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Appel du verdict II K 321/23/P (NCN/Błocki c. Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Complément d'appel contre le verdict du tribunal régional du 15 novembre 2024</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Conclusions de procédure — appel</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Wnioski-Procesowe-Apelacja.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analyse des liens : Babik, Liana, Zwonek, Błocki — népotisme au NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Pièce jointe à la plainte pénale déposée au parquet</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">9.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Décision du procureur — refus d'enquête (Ochońska-Wróbel)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">10.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Verdict Laura B-M c. Kilarski (juge Chmielarz)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/wwyrok-laura-chmielarz.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">11.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Expertise psychiatrique et psychologique</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">12.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">CV et liste de publications du Dr Witold Kilarski</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
 </ul>
   </div>
   <div class="lang-block" data-lang="de">
@@ -1230,18 +1308,18 @@ main {
   <div class="evidence-caption">NCN-Ultimatum — E-Mail von Laura Bandura-Morgan vom offiziellen NCN-Konto, 1. Juni 2020</div>
   </div>
 <ul class="doc-list">
-<li class="doc-item"><a class="doc-link" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">NCN-Ultimatum — E-Mail von Laura Bandura-Morgan, 1. Juni 2020</span><div class="doc-ext">JPG</div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Chronologischer E-Mail-Verkehr Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/analiza_nagran_audio_kompletna.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Vollständige Analyse der 10 Audioaufnahmen — Beweise für Erpressung und Korruption am NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Berufung gegen Urteil II K 321/23/P (NCN/Błocki gegen Kilarski)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Ergänzung der Berufung gegen das Urteil des Landgerichts Krakau vom 15. November 2024</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Wnioski-Procesowe-Apelacja.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Verfahrensanträge — Berufung</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Analyse der Verbindungen: Babik, Liana, Zwonek, Błocki — Vetternwirtschaft am NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Anlage zur Strafanzeige bei der Staatsanwaltschaft</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Beschluss der Staatsanwaltschaft — Ablehnung der Ermittlung (Ochońska-Wróbel)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Urteil Laura B-M gegen Kilarski (Richterin Chmielarz)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Psychiatrisch-psychologisches Gutachten</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Lebenslauf und Publikationsliste von Dr. Witold Kilarski</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
+<li class="doc-item"><span class="doc-number">1.</span><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">NCN-Ultimatum — E-Mail von Laura Bandura-Morgan, 1. Juni 2020</span><div class="doc-ext">JPG</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Chronologischer E-Mail-Verkehr Kilarski-Błocki-Drąg-Bandura (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Vollständige Analyse der 10 Audioaufnahmen — Beweise für Erpressung und Korruption am NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Berufung gegen Urteil II K 321/23/P (NCN/Błocki gegen Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Ergänzung der Berufung gegen das Urteil des Landgerichts Krakau vom 15. November 2024</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Verfahrensanträge — Berufung</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Wnioski-Procesowe-Apelacja.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analyse der Verbindungen: Babik, Liana, Zwonek, Błocki — Vetternwirtschaft am NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Anlage zur Strafanzeige bei der Staatsanwaltschaft</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">9.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Beschluss der Staatsanwaltschaft — Ablehnung der Ermittlung (Ochońska-Wróbel)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">10.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Urteil Laura B-M gegen Kilarski (Richterin Chmielarz)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/wwyrok-laura-chmielarz.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">11.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Psychiatrisch-psychologisches Gutachten</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">12.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Lebenslauf und Publikationsliste von Dr. Witold Kilarski</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
 </ul>
   </div>
   <div class="lang-block" data-lang="uk">
@@ -1253,18 +1331,18 @@ main {
   <div class="evidence-caption">Ультиматум NCN — електронний лист Лаури Бандури-Морган з офіційного облікового запису NCN, 1 червня 2020 р.</div>
   </div>
 <ul class="doc-list">
-<li class="doc-item"><a class="doc-link" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">Ультиматум NCN — лист Лаури Бандури-Морган, 1 червня 2020</span><div class="doc-ext">JPG</div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Хронологічне листування Кіларський-Блоцкі-Дрог-Бандура (2020-2021)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/analiza_nagran_audio_kompletna.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Повний аналіз 10 аудіозаписів — докази шантажу та корупції в NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Доповнення апеляції на рішення окружного суду Кракова від 15 листопада 2024</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Wnioski-Procesowe-Apelacja.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Процесуальні клопотання — апеляція</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Аналіз зв'язків: Бабік, Ліана, Звонек, Блоцкі — кумівство в NCN</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Додаток до заяви про злочин, поданої до прокуратури</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Рішення прокуратури — відмова від розслідування (Охонська-Врубель)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Вирок у справі Лаура Б-М проти Кіларського (суддя Хмелаж)</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-pdf"/></svg></span><span><span class="doc-label">Психіатрично-психологічний висновок</span><div class="doc-ext">PDF <a class="doc-preview-btn" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><svg><use href="#icon-eye"/></svg>Preview</a></div></span></a></li>
-<li class="doc-item"><a class="doc-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" target="_blank" rel="noopener noreferrer"><span class="doc-icon"><svg><use href="#icon-doc"/></svg></span><span><span class="doc-label">Резюме та список наукових публікацій д-ра Вітольда Кіларського</span><div class="doc-ext">DOCX <span class="doc-hint">(download)</span></div></span></a></li>
+<li class="doc-item"><span class="doc-number">1.</span><img class="doc-thumb" src="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" alt="" loading="lazy"><span><span class="doc-label">Ультиматум NCN — лист Лаури Бандури-Морган, 1 червня 2020</span><div class="doc-ext">JPG</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Хронологічне листування Кіларський-Блоцкі-Дрог-Бандура (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Повний аналіз 10 аудіозаписів — докази шантажу та корупції в NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Доповнення апеляції на рішення окружного суду Кракова від 15 листопада 2024</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Процесуальні клопотання — апеляція</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Wnioski-Procesowe-Apelacja.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Аналіз зв'язків: Бабік, Ліана, Звонек, Блоцкі — кумівство в NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Babik-Liana-Zwonek-Blocki-3.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Додаток до заяви про злочин, поданої до прокуратури</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Zalacznik-2-do-prokuratur-viiiaa.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">9.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Рішення прокуратури — відмова від розслідування (Охонська-Врубель)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">10.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Вирок у справі Лаура Б-М проти Кіларського (суддя Хмелаж)</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/wwyrok-laura-chmielarz.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">11.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Психіатрично-психологічний висновок</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">12.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Резюме та список наукових публікацій д-ра Вітольда Кіларського</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/cv_list-publications_teach_2023ix01_kilarski.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
 </ul>
   </div>
   </section>
