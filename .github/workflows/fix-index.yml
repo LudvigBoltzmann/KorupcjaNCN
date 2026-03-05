@@ -1,0 +1,45 @@
+name: Fix index.html YouTube URLs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore original full index.html from prior commit
+        run: |
+          git show 34685727d901c25b1b5b4ca5c53d78b7fb6727d1:index.html > index.html
+          echo "Restored index.html from commit 34685727, size: $(wc -c < index.html) bytes"
+
+      - name: Apply YouTube URL fixes
+        run: |
+          # Fix 1: thumbnailUrl
+          sed -i 's|"thumbnailUrl": "https://youtu.be/Z7DH_iRY78w/maxresdefault.jpg"|"thumbnailUrl": "https://img.youtube.com/vi/Z7DH_iRY78w/maxresdefault.jpg"|' index.html
+          # Fix 2: contentUrl
+          sed -i 's|"contentUrl": "https://youtu.be/Z7DH_iRY78w"|"contentUrl": "https://www.youtube.com/watch?v=Z7DH_iRY78w"|' index.html
+          # Fix 3: embedUrl
+          sed -i 's|"embedUrl": "https://youtu.be/Z7DH_iRY78w"|"embedUrl": "https://www.youtube.com/embed/Z7DH_iRY78w"|' index.html
+          # Fix 4: iframe src (note the double https:// bug)
+          sed -i 's|src="https://https://youtu.be/Z7DH_iRY78w"|src="https://www.youtube.com/embed/Z7DH_iRY78w"|' index.html
+          echo "Applied fixes. New size: $(wc -c < index.html) bytes"
+          # Verify the fixes
+          grep -n "youtu.be/Z7DH" index.html || echo "No remaining youtu.be/Z7DH URLs found - good!"
+          grep -n "youtube.com/embed/Z7DH" index.html
+          grep -n "youtube.com/watch" index.html
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --staged --stat
+          git commit -m "Fix index.html: correct YouTube embed URLs for video Z7DH_iRY78w"
+          git push
