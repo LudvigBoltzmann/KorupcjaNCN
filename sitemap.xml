@@ -14,11 +14,11 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#uk"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
     <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/yWZg9sjZ-jE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://youtu.be/Z7DH_iRY78w/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Whistleblower — A Documentary</video:title>
       <video:description>Documentary about corruption at Poland's National Science Centre (NCN). Dr Witold Kilarski exposes blackmail, nepotism, and cover-up by NCN Director Zbigniew Błocki.</video:description>
-      <video:content_loc>https://www.youtube.com/watch?v=yWZg9sjZ-jE</video:content_loc>
-      <video:player_loc>https://www.youtube.com/embed/yWZg9sjZ-jE</video:player_loc>
+      <video:content_loc>https://youtu.be/Z7DH_iRY78w/video:content_loc>
+      <video:player_loc>https://youtu.be/Z7DH_iRY78w/video:player_loc>
       <video:duration>192</video:duration>
       <video:publication_date>2026-03-03</video:publication_date>
     </video:video>
