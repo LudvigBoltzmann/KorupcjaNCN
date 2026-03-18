@@ -818,6 +818,115 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 .doc-btn { border: 1px solid rgba(26,26,46,0.2) !important; background: #ffffff !important; }
 .doc-btn-preview { background: #c0392b !important; color: #ffffff !important; border-color: #c0392b !important; }
 .doc-btn-download { background: #f2f1ed !important; color: #1a1a2e !important; }
+/* Interview (Rozmowa) section */
+.interview-section {
+  background: var(--color-surface);
+  padding: clamp(var(--space-12), 6vw, var(--space-20)) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+.interview-section .lang-block { display: none; }
+.interview-section .lang-block.active { display: block; }
+.interview-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.interview-section .section-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+.interview-section h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-6);
+  color: var(--color-text);
+}
+.interview-section h3 {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+.interview-section p {
+  margin-bottom: var(--space-4);
+  max-width: 65ch;
+  color: var(--color-text-muted);
+}
+.audio-player-wrap {
+  background: var(--color-doc-bg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 8px;
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-6) 0;
+  box-shadow: 0 2px 12px var(--color-shadow);
+}
+.audio-player-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.audio-player-meta {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-3);
+}
+.audio-player-wrap audio {
+  width: 100%;
+  margin-top: var(--space-2);
+  border-radius: 4px;
+}
+.interview-excerpt {
+  background: var(--color-evidence-bg);
+  border-left: 3px solid var(--color-accent);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-4) 0;
+  border-radius: 0 6px 6px 0;
+}
+.interview-excerpt .speaker {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-1);
+}
+.interview-excerpt blockquote {
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+  font-size: var(--text-base);
+}
+/* Force light theme for new sections */
+.interview-section { background: #f2f1ed !important; }
+.audio-player-wrap { background: #ffffff !important; border-color: rgba(26,26,46,0.2) !important; }
+.interview-excerpt { background: #fef9f0 !important; }
+.interview-section h2, .interview-section h3, .interview-section p { color: #1a1a2e !important; }
+.interview-section .section-label { color: #c0392b !important; }
+.audio-player-label { color: #1a1a2e !important; }
+.interview-excerpt blockquote { color: #1a1a2e !important; }
+.interview-excerpt .speaker { color: #c0392b !important; }
+/* Comments section */
+.comments-section {
+  padding: clamp(var(--space-12), 6vw, var(--space-20)) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.comments-section .lang-block { display: none; }
+.comments-section .lang-block.active { display: block; }
 </style>
 </head>
 <body>
@@ -843,6 +952,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </a>
 
   <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+  <a href="#interview" class="nav-link" data-nav="interview">
+  <span class="nav-pl">Rozmowa</span><span class="nav-en" style="display:none">Interview</span><span class="nav-fr" style="display:none">Entretien</span><span class="nav-de" style="display:none">Gespräch</span><span class="nav-uk" style="display:none">Розмова</span>
+  </a>
   <a href="#case" class="nav-link" data-nav="case">
   <span class="nav-pl">Sprawa</span><span class="nav-en" style="display:none">The Case</span><span class="nav-fr" style="display:none">L'Affaire</span><span class="nav-de" style="display:none">Der Fall</span><span class="nav-uk" style="display:none">Справа</span>
   </a>
@@ -852,11 +964,17 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <a href="#documents" class="nav-link" data-nav="documents">
   <span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span>
   </a>
+  <a href="#mudelsee" class="nav-link" data-nav="mudelsee">
+  <span class="nav-pl">Mudelsee</span><span class="nav-en" style="display:none">Mudelsee</span><span class="nav-fr" style="display:none">Mudelsee</span><span class="nav-de" style="display:none">Mudelsee</span><span class="nav-uk" style="display:none">Мудельзе</span>
+  </a>
   <a href="#timeline" class="nav-link" data-nav="timeline">
   <span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span>
   </a>
   <a href="#about" class="nav-link" data-nav="about">
   <span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span>
+  </a>
+  <a href="#comments" class="nav-link" data-nav="comments">
+  <span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span>
   </a>
   </nav>
 
@@ -964,6 +1082,405 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       <span class="lang-block" data-lang="de">3 Min. 12 Sek. · Englische Erzählung · Vollständige animierte Version: <a href="animation-en.html" target="_blank">öffnen</a></span>
       <span class="lang-block" data-lang="uk">3 хв 12 сек · Англійська розповідь · Повна анімована версія: <a href="animation-en.html" target="_blank">відкрити</a></span>
     </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION: INTERVIEW WITH LAURA
+     ========================================== -->
+<section class="interview-section" id="interview">
+  <div class="interview-inner">
+
+  <div class="lang-block active" data-lang="pl">
+  <div class="section-label">Nagranie</div>
+  <h2>Rozmowa z Laurą Bandurą-Morgan</h2>
+  <p>Nagranie rozmowy z <strong>29 maja 2020 r.</strong> między dr. Witoldem Kilarskim a Laurą Bandurą-Morgan — kierownikiem Działu Kontroli Grantów NCN. Tego samego dnia dyrektor NCN Zbigniew Błocki zaszantażował Laurę, by ta wymusiła na Kilarskim wycofanie wniosku grantowego NAWA w celu zadowolenia prof. Marcina Drąga.</p>
+  <div class="audio-player-wrap">
+    <div class="audio-player-label">Nagranie rozmowy — 29 maja 2020</div>
+    <div class="audio-player-meta">Laura Bandura-Morgan i Dr Witold Kilarski · Czas trwania: pełne nagranie</div>
+    <audio controls preload="metadata">
+      <source src="docs/1-29-mai-2020-05-29-154720-inter.mp3" type="audio/mpeg">
+      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+    </audio>
+  </div>
+
+  <h3>A. Szantaż</h3>
+  <p>Laura opisuje, jak dyrektor Błocki wezwał ją i zażądał, by przekazała Kilarskiemu polecenie wycofania wniosku grantowego NAWA („Polskie Powroty") w celu udobruchania prof. Marcina Drąga.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„żebyś ty wycofał te powroty, bo i tak, i mówiąc doc-docytuję: 'Bo tak czy siak by nie dostał'."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„mam nadzieję, że to udobrucha dokładnie, że to zadowoli pana Drąga, jeśli pan Kilarski wycofa projekt z powrotów"</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Informacja, którą dostałam dzisiaj jest taka, że pan Marcin Drąg jest wpływowy."</blockquote>
+  </div>
+
+  <h3>B. Napaść seksualna prof. Drąga</h3>
+  <p>Laura opisuje, jak prof. Marcin Drąg dokonał na niej napaści seksualnej — przyparł ją do siatki, siłą całował, włożył rękę w jej bieliznę wbrew jej woli.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Przyparł mnie do siatki, zaczął całować. Zaczął mi wkładać rękę w spodnie"</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„włożył moje majtki i chciał dotykał moich tych narządów rodnych... i chciał je tam wetknąć palec do środka. I broniłam się, odpychałam."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Ja nie chciałam, nie chciałam, tak? Bo mu tą rękę wyciągałam i cały czas mówiłam: Wyciągnij to Marcin, wyciągnij to Marcin, przestań, zostaw"</blockquote>
+  </div>
+
+  <h3>C. Dyrektor bagatelizuje napaść</h3>
+  <p>Gdy Laura powiedziała Błockiemu o napaści seksualnej Drąga, ten ją zbagatelizował:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan (cytuje Błockiego)</div>
+    <blockquote>„jakie to ma znaczenie? Bo może to ja ci niedługo proponowałam seks"</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Nie proponowałeś mi seksu. Mogłam powiedzieć: A gdybyś proponował, to bym się chyba zerzygała."</blockquote>
+  </div>
+
+  <h3>D. Czytanie prywatnych wiadomości</h3>
+  <p>Błocki i główna księgowa Wais czytali prywatne rozmowy Laury na Messengerze bez jej zgody:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„czytał moje Messengerze... Weiss też. No Błocki czytał, ale Weissowi dał. Też czytał."</blockquote>
+  </div>
+
+  <h3>E. Korupcja systemowa w NCN</h3>
+  <p>Laura opisuje liczne przypadki korupcji w NCN:</p>
+  <p><strong>Sprawa Januszkiewicza</strong> — Błocki został wyłączony z powodu konfliktu interesów, ale i tak interweniował, by zmienić opinię audytową.</p>
+  <p><strong>Sprawa Goli</strong> — dyrektor NCN uratował 1,3 mln PLN dla badacza po tym, jak usłyszał od przewodniczącej Rady, że to „bardzo dobry naukowiec".</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„mężowie i żony koordynatorów składają wnioski do NCN-u, to jest okej"</blockquote>
+  </div>
+
+  <h3>F. Recenzje Mudelsee — kopiuj-wklej</h3>
+  <p>Laura opisuje sprawę eksperta Manfreda Mudelsee, który skopiował ten sam fragment recenzji do 10–14 różnych wniosków grantowych w programie GRIEG:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Dziesięciu, dziesięć grantów czy czternaście grantów... I skopiował fragment dotyczący tam pewnie jednej osoby. Skopiował do pozostałych"</blockquote>
+  </div>
+  </div>
+
+  <div class="lang-block" data-lang="en">
+  <div class="section-label">Recording</div>
+  <h2>Interview with Laura Bandura-Morgan</h2>
+  <p>Audio recording from <strong>29 May 2020</strong> of a conversation between Dr Witold Kilarski and Laura Bandura-Morgan — Head of NCN Grants Control. On that same day, NCN Director Zbigniew Błocki blackmailed Laura to pressure Kilarski into withdrawing his NAWA grant application in order to appease Prof. Marcin Drąg.</p>
+  <div class="audio-player-wrap">
+    <div class="audio-player-label">Recorded conversation — 29 May 2020</div>
+    <div class="audio-player-meta">Laura Bandura-Morgan and Dr Witold Kilarski · Full recording</div>
+    <audio controls preload="metadata">
+      <source src="docs/1-29-mai-2020-05-29-154720-inter.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <h3>A. The Blackmail</h3>
+  <p>Laura describes how Director Błocki summoned her and demanded she tell Kilarski to withdraw his NAWA grant application ("Polish Returns") to appease Prof. Marcin Drąg.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"[He told me] that you should withdraw the Returns application, because either way — and I quote — 'He wouldn't get it anyway.'"</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"I hope this will appease — precisely — that this will satisfy Mr Drąg, if Mr Kilarski withdraws his project from the Returns programme."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"The information I received today is that Mr Marcin Drąg is influential."</blockquote>
+  </div>
+
+  <h3>B. Sexual Assault by Prof. Drąg</h3>
+  <p>Laura describes how Prof. Marcin Drąg sexually assaulted her — pressed her against a fence, forcibly kissed her, put his hand in her underwear against her will.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"He pressed me against the fence, started kissing me. He started putting his hand into my trousers."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"He reached into my underwear and tried to touch my genitals... and tried to push his finger inside. And I defended myself, I pushed him away."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"I didn't want it, I didn't want it, right? Because I was pulling his hand out and kept saying: Take it out Marcin, take it out Marcin, stop, leave me alone."</blockquote>
+  </div>
+
+  <h3>C. Director's Dismissal of the Assault</h3>
+  <p>When Laura told Błocki about Drąg's sexual assault, he dismissed it:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan (quoting Błocki)</div>
+    <blockquote>"What does it matter? Maybe it's me who'll be proposing sex to you soon."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"You haven't proposed sex to me. I could have said: And if you did propose, I'd probably throw up."</blockquote>
+  </div>
+
+  <h3>D. Reading Private Messages</h3>
+  <p>Błocki and chief accountant Wais read Laura's private Messenger conversations without her consent:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"He was reading my Messenger messages... Wais too. Błocki was reading them, but he gave them to Wais. He read them too."</blockquote>
+  </div>
+
+  <h3>E. Systematic Corruption at NCN</h3>
+  <p>Laura describes multiple corruption cases at NCN:</p>
+  <p><strong>Januszkiewicz case</strong> — Błocki was excluded due to conflict of interest but still intervened to change the audit opinion.</p>
+  <p><strong>Gola case</strong> — the NCN Director saved 1.3 million PLN for a researcher after hearing from the Council Chair that he was "a very good scientist."</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"Husbands and wives of coordinators submit grant applications to NCN — that's okay [according to them]."</blockquote>
+  </div>
+
+  <h3>F. Mudelsee Copy-Paste Reviews</h3>
+  <p>Laura discusses the Mudelsee case — an expert who copied the same review fragment to 10–14 different grant applications in the GRIEG programme:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"Ten, ten grants or fourteen grants... And he copied a fragment concerning probably one person. He copied it to the others."</blockquote>
+  </div>
+  </div>
+
+  <div class="lang-block" data-lang="fr">
+  <div class="section-label">Enregistrement</div>
+  <h2>Entretien avec Laura Bandura-Morgan</h2>
+  <p>Enregistrement audio du <strong>29 mai 2020</strong> d'une conversation entre le Dr Witold Kilarski et Laura Bandura-Morgan — cheffe du contrôle des subventions du NCN. Ce même jour, le directeur du NCN Zbigniew Błocki a fait chanter Laura pour qu'elle fasse pression sur Kilarski afin qu'il retire sa demande de subvention NAWA, dans le but d'apaiser le prof. Marcin Drąg.</p>
+  <div class="audio-player-wrap">
+    <div class="audio-player-label">Conversation enregistrée — 29 mai 2020</div>
+    <div class="audio-player-meta">Laura Bandura-Morgan et Dr Witold Kilarski · Enregistrement complet</div>
+    <audio controls preload="metadata">
+      <source src="docs/1-29-mai-2020-05-29-154720-inter.mp3" type="audio/mpeg">
+      Votre navigateur ne prend pas en charge l'élément audio.
+    </audio>
+  </div>
+
+  <h3>A. Le chantage</h3>
+  <p>Laura décrit comment le directeur Błocki l'a convoquée et lui a ordonné de dire à Kilarski de retirer sa demande NAWA (« Retours polonais ») pour satisfaire le prof. Marcin Drąg.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« [Il m'a dit] que vous devriez retirer la demande des Retours, car de toute façon — et je cite — "Il ne l'obtiendrait pas de toute façon." »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« J'espère que cela apaisera — précisément — que cela satisfera M. Drąg, si M. Kilarski retire son projet du programme Retours. »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« L'information que j'ai reçue aujourd'hui est que M. Marcin Drąg est influent. »</blockquote>
+  </div>
+
+  <h3>B. Agression sexuelle par le prof. Drąg</h3>
+  <p>Laura décrit comment le prof. Marcin Drąg l'a agressée sexuellement — l'a plaquée contre une clôture, l'a embrassée de force, a mis sa main dans ses sous-vêtements contre sa volonté.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Il m'a plaquée contre le grillage, a commencé à m'embrasser. Il a commencé à mettre sa main dans mon pantalon. »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Il a mis la main dans mes sous-vêtements et a essayé de toucher mes organes génitaux... et a essayé d'y enfoncer un doigt. Et je me défendais, je le repoussais. »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Je ne voulais pas, je ne voulais pas, n'est-ce pas ? Car je lui retirais la main et je répétais sans cesse : Retire ça Marcin, retire ça Marcin, arrête, laisse-moi. »</blockquote>
+  </div>
+
+  <h3>C. Le directeur banalise l'agression</h3>
+  <p>Lorsque Laura a informé Błocki de l'agression sexuelle de Drąg, il l'a banalisée :</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan (citant Błocki)</div>
+    <blockquote>« Quelle importance ? Peut-être que c'est moi qui te proposerai bientôt du sexe. »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Tu ne m'as pas proposé de sexe. J'aurais pu dire : Et si tu proposais, j'en vomir probablement. »</blockquote>
+  </div>
+
+  <h3>D. Lecture de messages privés</h3>
+  <p>Błocki et la comptable en chef Wais lisaient les conversations privées de Laura sur Messenger sans son consentement :</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Il lisait mes messages Messenger... Wais aussi. Błocki les lisait, mais il les a donnés à Wais. Lui aussi les a lus. »</blockquote>
+  </div>
+
+  <h3>E. Corruption systémique au NCN</h3>
+  <p>Laura décrit de multiples cas de corruption au NCN :</p>
+  <p><strong>Affaire Januszkiewicz</strong> — Błocki a été exclu pour conflit d'intérêts mais est quand même intervenu pour modifier l'opinion d'audit.</p>
+  <p><strong>Affaire Gola</strong> — le directeur du NCN a sauvé 1,3 million de PLN pour un chercheur après que la présidente du Conseil lui a dit que c'était « un très bon scientifique ».</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Les maris et femmes des coordinateurs déposent des demandes de subvention au NCN — c'est acceptable [selon eux]. »</blockquote>
+  </div>
+
+  <h3>F. Évaluations copier-coller de Mudelsee</h3>
+  <p>Laura parle de l'affaire Mudelsee — un expert qui a copié le même fragment d'évaluation dans 10 à 14 demandes de subvention différentes du programme GRIEG :</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Dix, dix subventions ou quatorze subventions... Et il a copié un fragment concernant probablement une personne. Il l'a copié dans les autres. »</blockquote>
+  </div>
+  </div>
+
+  <div class="lang-block" data-lang="de">
+  <div class="section-label">Aufnahme</div>
+  <h2>Gespräch mit Laura Bandura-Morgan</h2>
+  <p>Audioaufnahme vom <strong>29. Mai 2020</strong> eines Gesprächs zwischen Dr. Witold Kilarski und Laura Bandura-Morgan — Leiterin der Fördermittelkontrolle des NCN. Am selben Tag erpresste NCN-Direktor Zbigniew Błocki Laura, um Kilarski unter Druck zu setzen, seinen NAWA-Förderantrag zurückzuziehen, um Prof. Marcin Drąg zu besänftigen.</p>
+  <div class="audio-player-wrap">
+    <div class="audio-player-label">Aufgezeichnetes Gespräch — 29. Mai 2020</div>
+    <div class="audio-player-meta">Laura Bandura-Morgan und Dr. Witold Kilarski · Vollständige Aufnahme</div>
+    <audio controls preload="metadata">
+      <source src="docs/1-29-mai-2020-05-29-154720-inter.mp3" type="audio/mpeg">
+      Ihr Browser unterstützt das Audio-Element nicht.
+    </audio>
+  </div>
+
+  <h3>A. Die Erpressung</h3>
+  <p>Laura beschreibt, wie Direktor Błocki sie einbestellte und verlangte, dass sie Kilarski auffordere, seinen NAWA-Antrag („Polnische Rückkehr") zurückzuziehen, um Prof. Marcin Drąg zu besänftigen.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„[Er sagte mir,] dass du die Rückkehr-Bewerbung zurückziehen sollst, denn so oder so — und ich zitiere — ‚Er würde es sowieso nicht bekommen.'"</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Ich hoffe, das wird ihn besänftigen — genau — dass es Herrn Drąg zufriedenstellt, wenn Herr Kilarski sein Projekt aus dem Rückkehr-Programm zurückzieht."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Die Information, die ich heute erhalten habe, ist, dass Herr Marcin Drąg einflussreich ist."</blockquote>
+  </div>
+
+  <h3>B. Sexueller Übergriff durch Prof. Drąg</h3>
+  <p>Laura beschreibt, wie Prof. Marcin Drąg sie sexuell übergriff — er drückte sie gegen einen Zaun, küsste sie gewaltsam, steckte seine Hand gegen ihren Willen in ihre Unterwäsche.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Er drückte mich gegen den Zaun, fing an mich zu küssen. Er fing an, seine Hand in meine Hose zu stecken."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Er griff in meine Unterwäsche und versuchte meine Genitalien zu berühren... und versuchte seinen Finger hineinzustecken. Und ich wehrte mich, schubste ihn weg."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Ich wollte nicht, ich wollte nicht, verstehst du? Denn ich zog seine Hand heraus und sagte die ganze Zeit: Nimm das raus Marcin, nimm das raus Marcin, hör auf, lass mich."</blockquote>
+  </div>
+
+  <h3>C. Der Direktor verharmlost den Übergriff</h3>
+  <p>Als Laura Błocki von Drągs sexuellem Übergriff erzählte, tat er es ab:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan (zitiert Błocki)</div>
+    <blockquote>„Was spielt das für eine Rolle? Vielleicht bin ich es, der dir bald Sex vorschlägt."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Du hast mir keinen Sex vorgeschlagen. Ich hätte sagen können: Und wenn du es vorschlagen würdest, würde ich mich wahrscheinlich übergeben."</blockquote>
+  </div>
+
+  <h3>D. Lesen privater Nachrichten</h3>
+  <p>Błocki und die Hauptbuchhalterin Wais lasen ohne Lauras Einwilligung ihre privaten Messenger-Gespräche:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Er las meine Messenger-Nachrichten... Wais auch. Błocki las sie, aber er gab sie an Wais weiter. Der las sie auch."</blockquote>
+  </div>
+
+  <h3>E. Systematische Korruption am NCN</h3>
+  <p>Laura beschreibt mehrere Korruptionsfälle am NCN:</p>
+  <p><strong>Fall Januszkiewicz</strong> — Błocki wurde wegen Interessenkonflikts ausgeschlossen, griff aber dennoch ein, um das Prüfungsergebnis zu ändern.</p>
+  <p><strong>Fall Gola</strong> — der NCN-Direktor rettete 1,3 Mio. PLN für einen Forscher, nachdem die Ratsvorsitzende sagte, er sei „ein sehr guter Wissenschaftler".</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Ehemänner und Ehefrauen der Koordinatoren reichen Förderanträge beim NCN ein — das ist in Ordnung [laut ihnen]."</blockquote>
+  </div>
+
+  <h3>F. Mudelsees Kopier-Gutachten</h3>
+  <p>Laura spricht über den Fall Mudelsee — ein Gutachter, der dasselbe Gutachten-Fragment in 10 bis 14 verschiedene Förderanträge des GRIEG-Programms kopiert hat:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Zehn, zehn Förderungen oder vierzehn Förderungen... Und er hat ein Fragment über wahrscheinlich eine Person kopiert. Er hat es in die anderen kopiert."</blockquote>
+  </div>
+  </div>
+
+  <div class="lang-block" data-lang="uk">
+  <div class="section-label">Запис</div>
+  <h2>Розмова з Лаурою Бандурою-Морган</h2>
+  <p>Аудіозапис від <strong>29 травня 2020 р.</strong> розмови між д-ром Вітольдом Кіларським та Лаурою Бандурою-Морган — керівником відділу контролю грантів NCN. Того ж дня директор NCN Збігнев Блоцкі шантажем змусив Лауру тиснути на Кіларського, щоб той відкликав заявку на грант NAWA з метою задоволення проф. Марціна Дрога.</p>
+  <div class="audio-player-wrap">
+    <div class="audio-player-label">Записана розмова — 29 травня 2020</div>
+    <div class="audio-player-meta">Лаура Бандура-Морган та д-р Вітольд Кіларський · Повний запис</div>
+    <audio controls preload="metadata">
+      <source src="docs/1-29-mai-2020-05-29-154720-inter.mp3" type="audio/mpeg">
+      Ваш браузер не підтримує аудіоелемент.
+    </audio>
+  </div>
+
+  <h3>A. Шантаж</h3>
+  <p>Лаура описує, як директор Блоцкі викликав її та вимагав, щоб вона сказала Кіларському відкликати заявку на грант NAWA («Польські повернення») для задоволення проф. Марціна Дрога.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«[Він сказав мені,] щоб ти відкликав ці повернення, бо все одно — і я цитую — "Він би все одно не отримав."»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Я сподіваюся, що це задобрить — саме так — що це задовольнить пана Дрога, якщо пан Кіларський відкличе свій проєкт з програми повернень.»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Інформація, яку я отримала сьогодні, така, що пан Марцін Дрог є впливовим.»</blockquote>
+  </div>
+
+  <h3>B. Сексуальне насильство проф. Дрога</h3>
+  <p>Лаура описує, як проф. Марцін Дрог вчинив щодо неї сексуальне насильство — притиснув до огорожі, насильно цілував, засунув руку в її білизну проти її волі.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Він притиснув мене до сітки, почав цілувати. Почав засовувати руку мені в штани.»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Він засунув руку в мою білизну і намагався торкатися моїх статевих органів... і намагався засунути палець всередину. І я оборонялася, відштовхувала.»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Я не хотіла, не хотіла, розумієш? Бо я витягувала його руку і весь час говорила: Витягни це Марціне, витягни це Марціне, перестань, залиш мене.»</blockquote>
+  </div>
+
+  <h3>C. Директор применшує насильство</h3>
+  <p>Коли Лаура розповіла Блоцкому про сексуальне насильство Дрога, він применшив це:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган (цитує Блоцкого)</div>
+    <blockquote>«Яке це має значення? Може це я тобі незабаром запропоную секс.»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Ти не пропонував мені секс. Я могла б сказати: А якби запропонував, мене б, напевно, знудило.»</blockquote>
+  </div>
+
+  <h3>D. Читання приватних повідомлень</h3>
+  <p>Блоцкі та головний бухгалтер Вайс читали приватні розмови Лаури в Messenger без її згоди:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Він читав мої повідомлення в Messenger... Вайс теж. Блоцкі читав, але дав Вайсу. Той теж читав.»</blockquote>
+  </div>
+
+  <h3>E. Системна корупція в NCN</h3>
+  <p>Лаура описує численні випадки корупції в NCN:</p>
+  <p><strong>Справа Янушкевича</strong> — Блоцкі був відсторонений через конфлікт інтересів, але все одно втрутився, щоб змінити аудиторський висновок.</p>
+  <p><strong>Справа Голі</strong> — директор NCN зберіг 1,3 млн злотих для дослідника після того, як голова Ради сказала, що це «дуже хороший науковець».</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Чоловіки та дружини координаторів подають заявки на гранти до NCN — це нормально [на їхню думку].»</blockquote>
+  </div>
+
+  <h3>F. Рецензії Мудельзе — копіювання</h3>
+  <p>Лаура розповідає про справу Мудельзе — експерта, який скопіював один і той самий фрагмент рецензії до 10–14 різних грантових заявок у програмі GRIEG:</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Десять, десять грантів чи чотирнадцять грантів... І він скопіював фрагмент, що стосувався, мабуть, однієї людини. Скопіював до решти.»</blockquote>
+  </div>
+  </div>
+
   </div>
 </section>
 
@@ -1361,6 +1878,100 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   </section>
   <!-- ==========================================
+  SECTION: MUDELSEE CASE
+  ========================================== -->
+  <section class="section" id="mudelsee">
+  <div class="lang-block active" data-lang="pl">
+  <div class="section-label">Sprawa Mudelsee</div>
+  <h2>Sfałszowane recenzje Manfreda Mudelsee</h2>
+  <p>Sprawa Mudelsee pokazuje, jak NCN chronił zagranicznego eksperta, który złożył skopiowane recenzje do wielu wniosków grantowych w programie GRIEG. Ekspert Manfred Mudelsee używał identycznych szablonów tekstowych do oceny różnych naukowców, niekiedy przyznając wysokie noty, a innym razem niskie — używając tych samych skopiowanych fraz.</p>
+  <p>Mimo formalnej skargi Laury Bandury-Morgan do Komisji ds. Rzetelności Badań, dyrektor NCN Zbigniew Błocki oficjalnie odmówił zbadania sprawy, twierdząc, że zachowanie eksperta nie stanowi „przewinienia dyscyplinarnego w nauce". Decyzja ta zapadła tego samego dnia, gdy Błocki potajemnie przygotowywał odpowiedź NCN na audyt NIK (Najwyższej Izby Kontroli), który krytykował procedury kontrolne NCN.</p>
+  <h3>Dokumenty</h3>
+<ul class="doc-list">
+<li class="doc-item"><span class="doc-number">1.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analiza recenzji Mudelsee — kopiuj-wklej w wielu wnioskach GRIEG (Zaborska, Grabiec, Bąk, Szymczycha)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Mudelsee.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Wewnętrzne maile NCN — Laura Bandura-Morgan zgłasza nieprawidłowe recenzje eksperta. Odrzucająca odpowiedź Anny Wieczorek.</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Laura-vs-NCN-about-Mundelsee-expert.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Oficjalne pismo NCN (podpisane przez Błockiego, 04.12.2020) ODMAWIAJĄCE zbadania przewinienia Mudelsee</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Tajna odpowiedź Błockiego na wyniki kontroli NIK, wysłana 29 maja 2020 (tego samego dnia co szantaż!)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Blocki-secret-replay-to-NIK-control.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Wewnętrzne maile NCN o kontroli NIK — Laura pyta o studenta zgłaszającego ujawnienie treści wniosku przez eksperta</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/kontrola-NIK.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Pełny raport NIK o finansowaniu badań podstawowych przez NCN</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Program posiedzenia Rady NCN 13–14 stycznia 2021 — powołanie Komisji ds. Rzetelności Badań</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Program posiedzenia Rady NCN 10–11 lutego 2021</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+</ul>
+  </div>
+
+  <div class="lang-block" data-lang="en">
+  <div class="section-label">Mudelsee Case</div>
+  <h2>Manfred Mudelsee's Falsified Reviews</h2>
+  <p>The Mudelsee case demonstrates how NCN protected a foreign expert who submitted copy-paste reviews for multiple grant applications in the GRIEG programme. Expert Manfred Mudelsee used identical text templates to evaluate different researchers, sometimes giving high marks and sometimes low marks using the same copied phrases.</p>
+  <p>Despite Laura Bandura-Morgan's formal complaint to the Research Integrity Commission, NCN Director Zbigniew Błocki officially refused to investigate, claiming the expert's behavior did not constitute "scientific misconduct." The decision came on the same day Błocki was secretly preparing NCN's response to the NIK (Supreme Audit Office) audit that criticized NCN's control procedures.</p>
+  <h3>Documents</h3>
+<ul class="doc-list">
+<li class="doc-item"><span class="doc-number">1.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analysis of Mudelsee's copy-paste reviews across multiple GRIEG applications (Zaborska, Grabiec, Bąk, Szymczycha)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Mudelsee.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Internal NCN emails — Laura Bandura-Morgan raised concerns about improper expert reviews. Anna Wieczorek's dismissive response.</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Laura-vs-NCN-about-Mundelsee-expert.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Official NCN document (signed by Błocki, 04.12.2020) REFUSING to investigate Mudelsee's misconduct</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Błocki's secret reply to NIK control results, sent 29 May 2020 (same day as the blackmail!)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Blocki-secret-replay-to-NIK-control.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Internal NCN emails about NIK control — Laura asks about a student who reported an expert disclosing grant contents</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/kontrola-NIK.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Full NIK audit report on NCN funding of basic research</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">NCN Council meeting program, 13–14 January 2021 — appointing Commission for Research Integrity</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">NCN Council meeting program, 10–11 February 2021</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+</ul>
+  </div>
+
+  <div class="lang-block" data-lang="fr">
+  <div class="section-label">Affaire Mudelsee</div>
+  <h2>Les évaluations falsifiées de Manfred Mudelsee</h2>
+  <p>L'affaire Mudelsee démontre comment le NCN a protégé un expert étranger qui a soumis des évaluations copiées-collées pour plusieurs demandes de subvention dans le programme GRIEG. L'expert Manfred Mudelsee utilisait des modèles de texte identiques pour évaluer différents chercheurs, attribuant parfois des notes élevées et parfois basses en utilisant les mêmes phrases copiées.</p>
+  <p>Malgré la plainte formelle de Laura Bandura-Morgan à la Commission pour l'intégrité de la recherche, le directeur du NCN Zbigniew Błocki a officiellement refusé d'enquêter, affirmant que le comportement de l'expert ne constituait pas une « faute scientifique ». Cette décision a été prise le même jour où Błocki préparait secrètement la réponse du NCN à l'audit de la NIK (Cour suprême de contrôle) qui critiquait les procédures de contrôle du NCN.</p>
+  <h3>Documents</h3>
+<ul class="doc-list">
+<li class="doc-item"><span class="doc-number">1.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analyse des évaluations copiées-collées de Mudelsee dans plusieurs demandes GRIEG (Zaborska, Grabiec, Bąk, Szymczycha)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Mudelsee.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">E-mails internes du NCN — Laura Bandura-Morgan signale des évaluations inappropriées. Réponse dédaigneuse d'Anna Wieczorek.</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Laura-vs-NCN-about-Mundelsee-expert.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Document officiel du NCN (signé par Błocki, 04.12.2020) REFUSANT d'enquêter sur la faute de Mudelsee</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Réponse secrète de Błocki aux résultats du contrôle NIK, envoyée le 29 mai 2020 (le même jour que le chantage !)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Blocki-secret-replay-to-NIK-control.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">E-mails internes du NCN sur le contrôle NIK — Laura interroge sur un étudiant signalant la divulgation du contenu d'une demande par un expert</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/kontrola-NIK.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Rapport complet d'audit de la NIK sur le financement de la recherche fondamentale par le NCN</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Programme de la réunion du Conseil NCN, 13–14 janvier 2021 — nomination de la Commission pour l'intégrité de la recherche</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Programme de la réunion du Conseil NCN, 10–11 février 2021</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+</ul>
+  </div>
+
+  <div class="lang-block" data-lang="de">
+  <div class="section-label">Fall Mudelsee</div>
+  <h2>Manfred Mudelsees gefälschte Gutachten</h2>
+  <p>Der Fall Mudelsee zeigt, wie das NCN einen ausländischen Gutachter schützte, der kopierte Gutachten für mehrere Förderanträge im GRIEG-Programm einreichte. Der Gutachter Manfred Mudelsee verwendete identische Textvorlagen zur Bewertung verschiedener Forscher, wobei er manchmal hohe und manchmal niedrige Noten vergab — mit denselben kopierten Formulierungen.</p>
+  <p>Trotz der formellen Beschwerde von Laura Bandura-Morgan bei der Kommission für Forschungsintegrität weigerte sich NCN-Direktor Zbigniew Błocki offiziell, den Fall zu untersuchen, und behauptete, das Verhalten des Gutachters stelle kein „wissenschaftliches Fehlverhalten" dar. Die Entscheidung fiel am selben Tag, an dem Błocki heimlich die NCN-Antwort auf den NIK-Audit (Oberste Rechnungskammer) vorbereitete, der die Kontrollverfahren des NCN kritisierte.</p>
+  <h3>Dokumente</h3>
+<ul class="doc-list">
+<li class="doc-item"><span class="doc-number">1.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Analyse von Mudelsees kopierten Gutachten über mehrere GRIEG-Anträge (Zaborska, Grabiec, Bąk, Szymczycha)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Mudelsee.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Interne NCN-E-Mails — Laura Bandura-Morgan meldet unsachgemäße Expertengutachten. Abweisende Antwort von Anna Wieczorek.</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Laura-vs-NCN-about-Mundelsee-expert.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Offizielles NCN-Dokument (von Błocki unterzeichnet, 04.12.2020) — ABLEHNUNG der Untersuchung von Mudelsees Fehlverhalten</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Błockis geheime Antwort auf die NIK-Kontrollergebnisse, gesendet am 29. Mai 2020 (am selben Tag wie die Erpressung!)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Blocki-secret-replay-to-NIK-control.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Interne NCN-E-Mails zur NIK-Kontrolle — Laura fragt nach einem Studenten, der die Offenlegung von Antragsinhalten durch einen Gutachter meldete</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/kontrola-NIK.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Vollständiger NIK-Prüfungsbericht über die Finanzierung der Grundlagenforschung durch das NCN</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Programm der NCN-Ratssitzung, 13.–14. Januar 2021 — Ernennung der Kommission für Forschungsintegrität</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Programm der NCN-Ratssitzung, 10.–11. Februar 2021</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Vorschau</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+</ul>
+  </div>
+
+  <div class="lang-block" data-lang="uk">
+  <div class="section-label">Справа Мудельзе</div>
+  <h2>Сфальсифіковані рецензії Манфреда Мудельзе</h2>
+  <p>Справа Мудельзе демонструє, як NCN захищав іноземного експерта, який подав скопійовані рецензії до багатьох грантових заявок у програмі GRIEG. Експерт Манфред Мудельзе використовував ідентичні текстові шаблони для оцінки різних дослідників, іноді виставляючи високі оцінки, а іноді низькі — використовуючи ті самі скопійовані фрази.</p>
+  <p>Незважаючи на офіційну скаргу Лаури Бандури-Морган до Комісії з доброчесності досліджень, директор NCN Збігнев Блоцкі офіційно відмовився від розслідування, стверджуючи, що поведінка експерта не є «науковим проступком». Рішення було прийнято того ж дня, коли Блоцкі таємно готував відповідь NCN на аудит НІК (Вищої контрольної палати), який критикував контрольні процедури NCN.</p>
+  <h3>Документи</h3>
+<ul class="doc-list">
+<li class="doc-item"><span class="doc-number">1.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Аналіз скопійованих рецензій Мудельзе в кількох заявках GRIEG (Заборська, Грабєц, Бонк, Шимчиха)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Mudelsee.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">2.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Внутрішні листи NCN — Лаура Бандура-Морган повідомляє про неналежні експертні рецензії. Зневажлива відповідь Анни Вєчорек.</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Laura-vs-NCN-about-Mundelsee-expert.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">3.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Офіційний документ NCN (підписаний Блоцкім, 04.12.2020) — ВІДМОВА від розслідування проступку Мудельзе</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">4.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Таємна відповідь Блоцкого на результати контролю НІК, надіслана 29 травня 2020 (того ж дня, що й шантаж!)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/Blocki-secret-replay-to-NIK-control.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">5.</span><div class="doc-type-badge badge-docx"><svg><use href="#icon-doc"/></svg><span class="doc-type-badge-label">DOCX</span></div><span><span class="doc-label">Внутрішні листи NCN про контроль НІК — Лаура запитує про студента, який повідомив про розголошення експертом змісту заявки</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-download" href="docs/kontrola-NIK.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">6.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Повний звіт аудиту НІК про фінансування фундаментальних досліджень NCN</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">7.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Програма засідання Ради NCN, 13–14 січня 2021 — призначення Комісії з доброчесності досліджень</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<li class="doc-item"><span class="doc-number">8.</span><div class="doc-type-badge badge-pdf"><svg><use href="#icon-pdf"/></svg><span class="doc-type-badge-label">PDF</span></div><span><span class="doc-label">Програма засідання Ради NCN, 10–11 лютого 2021</span><div class="doc-ext">PDF</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+</ul>
+  </div>
+  </section>
+  <!-- ==========================================
   SECTION: TIMELINE
   ========================================== -->
   <section class="section" id="timeline">
@@ -1511,6 +2122,61 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   </section>
 </main>
+
+<!-- ==========================================
+     SECTION: COMMENTS (Giscus)
+     ========================================== -->
+<section class="section comments-section" id="comments" style="max-width:780px;margin:0 auto;padding-left:var(--space-5);padding-right:var(--space-5);">
+  <div class="lang-block active" data-lang="pl">
+  <div class="section-label">Komentarze</div>
+  <h2>Dyskusja</h2>
+  <p>Podziel się swoją opinią. Komentarze są przechowywane na GitHub Discussions — otwarta platforma, bez cenzury.</p>
+  </div>
+  <div class="lang-block" data-lang="en">
+  <div class="section-label">Comments</div>
+  <h2>Discussion</h2>
+  <p>Share your thoughts. Comments are stored on GitHub Discussions — an open platform, no censorship.</p>
+  </div>
+  <div class="lang-block" data-lang="fr">
+  <div class="section-label">Commentaires</div>
+  <h2>Discussion</h2>
+  <p>Partagez votre avis. Les commentaires sont hébergés sur GitHub Discussions — une plateforme ouverte, sans censure.</p>
+  </div>
+  <div class="lang-block" data-lang="de">
+  <div class="section-label">Kommentare</div>
+  <h2>Diskussion</h2>
+  <p>Teilen Sie Ihre Meinung. Kommentare werden auf GitHub Discussions gespeichert — eine offene Plattform, ohne Zensur.</p>
+  </div>
+  <div class="lang-block" data-lang="uk">
+  <div class="section-label">Коментарі</div>
+  <h2>Обговорення</h2>
+  <p>Поділіться своєю думкою. Коментарі зберігаються на GitHub Discussions — відкрита платформа, без цензури.</p>
+  </div>
+  <!-- Giscus comment widget
+       SETUP REQUIRED:
+       1. Enable GitHub Discussions on the repo: LudvigBoltzmann/KorupcjaNCN
+       2. Install the Giscus app: https://github.com/apps/giscus
+       3. Go to https://giscus.app to get the correct repo-id and category-id
+       4. Replace R_placeholder and DIC_placeholder below with real values
+  -->
+  <script src="https://giscus.app/client.js"
+    data-repo="LudvigBoltzmann/KorupcjaNCN"
+    data-repo-id="R_placeholder"
+    data-category="General"
+    data-category-id="DIC_placeholder"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="pl"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+
 <footer class="site-footer">
   <div class="footer-inner">
   <div class="lang-block active" data-lang="pl">
