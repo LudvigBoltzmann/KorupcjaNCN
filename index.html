@@ -304,6 +304,9 @@ a:hover { color: var(--color-link-hover); }
   max-width: 720px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
 }
 .hero-badge {
   display: inline-block;
@@ -873,6 +876,79 @@ main {
   }
 }
 
+
+/* Portrait Photo — Hero */
+.hero-portrait {
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-portrait {
+    width: 140px;
+    height: 140px;
+    margin-bottom: var(--space-2);
+  }
+  .hero-contact {
+    justify-content: center;
+  }
+}
+
+/* Portrait Photo — About */
+.about-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+.about-portrait {
+  flex-shrink: 0;
+  width: 160px;
+  height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+.about-text {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-portrait {
+    width: 140px;
+    height: 175px;
+  }
+}
+
 @media print {
   .site-header, .theme-toggle, .lang-switcher, .mobile-menu-btn, .nav-links, .video-section { display: none !important; }
   .hero { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -1040,6 +1116,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 .doc-modal { background: #fafaf8 !important; }
 .doc-modal-header { background: #f2f1ed !important; border-color: rgba(26,26,46,0.12) !important; }
 .doc-modal-title { color: #1a1a2e !important; }
+.hero-portrait { border-color: rgba(26,26,46,0.12) !important; }
+.about-portrait { box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important; }
+
 
 .interview-excerpt blockquote { color: #1a1a2e !important; }
 .interview-excerpt .speaker { color: #c0392b !important; }
@@ -1129,6 +1208,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <section class="hero">
   <div class="hero-inner">
   <div class="lang-block active" data-lang="pl">
+  <div class="hero-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="hero-content">
   <div class="hero-badge">Sygnalista</div>
   <h1>Dr Witold Kilarski</h1>
   <p class="hero-subtitle">Naukowiec, który ujawnił korupcję w&nbsp;Narodowym Centrum Nauki. Zamiast ścigać winnych — ukarano sygnalistę.</p>
@@ -1136,8 +1217,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <span>✉ <a href="mailto:witek.kilarski@gmail.com">witek.kilarski@gmail.com</a></span>
   <span>☎ <a href="tel:+48782473130">782 473 130</a></span>
   </div>
-  </div>
+  </div></div>
   <div class="lang-block" data-lang="en">
+  <div class="hero-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="hero-content">
   <div class="hero-badge">Whistleblower</div>
   <h1>Dr Witold Kilarski</h1>
   <p class="hero-subtitle">A scientist who uncovered corruption at Poland's National Science Centre (NCN). Instead of prosecuting the guilty — the whistleblower was punished.</p>
@@ -1145,8 +1228,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <span>✉ <a href="mailto:witek.kilarski@gmail.com">witek.kilarski@gmail.com</a></span>
   <span>☎ <a href="tel:+48782473130">782 473 130</a></span>
   </div>
-  </div>
+  </div></div>
   <div class="lang-block" data-lang="fr">
+  <div class="hero-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="hero-content">
   <div class="hero-badge">Lanceur d'alerte</div>
   <h1>Dr Witold Kilarski</h1>
   <p class="hero-subtitle">Un scientifique qui a&nbsp;révélé la corruption au Centre national des sciences de Pologne (NCN). Au lieu de poursuivre les coupables — c'est le lanceur d'alerte qui a&nbsp;été puni.</p>
@@ -1154,8 +1239,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <span>✉ <a href="mailto:witek.kilarski@gmail.com">witek.kilarski@gmail.com</a></span>
   <span>☎ <a href="tel:+48782473130">782 473 130</a></span>
   </div>
-  </div>
+  </div></div>
   <div class="lang-block" data-lang="de">
+  <div class="hero-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="hero-content">
   <div class="hero-badge">Whistleblower</div>
   <h1>Dr Witold Kilarski</h1>
   <p class="hero-subtitle">Ein Wissenschaftler, der Korruption am Nationalen Wissenschaftszentrum Polens (NCN) aufdeckte. Statt die Schuldigen zu verfolgen — wurde der Whistleblower bestraft.</p>
@@ -1163,8 +1250,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <span>✉ <a href="mailto:witek.kilarski@gmail.com">witek.kilarski@gmail.com</a></span>
   <span>☎ <a href="tel:+48782473130">782 473 130</a></span>
   </div>
-  </div>
+  </div></div>
   <div class="lang-block" data-lang="uk">
+  <div class="hero-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="hero-content">
   <div class="hero-badge">Викривач</div>
   <h1>Dr Witold Kilarski</h1>
   <p class="hero-subtitle">Науковець, який розкрив корупцію в&nbsp;Національному науковому центрі Польщі (NCN). Замість переслідування винних — покарали викривача.</p>
@@ -1172,7 +1261,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <span>✉ <a href="mailto:witek.kilarski@gmail.com">witek.kilarski@gmail.com</a></span>
   <span>☎ <a href="tel:+48782473130">782 473 130</a></span>
   </div>
-  </div>
+  </div></div>
   </div>
 </section>
 
@@ -1290,6 +1379,24 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="speaker">Laura Bandura-Morgan</div>
     <blockquote>„Dziesięciu, dziesięć grantów czy czternaście grantów... I skopiował fragment dotyczący tam pewnie jednej osoby. Skopiował do pozostałych"</blockquote>
   </div>
+  <h3>G. Doktorantka z Uniwersytetu Śląskiego — kradzież pomysłów z grantów</h3>
+  <p>Laura opisuje sprawę doktorantki z Uniwersytetu Śląskiego, która napisała pismo do NCN zgłaszając, że jej promotor zmuszał ją do wykonywania eksperymentów (w tym dzwoniąc o 22:00 w niedzielę do ciężarnej kobiety) i kradł pomysły z ocenianych przez siebie wniosków grantowych. Komisja Rzetelności Naukowej NCN zamknęła sprawę pod nieobecność Laury — w ciągu 15 minut, przy udziale byłego przewodniczącego Rady NCN Janeczka, który nie był członkiem komisji, ale przyszedł bronić swojego kolegi z Uniwersytetu Śląskiego.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Ten ekspert [...] z Uniwersytetu Śląskiego, który dziewczyna, że złożyła ten, napisała pismo, że pan profesor jej każe robić eksperymenty, że kradnie pomysły z ocenianych pomysłów z tych projektów. No i wystarczyło takie uwagi. Byłam na urlopie. Case, case closed, kurwa, case closed."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„A czemu przyszedł na posiedzenie komisji? Ponieważ pracuje na Uniwersytecie Śląskim i pan expert in question to jego kumpel."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„I jak nigdy pan Jakub Michalik w piętnaście minut napisał pismo w imieniu komisji. «Dziękujemy panu, przepraszamy i w ogóle za wszystko, za kłopot i tak dalej». Ja zdążyłam przyjść po dwóch tygodniach urlopu i już sprawa była załatwiona."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan (o doktorantce)</div>
+    <blockquote>„Że dziewczyna ma konflikt interesów, bo on się nad nią znęca. Znaczy ona uważa, że ją nęka, a on po prostu wymaga od niej, żeby przyszła do labu w ciąży o dziesiątej w nocy w niedzielę i zrobiła eksperyment, którego potem on nie wykorzystuje do niczego przez pół roku."</blockquote>
+  </div>
   </div>
 
   <div class="lang-block" data-lang="en">
@@ -1367,6 +1474,24 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="interview-excerpt">
     <div class="speaker">Laura Bandura-Morgan</div>
     <blockquote>"Ten, ten grants or fourteen grants... And he copied a fragment concerning probably one person. He copied it to the others."</blockquote>
+  </div>
+  <h3>G. Doctoral Student from the University of Silesia — Theft of Ideas from Grants</h3>
+  <p>Laura describes the case of a doctoral student from the University of Silesia who filed a written complaint to NCN reporting that her supervisor was forcing her to perform experiments (including calling her at 10 PM on a Sunday while she was pregnant) and was stealing ideas from the grant applications he was reviewing. NCN's Research Integrity Committee closed the case in Laura's absence — in just 15 minutes, with the participation of Janeczek, a former Chair of the NCN Council who was not a committee member, but came to defend his colleague from the University of Silesia.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"This expert [...] from the University of Silesia — a girl filed a letter saying that the professor forces her to do experiments, that he steals ideas from the reviewed grant applications. And those remarks were enough. I was on leave. Case, case closed."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"And why did he come to the committee meeting? Because he works at the University of Silesia and the expert in question is his mate."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>"And like never before, Mr Jakub Michalik wrote a letter on behalf of the committee in fifteen minutes. 'Thank you sir, we apologise for everything, for the trouble and so on.' I came back after two weeks' leave and the case was already settled."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan (about the doctoral student)</div>
+    <blockquote>"That the girl has a conflict of interest because he bullies her. She thinks he harasses her, and he simply demands that she come to the lab pregnant at ten o'clock on a Sunday night and do an experiment, which he then doesn't use for anything for six months."</blockquote>
   </div>
   </div>
 
@@ -1446,6 +1571,20 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="speaker">Laura Bandura-Morgan</div>
     <blockquote>« Dix, dix subventions ou quatorze subventions... Et il a copié un fragment concernant probablement une personne. Il l'a copié dans les autres. »</blockquote>
   </div>
+  <h3>G. Doctorante de l'Université de Silésie — Vol d'idées dans les subventions</h3>
+  <p>Laura décrit le cas d'une doctorante de l'Université de Silésie qui a déposé une plainte écrite auprès du NCN signalant que son directeur de thèse l'obligeait à réaliser des expériences (y compris en l'appelant à 22h un dimanche alors qu'elle était enceinte) et qu'il volait des idées dans les demandes de subventions qu'il évaluait. La Commission d'Intégrité Scientifique du NCN a classé l'affaire en l'absence de Laura — en seulement 15 minutes, avec la participation de Janeczek, ancien président du Conseil du NCN qui n'était pas membre de la commission, mais qui était venu défendre son collègue de l'Université de Silésie.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Cet expert [...] de l'Université de Silésie — une fille a écrit une lettre disant que le professeur la force à faire des expériences, qu'il vole des idées dans les projets de subventions évalués. Et ces remarques ont suffi. J'étais en congé. Affaire classée. »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Et pourquoi est-il venu à la réunion de la commission ? Parce qu'il travaille à l'Université de Silésie et l'expert en question est son ami. »</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>« Et comme jamais, M. Jakub Michalik a écrit une lettre au nom de la commission en quinze minutes. «Nous vous remercions, nous nous excusons pour tout.» Je suis revenue après deux semaines de congé et l'affaire était déjà réglée. »</blockquote>
+  </div>
   </div>
 
   <div class="lang-block" data-lang="de">
@@ -1524,6 +1663,20 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="speaker">Laura Bandura-Morgan</div>
     <blockquote>„Zehn, zehn Förderungen oder vierzehn Förderungen... Und er hat ein Fragment über wahrscheinlich eine Person kopiert. Er hat es in die anderen kopiert."</blockquote>
   </div>
+  <h3>G. Doktorandin der Universität Schlesien — Ideendiebstahl aus Förderanträgen</h3>
+  <p>Laura beschreibt den Fall einer Doktorandin der Universität Schlesien, die eine schriftliche Beschwerde beim NCN einreichte, in der sie berichtete, dass ihr Betreuer sie zu Experimenten zwang (einschließlich Anrufen um 22 Uhr an einem Sonntag, während sie schwanger war) und Ideen aus den von ihm begutachteten Förderanträgen stahl. Die Kommission für wissenschaftliche Integrität des NCN schloss den Fall in Lauras Abwesenheit — in nur 15 Minuten, unter Beteiligung von Janeczek, dem ehemaligen Vorsitzenden des NCN-Rates, der kein Mitglied der Kommission war, aber gekommen war, um seinen Kollegen von der Universität Schlesien zu verteidigen.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Dieser Experte [...] von der Universität Schlesien — eine Frau hat einen Brief geschrieben, dass der Professor sie zwingt, Experimente zu machen, dass er Ideen aus den begutachteten Förderanträgen stiehlt. Und diese Bemerkungen reichten aus. Ich war im Urlaub. Fall abgeschlossen."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Und warum kam er zur Kommissionssitzung? Weil er an der Universität Schlesien arbeitet und der betreffende Experte sein Kumpel ist."</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Laura Bandura-Morgan</div>
+    <blockquote>„Und wie nie zuvor schrieb Herr Jakub Michalik in fünfzehn Minuten ein Schreiben im Namen der Kommission. «Wir danken Ihnen, wir entschuldigen uns für alles.» Ich kam nach zwei Wochen Urlaub zurück und der Fall war bereits erledigt."</blockquote>
+  </div>
   </div>
 
   <div class="lang-block" data-lang="uk">
@@ -1601,6 +1754,20 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="interview-excerpt">
     <div class="speaker">Лаура Бандура-Морган</div>
     <blockquote>«Десять, десять грантів чи чотирнадцять грантів... І він скопіював фрагмент, що стосувався, мабуть, однієї людини. Скопіював до решти.»</blockquote>
+  </div>
+  <h3>G. Докторантка зі Сілезького університету — крадіжка ідей з грантів</h3>
+  <p>Лаура описує випадок докторантки зі Сілезького університету, яка подала письмову скаргу до NCN, повідомляючи, що її науковий керівник змушував її проводити експерименти (зокрема телефонував о 22:00 в неділю, коли вона була вагітна) та крав ідеї з грантових заявок, які він рецензував. Комісія з наукової доброчесності NCN закрила справу за відсутності Лаури — за 15 хвилин, за участю Янечека, колишнього голови Ради NCN, який не був членом комісії, але прийшов захищати свого колегу зі Сілезького університету.</p>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«Цей експерт [...] зі Сілезького університету — дівчина написала листа, що професор змушує її робити експерименти, що він краде ідеї з оцінюваних грантових проектів. І цих зауважень вистачило. Я була у відпустці. Справу закрито.»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«А чому він прийшов на засідання комісії? Тому що він працює в Сілезькому університеті, і цей експерт — його приятель.»</blockquote>
+  </div>
+  <div class="interview-excerpt">
+    <div class="speaker">Лаура Бандура-Морган</div>
+    <blockquote>«І як ніколи пан Якуб Міхалік за п'ятнадцять хвилин написав листа від імені комісії. «Дякуємо вам, вибачте за все.» Я повернулася після двох тижнів відпустки, а справа вже була вирішена.»</blockquote>
   </div>
   </div>
 
@@ -2210,38 +2377,58 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <section class="section" id="about">
   <div class="lang-block active" data-lang="pl">
   <div class="section-label">O mnie</div>
+  <div class="about-header">
+  <div class="about-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="about-text">
   <h2>Dr Witold Kilarski</h2>
   <p>Biolog specjalizujący się w badaniach nad układem limfatycznym. Doktorat uzyskał na Uniwersytecie w Uppsali (Szwecja). Pracował jako postdoc w EPFL w Lozannie (Szwajcaria) i na Uniwersytecie w Bordeaux (Francja), a następnie jako Research Assistant Professor na Wydziale Inżynierii Biomedycznej Uniwersytetu w Chicago (USA), w laboratorium prof. Melody Swartz.</p>
   <p>Przez ponad dekadę prowadził badania nad biologią naczyń limfatycznych, publikując w międzynarodowych czasopismach naukowych. Po powrocie do Polski w 2020 roku ubiegał się o grant NAWA na badania nad leczeniem cukrzycy typu 1.</p>
   <p><strong>Obecnie bezrobotny</strong> — w wyniku działań NCN i dyrektora Błockiego, jego kariera naukowa została zniszczona. Zamiast prowadzić badania nad leczeniem cukrzycy, zmuszony jest bronić się przed procesami sądowymi wszczętymi przez instytucję, która powinna wspierać naukę.</p>
+  </div></div>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">About Me</div>
+  <div class="about-header">
+  <div class="about-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="about-text">
   <h2>Dr Witold Kilarski</h2>
   <p>Biologist specialising in lymphatic system research. He received his PhD from Uppsala University (Sweden). He worked as a postdoc at EPFL Lausanne (Switzerland) and University of Bordeaux (France), then as Research Assistant Professor at the Department of Biomedical Engineering, University of Chicago (USA), in Prof. Melody Swartz's laboratory.</p>
   <p>For over a decade, he conducted research on lymphatic vessel biology, publishing in international scientific journals. After returning to Poland in 2020, he applied for a NAWA grant to research the treatment of Type 1 Diabetes.</p>
   <p><strong>Currently unemployed</strong> — as a result of NCN's actions and Director Błocki's interference, his scientific career has been destroyed. Instead of conducting research on curing diabetes, he is forced to defend himself in court proceedings initiated by the institution that should support science.</p>
+  </div></div>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">À propos</div>
+  <div class="about-header">
+  <div class="about-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="about-text">
   <h2>Dr Witold Kilarski</h2>
   <p>Biologiste spécialisé dans la recherche sur le système lymphatique. Il a obtenu son doctorat à l'Université d'Uppsala (Suède). Il a travaillé comme postdoctorant à l'EPFL Lausanne (Suisse) et à l'Université de Bordeaux (France), puis comme professeur assistant de recherche au Département de génie biomédical de l'Université de Chicago (USA), dans le laboratoire de la Prof. Melody Swartz.</p>
   <p>Pendant plus d'une décennie, il a mené des recherches sur la biologie des vaisseaux lymphatiques, publiant dans des revues scientifiques internationales. Après son retour en Pologne en 2020, il a sollicité une subvention NAWA pour des recherches sur le traitement du diabète de type 1.</p>
   <p><strong>Actuellement sans emploi</strong> — en raison des actions du NCN et de l'ingérence du directeur Błocki, sa carrière scientifique a été détruite. Au lieu de mener des recherches sur le traitement du diabète, il est contraint de se défendre dans des procédures judiciaires engagées par l'institution censée soutenir la science.</p>
+  </div></div>
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Über mich</div>
+  <div class="about-header">
+  <div class="about-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Dr Witold Kilarski" loading="lazy"></div>
+  <div class="about-text">
   <h2>Dr Witold Kilarski</h2>
   <p>Biologe mit Spezialisierung auf Lymphgefäßforschung. Er promovierte an der Universität Uppsala (Schweden). Er arbeitete als Postdoktorand an der EPFL Lausanne (Schweiz) und der Universität Bordeaux (Frankreich), anschließend als Research Assistant Professor am Department of Biomedical Engineering der University of Chicago (USA), im Labor von Prof. Melody Swartz.</p>
   <p>Über ein Jahrzehnt forschte er zur Biologie der Lymphgefäße und veröffentlichte in internationalen Fachzeitschriften. Nach seiner Rückkehr nach Polen im Jahr 2020 beantragte er ein NAWA-Stipendium zur Erforschung der Behandlung von Typ-1-Diabetes.</p>
   <p><strong>Derzeit arbeitslos</strong> — infolge der Maßnahmen des NCN und der Einmischung von Direktor Błocki wurde seine wissenschaftliche Karriere zerstört. Anstatt an der Heilung von Diabetes zu forschen, ist er gezwungen, sich in Gerichtsverfahren zu verteidigen, die von der Institution eingeleitet wurden, die die Wissenschaft fördern sollte.</p>
+  </div></div>
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Про мене</div>
+  <div class="about-header">
+  <div class="about-portrait"><img src="docs/kilarski-portrait-web.jpg" alt="Д-р Вітольд Кіларський" loading="lazy"></div>
+  <div class="about-text">
   <h2>Д-р Вітольд Кіларський</h2>
   <p>Біолог, що спеціалізується на дослідженні лімфатичної системи. Отримав ступінь доктора в Університеті Уппсали (Швеція). Працював як постдок в EPFL Лозанна (Швейцарія) та Університеті Бордо (Франція), потім як Research Assistant Professor на факультеті біомедичної інженерії Університету Чикаго (США), в лабораторії проф. Мелоді Свортц.</p>
   <p>Протягом понад десятиліття проводив дослідження біології лімфатичних судин, публікуючись у міжнародних наукових журналах. Після повернення до Польщі у 2020 році подав заявку на грант NAWA для дослідження лікування діабету 1 типу.</p>
   <p><strong>Наразі безробітний</strong> — внаслідок дій NCN та втручання директора Блоцкого його наукова кар'єра була зруйнована. Замість дослідження лікування діабету він змушений захищатися в судових процесах, ініційованих установою, яка мала б підтримувати науку.</p>
+  </div></div>
   </div>
   </section>
 </main>
