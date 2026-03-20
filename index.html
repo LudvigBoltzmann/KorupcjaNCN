@@ -949,6 +949,99 @@ main {
   }
 }
 
+/* CV Gallery Viewer */
+.cv-gallery {
+  margin-top: var(--space-6);
+  border-top: 1px solid rgba(26,26,46,0.12);
+  padding-top: var(--space-5);
+}
+.cv-gallery h3 {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-lg);
+}
+.cv-viewer {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(26,26,46,0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.cv-page-img {
+  width: 100%;
+  display: block;
+}
+.cv-page-container {
+  display: none;
+}
+.cv-page-container.active {
+  display: block;
+}
+.cv-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: #f2f1ed;
+  border-top: 1px solid rgba(26,26,46,0.08);
+}
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(26,26,46,0.2);
+  background: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #1a1a2e;
+  transition: background 0.15s, border-color 0.15s;
+}
+.cv-btn:hover {
+  background: #e8e7e3;
+  border-color: rgba(26,26,46,0.35);
+}
+.cv-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.cv-page-indicator {
+  font-size: 14px;
+  color: #6b7280;
+  min-width: 80px;
+  text-align: center;
+}
+.cv-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: var(--space-4);
+  padding: 6px 14px;
+  background: #c0392b;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cv-download-link:hover {
+  background: #a93226;
+}
+@media (max-width: 640px) {
+  .cv-controls {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .cv-download-link {
+    margin-left: 0;
+    margin-top: var(--space-1);
+  }
+}
+
 @media print {
   .site-header, .theme-toggle, .lang-switcher, .mobile-menu-btn, .nav-links, .video-section { display: none !important; }
   .hero { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -2385,6 +2478,28 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Przez ponad dekadę prowadził badania nad biologią naczyń limfatycznych, publikując w międzynarodowych czasopismach naukowych. Po powrocie do Polski w 2020 roku ubiegał się o grant NAWA na badania nad leczeniem cukrzycy typu 1.</p>
   <p><strong>Obecnie bezrobotny</strong> — w wyniku działań NCN i dyrektora Błockiego, jego kariera naukowa została zniszczona. Zamiast prowadzić badania nad leczeniem cukrzycy, zmuszony jest bronić się przed procesami sądowymi wszczętymi przez instytucję, która powinna wspierać naukę.</p>
   </div></div>
+  <div class="cv-gallery" data-cv-lang="pl">
+  <h3>Curriculum Vitae</h3>
+  <div class="cv-viewer" id="cv-viewer-pl">
+  <div class="cv-page-container active" data-page="1"><img class="cv-page-img" src="docs/cv-page-01.jpg" alt="CV page 1" loading="lazy"></div>
+  <div class="cv-page-container" data-page="2"><img class="cv-page-img" src="docs/cv-page-02.jpg" alt="CV page 2" loading="lazy"></div>
+  <div class="cv-page-container" data-page="3"><img class="cv-page-img" src="docs/cv-page-03.jpg" alt="CV page 3" loading="lazy"></div>
+  <div class="cv-page-container" data-page="4"><img class="cv-page-img" src="docs/cv-page-04.jpg" alt="CV page 4" loading="lazy"></div>
+  <div class="cv-page-container" data-page="5"><img class="cv-page-img" src="docs/cv-page-05.jpg" alt="CV page 5" loading="lazy"></div>
+  <div class="cv-page-container" data-page="6"><img class="cv-page-img" src="docs/cv-page-06.jpg" alt="CV page 6" loading="lazy"></div>
+  <div class="cv-page-container" data-page="7"><img class="cv-page-img" src="docs/cv-page-07.jpg" alt="CV page 7" loading="lazy"></div>
+  <div class="cv-page-container" data-page="8"><img class="cv-page-img" src="docs/cv-page-08.jpg" alt="CV page 8" loading="lazy"></div>
+  <div class="cv-page-container" data-page="9"><img class="cv-page-img" src="docs/cv-page-09.jpg" alt="CV page 9" loading="lazy"></div>
+  <div class="cv-page-container" data-page="10"><img class="cv-page-img" src="docs/cv-page-10.jpg" alt="CV page 10" loading="lazy"></div>
+  <div class="cv-page-container" data-page="11"><img class="cv-page-img" src="docs/cv-page-11.jpg" alt="CV page 11" loading="lazy"></div>
+  <div class="cv-controls">
+  <button class="cv-btn cv-prev" data-viewer="cv-viewer-pl" aria-label="Previous" disabled>&#8592;</button>
+  <span class="cv-page-indicator"><span class="cv-current">1</span> / 11</span>
+  <button class="cv-btn cv-next" data-viewer="cv-viewer-pl" aria-label="Next">&#8594;</button>
+  <a class="cv-download-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.pdf" download>Pobierz PDF</a>
+  </div>
+  </div>
+  </div>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">About Me</div>
@@ -2396,6 +2511,28 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>For over a decade, he conducted research on lymphatic vessel biology, publishing in international scientific journals. After returning to Poland in 2020, he applied for a NAWA grant to research the treatment of Type 1 Diabetes.</p>
   <p><strong>Currently unemployed</strong> — as a result of NCN's actions and Director Błocki's interference, his scientific career has been destroyed. Instead of conducting research on curing diabetes, he is forced to defend himself in court proceedings initiated by the institution that should support science.</p>
   </div></div>
+  <div class="cv-gallery" data-cv-lang="en">
+  <h3>Curriculum Vitae</h3>
+  <div class="cv-viewer" id="cv-viewer-en">
+  <div class="cv-page-container active" data-page="1"><img class="cv-page-img" src="docs/cv-page-01.jpg" alt="CV page 1" loading="lazy"></div>
+  <div class="cv-page-container" data-page="2"><img class="cv-page-img" src="docs/cv-page-02.jpg" alt="CV page 2" loading="lazy"></div>
+  <div class="cv-page-container" data-page="3"><img class="cv-page-img" src="docs/cv-page-03.jpg" alt="CV page 3" loading="lazy"></div>
+  <div class="cv-page-container" data-page="4"><img class="cv-page-img" src="docs/cv-page-04.jpg" alt="CV page 4" loading="lazy"></div>
+  <div class="cv-page-container" data-page="5"><img class="cv-page-img" src="docs/cv-page-05.jpg" alt="CV page 5" loading="lazy"></div>
+  <div class="cv-page-container" data-page="6"><img class="cv-page-img" src="docs/cv-page-06.jpg" alt="CV page 6" loading="lazy"></div>
+  <div class="cv-page-container" data-page="7"><img class="cv-page-img" src="docs/cv-page-07.jpg" alt="CV page 7" loading="lazy"></div>
+  <div class="cv-page-container" data-page="8"><img class="cv-page-img" src="docs/cv-page-08.jpg" alt="CV page 8" loading="lazy"></div>
+  <div class="cv-page-container" data-page="9"><img class="cv-page-img" src="docs/cv-page-09.jpg" alt="CV page 9" loading="lazy"></div>
+  <div class="cv-page-container" data-page="10"><img class="cv-page-img" src="docs/cv-page-10.jpg" alt="CV page 10" loading="lazy"></div>
+  <div class="cv-page-container" data-page="11"><img class="cv-page-img" src="docs/cv-page-11.jpg" alt="CV page 11" loading="lazy"></div>
+  <div class="cv-controls">
+  <button class="cv-btn cv-prev" data-viewer="cv-viewer-en" aria-label="Previous" disabled>&#8592;</button>
+  <span class="cv-page-indicator"><span class="cv-current">1</span> / 11</span>
+  <button class="cv-btn cv-next" data-viewer="cv-viewer-en" aria-label="Next">&#8594;</button>
+  <a class="cv-download-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.pdf" download>Download PDF</a>
+  </div>
+  </div>
+  </div>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">À propos</div>
@@ -2407,6 +2544,28 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Pendant plus d'une décennie, il a mené des recherches sur la biologie des vaisseaux lymphatiques, publiant dans des revues scientifiques internationales. Après son retour en Pologne en 2020, il a sollicité une subvention NAWA pour des recherches sur le traitement du diabète de type 1.</p>
   <p><strong>Actuellement sans emploi</strong> — en raison des actions du NCN et de l'ingérence du directeur Błocki, sa carrière scientifique a été détruite. Au lieu de mener des recherches sur le traitement du diabète, il est contraint de se défendre dans des procédures judiciaires engagées par l'institution censée soutenir la science.</p>
   </div></div>
+  <div class="cv-gallery" data-cv-lang="fr">
+  <h3>Curriculum Vitae</h3>
+  <div class="cv-viewer" id="cv-viewer-fr">
+  <div class="cv-page-container active" data-page="1"><img class="cv-page-img" src="docs/cv-page-01.jpg" alt="CV page 1" loading="lazy"></div>
+  <div class="cv-page-container" data-page="2"><img class="cv-page-img" src="docs/cv-page-02.jpg" alt="CV page 2" loading="lazy"></div>
+  <div class="cv-page-container" data-page="3"><img class="cv-page-img" src="docs/cv-page-03.jpg" alt="CV page 3" loading="lazy"></div>
+  <div class="cv-page-container" data-page="4"><img class="cv-page-img" src="docs/cv-page-04.jpg" alt="CV page 4" loading="lazy"></div>
+  <div class="cv-page-container" data-page="5"><img class="cv-page-img" src="docs/cv-page-05.jpg" alt="CV page 5" loading="lazy"></div>
+  <div class="cv-page-container" data-page="6"><img class="cv-page-img" src="docs/cv-page-06.jpg" alt="CV page 6" loading="lazy"></div>
+  <div class="cv-page-container" data-page="7"><img class="cv-page-img" src="docs/cv-page-07.jpg" alt="CV page 7" loading="lazy"></div>
+  <div class="cv-page-container" data-page="8"><img class="cv-page-img" src="docs/cv-page-08.jpg" alt="CV page 8" loading="lazy"></div>
+  <div class="cv-page-container" data-page="9"><img class="cv-page-img" src="docs/cv-page-09.jpg" alt="CV page 9" loading="lazy"></div>
+  <div class="cv-page-container" data-page="10"><img class="cv-page-img" src="docs/cv-page-10.jpg" alt="CV page 10" loading="lazy"></div>
+  <div class="cv-page-container" data-page="11"><img class="cv-page-img" src="docs/cv-page-11.jpg" alt="CV page 11" loading="lazy"></div>
+  <div class="cv-controls">
+  <button class="cv-btn cv-prev" data-viewer="cv-viewer-fr" aria-label="Previous" disabled>&#8592;</button>
+  <span class="cv-page-indicator"><span class="cv-current">1</span> / 11</span>
+  <button class="cv-btn cv-next" data-viewer="cv-viewer-fr" aria-label="Next">&#8594;</button>
+  <a class="cv-download-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.pdf" download>Télécharger PDF</a>
+  </div>
+  </div>
+  </div>
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Über mich</div>
@@ -2418,6 +2577,28 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Über ein Jahrzehnt forschte er zur Biologie der Lymphgefäße und veröffentlichte in internationalen Fachzeitschriften. Nach seiner Rückkehr nach Polen im Jahr 2020 beantragte er ein NAWA-Stipendium zur Erforschung der Behandlung von Typ-1-Diabetes.</p>
   <p><strong>Derzeit arbeitslos</strong> — infolge der Maßnahmen des NCN und der Einmischung von Direktor Błocki wurde seine wissenschaftliche Karriere zerstört. Anstatt an der Heilung von Diabetes zu forschen, ist er gezwungen, sich in Gerichtsverfahren zu verteidigen, die von der Institution eingeleitet wurden, die die Wissenschaft fördern sollte.</p>
   </div></div>
+  <div class="cv-gallery" data-cv-lang="de">
+  <h3>Lebenslauf</h3>
+  <div class="cv-viewer" id="cv-viewer-de">
+  <div class="cv-page-container active" data-page="1"><img class="cv-page-img" src="docs/cv-page-01.jpg" alt="CV page 1" loading="lazy"></div>
+  <div class="cv-page-container" data-page="2"><img class="cv-page-img" src="docs/cv-page-02.jpg" alt="CV page 2" loading="lazy"></div>
+  <div class="cv-page-container" data-page="3"><img class="cv-page-img" src="docs/cv-page-03.jpg" alt="CV page 3" loading="lazy"></div>
+  <div class="cv-page-container" data-page="4"><img class="cv-page-img" src="docs/cv-page-04.jpg" alt="CV page 4" loading="lazy"></div>
+  <div class="cv-page-container" data-page="5"><img class="cv-page-img" src="docs/cv-page-05.jpg" alt="CV page 5" loading="lazy"></div>
+  <div class="cv-page-container" data-page="6"><img class="cv-page-img" src="docs/cv-page-06.jpg" alt="CV page 6" loading="lazy"></div>
+  <div class="cv-page-container" data-page="7"><img class="cv-page-img" src="docs/cv-page-07.jpg" alt="CV page 7" loading="lazy"></div>
+  <div class="cv-page-container" data-page="8"><img class="cv-page-img" src="docs/cv-page-08.jpg" alt="CV page 8" loading="lazy"></div>
+  <div class="cv-page-container" data-page="9"><img class="cv-page-img" src="docs/cv-page-09.jpg" alt="CV page 9" loading="lazy"></div>
+  <div class="cv-page-container" data-page="10"><img class="cv-page-img" src="docs/cv-page-10.jpg" alt="CV page 10" loading="lazy"></div>
+  <div class="cv-page-container" data-page="11"><img class="cv-page-img" src="docs/cv-page-11.jpg" alt="CV page 11" loading="lazy"></div>
+  <div class="cv-controls">
+  <button class="cv-btn cv-prev" data-viewer="cv-viewer-de" aria-label="Previous" disabled>&#8592;</button>
+  <span class="cv-page-indicator"><span class="cv-current">1</span> / 11</span>
+  <button class="cv-btn cv-next" data-viewer="cv-viewer-de" aria-label="Next">&#8594;</button>
+  <a class="cv-download-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.pdf" download>PDF herunterladen</a>
+  </div>
+  </div>
+  </div>
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Про мене</div>
@@ -2429,6 +2610,28 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Протягом понад десятиліття проводив дослідження біології лімфатичних судин, публікуючись у міжнародних наукових журналах. Після повернення до Польщі у 2020 році подав заявку на грант NAWA для дослідження лікування діабету 1 типу.</p>
   <p><strong>Наразі безробітний</strong> — внаслідок дій NCN та втручання директора Блоцкого його наукова кар'єра була зруйнована. Замість дослідження лікування діабету він змушений захищатися в судових процесах, ініційованих установою, яка мала б підтримувати науку.</p>
   </div></div>
+  <div class="cv-gallery" data-cv-lang="uk">
+  <h3>Резюме</h3>
+  <div class="cv-viewer" id="cv-viewer-uk">
+  <div class="cv-page-container active" data-page="1"><img class="cv-page-img" src="docs/cv-page-01.jpg" alt="CV page 1" loading="lazy"></div>
+  <div class="cv-page-container" data-page="2"><img class="cv-page-img" src="docs/cv-page-02.jpg" alt="CV page 2" loading="lazy"></div>
+  <div class="cv-page-container" data-page="3"><img class="cv-page-img" src="docs/cv-page-03.jpg" alt="CV page 3" loading="lazy"></div>
+  <div class="cv-page-container" data-page="4"><img class="cv-page-img" src="docs/cv-page-04.jpg" alt="CV page 4" loading="lazy"></div>
+  <div class="cv-page-container" data-page="5"><img class="cv-page-img" src="docs/cv-page-05.jpg" alt="CV page 5" loading="lazy"></div>
+  <div class="cv-page-container" data-page="6"><img class="cv-page-img" src="docs/cv-page-06.jpg" alt="CV page 6" loading="lazy"></div>
+  <div class="cv-page-container" data-page="7"><img class="cv-page-img" src="docs/cv-page-07.jpg" alt="CV page 7" loading="lazy"></div>
+  <div class="cv-page-container" data-page="8"><img class="cv-page-img" src="docs/cv-page-08.jpg" alt="CV page 8" loading="lazy"></div>
+  <div class="cv-page-container" data-page="9"><img class="cv-page-img" src="docs/cv-page-09.jpg" alt="CV page 9" loading="lazy"></div>
+  <div class="cv-page-container" data-page="10"><img class="cv-page-img" src="docs/cv-page-10.jpg" alt="CV page 10" loading="lazy"></div>
+  <div class="cv-page-container" data-page="11"><img class="cv-page-img" src="docs/cv-page-11.jpg" alt="CV page 11" loading="lazy"></div>
+  <div class="cv-controls">
+  <button class="cv-btn cv-prev" data-viewer="cv-viewer-uk" aria-label="Previous" disabled>&#8592;</button>
+  <span class="cv-page-indicator"><span class="cv-current">1</span> / 11</span>
+  <button class="cv-btn cv-next" data-viewer="cv-viewer-uk" aria-label="Next">&#8594;</button>
+  <a class="cv-download-link" href="docs/cv_list-publications_teach_2023ix01_kilarski.pdf" download>Завантажити PDF</a>
+  </div>
+  </div>
+  </div>
   </div>
   </section>
 </main>
@@ -2539,6 +2742,33 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <script>
 (function() {
   'use strict';
+
+  // ---- CV Gallery Viewer ----
+  document.querySelectorAll('.cv-viewer').forEach(function(viewer) {
+    var pages = viewer.querySelectorAll('.cv-page-container');
+    var prevBtn = viewer.querySelector('.cv-prev');
+    var nextBtn = viewer.querySelector('.cv-next');
+    var indicator = viewer.querySelector('.cv-current');
+    var currentPage = 1;
+    var totalPages = pages.length;
+
+    function showPage(n) {
+      pages.forEach(function(p) { p.classList.remove('active'); });
+      pages[n - 1].classList.add('active');
+      currentPage = n;
+      indicator.textContent = n;
+      prevBtn.disabled = (n === 1);
+      nextBtn.disabled = (n === totalPages);
+    }
+
+    prevBtn.addEventListener('click', function() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    });
+    nextBtn.addEventListener('click', function() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    });
+  });
+
   // ---- Language Switcher ----
   const langBtns = document.querySelectorAll('.lang-btn');
   const langBlocks = document.querySelectorAll('.lang-block');
