@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,9 @@
 <meta name="google-site-verification" content="45d5477b32589e6c">
 <title>Dr Witold Kilarski — Sygnalista | Whistleblower</title>
 <meta name="description" content="Dr Witold Kilarski — sygnalista dokumentujący korupcję w Narodowym Centrum Nauki (NCN). Dowody szantażu, nepotyzmu i tuszowania ze strony dyrektora NCN Zbigniewa Błockiego.">
-<meta name="keywords" content="Kilarski, NCN, Narodowe Centrum Nauki, sygnalista, whistleblower, Zbigniew Błocki, korupcja, Laura Bandura-Morgan, NAWA, Polskie Powroty">
+<meta name="keywords" content="Kilarski, NCN, Narodowe Centrum Nauki, sygnalista, whistleblower, Zbigniew Błocki, korupcja, Laura Bandura-Morgan, NAWA, Polskie Powroty, National Science Centre Poland, corruption Poland, szantaż, nepotyzm, Marcin Drąg, nauka polska, grant fraud, scientific misconduct">
 <link rel="canonical" href="https://ludvigboltzmann.github.io/KorupcjaNCN/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
 
 <link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#pl">
 <link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#en">
@@ -56,7 +57,7 @@
   "headline": "Dr Witold Kilarski — Whistleblower: Corruption at Poland's National Science Centre (NCN)",
   "author": {"@type": "Person", "name": "Dr Witold Kilarski"},
   "datePublished": "2026-03-03",
-  "dateModified": "2026-03-04",
+  "dateModified": "2026-03-27",
   "description": "Documentation of corruption, blackmail, and nepotism at Poland's National Science Centre (NCN) by Director Zbigniew Błocki.",
   "inLanguage": ["pl", "en", "fr", "de", "uk"],
   "publisher": {"@type": "Person", "name": "Dr Witold Kilarski"},
@@ -72,11 +73,25 @@
   "contentUrl": "https://www.youtube.com/watch?v=Z7DH_iRY78w",
   "embedUrl": "https://www.youtube.com/embed/Z7DH_iRY78w",
   "publisher": {"@type": "Person", "name": "Dr Witold Kilarski"}
+  },
+  {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://ludvigboltzmann.github.io/KorupcjaNCN/"},
+    {"@type": "ListItem", "position": 2, "name": "Rozmowa", "item": "https://ludvigboltzmann.github.io/KorupcjaNCN/#interview"},
+    {"@type": "ListItem", "position": 3, "name": "Sprawa", "item": "https://ludvigboltzmann.github.io/KorupcjaNCN/#case"},
+    {"@type": "ListItem", "position": 4, "name": "Dokumenty", "item": "https://ludvigboltzmann.github.io/KorupcjaNCN/#documents"},
+    {"@type": "ListItem", "position": 5, "name": "Chronologia", "item": "https://ludvigboltzmann.github.io/KorupcjaNCN/#timeline"}
+  ]
   }
   ]
 }
 </script>
 
+<link rel="preload" as="image" href="docs/kilarski-portrait-web.jpg">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://www.youtube.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -284,7 +299,7 @@ a:hover { color: var(--color-link-hover); }
 .hero {
   background: var(--color-hero-overlay);
   color: var(--color-hero-text);
-  padding: clamp(var(--space-16), 10vw, var(--space-24)) var(--space-5);
+  padding: clamp(var(--space-8), 4vw, var(--space-12)) var(--space-5);
   position: relative;
   overflow: hidden;
 }
@@ -306,7 +321,7 @@ a:hover { color: var(--color-link-hover); }
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-8);
+  gap: var(--space-5);
 }
 .hero-badge {
   display: inline-block;
@@ -319,22 +334,22 @@ a:hover { color: var(--color-link-hover); }
   background: var(--color-badge-bg);
   padding: var(--space-1) var(--space-3);
   border-radius: 4px;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-3);
 }
 .hero h1 {
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 .hero-subtitle {
   font-family: var(--font-serif);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--color-hero-muted);
-  line-height: 1.6;
-  margin-bottom: var(--space-8);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
   max-width: 600px;
 }
 .hero-contact {
@@ -661,6 +676,29 @@ main {
 .timeline-text strong {
   color: var(--color-text);
 }
+
+/* Visitor counter */
+.visitor-counter {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: rgba(240,240,240,0.35);
+  margin-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.visitor-counter svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+}
+.visitor-counter a {
+  color: rgba(240,240,240,0.35);
+  border-bottom: none;
+}
+.visitor-counter a:hover {
+  color: rgba(240,240,240,0.6);
+}
 .site-footer {
   background: var(--color-header-bg);
   color: rgba(240,240,240,0.6);
@@ -699,7 +737,7 @@ main {
 .video-section .lang-block.active { display: inline; }
 .video-section {
   background: #0a0a12;
-  padding: clamp(var(--space-12), 6vw, var(--space-20)) var(--space-5);
+  padding: clamp(var(--space-6), 3vw, var(--space-10)) var(--space-5);
   border-bottom: 1px solid var(--color-border);
 }
 .video-wrapper {
@@ -712,17 +750,17 @@ main {
   font-weight: 600;
   color: rgba(240,240,240,0.5);
   text-align: center;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .video-title {
   font-family: var(--font-serif);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: 700;
   color: rgba(240,240,240,0.92);
   text-align: center;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
   letter-spacing: -0.01em;
 }
 .video-frame {
@@ -880,8 +918,8 @@ main {
 /* Portrait Photo — Hero */
 .hero-portrait {
   flex-shrink: 0;
-  width: 180px;
-  height: 180px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(255,255,255,0.15);
@@ -903,9 +941,9 @@ main {
     text-align: center;
   }
   .hero-portrait {
-    width: 140px;
-    height: 140px;
-    margin-bottom: var(--space-2);
+    width: 100px;
+    height: 100px;
+    margin-bottom: var(--space-1);
   }
   .hero-contact {
     justify-content: center;
@@ -1109,8 +1147,8 @@ main {
   .mobile-menu-btn { display: flex; }
   .lang-switcher { gap: 1px; }
   .lang-btn { padding: var(--space-1) 6px; font-size: 11px; }
-  .hero { padding: var(--space-12) var(--space-4); }
-  .hero h1 { font-size: var(--text-2xl); }
+  .hero { padding: var(--space-6) var(--space-4); }
+  .hero h1 { font-size: var(--text-xl); }
   .hero-contact { flex-direction: column; gap: var(--space-2); }
   main { padding: 0 var(--space-4); }
   .timeline { padding-left: var(--space-6); }
@@ -2958,6 +2996,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="footer-legal">
   Niniejsza strona dokumentuje sprawy interesu publicznego na podstawie art. 54 Konstytucji RP (wolność słowa), art. 10 Europejskiej Konwencji Praw Człowieka oraz Ustawy z dnia 14 czerwca 2024 r. o ochronie sygnalistów.
   </div>
+  <div class="visitor-counter">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>Odwiedziny: <span id="gc-counter-pl">—</span></span>
+  </div>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="footer-contact">
@@ -2966,6 +3008,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="footer-legal">
   This site documents matters of public interest under Art. 54 of the Polish Constitution (freedom of speech), Art. 10 of the European Convention on Human Rights, and the Polish Whistleblower Protection Act of 14 June 2024.
+  </div>
+  <div class="visitor-counter">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>Page views: <span id="gc-counter-en">—</span></span>
   </div>
   </div>
   <div class="lang-block" data-lang="fr">
@@ -2976,6 +3022,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="footer-legal">
   Ce site documente des questions d'intérêt public en vertu de l'art. 54 de la Constitution polonaise (liberté d'expression), de l'art. 10 de la Convention européenne des droits de l'homme et de la loi polonaise du 14 juin 2024 sur la protection des lanceurs d'alerte.
   </div>
+  <div class="visitor-counter">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>Visites : <span id="gc-counter-fr">—</span></span>
+  </div>
   </div>
   <div class="lang-block" data-lang="de">
   <div class="footer-contact">
@@ -2985,6 +3035,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="footer-legal">
   Diese Website dokumentiert Angelegenheiten von öffentlichem Interesse gemäß Art. 54 der polnischen Verfassung (Meinungsfreiheit), Art. 10 der Europäischen Menschenrechtskonvention und dem polnischen Whistleblower-Schutzgesetz vom 14. Juni 2024.
   </div>
+  <div class="visitor-counter">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>Besuche: <span id="gc-counter-de">—</span></span>
+  </div>
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="footer-contact">
@@ -2993,6 +3047,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="footer-legal">
   Цей сайт документує питання суспільного інтересу відповідно до ст. 54 Конституції Польщі (свобода слова), ст. 10 Європейської конвенції з прав людини та Закону Польщі від 14 червня 2024 р. про захист викривачів.
+  </div>
+  <div class="visitor-counter">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>Відвідування: <span id="gc-counter-uk">—</span></span>
   </div>
   </div>
   </div>
@@ -3172,6 +3230,22 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   });
 
 })();
+
+  // ---- GoatCounter visitor count display ----
+  (function() {
+    var gcUrl = 'https://korupcjancn.goatcounter.com/counter/TOTAL.json';
+    fetch(gcUrl)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var count = data.count_unique || data.count || '—';
+        var formatted = Number(count).toLocaleString();
+        ['pl','en','fr','de','uk'].forEach(function(lang) {
+          var el = document.getElementById('gc-counter-' + lang);
+          if (el) el.textContent = formatted;
+        });
+      })
+      .catch(function() {});
+  })();
 </script>
 
 <!-- Document Preview Modal -->
@@ -3194,5 +3268,10 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="doc-modal-body" id="doc-modal-body"></div>
   </div>
 </div>
+
+<!-- GoatCounter — darmowy licznik wizyt, bez cookies, RODO-zgodny -->
+<script data-goatcounter="https://korupcjancn.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- Visible visitor counter in footer -->
 </body>
 </html>
