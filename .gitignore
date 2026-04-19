@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+index.html.bak
+rebuild.py
+rebuild_data.py
+rebuild_docs.py
+rebuild_recordings.py
+rebuild_uj.py
