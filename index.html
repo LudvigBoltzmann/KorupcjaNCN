@@ -1561,7 +1561,25 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   }
 }
 
-</style>
+
+    .redaction-note {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(217, 130, 43, 0.08);
+      border-left: 3px solid #d9822b;
+      border-radius: 4px;
+      font-size: 0.92rem;
+      font-style: italic;
+      color: rgba(230, 230, 230, 0.85);
+      line-height: 1.4;
+    }
+    @media (prefers-color-scheme: light), body.light-mode .redaction-note { 
+      color: #555; 
+    }
+  </style>
 </head>
 <body>
 <div class="ua-ribbon" aria-label="Solidarity with Ukraine" title="&#x1F1FA;&#x1F1E6; Solidarni z Ukrainą"><div class="ua-ribbon-blue"></div><div class="ua-ribbon-gold"></div></div>
@@ -2614,6 +2632,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Z niniejszego nagrania usunięto fragmenty rozmów prywatnych (niezwiązanych ze sprawą NCN).</div>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
@@ -2628,6 +2647,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Your browser does not support the audio player.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Segments containing private conversations (unrelated to the NCN case) have been removed from this recording.</div>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
@@ -2642,6 +2662,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Votre navigateur ne prend pas en charge le lecteur audio.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Des segments de conversations privées (sans lien avec l'affaire NCN) ont été supprimés de cet enregistrement.</div>
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
@@ -2656,6 +2677,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Ihr Browser unterstützt den Audio-Player nicht.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Aus dieser Aufnahme wurden private Gesprächsausschnitte (ohne Bezug zum NCN-Fall) entfernt.</div>
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
@@ -2670,6 +2692,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Ваш браузер не підтримує аудіоплеєр.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 З цього запису видалено фрагменти приватних розмов (не пов'язаних зі справою NCN).</div>
   </div>
   </div>
 </section>
@@ -2960,6 +2983,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Z niniejszego nagrania usunięto fragmenty rozmów prywatnych (niezwiązanych ze sprawą NCN).</div>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
@@ -2974,6 +2998,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Your browser does not support the audio player.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Segments containing private conversations (unrelated to the NCN case) have been removed from this recording.</div>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
@@ -2988,6 +3013,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Votre navigateur ne prend pas en charge le lecteur audio.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Des segments de conversations privées (sans lien avec l'affaire NCN) ont été supprimés de cet enregistrement.</div>
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
@@ -3002,6 +3028,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Ihr Browser unterstützt den Audio-Player nicht.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Aus dieser Aufnahme wurden private Gesprächsausschnitte (ohne Bezug zum NCN-Fall) entfernt.</div>
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
@@ -3016,6 +3043,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Ваш браузер не підтримує аудіоплеєр.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 З цього запису видалено фрагменти приватних розмов (не пов'язаних зі справою NCN).</div>
   </div>
   </div>
 </section>
@@ -3035,6 +3063,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Z niniejszego nagrania usunięto fragmenty rozmów prywatnych (niezwiązanych ze sprawą NCN).</div>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
@@ -3049,6 +3078,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Your browser does not support the audio player.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Segments containing private conversations (unrelated to the NCN case) have been removed from this recording.</div>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
@@ -3063,6 +3093,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Votre navigateur ne prend pas en charge le lecteur audio.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Des segments de conversations privées (sans lien avec l'affaire NCN) ont été supprimés de cet enregistrement.</div>
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
@@ -3077,6 +3108,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Ihr Browser unterstützt den Audio-Player nicht.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 Aus dieser Aufnahme wurden private Gesprächsausschnitte (ohne Bezug zum NCN-Fall) entfernt.</div>
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
@@ -3091,6 +3123,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Ваш браузер не підтримує аудіоплеєр.
     </audio>
   </div>
+  <div class="redaction-note" role="note" aria-label="Redaction">🔒 З цього запису видалено фрагменти приватних розмов (не пов'язаних зі справою NCN).</div>
   </div>
   </div>
 </section>
