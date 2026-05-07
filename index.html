@@ -8,7 +8,7 @@
 <meta name="google-site-verification" content="45d5477b32589e6c">
 <title>Dr Witold Kilarski — Sygnalista | Whistleblower</title>
 <meta name="description" content="Dr Witold Kilarski — sygnalista dokumentujący korupcję w Narodowym Centrum Nauki (NCN). Dowody szantażu, nepotyzmu i tuszowania ze strony dyrektora NCN Zbigniewa Błockiego.">
-<meta name="keywords" content="Kilarski, NCN, Narodowe Centrum Nauki, sygnalista, whistleblower, Zbigniew Błocki, korupcja, Laura Bandura-Morgan, NAWA, Polskie Powroty, National Science Centre Poland, corruption Poland, szantaż, nepotyzm, Marcin Drąg, nauka polska, grant fraud, scientific misconduct">
+<meta name="keywords" content="Kilarski, Witold Kilarski, Dr Witold Kilarski, NCN, Narodowe Centrum Nauki, National Science Centre Poland, sygnalista, whistleblower, ochrona sygnalistów, Zbigniew Błocki, Błocki NCN, dyrektor NCN, Laura Bandura-Morgan, Marcin Drąg, NAWA, Narodowa Agencja Wymiany Akademickiej, Polskie Powroty, korupcja w nauce, korupcja NCN, korupcja akademicka, scientific corruption, research corruption, nepotyzm akademicki, nepotyzm w nauce, academic nepotism, konflikt interesów, conflict of interest, recenzje grantów, peer review, grant review integrity, ocena grantów, konkursy grantowe, grant fraud, grant funding fraud, scientific misconduct, naruszenia etyki naukowej, oszustwa naukowe, transparentność finansowania nauki, research funding transparency, przejrzystość w nauce, accountability in science, instytucjonalna odpowiedzialność, institutional accountability, whistleblowing, sygnalizowanie nieprawidłowości, ochrona prawna sygnalistów, Whistleblower Protection Act, Ustawa o ochronie sygnalistów, art. 54 Konstytucji RP, art. 10 EKPC, freedom of speech Poland, wolność słowa Polska, szantaż w nauce, blackmail in academia, tuszowanie, cover-up, polskie nauki, Polish science, Polish academia, prokuratura, Prokurator Berus, MNiSW, ministerstwo nauki, Komisja Ewaluacji Nauki, Uniwersytet Jagielloński, UJ, science policy Poland, integrity in research">
 <link rel="canonical" href="https://ludvigboltzmann.github.io/KorupcjaNCN/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
 
@@ -34,6 +34,33 @@
 <meta name="twitter:title" content="Dr Witold Kilarski — Sygnalista / Whistleblower">
 <meta name="twitter:description" content="Dokumentacja korupcji w Narodowym Centrum Nauki (NCN). Dowody szantażu i nepotyzmu.">
 <meta name="twitter:image" content="https://ludvigboltzmann.github.io/KorupcjaNCN/docs/laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg">
+
+<meta property="og:site_name" content="KorupcjaNCN — Dr Witold Kilarski">
+<meta property="article:author" content="Dr Witold Kilarski">
+<meta property="article:published_time" content="2026-03-03">
+<meta property="article:modified_time" content="2026-05-07">
+<meta property="article:section" content="Whistleblowing / Science integrity">
+<meta property="article:tag" content="NCN">
+<meta property="article:tag" content="Narodowe Centrum Nauki">
+<meta property="article:tag" content="korupcja w nauce">
+<meta property="article:tag" content="whistleblower">
+<meta property="article:tag" content="Zbigniew Błocki">
+<meta property="article:tag" content="nepotyzm akademicki">
+<meta property="article:tag" content="research funding transparency">
+
+<meta name="news_keywords" content="NCN, Narodowe Centrum Nauki, Zbigniew Błocki, sygnalista, whistleblower, korupcja w nauce, nepotyzm akademicki, recenzje grantów, NAWA, Polskie Powroty, transparentność finansowania nauki, scientific misconduct, research integrity, Polish science">
+<meta name="subject" content="Korupcja, nepotyzm i konflikty interesów w Narodowym Centrum Nauki (NCN) — dokumentacja sygnalisty Dr Witolda Kilarskiego">
+<meta name="rating" content="general">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="theme-color" content="#0a0a0a">
+<meta http-equiv="content-language" content="pl, en, fr, de, uk">
+<meta name="geo.region" content="PL">
+<meta name="geo.placename" content="Poland">
+<meta name="DC.title" content="Dr Witold Kilarski — Sygnalista | Whistleblower (NCN)">
+<meta name="DC.creator" content="Dr Witold Kilarski">
+<meta name="DC.subject" content="Whistleblowing; National Science Centre Poland (NCN); research integrity; academic corruption; nepotism; grant review">
+<meta name="DC.language" content="pl">
+<meta name="DC.rights" content="© Dr Witold Kilarski; documentation of matters of public interest">
 
 <script type="application/ld+json">
 {
@@ -4929,19 +4956,29 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 })();
 
   // ---- GoatCounter visitor count display ----
+  // Reads public total from witekkilarski.goatcounter.com.
+  // Requires "Allow public statistics" enabled in GoatCounter site settings.
   (function() {
-    var gcUrl = 'https://korupcjancn.goatcounter.com/counter/TOTAL.json';
-    fetch(gcUrl)
-      .then(function(r) { return r.json(); })
+    var gcUrl = 'https://witekkilarski.goatcounter.com/counter/TOTAL.json?v=' + Date.now();
+    fetch(gcUrl, { mode: 'cors', cache: 'no-store' })
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function(data) {
-        var count = data.count_unique || data.count || '—';
-        var formatted = Number(count).toLocaleString();
+        var raw = data.count_unique != null ? data.count_unique : data.count;
+        if (raw == null) return;
+        var n = Number(String(raw).replace(/\s|,/g, ''));
+        if (!isFinite(n)) return;
+        var formatted = n.toLocaleString();
         ['pl','en','fr','de','uk'].forEach(function(lang) {
           var el = document.getElementById('gc-counter-' + lang);
           if (el) el.textContent = formatted;
         });
       })
-      .catch(function() {});
+      .catch(function() {
+        // Leave the placeholder "—" in place if the public counter is not enabled.
+      });
   })();
 </script>
 
@@ -4967,9 +5004,6 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 </div>
 
 <!-- GoatCounter — darmowy licznik wizyt, bez cookies, RODO-zgodny -->
-<script data-goatcounter="https://korupcjancn.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<!-- Visible visitor counter in footer -->
 <script data-goatcounter="https://witekkilarski.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
