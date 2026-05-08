@@ -3,7 +3,6 @@
     "name": "Dr Witold Kilarski",
     "email": "witek.kilarski@gmail.com",
     "phone": "782 473 130",
-    "address": "Os. Złota Podkowa 27/9, 31-352 Kraków",
     "education": "PhD Uppsala University, Postdoc EPFL Lausanne, Postdoc University of Chicago (Dept. Biomedical Engineering, Prof. Melody Swartz)"
   },
   "case_summary": {
@@ -36,7 +35,6 @@
     ]
   },
   "documents": [
-    {"file": "laura-mail-ncn-WhatsApp-Image-2026-03-01-at-13.10.08.jpg", "label_pl": "Ultimatum NCN — mail Laury Bandury-Morgan z 1 czerwca 2020", "label_en": "NCN Ultimatum — Laura Bandura-Morgan's email, 1 June 2020"},
     {"file": "Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx", "label_pl": "Chronologiczna korespondencja mailowa Kilarski-Błocki-Drąg-Bandura (2020-2021)", "label_en": "Chronological email correspondence Kilarski-Błocki-Drąg-Bandura (2020-2021)"},
     {"file": "analiza_nagran_audio_kompletna.docx", "label_pl": "Kompletna analiza 10 nagrań audio — dowody szantażu i korupcji w NCN", "label_en": "Complete analysis of 10 audio recordings — evidence of blackmail and corruption at NCN"},
     {"file": "Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx", "label_pl": "Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)", "label_en": "Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)"},
@@ -46,7 +44,6 @@
     {"file": "Zalacznik-2-do-prokuratur-viiiaa.docx", "label_pl": "Załącznik do zawiadomienia do prokuratury", "label_en": "Attachment to criminal complaint filed with prosecutor"},
     {"file": "Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf", "label_pl": "Postanowienie Prokuratury — odmowa wszczęcia śledztwa (Ochońska-Wróbel)", "label_en": "Prosecutor's decision — refusal to investigate (Ochońska-Wróbel)"},
     {"file": "wwyrok-laura-chmielarz.pdf", "label_pl": "Wyrok w sprawie Laura B-M vs. Kilarski (sędzia Chmielarz)", "label_en": "Verdict in Laura B-M vs. Kilarski case (Judge Chmielarz)"},
-    {"file": "Opinia-psychiatryczno-psychologiczna-CamScanner-05-29-2025-13.07-2-1.pdf", "label_pl": "Opinia psychiatryczno-psychologiczna", "label_en": "Psychiatric-psychological expert opinion"},
     {"file": "cv_list-publications_teach_2023ix01_kilarski.docx", "label_pl": "CV i lista publikacji naukowych dr. Witolda Kilarskiego", "label_en": "CV and list of scientific publications of Dr. Witold Kilarski"}
   ]
 }
