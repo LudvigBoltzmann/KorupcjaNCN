@@ -23,7 +23,7 @@
       {"id": "I C 1671/22", "court": "Sąd Okręgowy Kraków", "description": "Laura B-M vs. Kilarski — civil, protection of personal rights"},
       {"id": "I ACa 3378/25", "court": "Sąd Apelacyjny Kraków", "description": "Appeal of I C 1671/22"},
       {"id": "I Co 464624K", "court": "Sąd Rejonowy Kraków-Krowodrza", "description": "Enforcement proceedings — 5000 PLN fine"},
-      {"id": "4135-1.Ds.96.2022", "court": "Prokuratura Kraków-Krowodrza", "description": "Prosecutor Ochońska-Wróbel refused investigation"}
+      {"id": "4135-1.Ds.96.2022", "court": "Prokuratura Kraków-Krowodrza", "description": "Prosecutor [anonimizowano — inicjały O.-W.] refused investigation"}
     ],
     "key_evidence": [
       "10 audio recordings (2020-2021) documenting blackmail and corruption",
@@ -42,8 +42,8 @@
     {"file": "Wnioski-Procesowe-Apelacja.docx", "label_pl": "Wnioski procesowe — apelacja", "label_en": "Procedural motions — appeal"},
     {"file": "Babik-Liana-Zwonek-Blocki-3.docx", "label_pl": "Analiza powiązań: Babik, Liana, Zwonek, Błocki — nepotyzm w NCN", "label_en": "Analysis of connections: Babik, Liana, Zwonek, Błocki — nepotism at NCN"},
     {"file": "Zalacznik-2-do-prokuratur-viiiaa.docx", "label_pl": "Załącznik do zawiadomienia do prokuratury", "label_en": "Attachment to criminal complaint filed with prosecutor"},
-    {"file": "Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf", "label_pl": "Postanowienie Prokuratury — odmowa wszczęcia śledztwa (Ochońska-Wróbel)", "label_en": "Prosecutor's decision — refusal to investigate (Ochońska-Wróbel)"},
-    {"file": "wwyrok-laura-chmielarz.pdf", "label_pl": "Wyrok w sprawie Laura B-M vs. Kilarski (sędzia Chmielarz)", "label_en": "Verdict in Laura B-M vs. Kilarski case (Judge Chmielarz)"},
+    {"file": "Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf", "label_pl": "Postanowienie Prokuratury — odmowa wszczęcia śledztwa (prok. O.-W.)", "label_en": "Prosecutor's decision — refusal to investigate (prosecutor O.-W.)"},
+    {"file": "wwyrok-laura-chmielarz.pdf", "label_pl": "Wyrok w sprawie Laura B-M vs. Kilarski (skład z udziałem sędzi A. Ch.)", "label_en": "Verdict in Laura B-M vs. Kilarski case (panel including Judge A. Ch.)"},
     {"file": "cv_list-publications_teach_2023ix01_kilarski.docx", "label_pl": "CV i lista publikacji naukowych dr. Witolda Kilarskiego", "label_en": "CV and list of scientific publications of Dr. Witold Kilarski"}
   ]
 }
