@@ -8,7 +8,7 @@
 <meta name="google-site-verification" content="45d5477b32589e6c">
 <title>Dr Witold Kilarski — Sygnalista | Whistleblower</title>
 <meta name="description" content="Dr Witold Kilarski — sygnalista dokumentujący korupcję w Narodowym Centrum Nauki (NCN). Dowody szantażu, nepotyzmu i tuszowania ze strony dyrektora NCN Zbigniewa Błockiego.">
-<meta name="keywords" content="Kilarski, Witold Kilarski, Dr Witold Kilarski, NCN, Narodowe Centrum Nauki, National Science Centre Poland, sygnalista, whistleblower, ochrona sygnalistów, Zbigniew Błocki, Błocki NCN, dyrektor NCN, Laura Bandura-Morgan, Marcin Drąg, NAWA, Narodowa Agencja Wymiany Akademickiej, Polskie Powroty, korupcja w nauce, korupcja NCN, korupcja akademicka, scientific corruption, research corruption, nepotyzm akademicki, nepotyzm w nauce, academic nepotism, konflikt interesów, conflict of interest, recenzje grantów, peer review, grant review integrity, ocena grantów, konkursy grantowe, grant fraud, grant funding fraud, scientific misconduct, naruszenia etyki naukowej, oszustwa naukowe, transparentność finansowania nauki, research funding transparency, przejrzystość w nauce, accountability in science, instytucjonalna odpowiedzialność, institutional accountability, whistleblowing, sygnalizowanie nieprawidłowości, ochrona prawna sygnalistów, Whistleblower Protection Act, Ustawa o ochronie sygnalistów, art. 54 Konstytucji RP, art. 10 EKPC, freedom of speech Poland, wolność słowa Polska, szantaż w nauce, blackmail in academia, tuszowanie, cover-up, polskie nauki, Polish science, Polish academia, prokuratura, Prokurator Berus, MNiSW, ministerstwo nauki, Komisja Ewaluacji Nauki, Uniwersytet Jagielloński, UJ, science policy Poland, integrity in research">
+<meta name="keywords" content="Dr Witold Kilarski, Witold Kilarski, sygnalista NCN, whistleblower NCN, NCN, Narodowe Centrum Nauki, National Science Centre Poland, Zbigniew Błocki, dyrektor NCN, Laura Bandura-Morgan, Marcin Drąg, Manfred Mudelsee, NAWA, Narodowa Agencja Wymiany Akademickiej, Polskie Powroty, GRIEG, OSF, korupcja w nauce, korupcja NCN, nepotyzm akademicki, konflikt interesów, recenzje grantów, peer review integrity, ocena wniosków grantowych, etyka naukowa, naruszenia etyki naukowej, scientific misconduct, research integrity, transparentność finansowania nauki, accountability in science, whistleblowing, ochrona sygnalistów, Ustawa o ochronie sygnalistów 2024, Whistleblower Protection Act, art. 54 Konstytucji RP, art. 10 EKPC, wolność słowa, szantaż w nauce, blackmail in academia, tuszowanie, cover-up, prokuratura, Prokurator Berus, Ochońska-Wróbel, postępowanie karne, zażalenie, Sąd Okręgowy w Krakowie, sędzia Anna Chmielarz, II K 321/23/P, I C 1671/22, apelacja, NIK, Najwyższa Izba Kontroli, kontrola NCN, raport NIK finansowanie badań, Uniwersytet Jagielloński, UJ, MNiSW, Komisja Ewaluacji Nauki, Polish science, Polish academia, science policy Poland">
 <link rel="canonical" href="https://ludvigboltzmann.github.io/KorupcjaNCN/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
 
@@ -47,8 +47,13 @@
 <meta property="article:tag" content="Zbigniew Błocki">
 <meta property="article:tag" content="nepotyzm akademicki">
 <meta property="article:tag" content="research funding transparency">
+<meta property="article:tag" content="NIK">
+<meta property="article:tag" content="prokuratura">
+<meta property="article:tag" content="Sąd Okręgowy w Krakowie">
+<meta property="article:tag" content="ochrona sygnalistów">
+<meta property="article:tag" content="NAWA Polskie Powroty">
 
-<meta name="news_keywords" content="NCN, Narodowe Centrum Nauki, Zbigniew Błocki, sygnalista, whistleblower, korupcja w nauce, nepotyzm akademicki, recenzje grantów, NAWA, Polskie Powroty, transparentność finansowania nauki, scientific misconduct, research integrity, Polish science">
+<meta name="news_keywords" content="NCN, Narodowe Centrum Nauki, Zbigniew Błocki, sygnalista, whistleblower, korupcja w nauce, nepotyzm akademicki, recenzje grantów, NAWA, Polskie Powroty, GRIEG, OSF, prokuratura, NIK, Sąd Okręgowy w Krakowie, II K 321/23/P, ochrona sygnalistów, scientific misconduct, research integrity, Polish science">
 <meta name="subject" content="Korupcja, nepotyzm i konflikty interesów w Narodowym Centrum Nauki (NCN) — dokumentacja sygnalisty Dr Witolda Kilarskiego">
 <meta name="rating" content="general">
 <meta name="referrer" content="no-referrer-when-downgrade">
@@ -139,6 +144,7 @@
   "encodingFormat": "audio/mpeg",
   "uploadDate": "2026-04-09",
   "inLanguage": "pl",
+  "author": {"@type": "Person", "name": "Dr Witold Kilarski"}
   },
   {
   "@type": "AudioObject",
@@ -4783,7 +4789,43 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   // ---- GoatCounter visitor count display ----
   // Reads public total from witekkilarski.goatcounter.com.
   // Requires "Allow public statistics" enabled in GoatCounter site settings.
+  // On failure, replaces the placeholder with a neutral "n/a" rather than 0,
+  // so visitors are not misled into thinking the site has zero traffic.
   (function() {
+    var LANGS = ['pl','en','fr','de','uk'];
+    var FALLBACK_LABEL = {
+      pl: 'niedostępne',
+      en: 'unavailable',
+      fr: 'indisponible',
+      de: 'nicht verfügbar',
+      uk: 'недоступно'
+    };
+    var FALLBACK_TITLE = {
+      pl: 'Licznik publiczny GoatCounter chwilowo niedostępny — kliknij, aby otworzyć statystyki.',
+      en: 'GoatCounter public counter is temporarily unavailable — click to open the stats page.',
+      fr: 'Le compteur public GoatCounter est temporairement indisponible — cliquez pour ouvrir les statistiques.',
+      de: 'Der öffentliche GoatCounter-Zähler ist vorübergehend nicht verfügbar — klicken zum Öffnen der Statistik.',
+      uk: 'Публічний лічильник GoatCounter тимчасово недоступний — натисніть, щоб відкрити статистику.'
+    };
+    var STATS_URL = 'https://witekkilarski.goatcounter.com/';
+
+    function setFallback() {
+      LANGS.forEach(function(lang) {
+        var el = document.getElementById('gc-counter-' + lang);
+        if (!el) return;
+        // Avoid replacing a real number that might already be set by a retry.
+        if (/[0-9]/.test(el.textContent)) return;
+        var a = document.createElement('a');
+        a.href = STATS_URL;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = FALLBACK_LABEL[lang] || FALLBACK_LABEL.en;
+        a.title = FALLBACK_TITLE[lang] || FALLBACK_TITLE.en;
+        el.textContent = '';
+        el.appendChild(a);
+      });
+    }
+
     var gcUrl = 'https://witekkilarski.goatcounter.com/counter/TOTAL.json?v=' + Date.now();
     fetch(gcUrl, { mode: 'cors', cache: 'no-store' })
       .then(function(r) {
@@ -4791,19 +4833,17 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
         return r.json();
       })
       .then(function(data) {
-        var raw = data.count_unique != null ? data.count_unique : data.count;
-        if (raw == null) return;
+        var raw = data && (data.count_unique != null ? data.count_unique : data.count);
+        if (raw == null) { setFallback(); return; }
         var n = Number(String(raw).replace(/\s|,/g, ''));
-        if (!isFinite(n)) return;
+        if (!isFinite(n)) { setFallback(); return; }
         var formatted = n.toLocaleString();
-        ['pl','en','fr','de','uk'].forEach(function(lang) {
+        LANGS.forEach(function(lang) {
           var el = document.getElementById('gc-counter-' + lang);
           if (el) el.textContent = formatted;
         });
       })
-      .catch(function() {
-        // Leave the placeholder "—" in place if the public counter is not enabled.
-      });
+      .catch(setFallback);
   })();
 </script>
 
