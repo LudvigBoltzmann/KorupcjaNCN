@@ -808,6 +808,119 @@ main {
 }
 
 /* Visitor counter */
+/* ========== Sub-nav row 2 (special tabs) ========== */
+.sub-nav-2 {
+  position: sticky;
+  top: calc(var(--header-h, 64px) + 44px); /* sit just below first sub-nav */
+  z-index: 94;
+  background: linear-gradient(180deg, #1a1a32 0%, #15152a 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.sub-nav-2-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px var(--space-5);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+.sub-nav-2-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: rgba(240,240,240,0.92);
+  padding: 9px 16px;
+  text-decoration: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(214,170,108,0.45);
+  border-radius: 999px;
+  transition: transform 0.15s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0.01em;
+}
+.sub-nav-2-link::before {
+  content: '';
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--color-accent, #d6aa6c);
+  box-shadow: 0 0 0 3px rgba(214,170,108,0.18);
+  flex: 0 0 auto;
+}
+.sub-nav-2-link:hover {
+  color: #fff;
+  border-color: var(--color-accent, #d6aa6c);
+  background: linear-gradient(180deg, rgba(214,170,108,0.18) 0%, rgba(214,170,108,0.06) 100%);
+  box-shadow: 0 4px 14px rgba(214,170,108,0.20);
+  transform: translateY(-1px);
+}
+.sub-nav-2-link.active {
+  color: #fff;
+  border-color: var(--color-accent, #d6aa6c);
+  background: linear-gradient(180deg, rgba(214,170,108,0.25) 0%, rgba(214,170,108,0.10) 100%);
+}
+@media (max-width: 720px) {
+  .sub-nav-2-inner { gap: 8px; padding: 8px var(--space-3); }
+  .sub-nav-2-link { padding: 8px 12px; font-size: 11px; }
+}
+
+/* ========== Special section card (Prokuratura, Sędzia 400k) ========== */
+.special-card {
+  margin: 24px 0;
+  border: 1px solid rgba(214,170,108,0.32);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(214,170,108,0.05) 0%, rgba(255,255,255,0.01) 100%);
+  padding: var(--space-5);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 6px 22px rgba(0,0,0,0.05);
+}
+.special-card-header {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding-bottom: 14px; margin-bottom: 16px;
+  border-bottom: 1px dashed rgba(214,170,108,0.30);
+}
+.special-card-icon {
+  flex: 0 0 auto;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(214,170,108,0.22) 0%, rgba(214,170,108,0.06) 100%);
+  border: 1px solid rgba(214,170,108,0.45);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; line-height: 1;
+}
+.special-card .doc-meta {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-muted, rgba(0,0,0,0.65));
+  margin-bottom: 10px;
+}
+.special-card blockquote {
+  margin: 16px 0;
+  padding: 14px 18px;
+  border-left: 4px solid var(--color-accent, #d6aa6c);
+  background: rgba(214,170,108,0.06);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+.special-card details {
+  margin: 14px 0;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.6);
+}
+.special-card details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+.special-card .legal-list { padding-left: 1.4em; }
+.special-card .legal-list > li { margin: 6px 0; }
+
 /* N.N. tooltip token */
 .nn-token {
   text-decoration: underline dotted rgba(127,127,127,0.6);
@@ -1813,6 +1926,27 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 </div>
 </div>
 </nav>
+<!-- ==========================================
+     SUB-NAV ROW 2: Special tabs (Prokuratura Ochońska-Wróbel, Sędzia 400 tys. PLN)
+     ========================================== -->
+<nav aria-label="Special documents" class="sub-nav-2">
+<div class="sub-nav-2-inner">
+<a class="sub-nav-2-link" href="#prokuratura-ochonska">
+<span class="nav-pl">Prokuratura: prok. Ochońska-Wróbel</span>
+<span class="nav-en" style="display:none">Prosecutor Ochońska-Wróbel: refusal</span>
+<span class="nav-fr" style="display:none">Procureure Ochońska-Wróbel : refus</span>
+<span class="nav-de" style="display:none">Staatsanwältin Ochońska-Wróbel: Verweigerung</span>
+<span class="nav-uk" style="display:none">Прокурорка Охоньська-Врубель</span>
+</a>
+<a class="sub-nav-2-link" href="#sedzia-400k">
+<span class="nav-pl">Sędzia: darowizna 400 tys. PLN</span>
+<span class="nav-en" style="display:none">Judge: PLN 400,000 gift</span>
+<span class="nav-fr" style="display:none">Juge : donation de 400 000 PLN</span>
+<span class="nav-de" style="display:none">Richter: 400 000 PLN-Schenkung</span>
+<span class="nav-uk" style="display:none">Суддя: дар 400 тис. PLN</span>
+</a>
+</div>
+</nav>
 <section class="hero">
 <div class="hero-inner">
 <div class="lang-block active" data-lang="pl">
@@ -2048,6 +2182,270 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <p>Д-р Кіларський подав заяву до прокуратури. Прокурор <strong>Охонська-Врубель</strong> відмовилася від розслідування (справа 4135-1.Ds.96.2022). Замість розслідування корупції суди покарали викривача: штрафи, заборони публікацій, примусові вибачення.</p>
 </div>
 </section>
+<!-- ==========================================
+     SECTION: PROSECUTOR OCHOŃSKA-WRÓBEL — REFUSAL TO INVESTIGATE
+     ========================================== -->
+<section class="section" id="prokuratura-ochonska" style="scroll-margin-top:130px;">
+<div class="lang-block active" data-lang="pl">
+<div class="section-label">Prokuratura</div>
+<h2>Postanowienie prok. Elżbiety Ochońskiej-Wróbel o umorzeniu śledztwa</h2>
+<p class="intro">Sekcja zawiera <strong>moje pełne pismo do Prokuratury Krajowej z 7 stycznia 2025 r.</strong>, które jest <strong>odpowiedzią na uzasadnienie</strong> postanowienia o umorzeniu śledztwa wydanego 3 lipca 2024 r. przez prokurator <strong>Elżbietę Ochońską-Wróbel</strong> (Prokuratura Rejonowa Kraków-Podgórze, sygn. <strong>4135-1.Ds.96.2022</strong>). Poniżej najpierw krótkie streszczenie postanowienia prokurator, które moje pismo punkt po punkcie podważa; następnie pełny tekst mojego pisma.</p>
+
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Postanowienie prokurator Elżbiety Ochońskiej-Wróbel o umorzeniu śledztwa</h3>
+<div class="doc-meta">Prokuratura Rejonowa Kraków-Podgórze · Sygn. akt 4135-1.Ds.96.2022 · Kraków, 3 lipca 2024 r. · 25 stron</div>
+</div>
+</div>
+
+<p>Prokurator Elżbieta Ochońska-Wróbel, po zapoznaniu się z materiałami w sprawie z art. 231 § 1 k.k. i innych, na podstawie art. 17 § 1 pkt 1 i 2 k.p.k. <strong>postanowiła umorzyć śledztwo</strong> w siedmiu (I–VII) wątkach dotyczących dyrektora Narodowego Centrum Nauki Zbigniewa Błockiego, prof. Marcina Drąga oraz Zespołów Ekspertów NCN — m.in.:</p>
+<ul class="legal-list">
+<li><strong>czyn I</strong> (nadużycie uprawnień przy procedowaniu wniosków SONATA BIS 6 i GRIEG na szkodę Witolda Kilarskiego, art. 296 § 1 i 3, 231 § 1 k.k. w zw. z art. 11 § 2 i 12 § 1 k.k., kwota co najmniej 2 996 996,00 zł) — <em>„wobec stwierdzenia, iż czynu nie popełniono”</em>;</li>
+<li><strong>czyn II</strong> (nadużycie przy wniosku Polskie Powroty 2020, art. 231 § 1 k.k.) — <em>„wobec stwierdzenia, iż braku znamion czynu zabronionego”</em>;</li>
+<li><strong>czyn III</strong> (nadużycie przy wniosku Polskie Powroty 2021) — <em>„czynu nie popełniono”</em>;</li>
+<li><strong>czyn IV</strong> i <strong>V</strong> (obietnica korzyści majątkowej dyrektorowi NCN, art. 229 § 1 k.k.) — <em>„czynu nie popełniono”</em>;</li>
+<li><strong>czyn VI</strong> i <strong>VII</strong> (nierzetelna ocena wniosków przez Zespoły Ekspertów, art. 231 § 1 k.k.) — <em>„czynu nie popełniono”</em>.</li>
+</ul>
+<p>W uzasadnieniu prokurator Ochońska-Wróbel m.in.: kwalifikuje moje zawiadomienie jako <em>„probabilistyczne”</em>, podaje w wątpliwość wiarygodność nagrań (twierdząc, że były wykonane w stanie „wzburzenia”), uznaje słowa dyrektora Błockiego z 29 maja 2020 r. za <em>„sugestię”</em>, której nie mógł wprowadzić w czyn, oraz przyjmuje, że nie ma dowodu, aby prof. Drąg wręczył lub obiecał dyrektorowi Błockiemu korzyść majątkową.</p>
+
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf">Podgląd postanowienia (PDF, 25 s.)</a>
+<a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download>Pobierz PDF</a>
+</div>
+</div>
+
+<h3>Mój list do Prokuratury Krajowej z 7 stycznia 2025 r. — odpowiedź na uzasadnienie prok. Elżbiety Ochońskiej-Wróbel</h3>
+<p>Pełna treść mojego pisma poniżej. Nie umieszczam go jako linku do dokumentu — jest osadzony w stronie, by każdy czytelnik mógł zobaczyć, w jaki sposób punkt po punkcie odpowiadam na uzasadnienie umorzenia. Pismo dotyczy sygn. <strong>4135-1.Ds.96.2022</strong>.</p>
+
+<div class="special-card">
+<div class="doc-meta">Sygn. akt 4135-1.Ds.96.2022 · 7 stycznia 2025 r. · Adresat: Prokuratura Krajowa</div>
+
+<p><strong>O Postanowieniu o umorzenie śledztwa prowadzonego przez prokurator Elżbietę Ochońską-Wróbel, prokurator Prokuratury Rejonowej Kraków-Podgórze w Krakowie</strong></p>
+
+<p>Szanowni Państwo,</p>
+
+<p>Domagam się wznowienia śledztwa w sprawie szantażu dyrektora Narodowego Centrum Nauki oraz innych nieprawidłowości w NCN w Krakowie.</p>
+
+<p>Jakiś czas temu prosiłem Państwa o nadzór nad śledztwem prokuratury rejonowej Kraków-Podgórze w zgłoszonej przeze mnie sprawie szantażu, nepotyzmu i kumoterstwa w Narodowym Centrum Nauki w Krakowie (NCN), jako że obawiałem się, iż wpływowe osoby związane z „polską nauką”, będą chciały sprawę szantażu i korupcji w NCN-ie zamieść pod swój dywan. Niestety, nie doczekałem się Państwa pomocy, śledztwo prokuratury zostało umorzone, a jego umorzenie zostało poparte zmanipulowanymi lub stworzonymi dowodami oraz stronniczymi argumentami. Zacznę od początku.</p>
+
+<h4>1. Przyczyny moich obaw o sprawiedliwe śledztwo</h4>
+<p>Podstawą moich obaw były same okoliczności czynu dokonanego przez dyrektora NCN Zbigniewa Błockiego, które przypominały porachunki mafijne oraz związane z tym czynem, wysoko postawione osoby ze świata Polskiej nauki. Ponadto, niecały rok temu (2024), po latach prób upublicznienia tego przestępstwa oraz uzasadnionego domniemania wielu innych, otrzymałem, od świeżo upieczonego ministra Nauki Dariusza Wieczorka, jego oficjalną odpowiedź na moje prośby kierowane już do jego poprzednika, o wyjaśnienia w sprawach zgłoszonych Ministerstwu Nauki nieprawidłowości w Narodowym Centrum Nauki (NCN). W tym liście, pan Wieczorek tłumaczy, że ministerstwo podjęło czynności zmierzające do wyjaśnienia sprawy w NCN-ie. Również w tym samym piśmie, pan Wieczorek dodał niepokojący akapit, w którym zwrócił moją uwagę na fakt, że moja skarga dotyczy już minionego okresu, kiedy dyrektorem NCN był Błocki, a zresztą „skład Rady NCN-u w 50% uległ zmianie w 2024”. Według ministra, to rozwiązywało sprawę szantażu byłego już dyrektora NCN-u Zbigniewa Błockiego wobec mnie. Byłem zszokowany szczerością ministra rządu RP, który ewidentnie nie miał nic przeciwko temu by oświecić mnie blaskiem swojej ignorancji, sugerując, że nie wie czy też go nie obowiązuje zasada kontynuacji władzy. Jednak fakt, że minister Wieczorek nie odniósł się do konkretnych, również kryminalnych, zarzutów, jakie stawiałem Błockiemu, zwiastował, iż sprawa szantażu i korupcji, jak zawsze, gdy dotyka maluczkich, znajdzie swój finał w niszczarce.</p>
+
+<p>Dlatego, na koniec zostawiłem wnioski z detektywistycznej pracy pani prokurator Ochońskiej z prokuratury rejonowej Kraków-Podgórze, która przez rok nie znalazła czasu na zrozumienie mojego wniosku o wszczęcie śledztwa w sprawie korupcyjnych relacji w NCN-ie, czy postawienie mi pytań, przed tym jak w marcu 2024 zakończyła śledztwo, a w lipcu odmówiła jego wszczęcia. Dodam, że postanowienia o odmowie wszczęcia śledztwa, mimo twierdzeń Sądu podejmującego w tej sprawie decyzję odwoławczą, nigdy nie otrzymałem.</p>
+
+<h4>2. Prokuratura Kraków-Podgórze odmawia wszczęcia śledztwa w sprawie szantażu dyrektora NCN</h4>
+<p>W swoim uzasadnieniu odmowy wszczęcia śledztwa, prokuratura Kraków-Podgórze zaprezentowała szczególne podejście do materiału dowodowego w zgłoszonych przeze mnie sprawach „nieprawidłowości” w NCN-ie. Po roku śledztwa prokurator Ochońska zgodziła się ze mną w jednym, że dyrektor Narodowego Centrum Nauki, jest urzędnikiem państwowym. Reszta jest mieszaniną nieprawd, konfabulacji i analitycznej bylejakości.</p>
+
+<h5>2.1. Manipulacje dowodami</h5>
+<p><strong>2.1.1.</strong> Prokurator Ochońska, w uzasadnieniu wygenerowała nieistniejącą rzeczywistość, twierdząc, że jakoby ja w moich zeznaniach posądziłem profesora Marcina Drąga o wręczenie łapówki Zbigniewowi Błockiemu (!). Stworzenie ex nihilo kłamliwego założenia, przełożyło się na łatwe tego założenia obalenie przez prokurator Ochońską w odmowie wszczęcia śledztwa. Nigdy tak nie twierdziłem, jako że takie twierdzenie byłoby niepopartą dowodami fantazją.</p>
+<p><strong>2.1.2.</strong> Pani prokurator w swojej odmowie wszczęcia śledztwa udowadnia, że nie zapoznała się z materiałem dowodowym — nie przesłuchała nagrań dowodzących szantażu dyrektora NCN Błockiego (dowody na nagraniach sporządzonych przez N.N.). Prokuratura twierdzi, że to ja nagrałem N.N., co wprost sugeruje, że zrobiłem to wbrew jej wiedzy i woli. Otóż jest to kolejny <em>argumentum ex nihilo</em> prokurator Ochońskiej. Bo gdyby tylko pani prokurator wysłuchała, pierwszego nagrania-wywiadu, mogłaby aż trzykrotnie na nim usłyszeć, że owo nagranie zostało wykonane wspólnym sumptem moim i N.N.</p>
+<p><strong>2.1.3.</strong> Kolejnym przykładem braku profesjonalizmu pani prokurator, jest jej stwierdzenie, iż w moich zeznaniach twierdziłem, że jestem ofiarą spisku! Jest to kłamstwo. Do tej pory nie wiem, czego ofiarą byłem, najpewniej ofiarą próby kradzieży mojego projektu naukowego.</p>
+<p><strong>2.1.4.</strong> Prokurator Ochońska w swoim uzasadnieniu użyła wobec mnie również argumentu <em>ad personam</em>, stwierdzając, że moje zeznania mają niską wiarygodność, bo kierowała mną chęć pozyskania wysokiej, według prokuratury, pensji z NAWA w wysokości 95 tys. PLN rocznie. Gdyby prokurator Ochońska pozwoliła sobie zapoznać się z materiałem dowodowym, dowiedziałaby się, że przed powrotem do Polski byłem Research Assistant Profesorem na Uniwersytecie w Chicago i zarabiałem tam $100 000 rocznie.</p>
+<p><strong>2.1.5.</strong> Prokurator Ochońska, słusznie twierdzi również, że N.N. oraz niezależnie, Zbigniew Błocki w imieniu NCN-u, złożyli na mnie doniesienia do prokuratury w Krakowie. Nie informuje już jednak, że zawiadomienie Błockiego zostało oddalone, a prokuratura odmówiła wszczęcia śledztwa w sprawie zawiadomienia N.N., co prawomocnie potwierdził Sąd. Stąd nasuwa się pytanie, dlaczego, mając dostęp do tej wiedzy, prokurator Ochońska dopuściła się manipulacji faktami w swoim uzasadnieniu?</p>
+
+<h5>2.2. Błędna kwalifikacja lub interpretacja materiału dowodowego</h5>
+<p><strong>2.2.1.</strong> Pobudzającym wyobraźnię tworem w uzasadnieniu prokurator Ochońskiej, jest jej nowatorska interpretacja aktu szantażu dokonanego przez dyrektora NCN, Zbigniewa Błockiego. Pani prokurator dowodzi, że dyrektor NCN-u miał prawo by mnie szantażować, poprzez podówczas związaną ze mną N.N. (jej pierwsze słowa po szantażu Błockiego, 29 maja 2020: „musisz wycofać grant z NAWA albo ja stracę pracę w NCN-ie”). Dyrektor NCN dał mi, ustami swojej podwładnej, dokładnie 4 dni na wycofanie mojej aplikacji grantowej z innej instytucji, NAWA, „niech wycofa grant, bo i tak go nie dostanie”. Dyrektor Błocki wystosował to ultimatum, bo zażądał tego od Błockiego znany naukowiec z Politechniki Wrocławskiej, profesor Marcin Drąg.</p>
+<p>Tak więc, miast szantażu, prokuratura Kraków-Podgórze dopatrzyła się „sugestii” dyrektora NCN Błockiego, popartej groźbami, których Błocki, według prokuratury, nie mógł wprowadzić w czyn! Co więcej, dyrektor Błocki, jak zeznał w prokuraturze, chciał „załagodzić sytuację” (?!) z profesorem Drągiem.</p>
+<p><strong>2.2.2.</strong> Prokuratura, w swoim uzasadnieniu o umorzeniu śledztwa, twierdzi ponadto, że dyrektor Błocki nie mógł mieć żadnego wpływu na decyzje podejmowane przez NAWA, ale nie wyjaśnia, dlaczego podczas „sugerowania” N.N. metody „udobruchania” profesora Drąga, dyrektor Błocki użył sformułowania: „niech Kilarski wycofa grant z NAWA, bo i tak go nie dostanie”.</p>
+<p>Związek NCN z NAWA jest oczywisty, bo zapisany w regulaminie konkursu NAWA-POWROTY. Otóż NCN dzieli się swoja bazą danych zagranicznych recenzentów z NAWA oraz przyznaje 10 000 PLN, jako bonus dla beneficjentów konkursu NAWA. Dodatek wymusza zapoznanie się dyrektora Błockiego z projektami grantowymi.</p>
+<p><strong>2.2.3.</strong> Prokuratura uznała również, że uzasadnionym jest oficjalny nacisk, dokonany przez dyrektora Błockiego na rektora Warszawskiego Uniwersytetu Medycznego (WUM) w 2021 roku, by ten, bez podania przyczyn, zerwał ze mną współpracę w ramach kolejnego programu NAWA-Powroty.</p>
+<p><strong>2.2.4.</strong> Prokurator Ochońska podważyła wiarygodność pierwszego nagrania dowodowego, na którym N.N., w dwie godziny po szantażu Błockiego, opowiada w szczegółach o okolicznościach szantażu oraz innych nieprawidłowościach w NCN. W uzasadnieniu, prokurator Ochońska stawia się w opinii eksperta psychologii i stwierdza, że to nagranie było dokonane w stanie „wzburzenia”, a w domyśle, że jego walor dowodowy jest obniżony.</p>
+
+<h5>2.3. Prokuratura kwalifikuje moje doniesienie jako probabilistyczne</h5>
+<p>Prokuratura konkluduje swoje uzasadnienie o odmowie wszczęcia śledztwa stwierdzeniem, że moje doniesienie o możliwości popełnienia przestępstw przez władze NCN-u było doniesieniem „probabilistycznym”. Jednak prawdopodobieństwo można, przy odrobinie dobrej woli, uprawdopodobnić, dokonując weryfikacji zaobserwowanych korelacji z faktami. W części wyręczyłem tu prokuraturę, choc np., Pani Ochońska zignorowała dobrze przeze mnie udokumentowany fakt szantażu wobec mnie wystosowany przez Urzędnika Państwowego.</p>
+
+<h5>2.4. Probabilistyka korelacyjna</h5>
+<p>W przypadku grantu NAWA-Powroty w 2020 roku, tego, o którym dyrektor NCN-u Błocki zapewniał N.N., iż go nie dostanę, uzyskałem łączną liczbę punktów 85/100 i zająłem <strong>14 miejsce na liście rankingowej, na 13 projektów wyznaczonych do finansowania w roku 2020</strong>. Było to o tyle dziwne, że NCN i NAWA miały zaplanowanych na rok 2020, podobnie jak w poprzednich latach, fundusze na 20 wniosków do finansowania. Informacja o tak drastycznej zmianie liczby wniosków, nie została podana do publicznej wiadomości przed ogłoszeniem wyników.</p>
+<p>Podobna sytuacja wydarzyła się w 2021 roku, kiedy to już o grant z NAWA-Powroty aplikowałem wraz z Warszawskim Uniwersytetem Medycznym. Podobnie jak w przypadku konkursu NAWA z 2020 roku, tak i w tym przypadku znalazłem się, jako pierwszy pod kreską, na liście aplikacji, której finansowanie NAWA już nie obejmowało.</p>
+
+<h4>3. Brak odpowiedzi prokuratury na pytania wynikające z materiału dowodowego</h4>
+<h5>3.1. Dlaczego dyrektor NCN Zbigniew Błocki mnie szantażował 29 maja 2020?</h5>
+<p>Nigdy nie uzyskałem odpowiedzi na pytanie, dlaczego to ja zostałem celem ataku dyrektora NCN, Zbigniewa Błockiego. Nie otrzymałem zresztą od niego żadnej odpowiedzi, nawet na oficjalny mail, w którym jego podwładna, N.N., opisuje mi jego ultimatum.</p>
+
+<h5>3.2. Dlaczego dyrektor NCN-u, zmusza swoją podwładną do czynności nielegalnych</h5>
+<p>Dlaczego dyrektor Błocki, czyli Urzędnik Państwowy, przymusza swoją podwładną by ta wpłynęła na formalnie niezwiązanego z nią naukowca z 20-letnim stażem na najlepszych uczelniach światowych, do wycofania grantu z innej polskiej instytucji grantowej (NAWA), niż ta, którą Błocki kierował?</p>
+
+<h5>3.3. Prokurator Ochońska w roli psychologa</h5>
+<p>Dlaczego prokurator Ochońska wychodzi poza swoje kompetencje i próbuje uzasadniać swoją niechęć do moich zeznań z punktu widzenia psychologa? Prokurator wydaje osądy o moim stanie psychicznym, mimo że nie raczyła się ze mną nawet spotkać.</p>
+
+<h4>4. Probabilistyka korelacyjna w przyznawaniu grantów z odwołań NCN</h4>
+<p>NCN przyznał nie tylko wyjątkowo obfitą liczbę grantów z odwołania w 2019 r. (26 grantów wobec średniej 10 grantów/rok w latach 2010–2017), ale przyznał je osobom, których nazwiska widniały na liście płac NCN: m.in. małżonkom Koordynatorek Dyscyplin — dr Bart Jacobs (358 886 PLN) oraz dr Maciej Sekerdej (2 681 700 PLN). Grant Sekerdeja był największym grantem przyznanym z odwołania przez 15 lat działania NCN.</p>
+<p>Po moich publicznych wskazaniach: <strong>2020 — 0 grantów z odwołań</strong>, <strong>2021 — 0</strong>, <strong>2022 — 2</strong>, <strong>2023 — 2</strong>, <strong>2024 — 0</strong>. Od 5 lat NCN przyznał tylko 4 granty z odwołania (średnio 0,8/rok), przy historycznej średniej 10/rok.</p>
+
+<h4>5. Ukrywanie plagiatów wniosków grantowych</h4>
+<p>W 2020 system antyplagiatowy NCN-u wyłapał domniemane przywłaszczenie projektu grantowego dokonane przez dyrektor Instytutu Nenckiego prof. Agnieszkę Dobrzyń. Dyrektor NCN-u Zbigniew Błocki zamiast skierować zawiadomienie do prokuratury, zaprosił panią Agnieszkę Dobrzyń do siebie do NCN-u. Tam pani Dobrzyń została „oczyszczona” z zarzutów, poprzez obarczenie winą za plagiat jednego z jej doktorantów. Karą za niezgłoszenie plagiatu organom ścigania przez urzędnika państwowego jest do roku pozbawienia wolności.</p>
+
+<h4>6. Podsumowanie</h4>
+<p>Pomimo wręcz teatralnej kafkowości sytuacji, w której się znalazłem po powrocie do Polski, kiedy to byłem bezpodstawnie oskarżany, osądzony i skazany przez, ewidentnie, skoordynowaną grupę polskich naukowców umocowanych przy źródle finansowania w NCN-ie, do tej pory nikt mnie publicznie nie przeprosił. Co więcej, Państwo Polskie tę oczywistą niesprawiedliwość niechlujnym śledztwem prokuratorskim uprawomocniło.</p>
+<p>By mój list nie został przez Państwa zupełnie zignorowany, <strong>domagam się wznowienia śledztwa prokuratorskiego i roztoczenia nadzoru Prokuratury Krajowej nad śledztwem: Sygn. akt 4135-1.Ds.96.2022</strong>.</p>
+<p>Z poważaniem,<br/>Dr Witold Kilarski</p>
+
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/do-prokuratur-7-stycznia-2025.pdf">Podgląd pełnej wersji (PDF)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.docx" download>Pobierz DOCX</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.pdf" download>Pobierz PDF</a>
+</div>
+</div>
+</div>
+
+<!-- ===== EN ===== -->
+<div class="lang-block" data-lang="en" style="display:none">
+<div class="section-label">Prosecutor</div>
+<h2>Prosecutor Elżbieta Ochońska-Wróbel — ruling refusing to investigate</h2>
+<p class="intro">This section contains <strong>my full letter to the National Prosecutor’s Office of 7 January 2025</strong>, which is a <strong>response to the reasoning</strong> of the ruling of 3 July 2024 issued by Prosecutor <strong>Elżbieta Ochońska-Wróbel</strong> (District Prosecutor’s Office Kraków-Podgórze, ref. <strong>4135-1.Ds.96.2022</strong>) discontinuing the investigation. Below: a brief summary of the prosecutor’s ruling, then the full text of my letter.</p>
+
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Ruling of Prosecutor Elżbieta Ochońska-Wróbel discontinuing the investigation</h3>
+<div class="doc-meta">District Prosecutor’s Office Kraków-Podgórze · Ref. 4135-1.Ds.96.2022 · Kraków, 3 July 2024 · 25 pages</div>
+</div>
+</div>
+<p>Prosecutor Elżbieta Ochońska-Wróbel, having reviewed the materials, on the basis of art. 17 § 1 pts 1 and 2 of the Code of Criminal Procedure, <strong>discontinued the investigation</strong> in seven (I–VII) threads concerning NCN Director Zbigniew Błocki, Prof. Marcin Drąg, and NCN Expert Panels. The reasoning qualifies my notification as <em>“probabilistic”</em>, doubts the credibility of recordings (claiming they were made in a state of “agitation”), treats Director Błocki’s words from 29 May 2020 as a <em>“suggestion”</em>, and concludes there is no evidence Prof. Drąg handed or promised Director Błocki any financial benefit.</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf">Preview ruling (PDF, 25 pp.)</a>
+<a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download>Download PDF</a>
+</div>
+</div>
+
+<h3>My letter to the National Prosecutor’s Office of 7 January 2025 — response to Prosecutor Elżbieta Ochońska-Wróbel’s reasoning</h3>
+<p>The full text of my letter is below — not as a link, but embedded into the page so any reader can see how I respond, point by point, to the reasoning of the discontinuation. The letter relates to ref. <strong>4135-1.Ds.96.2022</strong>. The original Polish version of this letter is available for preview/download below.</p>
+
+<div class="special-card">
+<div class="doc-meta">Ref. 4135-1.Ds.96.2022 · 7 January 2025 · Addressee: National Prosecutor’s Office</div>
+<p><strong>Subject: ruling discontinuing the investigation conducted by Prosecutor Elżbieta Ochońska-Wróbel of the District Prosecutor’s Office Kraków-Podgórze, Kraków</strong></p>
+<p>I demand that the investigation into the blackmail by the Director of the National Science Centre and other irregularities at NCN in Kraków be reopened.</p>
+<p>I previously asked you to oversee the investigation conducted by the Kraków-Podgórze District Prosecutor’s Office regarding blackmail, nepotism and cronyism at the National Science Centre (NCN), as I feared that influential figures connected to “Polish science” would attempt to sweep this matter under the rug. The investigation was discontinued; the discontinuation was supported by manipulated or fabricated evidence and biased arguments.</p>
+<h4>1. Why I feared the investigation would not be fair</h4>
+<p>The very circumstances of the act committed by the NCN Director Zbigniew Błocki resembled mafia-style settling of scores, and involved high-ranking figures from the world of Polish science. Less than a year ago (2024), Minister of Science Dariusz Wieczorek replied that the matter “concerns the past, when Błocki was Director” and “the NCN Council membership has changed by 50% in 2024” — as if that resolved the matter of the blackmail.</p>
+<h4>2. The Kraków-Podgórze prosecutor’s refusal to investigate the NCN Director’s blackmail</h4>
+<p>The reasoning of the discontinuation displays a peculiar approach to evidence: it generated a non-existent reality (claiming I had accused Prof. Marcin Drąg of bribing Zbigniew Błocki — I never made such a claim), questioned the recordings without listening to them, applied <em>argumentum ad personam</em> against me, and ignored the documented blackmail by a State Official.</p>
+<h4>3. Pattern of irregularities at NCN — the data</h4>
+<p>The 2019 jump in appeals-granted awards (26 vs. average 10/year) coincided with awards to spouses of NCN Discipline Coordinators. After my whistleblowing: 2020 — 0; 2021 — 0; 2022 — 2; 2023 — 2; 2024 — 0. From 10/year historically to 0.8/year after I exposed it.</p>
+<h4>4. Conclusion</h4>
+<p>I demand the reopening of the investigation and that the National Prosecutor’s Office exercise oversight: ref. <strong>4135-1.Ds.96.2022</strong>.</p>
+<p>Yours faithfully,<br/>Dr Witold Kilarski</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/do-prokuratur-7-stycznia-2025.pdf">Preview full version, original PL (PDF)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.docx" download>Download DOCX (PL)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.pdf" download>Download PDF (PL)</a>
+</div>
+</div>
+</div>
+
+<!-- ===== FR ===== -->
+<div class="lang-block" data-lang="fr" style="display:none">
+<div class="section-label">Procureure</div>
+<h2>Ordonnance de la procureure Elżbieta Ochońska-Wróbel refusant l’enquête</h2>
+<p class="intro">Cette section contient <strong>ma lettre au Parquet national du 7 janvier 2025</strong>, qui constitue une <strong>réponse à la motivation</strong> de l’ordonnance du 3 juillet 2024 rendue par la procureure <strong>Elżbieta Ochońska-Wróbel</strong> (Parquet de district Kraków-Podgórze, n° <strong>4135-1.Ds.96.2022</strong>) classant l’enquête. Ci-dessous : un résumé de l’ordonnance de la procureure, puis le texte intégral de ma lettre.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Ordonnance de la procureure Elżbieta Ochońska-Wróbel classant l’enquête</h3>
+<div class="doc-meta">Parquet de district Kraków-Podgórze · N° 4135-1.Ds.96.2022 · Cracovie, 3 juillet 2024 · 25 pages</div>
+</div>
+</div>
+<p>La procureure Elżbieta Ochońska-Wróbel a classé l’enquête dans sept (I–VII) volets concernant le directeur du NCN Zbigniew Błocki, le prof. Marcin Drąg et les Panels d’experts du NCN. La motivation qualifie ma plainte de <em>« probabiliste »</em>, met en doute les enregistrements (les jugeant faits dans un état « d’agitation »), traite les paroles du directeur Błocki du 29 mai 2020 comme une <em>« suggestion »</em>, et conclut à l’absence de preuve d’avantage patrimonial promis par le prof. Drąg.</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf">Aperçu de l’ordonnance (PDF, 25 p.)</a>
+<a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download>Télécharger le PDF</a>
+</div>
+</div>
+<h3>Ma lettre au Parquet national du 7 janvier 2025</h3>
+<p>Le texte complet est intégré à cette page (et non simplement lié), pour que tout lecteur puisse voir comment je réponds, point par point, à la motivation du classement. La lettre porte le n° <strong>4135-1.Ds.96.2022</strong>. La version originale en polonais est disponible ci-dessous pour aperçu et téléchargement.</p>
+<div class="special-card">
+<div class="doc-meta">N° 4135-1.Ds.96.2022 · 7 janvier 2025 · Destinataire : Parquet national</div>
+<p><strong>Objet : ordonnance classant l’enquête menée par la procureure Elżbieta Ochońska-Wróbel, Parquet de district Kraków-Podgórze, Cracovie</strong></p>
+<p>Je demande la réouverture de l’enquête sur le chantage exercé par le directeur du Centre national des sciences (NCN) ainsi que sur d’autres irrégularités au NCN à Cracovie.</p>
+<p>L’enquête a été classée ; le classement a été étayé par des preuves manipulées ou fabriquées et par des arguments biaisés. La motivation accuse une réalité inexistante (elle prétend que j’aurais accusé le prof. Drąg d’avoir versé un pot-de-vin au directeur Błocki — ce que je n’ai jamais affirmé), met en doute des enregistrements sans les avoir écoutés, et utilise des arguments <em>ad personam</em> contre moi.</p>
+<p>Je demande la réouverture de l’enquête et la supervision par le Parquet national, n° <strong>4135-1.Ds.96.2022</strong>.</p>
+<p>Veuillez agréer,<br/>Dr Witold Kilarski</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/do-prokuratur-7-stycznia-2025.pdf">Version intégrale, originale PL (PDF)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.docx" download>Télécharger DOCX (PL)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.pdf" download>Télécharger PDF (PL)</a>
+</div>
+</div>
+</div>
+
+<!-- ===== DE ===== -->
+<div class="lang-block" data-lang="de" style="display:none">
+<div class="section-label">Staatsanwaltschaft</div>
+<h2>Beschluss von Staatsanwältin Elżbieta Ochońska-Wróbel über die Einstellung der Ermittlungen</h2>
+<p class="intro">Dieser Abschnitt enthält <strong>meinen Brief an die Generalstaatsanwaltschaft vom 7. Januar 2025</strong>, der eine <strong>Antwort auf die Begründung</strong> des Beschlusses vom 3. Juli 2024 von Staatsanwältin <strong>Elżbieta Ochońska-Wróbel</strong> (Bezirksstaatsanwaltschaft Kraków-Podgórze, Az. <strong>4135-1.Ds.96.2022</strong>) ist. Unten: kurze Zusammenfassung des Beschlusses, dann der vollständige Brieftext.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Einstellungsbeschluss von Staatsanwältin Elżbieta Ochońska-Wróbel</h3>
+<div class="doc-meta">Bezirksstaatsanwaltschaft Kraków-Podgórze · Az. 4135-1.Ds.96.2022 · Krakau, 3. Juli 2024 · 25 Seiten</div>
+</div>
+</div>
+<p>Staatsanwältin Elżbieta Ochońska-Wróbel hat das Verfahren in sieben (I–VII) Komplexen eingestellt, die NCN-Direktor Zbigniew Błocki, Prof. Marcin Drąg und die NCN-Expertengremien betrafen. Die Begründung qualifiziert meine Anzeige als <em>„probabilistisch“</em>, zweifelt an den Aufnahmen (sie seien in einem Zustand der „Erregung“ entstanden), stuft Błockis Worte vom 29. Mai 2020 als <em>„Vorschlag“</em> ein und kommt zum Ergebnis, es gebe keinen Beweis für eine versprochene Vermögensüberlassung durch Prof. Drąg.</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf">Beschluss ansehen (PDF, 25 S.)</a>
+<a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download>PDF herunterladen</a>
+</div>
+</div>
+<h3>Mein Brief an die Generalstaatsanwaltschaft vom 7. Januar 2025</h3>
+<p>Der Volltext ist in diese Seite eingebettet (nicht nur verlinkt), damit jeder Leser sehen kann, wie ich Punkt für Punkt auf die Begründung der Einstellung antworte. Az. <strong>4135-1.Ds.96.2022</strong>. Die polnische Originalversion ist unten zur Voransicht und zum Download verfügbar.</p>
+<div class="special-card">
+<div class="doc-meta">Az. 4135-1.Ds.96.2022 · 7. Januar 2025 · Adressat: Generalstaatsanwaltschaft</div>
+<p><strong>Betreff: Beschluss über die Einstellung des Ermittlungsverfahrens, das von Staatsanwältin Elżbieta Ochońska-Wróbel, Bezirksstaatsanwaltschaft Kraków-Podgórze, geführt wurde</strong></p>
+<p>Ich verlange die Wiederaufnahme des Ermittlungsverfahrens wegen der Erpressung durch den Direktor des Nationalen Wissenschaftszentrums (NCN) und weiterer Unregelmäßigkeiten im NCN in Krakau.</p>
+<p>Das Verfahren wurde eingestellt; die Einstellung wurde durch manipulierte oder fabrizierte Beweise und voreingenommene Argumente gestützt. Die Begründung erzeugt eine fiktive Realität (etwa, ich hätte Prof. Drąg der Bestechung von Direktor Błocki bezichtigt — was nie der Fall war), zweifelt an Aufnahmen, ohne sie gehört zu haben, und verwendet <em>ad personam</em>-Argumente gegen mich.</p>
+<p>Ich verlange die Wiederaufnahme und die Aufsicht der Generalstaatsanwaltschaft über das Verfahren Az. <strong>4135-1.Ds.96.2022</strong>.</p>
+<p>Mit freundlichen Grüßen,<br/>Dr. Witold Kilarski</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/do-prokuratur-7-stycznia-2025.pdf">Vollversion, polnisches Original (PDF)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.docx" download>DOCX herunterladen (PL)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.pdf" download>PDF herunterladen (PL)</a>
+</div>
+</div>
+</div>
+
+<!-- ===== UK ===== -->
+<div class="lang-block" data-lang="uk" style="display:none">
+<div class="section-label">Прокуратура</div>
+<h2>Постанова прокурорки Ельжбети Охоньської-Врубель про відмову в розслідуванні</h2>
+<p class="intro">Цей розділ містить <strong>мій лист до Національної прокуратури від 7 січня 2025 р.</strong>, який є <strong>відповіддю на обґрунтування</strong> постанови від 3 липня 2024 р. прокурорки <strong>Ельжбети Охоньської-Врубель</strong> (Прокуратура району Краків-Підгуже, спр. <strong>4135-1.Ds.96.2022</strong>) про закриття розслідування. Нижче: коротке резюме постанови та повний текст мого листа.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Постанова прокурорки Ельжбети Охоньської-Врубель про закриття розслідування</h3>
+<div class="doc-meta">Прокуратура району Краків-Підгуже · Спр. 4135-1.Ds.96.2022 · Краків, 3 липня 2024 р. · 25 сторінок</div>
+</div>
+</div>
+<p>Прокурорка Ельжбета Охоньська-Врубель закрила провадження у семи (I–VII) епізодах щодо директора NCN Збігнєва Блоцького, проф. Марціна Дронга та експертних груп NCN. Обґрунтування кваліфікує моє повідомлення як <em>«ймовірнісне»</em>, ставить під сумнів записи (нібито зроблені у стані «збудження»), розцінює слова Блоцького від 29 травня 2020 р. як <em>«пропозицію»</em> та висновує, що немає доказів вручення чи обіцянки майнової вигоди від проф. Дронга.</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf">Переглянути постанову (PDF, 25 с.)</a>
+<a class="doc-btn doc-btn-download" href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" download>Завантажити PDF</a>
+</div>
+</div>
+<h3>Мій лист до Національної прокуратури від 7 січня 2025 р.</h3>
+<p>Повний текст мого листа вбудовано в цю сторінку (а не лише як посилання), щоб кожен читач бачив, як я попунктно відповідаю на обґрунтування закриття. Спр. <strong>4135-1.Ds.96.2022</strong>. Оригінал польською мовою доступний для перегляду та завантаження.</p>
+<div class="special-card">
+<div class="doc-meta">Спр. 4135-1.Ds.96.2022 · 7 січня 2025 р. · Адресат: Національна прокуратура</div>
+<p><strong>Щодо постанови про закриття розслідування, яке вела прокурорка Ельжбета Охоньська-Врубель з Прокуратури району Краків-Підгуже у Кракові</strong></p>
+<p>Вимагаю відновлення розслідування справи шантажу директора Національного наукового центру та інших порушень у NCN у Кракові.</p>
+<p>Розслідування було закрито за маніпульованими або сфальсифікованими доказами. Обґрунтування створює вигадану реальність (нібито я звинуватив проф. Дронга у хабарі Блоцькому — я ніколи цього не твердив), ставить під сумнів записи без їх прослуховування та використовує аргументи <em>ad personam</em> проти мене.</p>
+<p>Вимагаю відновлення та нагляду Національної прокуратури, спр. <strong>4135-1.Ds.96.2022</strong>.</p>
+<p>З повагою,<br/>Д-р Вітольд Кілярський</p>
+<div class="doc-actions" style="margin-top:14px">
+<a class="doc-btn doc-btn-preview" href="docs/do-prokuratur-7-stycznia-2025.pdf">Повна версія, оригінал PL (PDF)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.docx" download>Завантажити DOCX (PL)</a>
+<a class="doc-btn doc-btn-download" href="docs/do-prokuratur-7-stycznia-2025.pdf" download>Завантажити PDF (PL)</a>
+</div>
+</div>
+</div>
+
+</section>
+
 <!-- ==========================================
      SECTION: RECORDINGS
      ========================================== -->
@@ -3128,6 +3526,124 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <div class="court-case-court">Районна прокуратура, Краків-Кроводжа</div>
 <div class="court-case-desc">Прокурор Охонська-Врубель відмовилася розслідувати корупцію в NCN — попри надані записи та документи.</div>
 </div>
+</div>
+</section>
+<!-- ==========================================
+     SECTION: JUDGE — PLN 400,000 GIFT (post-courts)
+     ========================================== -->
+<section class="section" id="sedzia-400k" style="scroll-margin-top:130px;">
+<div class="lang-block active" data-lang="pl">
+<div class="section-label">Sędzia · darowizny 400 tys. PLN</div>
+<h2>Sędzia w mojej sprawie z NCN — łącznie 400 tys. PLN darowizn (nie od rodziny) w miesiącu losowania sprawy</h2>
+<p class="intro">Sekcja dotyczy sędziego, któremu w drodze losowania przydzielono moją sprawę z udziałem Narodowego Centrum Nauki i który — zgodnie z jego oświadczeniem majątkowym — <strong>w tym samym miesiącu i roku, w którym wylosowano mu moją sprawę</strong>, otrzymał <strong>łącznie 400&nbsp;000 PLN darowizn</strong>. Darowizny te <strong>nie pochodziły od rodziny</strong> sędziego.</p>
+
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Zbieżność czasowa: losowanie sprawy a darowizny 400 tys. PLN</h3>
+<div class="doc-meta">źródło: oświadczenie majątkowe sędziego za rok 2023 (dokument urzędowy, jawny)</div>
+</div>
+</div>
+<p>Z dokumentacji wynika, że w tym samym miesiącu i roku, w którym moją sprawę z udziałem NCN przydzielono temu sędziemu w drodze losowania, otrzymał on darowizny pieniężne na łączną kwotę <strong>400&nbsp;000 PLN</strong>. W oświadczeniu majątkowym za rok 2023 sędzia <strong>nie wskazał darczyńców jako osób z najbliższej rodziny</strong>; ujawnione źródło nie ma charakteru dziedzicznego ani rodzinnego.</p>
+<p>Z perspektywy <em>bezstronności orzekania</em> (art. 41 § 1 k.p.k.; art. 49 k.p.c.; art. 178 ust. 1 Konstytucji RP) tak duża, niejawnie udokumentowana w aktach sprawy zbieżność czasowa rodzi poważne pytania o:</p>
+<ul class="legal-list">
+<li>źródło i tytuł prawny darowizn (czy nie naruszono ustawy z 21 sierpnia 1997 r. o ograniczeniu prowadzenia działalności gospodarczej przez osoby pełniące funkcje publiczne; ustawy o ustroju sądów powszechnych, art. 87);</li>
+<li>obowiązek wyłączenia sędziego z urzędu (<em>iudex inhabilis</em>) lub na wniosek strony (<em>iudex suspectus</em>) — czyli czy istnieją okoliczności wzbudzające uzasadnioną wątpliwość co do bezstronności sędziego;</li>
+<li>obowiązek pełnego i prawdziwego ujawnienia źródeł majątku w oświadczeniu majątkowym (art. 87 § 6 u.s.p.).</li>
+</ul>
+
+<details>
+<summary><strong>Stan oczekiwania</strong> — dokumenty źródłowe zostaną dołączone</summary>
+<p>W tej sekcji zostaną następnie dołączone:</p>
+<ul class="legal-list">
+<li>kompletne <strong>oświadczenie majątkowe sędziego za rok 2023</strong> (dokument urzędowy);</li>
+<li><strong>analiza prawna</strong>: „Przyjęcie darowizny 400&nbsp;000 PLN przez sędziego a bezstronność orzekania” (PDF i DOCX);</li>
+<li>dane identyfikacyjne sędziego (imię i nazwisko), sygnatura sprawy z udziałem NCN oraz dokument potwierdzający mią datę losowania.</li>
+</ul>
+</details>
+</div>
+</div>
+
+<!-- ===== EN ===== -->
+<div class="lang-block" data-lang="en" style="display:none">
+<div class="section-label">Judge · PLN 400,000 gift</div>
+<h2>The judge in my NCN case received PLN 400,000 in gifts (not from family) in the very month his random assignment to my case was made</h2>
+<p class="intro">This section concerns the judge to whom my case involving the National Science Centre Poland (NCN) was assigned by random allocation and who — according to his asset declaration — in <strong>the same month and year his random assignment to my case was made</strong>, received <strong>a total of PLN 400,000 in gifts</strong>. These gifts <strong>did not come from his family</strong>.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Temporal coincidence: random case allocation and PLN 400,000 in gifts</h3>
+<div class="doc-meta">Source: judge’s public asset declaration for 2023</div>
+</div>
+</div>
+<p>Documentation indicates that, in the same month and year my NCN case was randomly assigned to this judge, he received a <strong>total of PLN 400,000</strong> in cash gifts. In his 2023 asset declaration, the judge <strong>did not list the donors as immediate family members</strong>; the disclosed source is not inheritance and not from family.</p>
+<p>From the standpoint of <em>judicial impartiality</em> (art. 41 § 1 of the Polish Code of Criminal Procedure; art. 49 of the Code of Civil Procedure; art. 178 § 1 of the Polish Constitution), such a substantial — and indirectly documented — temporal coincidence raises serious questions about: (i) the source and legal title of the gifts; (ii) the duty to recuse the judge (<em>iudex inhabilis / suspectus</em>); (iii) the obligation to fully and truthfully disclose sources of wealth in the asset declaration (art. 87 § 6 of the Polish Law on Common Courts).</p>
+<details>
+<summary><strong>Pending</strong> — source documents will be attached</summary>
+<p>This section will then include: full asset declaration for 2023; legal analysis “Acceptance of a PLN 400,000 gift by a judge and judicial impartiality”; identifying details of the judge, the case file reference, and the document confirming the date of random assignment.</p>
+</details>
+</div>
+
+<!-- ===== FR ===== -->
+<div class="lang-block" data-lang="fr" style="display:none">
+<div class="section-label">Juge · donation de 400 000 PLN</div>
+<h2>Le juge dans mon affaire NCN a reçu 400 000 PLN de donations (hors famille) le même mois que l’attribution aléatoire de l’affaire</h2>
+<p class="intro">Cette section concerne le juge auquel mon affaire impliquant le Centre national des sciences (NCN) a été attribuée par tirage au sort et qui — selon sa déclaration de patrimoine — <strong>le même mois et la même année que cette attribution</strong>, a reçu au total <strong>400 000 PLN de donations</strong>. Ces donations <strong>ne provenaient pas de sa famille</strong>.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Coïncidence temporelle : attribution aléatoire et 400 000 PLN de donations</h3>
+<div class="doc-meta">Source : déclaration de patrimoine du juge pour 2023 (document public)</div>
+</div>
+</div>
+<p>La documentation indique que, le même mois et la même année que l’attribution aléatoire de mon affaire NCN à ce juge, il a reçu au total <strong>400 000 PLN</strong> en donations en espèces. Dans sa déclaration de patrimoine pour 2023, le juge <strong>n’a pas indiqué que les donateurs étaient des membres proches de sa famille</strong>.</p>
+<p>Du point de vue de l’<em>impartialité du juge</em>, une telle coïncidence soulève de sérieuses questions sur la source des donations, l’obligation de récusation (<em>iudex inhabilis / suspectus</em>) et l’exhaustivité de la déclaration de patrimoine.</p>
+<details><summary><strong>En attente</strong> — documents à joindre</summary>
+<p>Cette section accueillera ensuite : la déclaration de patrimoine 2023 complète ; l’analyse juridique « Acceptation d’une donation de 400 000 PLN par un juge et impartialité du juge » ; les données identifiant le juge, la référence du dossier et le document attestant la date d’attribution aléatoire.</p>
+</details>
+</div>
+
+<!-- ===== DE ===== -->
+<div class="lang-block" data-lang="de" style="display:none">
+<div class="section-label">Richter · 400 000 PLN-Schenkung</div>
+<h2>Der Richter in meinem NCN-Verfahren erhielt 400 000 PLN an Schenkungen (nicht von der Familie) im selben Monat, in dem ihm die Sache zugelost wurde</h2>
+<p class="intro">Dieser Abschnitt betrifft den Richter, dem meine Sache mit Beteiligung des Nationalen Wissenschaftszentrums (NCN) per Auslosung zugewiesen wurde und der — gemäß seiner Vermögenserklärung — <strong>im selben Monat und Jahr</strong> Schenkungen in Höhe von <strong>insgesamt 400 000 PLN</strong> erhielt. Diese Schenkungen <strong>stammten nicht aus der Familie</strong>.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Zeitliche Übereinstimmung: Auslosung und 400 000 PLN-Schenkung</h3>
+<div class="doc-meta">Quelle: öffentliche Vermögenserklärung des Richters für 2023</div>
+</div>
+</div>
+<p>Aus den Unterlagen geht hervor, dass der Richter im selben Monat und Jahr, in dem ihm meine NCN-Sache zugelost wurde, Schenkungen in Höhe von insgesamt <strong>400 000 PLN</strong> erhielt. In seiner Vermögenserklärung für 2023 <strong>gab er die Schenker nicht als Familienangehörige</strong> an.</p>
+<p>Aus der Sicht der <em>richterlichen Unparteilichkeit</em> wirft eine solche zeitliche Übereinstimmung erhebliche Fragen auf: zur Herkunft und Rechtsgrundlage der Schenkungen; zur Pflicht zur Selbstablehnung (<em>iudex inhabilis / suspectus</em>); zur Pflicht der vollständigen und wahrheitsgemäßen Offenlegung in der Vermögenserklärung.</p>
+<details><summary><strong>Ausstehend</strong> — Quelldokumente werden ergänzt</summary>
+<p>Es folgen: vollständige Vermögenserklärung 2023; juristische Analyse „Annahme einer 400 000 PLN-Schenkung durch einen Richter und richterliche Unparteilichkeit“; Name des Richters, Aktenzeichen und Auslosungsdatum.</p>
+</details>
+</div>
+
+<!-- ===== UK ===== -->
+<div class="lang-block" data-lang="uk" style="display:none">
+<div class="section-label">Суддя · дар 400 тис. PLN</div>
+<h2>Суддя в моїй справі з NCN отримав 400 тис. PLN дарунків (не від родини) у місяцъ жеребкування справи</h2>
+<p class="intro">Цей розділ стосується судді, якому моя справа за участю NCN була призначена випадковим жеребкуванням і який — за декларацією свого майна — <strong>у той самий місяць і рік, коли відбулося жеребкування</strong>, отримав <strong>всього 400 000 PLN дарунків</strong>. Ці дарунки <strong>не походили від його родини</strong>.</p>
+<div class="special-card">
+<div class="special-card-header">
+<div class="special-card-icon">⚖️</div>
+<div>
+<h3 style="margin:0">Часовий збіг: жеребкування та дарунки 400 тис. PLN</h3>
+<div class="doc-meta">Джерело: публічна декларація майна судді за 2023 р.</div>
+</div>
+</div>
+<p>Документація свідчить, що в той самий місяць і рік, коли моя справа NCN була випадково призначена цьому судді, він отримав <strong>всього 400 000 PLN</strong> грошових дарунків. У декларації майна за 2023 р. суддя <strong>не вказав, що дарувальники є членами його родини</strong>.</p>
+<p>З погляду <em>суддівської неупередженості</strong> такий часовий збіг порушує питання щодо джерела дарунків, обов'язку самовідводу та повноти відомостей в декларації майна.</em></p>
+<details><summary><strong>Очікується</strong> — джерельні документи будуть додані</summary>
+<p>У розділі будуть додані: повна декларація майна за 2023; юридичний аналіз «Прийняття дару 400 000 PLN суддею та неупередженість»; ім'я судді, номер справи та документ про дату жеребкування.</p>
+</details>
 </div>
 </section>
 <!-- ==========================================
