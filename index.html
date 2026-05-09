@@ -1524,10 +1524,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   visibility: visible;
   transform: translateY(0);
 }
-[data-theme="dark"] .sub-nav-dropdown {
-  background: #1a1a2e;
-  border-color: rgba(255,255,255,0.12);
-}
+/* M17: dark-theme dropdown override removed — site is force-light. */
 .sub-nav-dropdown-title {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -1717,15 +1714,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     .doc-desc.doc-desc-below {
       color: #3a3a4a !important;
     }
-    /* In dark mode, restore lighter values so the contrast still works */
-    [data-theme="dark"] .court-case-id { color: #f0f0f0 !important; border-bottom-color: var(--color-accent); }
-    [data-theme="dark"] .court-case-court { color: #d0d0d8 !important; }
-    [data-theme="dark"] .court-case-desc { color: #e0e0e8 !important; }
-    [data-theme="dark"] .audio-player-meta,
-    [data-theme="dark"] .timeline-date,
-    [data-theme="dark"] .doc-number,
-    [data-theme="dark"] .doc-ext { color: #d0d0d8 !important; }
-    [data-theme="dark"] .doc-desc.doc-desc-below { color: #c0c0c8 !important; }
+    /* M11 dark-mode block intentionally REMOVED in M17 — site is
+       force-light (lines ~1263), so making these colors light produced
+       light-on-light unreadable text. */
 
     /* ===== Contrast fix (M16) — site-wide expansion =====
        User reported continued gray-on-white visibility issues on body copy
@@ -1831,34 +1822,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       color: #2a2a3a !important;
       font-weight: 500 !important;
     }
-    /* Dark mode overrides for the site-wide additions */
-    [data-theme="dark"] .section p,
-    [data-theme="dark"] .section li,
-    [data-theme="dark"] .interview-section p,
-    [data-theme="dark"] .lang-block p,
-    [data-theme="dark"] .lang-block li,
-    [data-theme="dark"] .summary-table th,
-    [data-theme="dark"] .summary-table td,
-    [data-theme="dark"] .interview-excerpt blockquote,
-    [data-theme="dark"] .interview-excerpt .speaker,
-    [data-theme="dark"] .doc-desc,
-    [data-theme="dark"] .doc-desc.doc-desc-above,
-    [data-theme="dark"] .doc-label,
-    [data-theme="dark"] .evidence-caption,
-    [data-theme="dark"] .footnote-meta,
-    [data-theme="dark"] .footnote-meta em,
-    [data-theme="dark"] .section-jumpnav-label,
-    [data-theme="dark"] .audio-player-label,
-    [data-theme="dark"] .redaction-note,
-    [data-theme="dark"] .special-card p,
-    [data-theme="dark"] .special-card .legal-list,
-    [data-theme="dark"] .special-card .legal-list > li {
-      color: #e8e8f0 !important;
-    }
-    [data-theme="dark"] .doc-meta,
-    [data-theme="dark"] .special-card .doc-meta {
-      color: #c8c8d0 !important;
-    }
+    /* M16 dark-mode block intentionally REMOVED in M17 — see emergency
+       override at end of <style>. The site is force-light (lines ~1263)
+       so dark-mode color rules made text light-on-light → unreadable. */
 
     /* Mobile tweaks: tighter container, prevent any overflow */
     @media (max-width: 640px) {
@@ -2237,6 +2203,108 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     .nn-token:hover {
       text-decoration-color: currentColor;
     }
+
+    /* ============================================================
+       M17: EMERGENCY READABILITY OVERRIDE (must be last)
+       The site is intentionally force-light (background #fafaf8 set
+       via !important on html/body). Multiple earlier rules used
+       [data-theme="dark"] to flip text to light — but with the bg
+       still light, that made text invisible. This block:
+         (1) Re-defines all dark-theme color variables to their
+             light-theme equivalents — disables dark mode entirely.
+         (2) Asserts dark, AA-readable text on every visible content
+             element on light backgrounds inside <main>.
+         (3) Preserves white-on-dark for known dark UI containers
+             (header, hero, sub-nav, sub-nav-2, footer, dropdowns,
+             pill nav tabs) by NOT touching their selectors.
+       ============================================================ */
+    /* (1) Disable dark theme: force dark-theme tokens to light values. */
+    [data-theme="dark"] {
+      --color-bg: #fafaf8 !important;
+      --color-surface: #f2f1ed !important;
+      --color-surface-2: #e8e7e3 !important;
+      --color-text: #1a1a2e !important;
+      --color-text-muted: #3a3a4a !important;
+      --color-text-faint: #5a5a6a !important;
+      --color-accent: #c0392b !important;
+      --color-border: rgba(26, 26, 46, 0.12) !important;
+      --color-border-strong: rgba(26, 26, 46, 0.2) !important;
+      --color-doc-bg: #ffffff !important;
+      --color-doc-hover: #f8f7f5 !important;
+    }
+
+    /* (2) Belt-and-braces: assert dark text on every paragraph, list
+       item, heading, table cell, blockquote, summary, details and
+       definition that lives in a light-background area. Scoped to
+       <main> and to the comments section (the only other light area
+       outside <main>). */
+    main p,
+    main li,
+    main dd,
+    main dt,
+    main td,
+    main th,
+    main blockquote,
+    main summary,
+    main details,
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6,
+    .comments-section p,
+    .comments-section li,
+    .comments-section h1,
+    .comments-section h2,
+    .comments-section h3 {
+      color: #1a1a2e !important;
+    }
+    /* Specific small-meta classes we earlier promoted to dark — keep
+       them dark, regardless of theme. */
+    main .footnote-meta,
+    main .doc-meta,
+    main .audio-player-meta,
+    main .timeline-date,
+    main .doc-number,
+    main .doc-ext,
+    main .court-case-court,
+    main .doc-desc,
+    main .doc-desc.doc-desc-above,
+    main .doc-desc.doc-desc-below,
+    main .doc-label,
+    main .evidence-caption,
+    main .section-jumpnav-label,
+    main .audio-player-label,
+    main .court-case-id,
+    main .court-case-desc,
+    main .interview-excerpt .speaker,
+    main .redaction-note {
+      color: #1a1a2e !important;
+    }
+    main .footnote-meta em { color: #1a1a2e !important; }
+    /* Section-label tag stays red-accent, and the case-id keeps its
+       red underline — both are inside <main> but want the accent. */
+    main .section-label { color: #c0392b !important; }
+    main .court-case-id { border-bottom-color: var(--color-accent) !important; }
+
+    /* (3) DO NOT TOUCH white-on-dark containers. We explicitly do
+       NOTHING to:
+         .site-header, .site-header *
+         .nav-links, .nav-link  (M14 pill — already self-contained)
+         .sub-nav, .sub-nav-link, .sub-nav-2, .sub-nav-2-link
+         .sub-nav-dropdown (white panel — has its own dark-aware rule)
+         .hero, .hero-* (dark hero)
+         .site-footer, .footer-*
+         .lang-switcher, .lang-btn (M15)
+         .theme-toggle, .mobile-menu-btn
+       …because those are either light-on-dark by design or have
+       their own well-tested rules. */
+
+    /* The page is force-light, so hide the theme-toggle's moon icon
+       that JS used to flip — but keep the toggle button visible (it
+       still does language preference cycling for the visitor counter
+       in some flows). The button itself is harmless if clicked. */
   </style>
 </head>
 <body>
