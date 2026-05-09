@@ -148,7 +148,7 @@
   },
   {
   "@type": "AudioObject",
-  "name": "Nagranie 7a — 20 marca 2021 (część A): NN przegrywa swoje e-maile z NCN",
+  "name": "Nagranie 5a — 20 marca 2021 (część A): NN przegrywa swoje e-maile z NCN",
   "description": "Pierwsza część jednej ciągłej rozmowy z 20 marca 2021 r. Dr Witold Kilarski przegrywa osobie NN jej własne e-maile z NCN z okresu, gdy kończyła tam pracę. W rozmowie uczestniczy również Jolanta Kilarska.",
   "contentUrl": "https://ludvigboltzmann.github.io/KorupcjaNCN/docs/7.-20-marca-2021a_NN-2021_03_20_13_04_17.mp3",
   "encodingFormat": "audio/mpeg",
@@ -158,7 +158,7 @@
   },
   {
   "@type": "AudioObject",
-  "name": "Nagranie 7b — 20 marca 2021 (część B): kontynuacja odsłuchiwania e-maili NN",
+  "name": "Nagranie 5b — 20 marca 2021 (część B): kontynuacja odsłuchiwania e-maili NN",
   "description": "Druga część jednej ciągłej rozmowy z 20 marca 2021 r. — bezpośrednia kontynuacja części 7a. NN komentuje działania dyrekcji NCN (Błocki, Drąg, Mudelsee) z perspektywy byłej pracownicy Centrum.",
   "contentUrl": "https://ludvigboltzmann.github.io/KorupcjaNCN/docs/8.-20-marca-2021b_NN-2021_03_20_14_20_24.mp3",
   "encodingFormat": "audio/mpeg",
@@ -1727,6 +1727,139 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     [data-theme="dark"] .doc-ext { color: #d0d0d8 !important; }
     [data-theme="dark"] .doc-desc.doc-desc-below { color: #c0c0c8 !important; }
 
+    /* ===== Contrast fix (M16) — site-wide expansion =====
+       User reported continued gray-on-white visibility issues on body copy
+       and small metadata. Apply dark + bold to all visible text on light
+       backgrounds; keep light-on-dark areas untouched. */
+    /* Body copy / paragraphs / list items in main content areas.
+       Scoped to <main> so the dark hero / sub-nav / footer / header are
+       not affected (they live OUTSIDE main except for the case section
+       wrap, which is light-on-light). */
+    main .section p,
+    main .section li,
+    main .section ul,
+    main .section ol,
+    main .interview-section p,
+    main .interview-section li,
+    main .lang-block p,
+    main .lang-block li {
+      color: #1a1a2e !important;
+    }
+    /* Footnotes and source notes — keep italic but make text dark and a bit
+       bolder so they remain readable on white. */
+    .footnote-meta {
+      color: #2a2a3a !important;
+      font-weight: 500 !important;
+      font-size: 13px;
+      line-height: 1.55;
+      margin-top: var(--space-3);
+      padding: 8px 12px;
+      background: rgba(192, 57, 43, 0.04);
+      border-left: 3px solid rgba(192, 57, 43, 0.35);
+      border-radius: 0 4px 4px 0;
+    }
+    .footnote-meta em { color: #1a1a2e !important; font-style: italic; font-weight: 700; }
+    /* Document descriptions */
+    .doc-desc {
+      color: #1a1a2e !important;
+      font-weight: 500 !important;
+    }
+    .doc-desc.doc-desc-above { color: #1a1a2e !important; font-weight: 600 !important; }
+    /* doc-label inside documents list — was muted gray, now dark */
+    .doc-label {
+      color: #1a1a2e !important;
+      font-weight: 600 !important;
+    }
+    /* Evidence captions under photos */
+    .evidence-caption {
+      color: #1a1a2e !important;
+      font-weight: 500 !important;
+    }
+    /* Special-card meta line on prokuratura/sędzia cards */
+    .special-card .doc-meta {
+      color: #2a2a3a !important;
+      font-weight: 500 !important;
+    }
+    /* Section jumpnav label — was uppercase gray */
+    .section-jumpnav-label {
+      color: #1a1a2e !important;
+      font-weight: 700 !important;
+    }
+    /* Section-label small-caps tag at top of every section — was already
+       red-accented, but ensure it's bold enough on white */
+    .section-label {
+      color: #c0392b !important;
+      font-weight: 700 !important;
+    }
+    /* Audio player label (recording title) — already strong, just ensure
+       full contrast */
+    .audio-player-label {
+      color: #1a1a2e !important;
+      font-weight: 700 !important;
+    }
+    /* Hero subtitle and video subtitle on dark hero stay light — but the
+       hero-subtitle below the dark hero (which is white text on dark) is
+       fine; we deliberately do NOT change .hero-subtitle. */
+    /* Summary table cells — make label cells bold, ensure text is dark */
+    .summary-table th,
+    .summary-table td {
+      color: #1a1a2e !important;
+    }
+    .summary-table th { font-weight: 700 !important; }
+    /* Interview-excerpt speaker name — dark and bold */
+    .interview-excerpt .speaker {
+      color: #1a1a2e !important;
+      font-weight: 700 !important;
+    }
+    .interview-excerpt blockquote {
+      color: #1a1a2e !important;
+    }
+    /* Legal lists / numbered points inside special-card */
+    .special-card .legal-list,
+    .special-card .legal-list > li,
+    .special-card p {
+      color: #1a1a2e !important;
+    }
+    /* Redaction notice banner — already styled with red accent; ensure
+       text is dark and bold for legibility */
+    .redaction-note {
+      color: #1a1a2e !important;
+      font-weight: 600 !important;
+    }
+    /* doc-meta general (not in special-card) */
+    .doc-meta {
+      color: #2a2a3a !important;
+      font-weight: 500 !important;
+    }
+    /* Dark mode overrides for the site-wide additions */
+    [data-theme="dark"] .section p,
+    [data-theme="dark"] .section li,
+    [data-theme="dark"] .interview-section p,
+    [data-theme="dark"] .lang-block p,
+    [data-theme="dark"] .lang-block li,
+    [data-theme="dark"] .summary-table th,
+    [data-theme="dark"] .summary-table td,
+    [data-theme="dark"] .interview-excerpt blockquote,
+    [data-theme="dark"] .interview-excerpt .speaker,
+    [data-theme="dark"] .doc-desc,
+    [data-theme="dark"] .doc-desc.doc-desc-above,
+    [data-theme="dark"] .doc-label,
+    [data-theme="dark"] .evidence-caption,
+    [data-theme="dark"] .footnote-meta,
+    [data-theme="dark"] .footnote-meta em,
+    [data-theme="dark"] .section-jumpnav-label,
+    [data-theme="dark"] .audio-player-label,
+    [data-theme="dark"] .redaction-note,
+    [data-theme="dark"] .special-card p,
+    [data-theme="dark"] .special-card .legal-list,
+    [data-theme="dark"] .special-card .legal-list > li {
+      color: #e8e8f0 !important;
+    }
+    [data-theme="dark"] .doc-meta,
+    [data-theme="dark"] .special-card .doc-meta {
+      color: #c8c8d0 !important;
+    }
+
     /* Mobile tweaks: tighter container, prevent any overflow */
     @media (max-width: 640px) {
       main { padding: 0 var(--space-3); }
@@ -2200,7 +2333,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
         <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Kluczowe dowody ultimatum</span><span class="nav-en" style="display:none">Key ultimatum evidence</span><span class="nav-fr" style="display:none">Preuves clés de l'ultimatum</span><span class="nav-de" style="display:none">Beweise des Ultimatums</span><span class="nav-uk" style="display:none">Ключові докази ультиматуму</span></div>
         <a href="#documents" class="nav-link" role="menuitem"><span class="nav-pl">Ultimatum NCN — e-mail osoby NN (1 czerwca 2020)</span><span class="nav-en" style="display:none">NCN Ultimatum — NN's email (1 June 2020)</span><span class="nav-fr" style="display:none">Ultimatum NCN — e-mail de NN (1 juin 2020)</span><span class="nav-de" style="display:none">NCN-Ultimatum — E-Mail von NN (1. Juni 2020)</span><span class="nav-uk" style="display:none">Ультиматум NCN — лист особи NN (1 червня 2020)</span></a>
         <a href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Chronologiczna korespondencja Kilarski–Błocki–Drąg–NN</span><span class="nav-en" style="display:none">Chronological correspondence Kilarski–Błocki–Drąg–NN</span><span class="nav-fr" style="display:none">Correspondance chronologique Kilarski–Błocki–Drąg–NN</span><span class="nav-de" style="display:none">Chronologische Korrespondenz Kilarski–Błocki–Drąg–NN</span><span class="nav-uk" style="display:none">Хронологічна переписка Кіларський–Блоцкі–Дронг–NN</span></a>
-        <a href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Kompletna analiza 10 nagrań audio</span><span class="nav-en" style="display:none">Complete analysis of 10 audio recordings</span><span class="nav-fr" style="display:none">Analyse complète des 10 enregistrements audio</span><span class="nav-de" style="display:none">Vollständige Analyse der 10 Audioaufnahmen</span><span class="nav-uk" style="display:none">Повний аналіз 10 аудіозаписів</span></a>
+        <a href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Kompletna analiza 7 nagrań audio</span><span class="nav-en" style="display:none">Complete analysis of 7 audio recordings</span><span class="nav-fr" style="display:none">Analyse complète des 7 enregistrements audio</span><span class="nav-de" style="display:none">Vollständige Analyse der 7 Audioaufnahmen</span><span class="nav-uk" style="display:none">Повний аналіз 7 аудіозаписів</span></a>
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
@@ -2210,12 +2343,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
         <a href="#rec-1" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 1 — 29 maja 2020 (po ultimatum)</span><span class="nav-en" style="display:none">Recording 1 — 29 May 2020 (after the ultimatum)</span><span class="nav-fr" style="display:none">Enregistrement 1 — 29 mai 2020 (après l'ultimatum)</span><span class="nav-de" style="display:none">Aufnahme 1 — 29. Mai 2020 (nach dem Ultimatum)</span><span class="nav-uk" style="display:none">Запис 1 — 29 травня 2020 (після ультиматуму)</span></a>
         <a href="#rec-2" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 2 — 2 czerwca 2020 (po piątkowym ultimatum)</span><span class="nav-en" style="display:none">Recording 2 — 2 June 2020 (after Friday's ultimatum)</span><span class="nav-fr" style="display:none">Enregistrement 2 — 2 juin 2020 (après l'ultimatum de vendredi)</span><span class="nav-de" style="display:none">Aufnahme 2 — 2. Juni 2020 (nach dem Freitag-Ultimatum)</span><span class="nav-uk" style="display:none">Запис 2 — 2 червня 2020 (після п'ятничного ультиматуму)</span></a>
         <a href="#rec-3" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 3 — 4 czerwca 2020</span><span class="nav-en" style="display:none">Recording 3 — 4 June 2020</span><span class="nav-fr" style="display:none">Enregistrement 3 — 4 juin 2020</span><span class="nav-de" style="display:none">Aufnahme 3 — 4. Juni 2020</span><span class="nav-uk" style="display:none">Запис 3 — 4 червня 2020</span></a>
-        <a href="#rec-5" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 5 — 10 października 2020 (NN o odejściu z NCN)</span><span class="nav-en" style="display:none">Recording 5 — 10 October 2020 (NN on leaving NCN)</span><span class="nav-fr" style="display:none">Enregistrement 5 — 10 octobre 2020 (NN et son départ du NCN)</span><span class="nav-de" style="display:none">Aufnahme 5 — 10. Oktober 2020 (NN über den Weggang vom NCN)</span><span class="nav-uk" style="display:none">Запис 5 — 10 жовтня 2020 (NN про вихід з NCN)</span></a>
-        <a href="#rec-6" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 6 — 28 sierpnia 2020 (NN broni Mudelsee)</span><span class="nav-en" style="display:none">Recording 6 — 28 August 2020 (NN defends Mudelsee)</span><span class="nav-fr" style="display:none">Enregistrement 6 — 28 août 2020 (NN défend Mudelsee)</span><span class="nav-de" style="display:none">Aufnahme 6 — 28. August 2020 (NN verteidigt Mudelsee)</span><span class="nav-uk" style="display:none">Запис 6 — 28 серпня 2020 (NN захищає Мудельзе)</span></a>
-        <a href="#rec-7a" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 7a — 20 marca 2021 (część A)</span><span class="nav-en" style="display:none">Recording 7a — 20 March 2021 (part A)</span><span class="nav-fr" style="display:none">Enregistrement 7a — 20 mars 2021 (partie A)</span><span class="nav-de" style="display:none">Aufnahme 7a — 20. März 2021 (Teil A)</span><span class="nav-uk" style="display:none">Запис 7a — 20 березня 2021 (частина A)</span></a>
-        <a href="#rec-7b" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 7b — 20 marca 2021 (część B)</span><span class="nav-en" style="display:none">Recording 7b — 20 March 2021 (part B)</span><span class="nav-fr" style="display:none">Enregistrement 7b — 20 mars 2021 (partie B)</span><span class="nav-de" style="display:none">Aufnahme 7b — 20. März 2021 (Teil B)</span><span class="nav-uk" style="display:none">Запис 7b — 20 березня 2021 (частина B)</span></a>
-        <a href="#rec-9" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 9 — NN z Jareniówki (telefon)</span><span class="nav-en" style="display:none">Recording 9 — NN from Jareniówka (phone call)</span><span class="nav-fr" style="display:none">Enregistrement 9 — NN depuis Jareniówka (appel)</span><span class="nav-de" style="display:none">Aufnahme 9 — NN aus Jareniówka (Telefonat)</span><span class="nav-uk" style="display:none">Запис 9 — NN з Яренювки (телефон)</span></a>
-        <a href="#rec-10" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 10 — 30 września 2021 (mechanizm zniszczenia)</span><span class="nav-en" style="display:none">Recording 10 — 30 September 2021 (the destruction mechanism)</span><span class="nav-fr" style="display:none">Enregistrement 10 — 30 septembre 2021 (le mécanisme de destruction)</span><span class="nav-de" style="display:none">Aufnahme 10 — 30. September 2021 (der Zerstörungsmechanismus)</span><span class="nav-uk" style="display:none">Запис 10 — 30 вересня 2021 (механізм знищення)</span></a>
+        <a href="#rec-4" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 4 — 10 października 2020 (NN o odejściu z NCN)</span><span class="nav-en" style="display:none">Recording 4 — 10 October 2020 (NN on leaving NCN)</span><span class="nav-fr" style="display:none">Enregistrement 4 — 10 octobre 2020 (NN et son départ du NCN)</span><span class="nav-de" style="display:none">Aufnahme 4 — 10. Oktober 2020 (NN über den Weggang vom NCN)</span><span class="nav-uk" style="display:none">Запис 4 — 10 жовтня 2020 (NN про вихід з NCN)</span></a>
+        <a href="#rec-5a" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 5a — 20 marca 2021 (część A)</span><span class="nav-en" style="display:none">Recording 5a — 20 March 2021 (part A)</span><span class="nav-fr" style="display:none">Enregistrement 5a — 20 mars 2021 (partie A)</span><span class="nav-de" style="display:none">Aufnahme 5a — 20. März 2021 (Teil A)</span><span class="nav-uk" style="display:none">Запис 5a — 20 березня 2021 (частина A)</span></a>
+        <a href="#rec-5b" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 5b — 20 marca 2021 (część B)</span><span class="nav-en" style="display:none">Recording 5b — 20 March 2021 (part B)</span><span class="nav-fr" style="display:none">Enregistrement 5b — 20 mars 2021 (partie B)</span><span class="nav-de" style="display:none">Aufnahme 5b — 20. März 2021 (Teil B)</span><span class="nav-uk" style="display:none">Запис 5b — 20 березня 2021 (частина B)</span></a>
+        <a href="#rec-6" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 6 — NN z Jareniówki (telefon)</span><span class="nav-en" style="display:none">Recording 6 — NN from Jareniówka (phone call)</span><span class="nav-fr" style="display:none">Enregistrement 6 — NN depuis Jareniówka (appel)</span><span class="nav-de" style="display:none">Aufnahme 6 — NN aus Jareniówka (Telefonat)</span><span class="nav-uk" style="display:none">Запис 6 — NN з Яренювки (телефон)</span></a>
+        <a href="#rec-7" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 7 — 30 września 2021 (mechanizm zniszczenia)</span><span class="nav-en" style="display:none">Recording 7 — 30 September 2021 (the destruction mechanism)</span><span class="nav-fr" style="display:none">Enregistrement 7 — 30 septembre 2021 (le mécanisme de destruction)</span><span class="nav-de" style="display:none">Aufnahme 7 — 30. September 2021 (der Zerstörungsmechanismus)</span><span class="nav-uk" style="display:none">Запис 7 — 30 вересня 2021 (механізм знищення)</span></a>
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
@@ -2454,7 +2586,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>W konkursie NAWA Polskie Powroty 2020 przyznano 12 grantów. Dr Kilarski zajął <strong>13. miejsce</strong> — pierwszy na liście rezerwowej. Identyczny wynik powtórzył się w 2021 roku.</p>
   <h3>Dowody</h3>
   <ul>
-  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">10 nagrań audio</a></strong> (2020–2021) dokumentujących domniemany szantaż, nieuprawniony dostęp do prywatnej korespondencji, rzekomo sfałszowane recenzje (kopia-wklej Mudelsee), domniemany nepotyzm (powiązania Błocki–Liana–UJ) oraz domniemane tuszowanie kontroli NIK.</li>
+  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">7 nagrań audio</a></strong> (2020–2021) dokumentujących domniemany szantaż, nieuprawniony dostęp do prywatnej korespondencji, rzekomo sfałszowane recenzje (kopia-wklej Mudelsee), domniemany nepotyzm (powiązania Błocki–Liana–UJ) oraz domniemane tuszowanie kontroli NIK.</li>
   <li><strong></strong> od osoby NN (1 czerwca 2020) potwierdzający ultimatum Błockiego.</li>
   <li><a href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Chronologiczna korespondencja e-mailowa Kilarski–Błocki–Drąg–NN (2020–2021).</a></li>
   <li><a href="docs/Mudelsee.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Rzekomo sfałszowane recenzje Manfreda Mudelsee w programie GRIEG (metoda kopiuj-wklej).</a></li>
@@ -2477,7 +2609,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>In the 2020 NAWA Polish Returns competition, 12 grants were awarded. Dr. Kilarski ranked <strong>13th</strong> — first alternate. The same result occurred in 2021.</p>
   <h3>Evidence</h3>
   <ul>
-  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">10 audio recordings</a></strong> (2020–2021) documenting alleged blackmail, allegedly unauthorized access to private messages, allegedly falsified reviews (Mudelsee copy-paste), nepotism (Błocki–Liana–UJ connections), and the NIK audit alleged cover-up.</li>
+  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">7 audio recordings</a></strong> (2020–2021) documenting alleged blackmail, allegedly unauthorized access to private messages, allegedly falsified reviews (Mudelsee copy-paste), nepotism (Błocki–Liana–UJ connections), and the NIK audit alleged cover-up.</li>
   <li><strong></strong> from NN (1 June 2020) confirming Błocki's ultimatum.</li>
   <li><a href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Chronological email correspondence Kilarski–Błocki–Drąg–NN (2020–2021).</a></li>
   <li><a href="docs/Mudelsee.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Allegedly falsified reviews by Manfred Mudelsee in the GRIEG programme (copy-paste method).</a></li>
@@ -2500,7 +2632,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Lors du concours NAWA Retours polonais 2020, 12 subventions ont été attribuées. Le Dr Kilarski s'est classé <strong>13e</strong> — premier suppléant. Le même résultat s'est reproduit en 2021.</p>
   <h3>Preuves</h3>
   <ul>
-  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">10 enregistrements audio</a></strong> (2020–2021) documentant le chantage présumé, l'accès non autorisé aux messages privés, les évaluations prétendument falsifiées (copier-coller de Mudelsee), le népotisme présumé (liens Błocki–Liana–UJ) et la dissimulation présumée du contrôle de la NIK.</li>
+  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">7 enregistrements audio</a></strong> (2020–2021) documentant le chantage présumé, l'accès non autorisé aux messages privés, les évaluations prétendument falsifiées (copier-coller de Mudelsee), le népotisme présumé (liens Błocki–Liana–UJ) et la dissimulation présumée du contrôle de la NIK.</li>
   <li><strong></strong> de NN (1er juin 2020) confirmant l'ultimatum de Błocki.</li>
   <li><a href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Correspondance chronologique Kilarski–Błocki–Drąg–NN (2020–2021).</a></li>
   <li><a href="docs/Mudelsee.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Évaluations falsifiées de Manfred Mudelsee dans le programme GRIEG.</a></li>
@@ -2523,7 +2655,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Im NAWA-Wettbewerb Polnische Rückkehr 2020 wurden 12 Förderungen vergeben. Dr. Kilarski belegte <strong>Platz 13</strong> — erster Nachrücker. Das gleiche Ergebnis wiederholte sich 2021.</p>
   <h3>Beweise</h3>
   <ul>
-  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">10 Audioaufnahmen</a></strong> (2020–2021), die mutmaßliche Erpressung, unbefugten Zugriff auf private Nachrichten, mutmaßlich gefälschte Gutachten (Mudelsee-Kopieren), mutmaßliche Vetternwirtschaft (Verbindungen Błocki–Liana–UJ) und die mutmaßliche Vertuschung der NIK-Prüfung dokumentieren.</li>
+  <li><strong><a href="#interview" style="color:inherit;text-decoration:underline">7 Audioaufnahmen</a></strong> (2020–2021), die mutmaßliche Erpressung, unbefugten Zugriff auf private Nachrichten, mutmaßlich gefälschte Gutachten (Mudelsee-Kopieren), mutmaßliche Vetternwirtschaft (Verbindungen Błocki–Liana–UJ) und die mutmaßliche Vertuschung der NIK-Prüfung dokumentieren.</li>
   <li><strong></strong> von NN (1. Juni 2020), die Błockis Ultimatum bestätigt.</li>
   <li><a href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Chronologischer E-Mail-Verkehr Kilarski–Błocki–Drąg–NN (2020–2021).</a></li>
   <li><a href="docs/Mudelsee.pdf" target="_blank" style="color:#c0392b;text-decoration:underline">Mutmaßlich gefälschte Gutachten von Manfred Mudelsee im GRIEG-Programm (Copy-Paste-Methode).</a></li>
@@ -2546,7 +2678,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>У конкурсі NAWA «Польські повернення» 2020 було присуджено 12 грантів. Д-р Кіларський зайняв <strong>13-те місце</strong> — перший у резервному списку. Такий самий результат повторився у 2021 році.</p>
   <h3>Докази</h3>
   <ul>
-  <li><strong>10 аудіозаписів</strong> (2020–2021), що документують ймовірний шантаж, несанкціонований доступ до приватних повідомлень, сфальсифіковані рецензії (метод копіювання Мудельзе), ймовірне кумівство (зв'язки Блоцкі–Ліана–УЯ) та приховування аудиту НІК.</li>
+  <li><strong>7 аудіозаписів</strong> (2020–2021), що документують ймовірний шантаж, несанкціонований доступ до приватних повідомлень, сфальсифіковані рецензії (метод копіювання Мудельзе), ймовірне кумівство (зв'язки Блоцкі–Ліана–УЯ) та приховування аудиту НІК.</li>
   <li><strong>Офіційний електронний лист NCN</strong> від особи NN (1 червня 2020), що підтверджує ультиматум Блоцкого.</li>
   <li>Хронологічне листування Кіларський–Блоцкі–Дрог–NN (2020–2021).</li>
   <li>Сфальсифіковані рецензії Манфреда Мудельзе в програмі GRIEG (метод копіювання).</li>
@@ -3677,15 +3809,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <!-- ==========================================
      SECTION: RECORDINGS 5–10 (added in rebuild)
      ========================================== -->
-<section class="interview-section" id="rec-5">
+<section class="interview-section" id="rec-4">
   <div class="interview-inner">
   <div class="lang-block active" data-lang="pl">
   <div class="section-label">Nagrania</div>
-  <h2>Nagranie 5 — 10 października 2020: NN o chęci odejścia z NCN</h2>
+  <h2>Nagranie 4 — 10 października 2020: NN o chęci odejścia z NCN</h2>
   <p>Nagranie z <strong>10 października 2020 r.</strong> — NN w rozmowie z dr. Kilarskim opowiada o swojej decyzji o odejściu z Narodowego Centrum Nauki. Wyjaśnia atmosferę w NCN po ultimatum Błockiego i narastający nacisk ze strony dyrekcji.</p>
   <p>NN opisuje zarówno konsekwencje, jakie spadły na nią po ujawnieniu domniemanego szantażu, jak i wewnętrzne procedury NCN wobec osób, które nie chcą milczeć. Rozmowa dokumentuje też, że NN wprost mówi o zamiarze odejścia — co potem zostanie potwierdzone e-mailami NCN z przełomu 2020/2021.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Nagranie 5 — 10 października 2020 r.</div>
+    <div class="audio-player-label">Nagranie 4 — 10 października 2020 r.</div>
     <div class="audio-player-meta">NN opowiada o decyzji odejścia z NCN</div>
     <audio controls preload="metadata">
       <source src="docs/5.-10-pazdz-2020_Laura-o-checi-odejscia-z-NCN_2020_10_26_23_19_11.mp3" type="audio/mpeg">
@@ -3707,11 +3839,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
-  <h2>Recording 5 — 10 October 2020: NN on wanting to leave NCN</h2>
+  <h2>Recording 4 — 10 October 2020: NN on wanting to leave NCN</h2>
   <p>Recording from <strong>10 October 2020</strong> — NN, speaking with Dr. Kilarski, describes her decision to leave Poland's National Science Centre. She explains the atmosphere inside NCN after Błocki's ultimatum and the growing pressure from management.</p>
   <p>NN describes both the consequences that befell her after exposing the alleged blackmail and NCN's internal procedures against those who refuse to stay silent. The conversation also documents her explicit statement that she intends to leave — which is later confirmed by NCN emails from the turn of 2020/2021.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Recording 5 — 10 October 2020</div>
+    <div class="audio-player-label">Recording 4 — 10 October 2020</div>
     <div class="audio-player-meta">NN on her decision to leave NCN</div>
     <audio controls preload="metadata">
       <source src="docs/5.-10-pazdz-2020_Laura-o-checi-odejscia-z-NCN_2020_10_26_23_19_11.mp3" type="audio/mpeg">
@@ -3733,11 +3865,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
-  <h2>Enregistrement 5 — 10 octobre 2020 : NN veut quitter le NCN</h2>
+  <h2>Enregistrement 4 — 10 octobre 2020 : NN veut quitter le NCN</h2>
   <p>Enregistrement du <strong>10 octobre 2020</strong> — NN, dans une conversation avec le Dr Kilarski, évoque sa décision de quitter le Centre national des sciences de Pologne. Elle décrit l'atmosphère au sein du NCN après l'ultimatum de Błocki et la pression croissante de la direction.</p>
   <p>NN raconte à la fois les conséquences qu'elle a subies après avoir révélé le chantage présumé et les procédures internes du NCN contre ceux qui refusent de se taire. La conversation documente également son intention explicite de partir — confirmée plus tard par des e-mails du NCN fin 2020/début 2021.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Enregistrement 5 — 10 octobre 2020</div>
+    <div class="audio-player-label">Enregistrement 4 — 10 octobre 2020</div>
     <div class="audio-player-meta">NN et sa décision de quitter le NCN</div>
     <audio controls preload="metadata">
       <source src="docs/5.-10-pazdz-2020_Laura-o-checi-odejscia-z-NCN_2020_10_26_23_19_11.mp3" type="audio/mpeg">
@@ -3748,11 +3880,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
-  <h2>Aufnahme 5 — 10. Oktober 2020: NN will das NCN verlassen</h2>
+  <h2>Aufnahme 4 — 10. Oktober 2020: NN will das NCN verlassen</h2>
   <p>Aufnahme vom <strong>10. Oktober 2020</strong> — NN berichtet im Gespräch mit Dr. Kilarski über ihre Entscheidung, das Nationale Wissenschaftszentrum Polens zu verlassen. Sie schildert die Stimmung im NCN nach Błockis Ultimatum und den wachsenden Druck der Leitung.</p>
   <p>NN beschreibt sowohl die Folgen, die sie nach der Aufdeckung der mutmaßliche Erpressung zu tragen hatte, als auch die internen Verfahren des NCN gegen Personen, die nicht schweigen wollen. Das Gespräch dokumentiert außerdem, dass NN ausdrücklich ihre Abgangsabsicht erklärt — was später durch NCN-E-Mails aus der Jahreswende 2020/2021 bestätigt wird.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Aufnahme 5 — 10. Oktober 2020</div>
+    <div class="audio-player-label">Aufnahme 4 — 10. Oktober 2020</div>
     <div class="audio-player-meta">NN über ihren geplanten Weggang vom NCN</div>
     <audio controls preload="metadata">
       <source src="docs/5.-10-pazdz-2020_Laura-o-checi-odejscia-z-NCN_2020_10_26_23_19_11.mp3" type="audio/mpeg">
@@ -3763,11 +3895,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
-  <h2>Запис 5 — 10 жовтня 2020: NN про бажання піти з NCN</h2>
+  <h2>Запис 4 — 10 жовтня 2020: NN про бажання піти з NCN</h2>
   <p>Запис від <strong>10 жовтня 2020 р.</strong> — NN у розмові з д-ром Кіларським розповідає про своє рішення піти з Національного наукового центру Польщі. Вона описує атмосферу в NCN після ультиматуму Блоцкого та зростаючий тиск з боку керівництва.</p>
   <p>NN розповідає як про наслідки, що спіткали її після розкриття шантажу, так і про внутрішні процедури NCN щодо тих, хто не хоче мовчати. Розмова також документує її прямі слова про намір звільнитися — що пізніше буде підтверджено листами NCN кінця 2020 — початку 2021 рр.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Запис 5 — 10 жовтня 2020 р.</div>
+    <div class="audio-player-label">Запис 4 — 10 жовтня 2020 р.</div>
     <div class="audio-player-meta">NN про рішення піти з NCN</div>
     <audio controls preload="metadata">
       <source src="docs/5.-10-pazdz-2020_Laura-o-checi-odejscia-z-NCN_2020_10_26_23_19_11.mp3" type="audio/mpeg">
@@ -3791,121 +3923,12 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </nav>
 </section>
 
-<section class="interview-section" id="rec-6">
+<section class="interview-section" id="rec-5a">
   <div class="interview-inner">
   <div class="lang-block active" data-lang="pl">
   <div class="section-label">Nagrania</div>
-  <h2>Nagranie 6 — 28 sierpnia 2020: NN broni Mudelsee</h2>
-  <p>Nagranie z <strong>28 sierpnia 2020 r.</strong> — NN, jako kierownik Działu Kontroli Grantów NCN, broni eksperta Manfreda Mudelsee przed dr. Kilarskim. NN tłumaczy mechanizm „kopiuj-wklej" w recenzjach eksperckich i zdradza, że <strong>kilku ekspertów</strong> NCN kopiuje recenzje pomiędzy różnymi wnioskami grantowymi.</p>
-  <p>Rozmowa dokumentuje wewnętrzną wiedzę NCN o nieprawidłowościach w systemie ewaluacji grantów — i jednocześnie instytucjonalną zmowę, w ramach której takie praktyki są tolerowane lub usprawiedliwiane. Jest to dowód w tle dla sprawy Mudelsee oraz dla późniejszej odmowy Błockiego (04.12.2020) zbadania zarzutu.</p>
-  <div class="audio-player-wrap">
-    <div class="audio-player-label">Nagranie 6 — 28 sierpnia 2020 r.</div>
-    <div class="audio-player-meta">NN broni Mudelsee; ujawnia, że kilku ekspertów NCN kopiuje recenzje</div>
-    <audio controls preload="metadata">
-      <source src="docs/6.-zal-4-2009281937-NN-NN-broni-Mandelsiego-28Sierpnia-paru-ekspertow-kopiuje-recenzje.MP3" type="audio/mpeg">
-      Twoja przeglądarka nie obsługuje odtwarzacza audio.
-    </audio>
-  </div>
-
-  <h3>A. Obrona eksperta Mudelsee</h3>
-  <p>NN — z pozycji kierownika Działu Kontroli Grantów NCN — broni recenzenta Manfreda Mudelsee w rozmowie z dr. Kilarskim. Przedstawia tłumaczenie, w ramach którego skopiowanie tych samych fragmentów recenzji do różnych wniosków jest usprawiedliwiane jako technika pracy, a nie naruszenie zasad rzetelności recenzji eksperckiej.</p>
-
-  <h3>B. „Kilku ekspertów kopiuje recenzje" — ujawnienie skali</h3>
-  <p>W toku rozmowy NN ujawnia, że schemat „kopiuj-wklej" w recenzjach NCN nie ogranicza się do jednego przypadku — według jej relacji <strong>kilku ekspertów</strong> NCN kopiuje fragmenty recenzji pomiędzy różnymi wnioskami grantowymi (sygnał o systemowym charakterze problemu). Dokument zbiorczej analizy nagrań sporządzonej przez dr. Kilarskiego wskazuje też na konkretną liczbę: <strong>14 identycznych recenzji</strong> wykrytych w jednym programie.</p>
-
-  <h3>C. Znaczenie nagrania dla sprawy Mudelsee</h3>
-  <p>Nagranie dokumentuje, że w sierpniu 2020 r. — tj. <strong>na cztery miesiące przed</strong> formalną odmową Błockiego (4 grudnia 2020 r.) zbadania zarzutu wobec Mudelsee — wewnętrzny aparat NCN był świadomy schematu „kopiuj-wklej" i zamiast podjąć działania, prezentował narrację usprawiedliwiającą. To kontekst materialny dla późniejszej decyzji dyrekcji.</p>
-
-  <p class="footnote-meta"><em>Uwaga źródłowa:</em> opis odpowiada zbiorczej analizie nagrań przygotowanej przez dr. Witolda Kilarskiego (<code>analiza_nagran_audio_kompletna.docx</code>); nie cytuje się tu surowych fragmentów transkrypcji ze względu na ich wewnętrzny, roboczy charakter — interpretacja konkretnych stwierdzeń wymaga audialnego odsłuchu nagrania.</p>
-  </div>
-  <div class="lang-block" data-lang="en">
-  <div class="section-label">Recordings</div>
-  <h2>Recording 6 — 28 August 2020: NN defends Mudelsee</h2>
-  <p>Recording from <strong>28 August 2020</strong> — NN, Head of NCN's Grants Control Department, defends expert Manfred Mudelsee before Dr. Kilarski. NN explains the "copy-paste" mechanism in expert reviews and reveals that <strong>several NCN experts</strong> copy reviews between different grant applications.</p>
-  <p>The conversation documents NCN's internal awareness of irregularities in the grant evaluation system — and at the same time the institutional complicity under which such practices are tolerated or excused. It provides background evidence for the Mudelsee case and for Błocki's later refusal (4 Dec 2020) to investigate the charge.</p>
-  <div class="audio-player-wrap">
-    <div class="audio-player-label">Recording 6 — 28 August 2020</div>
-    <div class="audio-player-meta">NN defends Mudelsee; reveals several NCN experts copy reviews</div>
-    <audio controls preload="metadata">
-      <source src="docs/6.-zal-4-2009281937-NN-NN-broni-Mandelsiego-28Sierpnia-paru-ekspertow-kopiuje-recenzje.MP3" type="audio/mpeg">
-      Your browser does not support the audio player.
-    </audio>
-  </div>
-
-  <h3>A. Defending the reviewer Mudelsee</h3>
-  <p>From her position as Head of NCN's Grants Control Department, NN defends reviewer Manfred Mudelsee in conversation with Dr. Kilarski. She offers an explanation in which the use of identical text fragments across multiple grant reviews is treated as a working technique rather than a breach of expert-review integrity.</p>
-
-  <h3>B. "Several experts copy reviews" — disclosure of scale</h3>
-  <p>During the conversation NN reveals that the "copy-paste" pattern in NCN reviews is not a single isolated case — according to her account, <strong>several</strong> NCN reviewers copy review fragments across different grant applications, suggesting the issue is systemic. Dr. Kilarski's consolidated analysis of the recordings further records a concrete figure: <strong>14 identical reviews</strong> uncovered within a single funding programme.</p>
-
-  <h3>C. Significance for the Mudelsee case</h3>
-  <p>The recording shows that in August 2020 — i.e. <strong>four months before</strong> Błocki's formal refusal (4 December 2020) to examine the charge against Mudelsee — NCN's internal apparatus was already aware of the copy-paste pattern and, instead of taking action, was advancing a justifying narrative. This is the substantive context for the management's later decision.</p>
-
-  <p class="footnote-meta"><em>Source note:</em> The description matches the consolidated analysis of recordings prepared by Dr. Witold Kilarski (<code>analiza_nagran_audio_kompletna.docx</code>); raw transcript fragments are not quoted here because of their internal, working-document character — interpretation of specific statements requires audio review of the recording.</p>
-  </div>
-  <div class="lang-block" data-lang="fr">
-  <div class="section-label">Enregistrements</div>
-  <h2>Enregistrement 6 — 28 août 2020 : NN défend Mudelsee</h2>
-  <p>Enregistrement du <strong>28 août 2020</strong> — NN, cheffe du Département du contrôle des subventions du NCN, défend l'expert Manfred Mudelsee devant le Dr Kilarski. Elle explique le mécanisme du « copier-coller » dans les évaluations d'experts et révèle que <strong>plusieurs experts</strong> du NCN copient des évaluations entre différentes demandes de subvention.</p>
-  <p>La conversation documente la connaissance interne du NCN quant aux irrégularités du système d'évaluation des subventions — et la complicité institutionnelle qui tolère ou excuse ces pratiques. Elle sert de contexte pour l'affaire Mudelsee et pour le refus ultérieur de Błocki (4 déc. 2020) d'enquêter.</p>
-  <div class="audio-player-wrap">
-    <div class="audio-player-label">Enregistrement 6 — 28 août 2020</div>
-    <div class="audio-player-meta">NN défend Mudelsee ; révèle que plusieurs experts NCN copient des évaluations</div>
-    <audio controls preload="metadata">
-      <source src="docs/6.-zal-4-2009281937-NN-NN-broni-Mandelsiego-28Sierpnia-paru-ekspertow-kopiuje-recenzje.MP3" type="audio/mpeg">
-      Votre navigateur ne prend pas en charge le lecteur audio.
-    </audio>
-  </div>
-  </div>
-  <div class="lang-block" data-lang="de">
-  <div class="section-label">Aufnahmen</div>
-  <h2>Aufnahme 6 — 28. August 2020: NN verteidigt Mudelsee</h2>
-  <p>Aufnahme vom <strong>28. August 2020</strong> — NN, Leiterin der NCN-Abteilung für Förderkontrolle, verteidigt den Gutachter Manfred Mudelsee gegenüber Dr. Kilarski. Sie erklärt den „Kopieren-Einfügen"-Mechanismus in Expertengutachten und verrät, dass <strong>mehrere NCN-Gutachter</strong> Rezensionen zwischen verschiedenen Förderanträgen kopieren.</p>
-  <p>Das Gespräch dokumentiert das interne Wissen des NCN über Unregelmäßigkeiten im Evaluationssystem — und zugleich die institutionelle Mitwisserschaft, unter der solche Praktiken geduldet oder entschuldigt werden. Es liefert den Hintergrund für den Fall Mudelsee und für Błockis spätere Ablehnung (04.12.2020), den Vorwurf zu untersuchen.</p>
-  <div class="audio-player-wrap">
-    <div class="audio-player-label">Aufnahme 6 — 28. August 2020</div>
-    <div class="audio-player-meta">NN verteidigt Mudelsee; enthüllt, dass mehrere NCN-Gutachter Rezensionen kopieren</div>
-    <audio controls preload="metadata">
-      <source src="docs/6.-zal-4-2009281937-NN-NN-broni-Mandelsiego-28Sierpnia-paru-ekspertow-kopiuje-recenzje.MP3" type="audio/mpeg">
-      Ihr Browser unterstützt den Audio-Player nicht.
-    </audio>
-  </div>
-  </div>
-  <div class="lang-block" data-lang="uk">
-  <div class="section-label">Записи</div>
-  <h2>Запис 6 — 28 серпня 2020: NN захищає Мудельзе</h2>
-  <p>Запис від <strong>28 серпня 2020 р.</strong> — NN, керівник Відділу контролю грантів NCN, захищає експерта Манфреда Мудельзе перед д-ром Кіларським. NN пояснює механізм «скопіюй-встав» в експертних рецензіях і зізнається, що <strong>кілька експертів</strong> NCN копіюють рецензії між різними грантовими заявками.</p>
-  <p>Розмова документує внутрішню обізнаність NCN про порушення в системі оцінки грантів — і водночас інституційну змову, за якої такі практики толеруються або виправдовуються. Це фонові докази для справи Мудельзе та для пізнішої відмови Блоцкого (04.12.2020) розслідувати звинувачення.</p>
-  <div class="audio-player-wrap">
-    <div class="audio-player-label">Запис 6 — 28 серпня 2020 р.</div>
-    <div class="audio-player-meta">NN захищає Мудельзе; зізнається, що кілька експертів NCN копіюють рецензії</div>
-    <audio controls preload="metadata">
-      <source src="docs/6.-zal-4-2009281937-NN-NN-broni-Mandelsiego-28Sierpnia-paru-ekspertow-kopiuje-recenzje.MP3" type="audio/mpeg">
-      Ваш браузер не підтримує аудіоплеєр.
-    </audio>
-  </div>
-  </div>
-  </div>
-  <nav class="section-jumpnav" aria-label="Jump to section">
-    <span class="section-jumpnav-label"><span class="nav-pl">Przejdź do:</span><span class="nav-en" style="display:none">Jump to:</span><span class="nav-fr" style="display:none">Aller à :</span><span class="nav-de" style="display:none">Springe zu:</span><span class="nav-uk" style="display:none">Перейти до:</span></span>
-    <a href="#case"><span class="nav-pl">Sprawa</span><span class="nav-en" style="display:none">The Case</span><span class="nav-fr" style="display:none">L'Affaire</span><span class="nav-de" style="display:none">Der Fall</span><span class="nav-uk" style="display:none">Справа</span></a>
-    <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
-    <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
-    <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
-    <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
-    <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
-    <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
-    <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
-  </nav>
-</section>
-
-<section class="interview-section" id="rec-7a">
-  <div class="interview-inner">
-  <div class="lang-block active" data-lang="pl">
-  <div class="section-label">Nagrania</div>
-  <h2>Nagranie 7 (20 marca 2021) — jedna rozmowa w dwóch częściach</h2>
-  <p><strong>Nagranie 7 to jedno, kontynuowane nagranie</strong> z <strong>20 marca 2021 r.</strong>, które — ze względów technicznych — zostało zapisane w dwóch plikach (<strong>7a</strong> i <strong>7b</strong>). W trakcie tej rozmowy dr Witold Kilarski przegrywał osobie NN <strong>jej własne e-maile z NCN</strong> z okresu, gdy kończyła tam pracę.</p>
+  <h2>Nagranie 5 (20 marca 2021) — jedna rozmowa w dwóch częściach</h2>
+  <p><strong>Nagranie 5 to jedno, kontynuowane nagranie</strong> z <strong>20 marca 2021 r.</strong>, które — ze względów technicznych — zostało zapisane w dwóch plikach (<strong>7a</strong> i <strong>7b</strong>). W trakcie tej rozmowy dr Witold Kilarski przegrywał osobie NN <strong>jej własne e-maile z NCN</strong> z okresu, gdy kończyła tam pracę.</p>
   <p>W rozmowie uczestniczyła również <strong>Jolanta Kilarska („Jola")</strong> — małżonka dr. Kilarskiego. Trójstronny charakter rozmowy pozwala prześledzić, jak NN reaguje na konfrontację z własnymi mailami i jak komentuje działania dyrekcji NCN (Błocki, Drąg, Mudelsee) już z perspektywy byłej pracownicy Centrum.</p>
   <p><em>Uwaga:</em> część A (plik mniejszy) to początek rozmowy; część B (plik większy) to bezpośrednia kontynuacja. Aby zachować ciągłość i kontekst wypowiedzi, zalecamy odsłuchanie obu plików w kolejności A → B.</p>
   <p><em>Wersja audio:</em> Aktualna wersja tego nagrania (7a + 7b) została zastąpiona wersją z głównego folderu oryginałów — o wyższej jakości dźwięku niż pierwotnie opublikowana.</p>
@@ -3917,7 +3940,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
   </div>
-  <div id="rec-7b" style="scroll-margin-top:120px;"></div>
+  <div id="rec-5b" style="scroll-margin-top:120px;"></div>
   <div class="audio-player-wrap">
     <div class="audio-player-label">Część B — 7b (20 marca 2021)</div>
     <div class="audio-player-meta">Witold Kilarski, NN i Jolanta Kilarska · przegrywanie maili NN z NCN (część B)</div>
@@ -3931,20 +3954,20 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>Trójstronna rozmowa — dr Witold Kilarski, NN i Jolanta Kilarska — w której Kilarski na bieżąco odtwarza fragmenty maili NN z okresu jej pracy w NCN. Konfrontacja ma charakter dowodowy: NN, już z perspektywy byłej pracownicy, komentuje treść swoich własnych pism, w tym tych, w których relacjonuje przebieg sprawy wniosku NAWA i zachowania dyrekcji NCN.</p>
 
   <h3>B. Fałszowanie recenzji w NCN — sprawa Mudelsee i „14 identycznych recenzji"</h3>
-  <p>W rozmowie pojawia się temat fałszowania recenzji w NCN: skala zjawiska to według ustaleń NN <strong>14 identycznych (kopiuj-wklej) recenzji</strong> wykrytych w jednym programie. Rozmowa stanowi późniejszy, bardziej uporządkowany komentarz NN do tych odkryć (po jej odejściu z NCN), w odróżnieniu od spontanicznego wystąpienia z sierpnia 2020 r. (Nagranie 6).</p>
+  <p>W rozmowie pojawia się temat fałszowania recenzji w NCN: skala zjawiska to według ustaleń NN <strong>14 identycznych (kopiuj-wklej) recenzji</strong> wykrytych w jednym programie. Rozmowa stanowi późniejszy, bardziej uporządkowany komentarz NN do tych odkryć (po jej odejściu z NCN), w odróżnieniu od spontanicznych wypowiedzi z sierpnia 2020 r.</p>
 
   <h3>C. Nierówne traktowanie naukowców i konflikty interesów w Radzie NCN</h3>
   <p>NN porusza również tematy: nierównego traktowania badaczy w toku oceny grantów (z odwołaniem do konkretnych przypadków znanych jej z pracy w Dziale Kontroli) oraz domniemanych konfliktów interesów wewnątrz Rady NCN. Wywody mają charakter referencyjny — NN przywołuje sprawy, które według niej powinny były zakończyć się działaniami dyscyplinarnymi.</p>
 
   <h3>D. Reakcje wewnątrz NCN na ujawnione nieprawidłowości</h3>
-  <p>NN opisuje, jak wewnątrz NCN reagowano na jej kontrole i odkrycia: od cichych upomnień, przez próby przeniesienia odpowiedzialności, po — według jej relacji — działania dyscyplinarne wobec niej samej, gdy nie chciała umorzyć ustaleń. Materiał ten dopełnia obraz instytucjonalny dokumentowany w nagraniach 5 i 6.</p>
+  <p>NN opisuje, jak wewnątrz NCN reagowano na jej kontrole i odkrycia: od cichych upomnień, przez próby przeniesienia odpowiedzialności, po — według jej relacji — działania dyscyplinarne wobec niej samej, gdy nie chciała umorzyć ustaleń. Materiał ten dopełnia obraz instytucjonalny dokumentowany w pozostałych nagraniach z 2020 r.</p>
 
   <p class="footnote-meta"><em>Uwaga źródłowa:</em> rozmowa istnieje w postaci dwóch plików audio (7a, 7b) i automatycznej transkrypcji o niestabilnych etykietach mówców. Przedstawione tu wątki są streszczeniem wniosków zbiorczej analizy nagrań sporządzonej przez dr. Witolda Kilarskiego (<code>analiza_nagran_audio_kompletna.docx</code>). Ze względu na znaczną długość rozmowy nie cytuje się tu pojedynczych fragmentów — w razie sporu interpretacyjnego rozstrzyga audialny zapis nagrania.</p>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
-  <h2>Recording 7 (20 March 2021) — one conversation in two parts</h2>
-  <p><strong>Recording 7 is one continuous conversation</strong> from <strong>20 March 2021</strong>, saved — for technical reasons — in two files (<strong>7a</strong> and <strong>7b</strong>). During this conversation Dr. Witold Kilarski played back to NN <strong>her own NCN emails</strong> from the period when she was leaving NCN.</p>
+  <h2>Recording 5 (20 March 2021) — one conversation in two parts</h2>
+  <p><strong>Recording 5 is one continuous conversation</strong> from <strong>20 March 2021</strong>, saved — for technical reasons — in two files (<strong>7a</strong> and <strong>7b</strong>). During this conversation Dr. Witold Kilarski played back to NN <strong>her own NCN emails</strong> from the period when she was leaving NCN.</p>
   <p><strong>Jolanta Kilarska ("Jola")</strong> — Dr. Kilarski's spouse — also took part in the conversation. The three-way nature of the exchange allows one to follow how NN reacts when confronted with her own emails and how she comments on the actions of NCN's management (Błocki, Drąg, Mudelsee) from the perspective of a former NCN employee.</p>
   <p><em>Note:</em> Part A (the smaller file) is the beginning of the conversation; Part B (the larger file) is its direct continuation. For continuity and context, we recommend listening to both files in A → B order.</p>
   <p><em>Audio version:</em> The current version of this recording (7a + 7b) has been replaced with the version from the main folder of originals — higher-quality audio than the one originally published.</p>
@@ -3969,20 +3992,20 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <p>A three-way conversation — Dr. Witold Kilarski, NN and Jolanta Kilarska — in which Kilarski reads back fragments of NN's NCN emails from the period of her employment. The confrontation is evidentiary in character: NN, now a former employee, comments on the content of her own messages, including those in which she described the NAWA application affair and management's conduct.</p>
 
   <h3>B. Falsified reviews at NCN — the Mudelsee case and "14 identical reviews"</h3>
-  <p>The conversation returns to the falsification of reviews at NCN: the scale, according to NN's findings, was <strong>14 identical (copy-paste) reviews</strong> uncovered within one funding programme. The recording offers a later, more orderly commentary by NN on those discoveries (after her departure from NCN), in contrast with her spontaneous statements of August 2020 (Recording 6).</p>
+  <p>The conversation returns to the falsification of reviews at NCN: the scale, according to NN's findings, was <strong>14 identical (copy-paste) reviews</strong> uncovered within one funding programme. The recording offers a later, more orderly commentary by NN on those discoveries (after her departure from NCN), in contrast with her spontaneous statements of August 2020.</p>
 
   <h3>C. Unequal treatment of researchers and conflicts of interest in the NCN Council</h3>
   <p>NN also addresses unequal treatment of researchers in grant evaluation (referring to specific cases she knew from her work in the Control Department) and alleged conflicts of interest within the NCN Council. Her reasoning is referential — she invokes cases which, in her view, should have led to disciplinary action.</p>
 
   <h3>D. Internal NCN reactions to the disclosed irregularities</h3>
-  <p>NN describes the internal reactions to her audits and discoveries: from quiet warnings, through attempts to shift responsibility, to — by her account — disciplinary measures aimed at her when she refused to drop her findings. This material rounds out the institutional picture documented in Recordings 5 and 6.</p>
+  <p>NN describes the internal reactions to her audits and discoveries: from quiet warnings, through attempts to shift responsibility, to — by her account — disciplinary measures aimed at her when she refused to drop her findings. This material rounds out the institutional picture documented in the other 2020 recordings.</p>
 
   <p class="footnote-meta"><em>Source note:</em> The conversation exists as two audio files (7a, 7b) and an automatic transcript with unstable speaker labels. The themes summarised here follow the consolidated analysis of recordings prepared by Dr. Witold Kilarski (<code>analiza_nagran_audio_kompletna.docx</code>). Given the conversation's length, no single passage is quoted here; in case of interpretive dispute, the audio file is decisive.</p>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
-  <h2>Enregistrement 7 (20 mars 2021) — une conversation en deux parties</h2>
-  <p><strong>L'enregistrement 7 est une seule et même conversation continue</strong> du <strong>20 mars 2021</strong>, enregistrée — pour des raisons techniques — dans deux fichiers (<strong>7a</strong> et <strong>7b</strong>). Au cours de cette conversation, le Dr Witold Kilarski a fait écouter à NN <strong>ses propres e-mails du NCN</strong> datant de la période où elle quittait le NCN.</p>
+  <h2>Enregistrement 5 (20 mars 2021) — une conversation en deux parties</h2>
+  <p><strong>L'enregistrement 5 est une seule et même conversation continue</strong> du <strong>20 mars 2021</strong>, enregistrée — pour des raisons techniques — dans deux fichiers (<strong>7a</strong> et <strong>7b</strong>). Au cours de cette conversation, le Dr Witold Kilarski a fait écouter à NN <strong>ses propres e-mails du NCN</strong> datant de la période où elle quittait le NCN.</p>
   <p><strong>Jolanta Kilarska (« Jola »)</strong> — épouse du Dr Kilarski — a également participé à la conversation. Le caractère tripartite de l'échange permet de suivre la réaction de NN lorsqu'elle est confrontée à ses propres e-mails et ses commentaires sur les actions de la direction du NCN (Błocki, Drąg, Mudelsee) depuis la perspective d'une ancienne employée.</p>
   <p><em>Remarque :</em> la partie A (fichier plus petit) est le début de la conversation ; la partie B (fichier plus grand) en est la suite directe. Pour la continuité et le contexte, nous recommandons d'écouter les deux fichiers dans l'ordre A → B.</p>
   <p><em>Version audio :</em> La version actuelle de cet enregistrement (7a + 7b) a été remplacée par la version issue du dossier principal des originaux — de meilleure qualité sonore que celle initialement publiée.</p>
@@ -4005,8 +4028,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
-  <h2>Aufnahme 7 (20. März 2021) — ein Gespräch in zwei Teilen</h2>
-  <p><strong>Aufnahme 7 ist ein einziges, fortlaufendes Gespräch</strong> vom <strong>20. März 2021</strong>, das — aus technischen Gründen — in zwei Dateien gespeichert wurde (<strong>7a</strong> und <strong>7b</strong>). Während dieses Gesprächs spielte Dr. Witold Kilarski NN <strong>ihre eigenen NCN-E-Mails</strong> aus der Zeit vor, als sie das NCN verließ.</p>
+  <h2>Aufnahme 5 (20. März 2021) — ein Gespräch in zwei Teilen</h2>
+  <p><strong>Aufnahme 5 ist ein einziges, fortlaufendes Gespräch</strong> vom <strong>20. März 2021</strong>, das — aus technischen Gründen — in zwei Dateien gespeichert wurde (<strong>7a</strong> und <strong>7b</strong>). Während dieses Gesprächs spielte Dr. Witold Kilarski NN <strong>ihre eigenen NCN-E-Mails</strong> aus der Zeit vor, als sie das NCN verließ.</p>
   <p>An dem Gespräch nahm außerdem <strong>Jolanta Kilarska („Jola")</strong> — die Ehefrau von Dr. Kilarski — teil. Der dreiseitige Charakter des Austauschs ermöglicht es nachzuvollziehen, wie NN auf die Konfrontation mit ihren eigenen E-Mails reagiert und wie sie — nun als ehemalige NCN-Mitarbeiterin — die Handlungen der NCN-Leitung (Błocki, Drąg, Mudelsee) kommentiert.</p>
   <p><em>Hinweis:</em> Teil A (die kleinere Datei) ist der Anfang des Gesprächs; Teil B (die größere Datei) ist seine unmittelbare Fortsetzung. Für Kontinuität und Kontext empfehlen wir, beide Dateien in der Reihenfolge A → B anzuhören.</p>
   <p><em>Audio-Version:</em> Die aktuelle Version dieser Aufnahme (7a + 7b) wurde durch die Version aus dem Hauptordner der Originale ersetzt — mit besserer Tonqualität als die ursprünglich veröffentlichte.</p>
@@ -4029,8 +4052,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
-  <h2>Запис 7 (20 березня 2021) — одна розмова у двох частинах</h2>
-  <p><strong>Запис 7 — це одна безперервна розмова</strong> від <strong>20 березня 2021 р.</strong>, яка — з технічних причин — була збережена у двох файлах (<strong>7a</strong> і <strong>7b</strong>). Під час цієї розмови д-р Вітольд Кіларський відтворював особі NN <strong>її власні листи з NCN</strong> із періоду, коли вона завершувала роботу в NCN.</p>
+  <h2>Запис 5 (20 березня 2021) — одна розмова у двох частинах</h2>
+  <p><strong>Запис 5 — це одна безперервна розмова</strong> від <strong>20 березня 2021 р.</strong>, яка — з технічних причин — була збережена у двох файлах (<strong>7a</strong> і <strong>7b</strong>). Під час цієї розмови д-р Вітольд Кіларський відтворював особі NN <strong>її власні листи з NCN</strong> із періоду, коли вона завершувала роботу в NCN.</p>
   <p>У розмові також брала участь <strong>Йоланта Кіларська («Йоля»)</strong> — дружина д-ра Кіларського. Трьохсторонній характер обміну дозволяє простежити, як NN реагує на конфронтацію зі своїми власними листами та як коментує дії керівництва NCN (Блоцкі, Дронг, Мудельзе) вже з позиції колишньої співробітниці.</p>
   <p><em>Примітка:</em> частина A (менший файл) — початок розмови; частина B (більший файл) — її безпосереднє продовження. Для збереження неперервності та контексту рекомендуємо слухати обидва файли по черзі A → B.</p>
   <p><em>Аудіоверсія:</em> Поточна версія цього запису (7a + 7b) замінена версією з головної теки оригіналів — вищої якості звуку, ніж опублікована раніше.</p>
@@ -4066,15 +4089,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </nav>
 </section>
 
-<section class="interview-section" id="rec-9">
+<section class="interview-section" id="rec-6">
   <div class="interview-inner">
   <div class="lang-block active" data-lang="pl">
   <div class="section-label">Nagrania</div>
-  <h2>Nagranie 9 — telefon NN z Jareniówki</h2>
+  <h2>Nagranie 6 — telefon NN z Jareniówki</h2>
   <p>Telefoniczne nagranie — NN dzwoni do dr. Kilarskiego z <strong>Jareniówki</strong>. Krótsze od innych rozmów, ale istotne ze względu na szczerość i bezpośredni ton: NN mówi spontanicznie, bez formalnego kontekstu spotkania w NCN.</p>
   <p>W tym materiale znajdują się wypowiedzi, w których NN potwierdza wcześniejsze relacje dotyczące nacisków ze strony dyrekcji NCN oraz wyraża własne odczucia wobec tego, co się wydarzyło. Jest to głos prywatny — uzupełnienie nagrań wykonanych w pracy.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Nagranie 9 — telefon NN z Jareniówki</div>
+    <div class="audio-player-label">Nagranie 6 — telefon NN z Jareniówki</div>
     <div class="audio-player-meta">Rozmowa telefoniczna: NN do dr. Witolda Kilarskiego</div>
     <audio controls preload="metadata">
       <source src="docs/9.-Lara-tel-do-mnie-Jareniowki_AUD-20231216-WA0001.m4a" type="audio/mp4">
@@ -4098,15 +4121,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <h3>E. Drąg jako „duża ryba" na uczelni — paralele z aferą Macchiariniego</h3>
   <p>NN przywołuje sprawę Paolo Macchiariniego (skompromitowany lekarz związany z Karolinska Institute) jako analogię i ocenia, że prof. Drąg ma na swojej uczelni status osoby, której instytucja będzie bronić „murem" ze względu na pozyskiwane przez niego środki na badania. Wniosek NN: konflikt z taką osobą wymaga drogi procesowej, nie publicystycznej.</p>
 
-  <p class="footnote-meta"><em>Uwaga źródłowa:</em> opis odpowiada streszczeniu rozdziału IV „Szczegółowa analiza nagrania nr 9" w dokumencie <code>analiza_nagran_audio_kompletna.docx</code> sporządzonym przez dr. Witolda Kilarskiego. Nazwiska osób trzecich są ograniczone do osób publicznych pełniących funkcje instytucjonalne; pozostałe osoby (w tym wcześniejsza planowana współpracowniczka grantu NAWA) pozostają tu anonimizowane.</p>
+  <p class="footnote-meta"><em>Uwaga źródłowa:</em> opis odpowiada streszczeniu rozdziału IV „Szczegółowa analiza nagrania nr 9" w dokumencie <code>analiza_nagran_audio_kompletna.docx</code> sporządzonym przez dr. Witolda Kilarskiego (dokument źródłowy używa pierwotnej numeracji 1–10 całego zbioru nagrań; na stronie ta sama rozmowa publikowana jest jako Nagranie 6). Nazwiska osób trzecich są ograniczone do osób publicznych pełniących funkcje instytucjonalne; pozostałe osoby (w tym wcześniejsza planowana współpracowniczka grantu NAWA) pozostają tu anonimizowane.</p>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
-  <h2>Recording 9 — NN's phone call from Jareniówka</h2>
+  <h2>Recording 6 — NN's phone call from Jareniówka</h2>
   <p>Phone recording — NN calls Dr. Kilarski from <strong>Jareniówka</strong>. Shorter than the other conversations, but important for its candor and direct tone: NN speaks spontaneously, without the formal context of an NCN meeting.</p>
   <p>The material contains statements in which NN confirms earlier accounts of pressure from NCN management and expresses her own feelings about what happened. It is a private voice — a complement to the recordings made at work.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Recording 9 — NN's phone call from Jareniówka</div>
+    <div class="audio-player-label">Recording 6 — NN's phone call from Jareniówka</div>
     <div class="audio-player-meta">Phone call: NN to Dr. Witold Kilarski</div>
     <audio controls preload="metadata">
       <source src="docs/9.-Lara-tel-do-mnie-Jareniowki_AUD-20231216-WA0001.m4a" type="audio/mp4">
@@ -4130,15 +4153,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <h3>E. Drąg as a "big fish" in his institution — parallels to the Macchiarini affair</h3>
   <p>NN draws an analogy with the Paolo Macchiarini case (a compromised researcher associated with the Karolinska Institute) and assesses that Prof. Drąg occupies, within his university, the position of someone the institution will defend "as a wall" because of the research funding he brings in. NN's conclusion: a conflict with such a person calls for a court route, not a public-commentary one.</p>
 
-  <p class="footnote-meta"><em>Source note:</em> The description follows the summary in Section IV "Detailed analysis of Recording 9" of the document <code>analiza_nagran_audio_kompletna.docx</code> prepared by Dr. Witold Kilarski. Third-party names are limited to public figures holding institutional roles; other individuals (including the earlier-planned NAWA collaborator) remain anonymised here.</p>
+  <p class="footnote-meta"><em>Source note:</em> The description follows the summary in Section IV "Detailed analysis of recording no. 9" of the document <code>analiza_nagran_audio_kompletna.docx</code> prepared by Dr. Witold Kilarski (the source document uses the original 1–10 numbering of the full set of recordings; on this site the same conversation is published as Recording 6). Third-party names are limited to public figures holding institutional roles; other individuals (including the earlier-planned NAWA collaborator) remain anonymised here.</p>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
-  <h2>Enregistrement 9 — appel de NN depuis Jareniówka</h2>
+  <h2>Enregistrement 6 — appel de NN depuis Jareniówka</h2>
   <p>Enregistrement téléphonique — NN appelle le Dr Kilarski depuis <strong>Jareniówka</strong>. Plus court que les autres conversations, mais significatif par sa franchise et son ton direct : NN parle spontanément, sans le cadre formel d'une réunion au NCN.</p>
   <p>On y trouve des déclarations dans lesquelles NN confirme ses récits antérieurs sur les pressions de la direction du NCN et exprime son propre ressenti. C'est une voix privée — un complément aux enregistrements faits sur le lieu de travail.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Enregistrement 9 — appel de NN depuis Jareniówka</div>
+    <div class="audio-player-label">Enregistrement 6 — appel de NN depuis Jareniówka</div>
     <div class="audio-player-meta">Appel téléphonique : NN au Dr Witold Kilarski</div>
     <audio controls preload="metadata">
       <source src="docs/9.-Lara-tel-do-mnie-Jareniowki_AUD-20231216-WA0001.m4a" type="audio/mp4">
@@ -4149,11 +4172,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
-  <h2>Aufnahme 9 — NN Telefonanruf aus Jareniówka</h2>
+  <h2>Aufnahme 6 — NN Telefonanruf aus Jareniówka</h2>
   <p>Telefonaufnahme — NN ruft Dr. Kilarski aus <strong>Jareniówka</strong> an. Kürzer als die anderen Gespräche, aber wichtig wegen ihrer Offenheit und Direktheit: NN spricht spontan, ohne den formalen Rahmen eines NCN-Treffens.</p>
   <p>Das Material enthält Aussagen, in denen NN frühere Berichte über den Druck der NCN-Leitung bestätigt und ihre eigenen Gefühle zu den Ereignissen ausdrückt. Es ist eine private Stimme — eine Ergänzung zu den Aufnahmen am Arbeitsplatz.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Aufnahme 9 — NN Anruf aus Jareniówka</div>
+    <div class="audio-player-label">Aufnahme 6 — NN Anruf aus Jareniówka</div>
     <div class="audio-player-meta">Telefongespräch: NN an Dr. Witold Kilarski</div>
     <audio controls preload="metadata">
       <source src="docs/9.-Lara-tel-do-mnie-Jareniowki_AUD-20231216-WA0001.m4a" type="audio/mp4">
@@ -4164,11 +4187,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
-  <h2>Запис 9 — телефонний дзвінок NN з Яренювки</h2>
+  <h2>Запис 6 — телефонний дзвінок NN з Яренювки</h2>
   <p>Телефонний запис — NN телефонує д-ру Кіларському з <strong>Яренювки</strong>. Коротший за інші розмови, але важливий щирістю та прямотою тону: NN говорить спонтанно, поза формальними рамками зустрічі в NCN.</p>
   <p>У матеріалі містяться висловлювання, в яких NN підтверджує попередні розповіді про тиск з боку керівництва NCN і висловлює власні відчуття щодо того, що сталося. Це приватний голос — доповнення до записів, зроблених на робочому місці.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Запис 9 — дзвінок NN з Яренювки</div>
+    <div class="audio-player-label">Запис 6 — дзвінок NN з Яренювки</div>
     <div class="audio-player-meta">Телефонна розмова: NN до д-ра Вітольда Кіларського</div>
     <audio controls preload="metadata">
       <source src="docs/9.-Lara-tel-do-mnie-Jareniowki_AUD-20231216-WA0001.m4a" type="audio/mp4">
@@ -4192,15 +4215,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </nav>
 </section>
 
-<section class="interview-section" id="rec-10">
+<section class="interview-section" id="rec-7">
   <div class="interview-inner">
   <div class="lang-block active" data-lang="pl">
   <div class="section-label">Nagrania</div>
-  <h2>Nagranie 10 — 30 września 2021: mechanizm zniszczenia Witolda</h2>
+  <h2>Nagranie 7 — 30 września 2021: mechanizm zniszczenia Witolda</h2>
   <p>Nagranie z <strong>30 września 2021 r.</strong> (godz. 11:49) — NN opowiada, jaki <strong>mógł być mechanizm zniszczenia dr. Witolda Kilarskiego</strong> przez dyrektora NCN Zbigniewa Błockiego i prof. Marcina Drąga. Jest to późne, zbiorcze spojrzenie NN — już po odejściu z NCN — na cały proces: od ultimatum z 29 maja 2020 r. aż po wykluczenie Kilarskiego ze środowiska naukowego.</p>
   <p>NN rekonstruuje konkretne kroki: wpływ Drąga na decyzje NCN, wykorzystanie pozycji Błockiego do zamknięcia niezależnym osobom dostępu do grantów, oraz rolę represji procesowych (sądy, pozwy cywilne, wyroki). Nagranie jest jednym z najważniejszych podsumowań sprawy z ust osoby, która była wewnątrz aparatu.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Nagranie 10 — 30 września 2021, godz. 11:49</div>
+    <div class="audio-player-label">Nagranie 7 — 30 września 2021, godz. 11:49</div>
     <div class="audio-player-meta">NN o mechanizmie zniszczenia Kilarskiego przez Błockiego i Drąga</div>
     <audio controls preload="metadata">
       <source src="docs/10.-AUDIO-2021-09-30-11-49-07-NN-opowiada-jaki-mogl-byc-mechanizm-zniszczenia-WItka-przez-Blockiego-i-Draga_sss.mp3" type="audio/mpeg">
@@ -4247,15 +4270,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <h3>F. NN nie chce zeznawać — granica osobista</h3>
   <p>Pod naciskiem dr. Kilarskiego NN tłumaczy, dlaczego nie chce składać zeznań w sprawie. Nie kwestionuje ustaleń, ale wprost stawia granicę: woli „odejść" od osób i sytuacji, które działają na nią negatywnie, zamiast „walczyć". Stawia przy tym granicę czasową — „Błocki przestanie być dyrektorem za dwa lata". Dr Kilarski w nagraniu nie akceptuje tej biernej postawy i zapowiada „frontalny atak" jako jedyną — w jego ocenie — możliwość obrony.</p>
 
-  <p class="footnote-meta"><em>Uwaga źródłowa:</em> opis i cytaty pochodzą z rozdziału V „Szczegółowa analiza nagrania nr 10" w dokumencie <code>analiza_nagran_audio_kompletna.docx</code> sporządzonym przez dr. Witolda Kilarskiego. Z opisu wyłączono wątki prywatne i niezwiązane ze sprawą NCN (m.in. fragment, w którym dr Kilarski opowiada o grze z synem na Xboxie). Wątki, w których NN — będąc osobą poszkodowaną — przekazuje informacje uzyskane od Z.B., są oznaczone jako cytat NN ze słów Z.B.</p>
+  <p class="footnote-meta"><em>Uwaga źródłowa:</em> opis i cytaty pochodzą z rozdziału V „Szczegółowa analiza nagrania nr 10" w dokumencie <code>analiza_nagran_audio_kompletna.docx</code> sporządzonym przez dr. Witolda Kilarskiego (dokument źródłowy używa pierwotnej numeracji 1–10 całego zbioru nagrań; na stronie ta sama rozmowa publikowana jest jako Nagranie 7). Z opisu wyłączono wątki prywatne i niezwiązane ze sprawą NCN (m.in. fragment, w którym dr Kilarski opowiada o grze z synem na Xboxie). Wątki, w których NN — będąc osobą poszkodowaną — przekazuje informacje uzyskane od Z.B., są oznaczone jako cytat NN ze słów Z.B.</p>
   </div>
   <div class="lang-block" data-lang="en">
   <div class="section-label">Recordings</div>
-  <h2>Recording 10 — 30 September 2021: the mechanism of Witold's destruction</h2>
+  <h2>Recording 7 — 30 September 2021: the mechanism of Witold's destruction</h2>
   <p>Recording from <strong>30 September 2021</strong> (11:49) — NN explains what <strong>the mechanism of Dr. Witold Kilarski's destruction</strong> by NCN Director Zbigniew Błocki and Prof. Marcin Drąg <strong>may have been</strong>. It is a late, summarising view from NN — already a former NCN employee — covering the whole process: from the 29 May 2020 ultimatum to Kilarski's exclusion from academia.</p>
   <p>NN reconstructs specific steps: Drąg's influence on NCN decisions, Błocki's use of his position to close off grant access to independent voices, and the role of procedural reprisals (courts, civil lawsuits, verdicts). It is one of the most important summaries of the case delivered by someone who was inside the apparatus.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Recording 10 — 30 September 2021, 11:49</div>
+    <div class="audio-player-label">Recording 7 — 30 September 2021, 11:49</div>
     <div class="audio-player-meta">NN on the mechanism of Kilarski's destruction by Błocki and Drąg</div>
     <audio controls preload="metadata">
       <source src="docs/10.-AUDIO-2021-09-30-11-49-07-NN-opowiada-jaki-mogl-byc-mechanizm-zniszczenia-WItka-przez-Blockiego-i-Draga_sss.mp3" type="audio/mpeg">
@@ -4302,15 +4325,15 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <h3>F. NN does not want to give testimony — a personal limit</h3>
   <p>Pressed by Dr. Kilarski, NN explains why she does not want to testify in court. She does not contest the findings, but draws a personal line: she prefers to "walk away" from people and situations that affect her negatively, rather than to fight. She also draws a temporal line — "Błocki will stop being director in two years". On the recording, Dr. Kilarski does not accept this passive stance and announces a "frontal attack" as, in his view, the only available form of defence.</p>
 
-  <p class="footnote-meta"><em>Source note:</em> Description and quotations are drawn from Section V "Detailed analysis of Recording 10" in the document <code>analiza_nagran_audio_kompletna.docx</code> prepared by Dr. Witold Kilarski. Excluded from the description are private threads unrelated to the NCN case (including a passage in which Dr. Kilarski recounts playing a video game with his son). Where NN — as the affected person — relays information she received from Z.B., the passage is marked as NN quoting Z.B.</p>
+  <p class="footnote-meta"><em>Source note:</em> Description and quotations are drawn from Section V "Detailed analysis of Recording no. 10" in the document <code>analiza_nagran_audio_kompletna.docx</code> prepared by Dr. Witold Kilarski (the source document uses the original 1–10 numbering of the full set of recordings; on this site the same conversation is published as Recording 7). Excluded from the description are private threads unrelated to the NCN case (including a passage in which Dr. Kilarski recounts playing a video game with his son). Where NN — as the affected person — relays information she received from Z.B., the passage is marked as NN quoting Z.B.</p>
   </div>
   <div class="lang-block" data-lang="fr">
   <div class="section-label">Enregistrements</div>
-  <h2>Enregistrement 10 — 30 septembre 2021 : le mécanisme de destruction de Witold</h2>
+  <h2>Enregistrement 7 — 30 septembre 2021 : le mécanisme de destruction de Witold</h2>
   <p>Enregistrement du <strong>30 septembre 2021</strong> (11h49) — NN expose <strong>ce qu'aurait pu être le mécanisme de destruction du Dr Witold Kilarski</strong> par le directeur du NCN Zbigniew Błocki et le Prof. Marcin Drąg. C'est une vue tardive et synthétique de NN — désormais ancienne employée du NCN — sur tout le processus : de l'ultimatum du 29 mai 2020 à l'exclusion de Kilarski du monde académique.</p>
   <p>NN reconstruit les étapes concrètes : l'influence de Drąg sur les décisions du NCN, l'usage par Błocki de sa position pour couper l'accès aux subventions aux voix indépendantes, et le rôle des représailles procédurales (tribunaux, procès civils, verdicts). C'est l'une des synthèses les plus importantes de l'affaire venant de l'intérieur de l'appareil.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Enregistrement 10 — 30 septembre 2021, 11h49</div>
+    <div class="audio-player-label">Enregistrement 7 — 30 septembre 2021, 11h49</div>
     <div class="audio-player-meta">NN sur le mécanisme de destruction de Kilarski par Błocki et Drąg</div>
     <audio controls preload="metadata">
       <source src="docs/10.-AUDIO-2021-09-30-11-49-07-NN-opowiada-jaki-mogl-byc-mechanizm-zniszczenia-WItka-przez-Blockiego-i-Draga_sss.mp3" type="audio/mpeg">
@@ -4321,11 +4344,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="de">
   <div class="section-label">Aufnahmen</div>
-  <h2>Aufnahme 10 — 30. September 2021: der Mechanismus der Zerstörung Witolds</h2>
+  <h2>Aufnahme 7 — 30. September 2021: der Mechanismus der Zerstörung Witolds</h2>
   <p>Aufnahme vom <strong>30. September 2021</strong> (11:49) — NN erläutert, wie <strong>der Mechanismus der Zerstörung von Dr. Witold Kilarski</strong> durch NCN-Direktor Zbigniew Błocki und Prof. Marcin Drąg <strong>ausgesehen haben könnte</strong>. Es ist eine späte, zusammenfassende Sicht NN — bereits als ehemalige NCN-Mitarbeiterin — auf den gesamten Prozess: vom Ultimatum am 29. Mai 2020 bis zur Verdrängung Kilarskis aus der Wissenschaft.</p>
   <p>NN rekonstruiert konkrete Schritte: Drągs Einfluss auf NCN-Entscheidungen, Błockis Nutzung seiner Position, um unabhängigen Stimmen den Zugang zu Fördermitteln zu verschließen, und die Rolle verfahrensrechtlicher Repressalien (Gerichte, Zivilklagen, Urteile). Es ist eine der wichtigsten Zusammenfassungen des Falls aus dem Inneren des Apparats.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Aufnahme 10 — 30. September 2021, 11:49</div>
+    <div class="audio-player-label">Aufnahme 7 — 30. September 2021, 11:49</div>
     <div class="audio-player-meta">NN über den Mechanismus der Zerstörung Kilarskis durch Błocki und Drąg</div>
     <audio controls preload="metadata">
       <source src="docs/10.-AUDIO-2021-09-30-11-49-07-NN-opowiada-jaki-mogl-byc-mechanizm-zniszczenia-WItka-przez-Blockiego-i-Draga_sss.mp3" type="audio/mpeg">
@@ -4336,11 +4359,11 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
   <div class="lang-block" data-lang="uk">
   <div class="section-label">Записи</div>
-  <h2>Запис 10 — 30 вересня 2021: механізм знищення Вітольда</h2>
+  <h2>Запис 7 — 30 вересня 2021: механізм знищення Вітольда</h2>
   <p>Запис від <strong>30 вересня 2021 р.</strong> (11:49) — NN розповідає, <strong>яким міг бути механізм знищення д-ра Вітольда Кіларського</strong> директором NCN Збігнєвом Блоцкім і проф. Марціном Дрогом. Це пізніший, узагальнюючий погляд NN — вже колишньої співробітниці NCN — на весь процес: від ультиматуму 29 травня 2020 р. до витіснення Кіларського з наукового середовища.</p>
   <p>NN реконструює конкретні кроки: вплив Дрога на рішення NCN, використання Блоцкім своєї посади, щоб закрити незалежним голосам доступ до грантів, і роль процесуальних репресій (суди, цивільні позови, вироки). Це одне з найважливіших узагальнень справи з вуст особи, яка була всередині апарату.</p>
   <div class="audio-player-wrap">
-    <div class="audio-player-label">Запис 10 — 30 вересня 2021, 11:49</div>
+    <div class="audio-player-label">Запис 7 — 30 вересня 2021, 11:49</div>
     <div class="audio-player-meta">NN про механізм знищення Кіларського Блоцкім і Дрогом</div>
     <audio controls preload="metadata">
       <source src="docs/10.-AUDIO-2021-09-30-11-49-07-NN-opowiada-jaki-mogl-byc-mechanizm-zniszczenia-WItka-przez-Blockiego-i-Draga_sss.mp3" type="audio/mpeg">
@@ -4677,8 +4700,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <p class="doc-desc doc-desc-above">Pełna chronologiczna rekonstrukcja korespondencji e-mailowej między dr. Kilarskim, Błockim, prof. Drągiem oraz osobą NN w latach 2020–2021.</p>
 <li class="doc-item"><span class="doc-number">2.</span><img class="doc-thumb" src="docs/thumb-Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.jpg" alt="" loading="lazy"><span><span class="doc-label">Chronologiczna korespondencja mailowa Kilarski-Błocki-Drąg-NN (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
 <p class="doc-desc doc-desc-below">Dokument pokazuje sekwencję zdarzeń i reakcje poszczególnych uczestników na ultimatum oraz późniejsze próby wyciszenia sprawy. Użyteczny do śledzenia, kto i kiedy wiedział.</p>
-<p class="doc-desc doc-desc-above">Kompletna analiza 10 nagrań audio (2020–2021): transkrypcje, kontekst i powiązania między wątkami domniemanego szantażu, nepotyzmu i rzekomo sfałszowanych recenzji.</p>
-<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Kompletna analiza 10 nagrań audio — dowody domniemanego szantażu i korupcji w NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
+<p class="doc-desc doc-desc-above">Kompletna analiza 7 nagrań audio (2020–2021): transkrypcje, kontekst i powiązania między wątkami domniemanego szantażu, nepotyzmu i rzekomo sfałszowanych recenzji.</p>
+<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Kompletna analiza 7 nagrań audio — dowody domniemanego szantażu i korupcji w NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
 <p class="doc-desc doc-desc-below">Dokument ujednolica wszystkie nagrania w jeden zestaw dowodów, z przypisami do konkretnych fragmentów czasowych. Jest przewodnikiem po materiale audio dla śledczych i dziennikarzy.</p>
 <p class="doc-desc doc-desc-above">Apelacja dr. Kilarskiego od wyroku sądu pierwszej instancji w sprawie II K 321/23/P — sprawa cywilna wniesiona przez NCN/Błockiego przeciwko sygnaliście.</p>
 <li class="doc-item"><span class="doc-number">4.</span><img class="doc-thumb" src="docs/thumb-Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.jpg" alt="" loading="lazy"><span><span class="doc-label">Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Podgląd</a><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Pobierz</a></div></span></li>
@@ -4721,8 +4744,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <p class="doc-desc doc-desc-above">A complete chronological reconstruction of email correspondence between Dr. Kilarski, Błocki, Prof. Drąg and NN across 2020–2021.</p>
 <li class="doc-item"><span class="doc-number">2.</span><img class="doc-thumb" src="docs/thumb-Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.jpg" alt="" loading="lazy"><span><span class="doc-label">Chronological email correspondence Kilarski-Błocki-Drąg-NN (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
 <p class="doc-desc doc-desc-below">The document shows the sequence of events and the reactions of each participant to the ultimatum and the subsequent attempts to bury the case. Useful for tracking who knew what and when.</p>
-<p class="doc-desc doc-desc-above">A complete analysis of the 10 audio recordings (2020–2021): transcripts, context, and connections between the threads of alleged blackmail, alleged nepotism and allegedly falsified reviews.</p>
-<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Complete analysis of 10 audio recordings — evidence of alleged blackmail and alleged corruption at NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<p class="doc-desc doc-desc-above">A complete analysis of the 7 audio recordings (2020–2021): transcripts, context, and connections between the threads of alleged blackmail, alleged nepotism and allegedly falsified reviews.</p>
+<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Complete analysis of 7 audio recordings — evidence of alleged blackmail and alleged corruption at NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
 <p class="doc-desc doc-desc-below">The document consolidates all the recordings into a single evidence set, with references to specific time fragments. It is a guide through the audio material for investigators and journalists.</p>
 <p class="doc-desc doc-desc-above">Dr. Kilarski's appeal against the first-instance verdict in case II K 321/23/P — a civil case brought by NCN/Błocki against the whistleblower.</p>
 <li class="doc-item"><span class="doc-number">4.</span><img class="doc-thumb" src="docs/thumb-Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.jpg" alt="" loading="lazy"><span><span class="doc-label">Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
@@ -4765,8 +4788,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <p class="doc-desc doc-desc-above">Reconstitution chronologique complète de la correspondance par e-mail entre le Dr Kilarski, Błocki, le Prof. Drąg et NN au cours de 2020–2021.</p>
 <li class="doc-item"><span class="doc-number">2.</span><img class="doc-thumb" src="docs/thumb-Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.jpg" alt="" loading="lazy"><span><span class="doc-label">Correspondance chronologique Kilarski-Błocki-Drąg-NN (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
 <p class="doc-desc doc-desc-below">Le document montre la séquence des événements et les réactions de chaque participant à l'ultimatum et aux tentatives ultérieures d'étouffer l'affaire. Utile pour suivre qui savait quoi et quand.</p>
-<p class="doc-desc doc-desc-above">Analyse complète des 10 enregistrements audio (2020–2021) : transcriptions, contexte et liens entre les fils du chantage présumé, du népotisme présumé et des évaluations prétendument falsifiées.</p>
-<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Analyse complète de 10 enregistrements audio — preuves de chantage présumé et alleged corruption présumée au NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
+<p class="doc-desc doc-desc-above">Analyse complète des 7 enregistrements audio (2020–2021) : transcriptions, contexte et liens entre les fils du chantage présumé, du népotisme présumé et des évaluations prétendument falsifiées.</p>
+<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Analyse complète de 7 enregistrements audio — preuves de chantage présumé et alleged corruption présumée au NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
 <p class="doc-desc doc-desc-below">Le document consolide tous les enregistrements en un seul dossier de preuves, avec des références à des segments temporels précis. C'est un guide du matériel audio pour les enquêteurs et les journalistes.</p>
 <p class="doc-desc doc-desc-above">Appel du Dr Kilarski contre le verdict de première instance dans l'affaire II K 321/23/P — procédure civile engagée par le NCN/Błocki contre le lanceur d'alerte.</p>
 <li class="doc-item"><span class="doc-number">4.</span><img class="doc-thumb" src="docs/thumb-Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.jpg" alt="" loading="lazy"><span><span class="doc-label">Appel du verdict II K 321/23/P (NCN/Błocki c. Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Aperçu</a><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Télécharger</a></div></span></li>
@@ -4809,8 +4832,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <p class="doc-desc doc-desc-above">Eine vollständige chronologische Rekonstruktion des E-Mail-Verkehrs zwischen Dr. Kilarski, Błocki, Prof. Drąg und NN in den Jahren 2020–2021.</p>
 <li class="doc-item"><span class="doc-number">2.</span><img class="doc-thumb" src="docs/thumb-Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.jpg" alt="" loading="lazy"><span><span class="doc-label">Chronologischer E-Mail-Verkehr Kilarski-Błocki-Drąg-NN (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
 <p class="doc-desc doc-desc-below">Das Dokument zeigt die Abfolge der Ereignisse und die Reaktionen der Beteiligten auf das Ultimatum sowie die späteren Versuche, den Fall zu vertuschen. Nützlich, um nachzuvollziehen, wer wann was wusste.</p>
-<p class="doc-desc doc-desc-above">Eine vollständige Analyse der 10 Audioaufnahmen (2020–2021): Transkripte, Kontext und Verbindungen zwischen den Strängen mutmaßliche Erpressung, mutmaßliche Vetternwirtschaft und mutmaßlich gefälschte Gutachten.</p>
-<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Vollständige Analyse der 10 Audioaufnahmen — Beweise für mutmaßliche Erpressung und Korruption am NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
+<p class="doc-desc doc-desc-above">Eine vollständige Analyse der 7 Audioaufnahmen (2020–2021): Transkripte, Kontext und Verbindungen zwischen den Strängen mutmaßliche Erpressung, mutmaßliche Vetternwirtschaft und mutmaßlich gefälschte Gutachten.</p>
+<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Vollständige Analyse der 7 Audioaufnahmen — Beweise für mutmaßliche Erpressung und Korruption am NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
 <p class="doc-desc doc-desc-below">Das Dokument bündelt alle Aufnahmen zu einem einheitlichen Beweisdossier mit Verweisen auf konkrete Zeitabschnitte. Es dient als Leitfaden durch das Audiomaterial für Ermittler und Journalisten.</p>
 <p class="doc-desc doc-desc-above">Berufung von Dr. Kilarski gegen das erstinstanzliche Urteil im Verfahren II K 321/23/P — ein Zivilverfahren des NCN/Błocki gegen den Whistleblower.</p>
 <li class="doc-item"><span class="doc-number">4.</span><img class="doc-thumb" src="docs/thumb-Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.jpg" alt="" loading="lazy"><span><span class="doc-label">Berufung gegen Urteil II K 321/23/P (NCN/Błocki gegen Kilarski)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Preview</a><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Download</a></div></span></li>
@@ -4853,8 +4876,8 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <p class="doc-desc doc-desc-above">Повна хронологічна реконструкція електронного листування між д-ром Кіларським, Блоцкім, проф. Дрогом та особою NN упродовж 2020–2021 рр.</p>
 <li class="doc-item"><span class="doc-number">2.</span><img class="doc-thumb" src="docs/thumb-Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.jpg" alt="" loading="lazy"><span><span class="doc-label">Хронологічне листування Кіларський-Блоцкі-Дрог-NN (2020-2021)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
 <p class="doc-desc doc-desc-below">Документ відображає послідовність подій і реакції кожного з учасників на ультиматум та подальші спроби приховати справу. Корисний для відстеження, хто і коли що знав.</p>
-<p class="doc-desc doc-desc-above">Повний аналіз 10 аудіозаписів (2020–2021): транскрипти, контекст і зв'язки між лініями шантажу, непотизму та сфальсифікованих рецензій.</p>
-<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Повний аналіз 10 аудіозаписів — докази шантажу та нібито корупцію в NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
+<p class="doc-desc doc-desc-above">Повний аналіз 7 аудіозаписів (2020–2021): транскрипти, контекст і зв'язки між лініями шантажу, непотизму та сфальсифікованих рецензій.</p>
+<li class="doc-item"><span class="doc-number">3.</span><img class="doc-thumb" src="docs/thumb-analiza_nagran_audio_kompletna.jpg" alt="" loading="lazy"><span><span class="doc-label">Повний аналіз 7 аудіозаписів — докази шантажу та нібито корупцію в NCN</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/analiza_nagran_audio_kompletna.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
 <p class="doc-desc doc-desc-below">Документ об'єднує всі записи в єдиний набір доказів із посиланнями на конкретні часові фрагменти. Це путівник по аудіоматеріалу для слідчих та журналістів.</p>
 <p class="doc-desc doc-desc-above">Апеляція д-ра Кіларського на вирок суду першої інстанції у справі II K 321/23/P — цивільний позов NCN/Блоцкого проти викривача.</p>
 <li class="doc-item"><span class="doc-number">4.</span><img class="doc-thumb" src="docs/thumb-Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.jpg" alt="" loading="lazy"><span><span class="doc-label">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span><div class="doc-ext">DOCX</div><div class="doc-actions"><a class="doc-btn doc-btn-preview" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-eye"/></svg>Перегляд</a><a class="doc-btn doc-btn-download" href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx" download><svg><use href="#icon-download"/></svg>Завантажити</a></div></span></li>
@@ -5450,7 +5473,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="timeline-item highlight"><div class="timeline-date"><a href="docs/2.-2-czerwca-2020_second-talk-with-weiss-and-blocki.MP3" target="_blank" style="color:#c0392b;text-decoration:underline" title="Nagranie 2 — 2 czerwca 2020">2 czerwca 2020</a></div><div class="timeline-text"><strong>Nagrane spotkanie</strong> — NN z dyrektorem Błockim w NCN (ukryty dyktafon)</div></div>
   <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-text">NAWA Polskie Powroty — <strong>13. miejsce</strong> (przyznano 12 grantów — pierwszy na liście rezerwowej)</div></div>
   <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-text">NAWA Polskie Powroty — ponownie <strong>13. miejsce</strong></div></div>
-  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text">Wykonanie <strong>10 nagrań</strong> dokumentujących korupcję w NCN</div></div>
+  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text">Wykonanie <strong>7 nagrań</strong> dokumentujących korupcję w NCN</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">NN pozywa Kilarskiego (I C 1671/22)</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">Prokurator referent (poprzednia sprawa) odmawia wszczęcia śledztwa</div></div>
   <div class="timeline-item"><div class="timeline-date">2023</div><div class="timeline-text">NCN/Błocki oskarża Kilarskiego o zniesławienie (II K 321/23/P)</div></div>
@@ -5471,7 +5494,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="timeline-item highlight"><div class="timeline-date"><a href="docs/2.-2-czerwca-2020_second-talk-with-weiss-and-blocki.MP3" target="_blank" style="color:#c0392b;text-decoration:underline" title="Recording 2 — 2 June 2020">2 June 2020</a></div><div class="timeline-text"><strong>Recorded meeting</strong> — NN with Director Błocki at NCN (hidden recorder)</div></div>
   <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-text">NAWA Polish Returns — <strong>13th place</strong> (12 grants awarded — first alternate)</div></div>
   <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-text">NAWA Polish Returns — <strong>13th place</strong> again</div></div>
-  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>10 recordings</strong> made documenting NCN alleged corruption</div></div>
+  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>7 recordings</strong> made documenting NCN alleged corruption</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">NN sues Kilarski (I C 1671/22)</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">the prosecutor (earlier case) refuses to investigate</div></div>
   <div class="timeline-item"><div class="timeline-date">2023</div><div class="timeline-text">NCN/Błocki prosecutes Kilarski for defamation (II K 321/23/P)</div></div>
@@ -5492,7 +5515,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="timeline-item highlight"><div class="timeline-date"><a href="docs/2.-2-czerwca-2020_second-talk-with-weiss-and-blocki.MP3" target="_blank" style="color:#c0392b;text-decoration:underline" title="Enregistrement 2 — 2 juin 2020">2 juin 2020</a></div><div class="timeline-text"><strong>Réunion enregistrée</strong> — NN avec le directeur Błocki au NCN (enregistreur caché)</div></div>
   <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-text">NAWA Retours polonais — <strong>13e place</strong> (12 subventions attribuées — premier suppléant)</div></div>
   <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-text">NAWA Retours polonais — à nouveau <strong>13e place</strong></div></div>
-  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>10 enregistrements</strong> documentant la alleged corruption présumée au NCN</div></div>
+  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>7 enregistrements</strong> documentant la alleged corruption présumée au NCN</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">NN poursuit Kilarski (I C 1671/22)</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">la procureure (dossier précédent) refuse d'enquêter</div></div>
   <div class="timeline-item"><div class="timeline-date">2023</div><div class="timeline-text">NCN/Błocki poursuit Kilarski pour diffamation (II K 321/23/P)</div></div>
@@ -5513,7 +5536,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="timeline-item highlight"><div class="timeline-date"><a href="docs/2.-2-czerwca-2020_second-talk-with-weiss-and-blocki.MP3" target="_blank" style="color:#c0392b;text-decoration:underline" title="Aufnahme 2 — 2. Juni 2020">2. Juni 2020</a></div><div class="timeline-text"><strong>Aufgezeichnetes Treffen</strong> — NN mit Direktor Błocki am NCN (verstecktes Aufnahmegerät)</div></div>
   <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-text">NAWA Polnische Rückkehr — <strong>Platz 13</strong> (12 Förderungen vergeben — erster Nachrücker)</div></div>
   <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-text">NAWA Polnische Rückkehr — erneut <strong>Platz 13</strong></div></div>
-  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>10 Aufnahmen</strong> dokumentieren die Korruption am NCN</div></div>
+  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>7 Aufnahmen</strong> dokumentieren die Korruption am NCN</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">NN verklagt Kilarski (I C 1671/22)</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">die Staatsanwaltschaft (früheres Verfahren) lehnt Ermittlung ab</div></div>
   <div class="timeline-item"><div class="timeline-date">2023</div><div class="timeline-text">NCN/Błocki klagt Kilarski wegen Verleumdung an (II K 321/23/P)</div></div>
@@ -5534,7 +5557,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <div class="timeline-item highlight"><div class="timeline-date"><a href="docs/2.-2-czerwca-2020_second-talk-with-weiss-and-blocki.MP3" target="_blank" style="color:#c0392b;text-decoration:underline" title="Запис 2 — 2 червня 2020">2 червня 2020</a></div><div class="timeline-text"><strong>Записана зустріч</strong> — NN з директором Блоцкім в NCN (прихований диктофон)</div></div>
   <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-text">NAWA «Польські повернення» — <strong>13-те місце</strong> (присуджено 12 грантів — перший у резервному списку)</div></div>
   <div class="timeline-item"><div class="timeline-date">2021</div><div class="timeline-text">NAWA «Польські повернення» — знову <strong>13-те місце</strong></div></div>
-  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>10 записів</strong>, що документують нібито корупцію в NCN</div></div>
+  <div class="timeline-item"><div class="timeline-date">2020–2021</div><div class="timeline-text"><strong>7 записів</strong>, що документують нібито корупцію в NCN</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">NN подає позов проти Кіларського (I C 1671/22)</div></div>
   <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-text">Прокурор прокурор-доповідач (попередня справа) відмовляється від розслідування</div></div>
   <div class="timeline-item"><div class="timeline-date">2023</div><div class="timeline-text">NCN/Блоцкі звинувачує Кіларського у наклепі (II K 321/23/P)</div></div>

@@ -17,16 +17,36 @@
     "grant_topic": "Cure for Type 1 Diabetes",
     "nawa_ranking_2020": "13th place (12 grants awarded — first alternate)",
     "nawa_ranking_2021": "13th place again (first alternate again)",
-    "recordings_count": 10,
+    "recordings_count": 7,
     "court_cases": [
-      {"id": "II K 321/23/P", "court": "Sąd Rejonowy Kraków", "description": "NCN/Błocki vs. Kilarski — criminal defamation"},
-      {"id": "I C 1671/22", "court": "Sąd Okręgowy Kraków", "description": "NN vs. Kilarski — civil, protection of personal rights"},
-      {"id": "I ACa 3378/25", "court": "Sąd Apelacyjny Kraków", "description": "Appeal of I C 1671/22"},
-      {"id": "I Co 464624K", "court": "Sąd Rejonowy Kraków-Krowodrza", "description": "Enforcement proceedings — 5000 PLN fine"},
-      {"id": "4135-1.Ds.96.2022", "court": "Prokuratura Kraków-Krowodrza", "description": "Prosecutor (initials O.-W.) refused investigation"}
+      {
+        "id": "II K 321/23/P",
+        "court": "Sąd Rejonowy Kraków",
+        "description": "NCN/Błocki vs. Kilarski — criminal defamation"
+      },
+      {
+        "id": "I C 1671/22",
+        "court": "Sąd Okręgowy Kraków",
+        "description": "NN vs. Kilarski — civil, protection of personal rights"
+      },
+      {
+        "id": "I ACa 3378/25",
+        "court": "Sąd Apelacyjny Kraków",
+        "description": "Appeal of I C 1671/22"
+      },
+      {
+        "id": "I Co 464624K",
+        "court": "Sąd Rejonowy Kraków-Krowodrza",
+        "description": "Enforcement proceedings — 5000 PLN fine"
+      },
+      {
+        "id": "4135-1.Ds.96.2022",
+        "court": "Prokuratura Kraków-Krowodrza",
+        "description": "Prosecutor (initials O.-W.) refused investigation"
+      }
     ],
     "key_evidence": [
-      "10 audio recordings (2020-2021) documenting alleged blackmail and alleged corruption",
+      "7 audio recordings (2020-2021) documenting alleged blackmail and alleged corruption",
       "Official NCN email from NN (1 June 2020) confirming Błocki's ultimatum",
       "Chronological email correspondence Kilarski-Błocki-Drąg-NN (2020-2021)",
       "Manfred Mudelsee copy-paste reviews (allegedly falsified grant reviews in GRIEG program)",
@@ -35,15 +55,55 @@
     ]
   },
   "documents": [
-    {"file": "Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx", "label_pl": "Chronologiczna korespondencja mailowa Kilarski-Błocki-Drąg-NN (2020-2021)", "label_en": "Chronological email correspondence Kilarski-Błocki-Drąg-NN (2020-2021)"},
-    {"file": "analiza_nagran_audio_kompletna.docx", "label_pl": "Kompletna analiza 10 nagrań audio — dowody szantażu i korupcji w NCN", "label_en": "Complete analysis of 10 audio recordings — evidence of blackmail and corruption at NCN"},
-    {"file": "Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx", "label_pl": "Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)", "label_en": "Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)"},
-    {"file": "I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx", "label_pl": "Uzupełnienie apelacji od wyroku Sądu Okręgowego z 15 listopada 2024", "label_en": "Supplementary appeal against Kraków District Court verdict of 15 November 2024"},
-    {"file": "Wnioski-Procesowe-Apelacja.docx", "label_pl": "Wnioski procesowe — apelacja", "label_en": "Procedural motions — appeal"},
-    {"file": "Babik-Liana-Zwonek-Blocki-3.docx", "label_pl": "Analiza powiązań: Babik, Liana, Zwonek, Błocki — domniemany nepotyzm w NCN", "label_en": "Analysis of connections: Babik, Liana, Zwonek, Błocki — alleged nepotism at NCN"},
-    {"file": "Zalacznik-2-do-prokuratur-viiiaa.docx", "label_pl": "Załącznik do zawiadomienia do prokuratury", "label_en": "Attachment to criminal complaint filed with prosecutor"},
-    {"file": "Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf", "label_pl": "Postanowienie Prokuratury — odmowa wszczęcia śledztwa (prok. O.-W.)", "label_en": "Prosecutor's decision — refusal to investigate (prosecutor O.-W.)"},
-    {"file": "wwyrok-laura-chmielarz.pdf", "label_pl": "Wyrok w sprawie NN vs. Kilarski (skład z udziałem sędzi A. Ch.)", "label_en": "Verdict in NN vs. Kilarski case (panel including Judge A. Ch.)"},
-    {"file": "cv_list-publications_teach_2023ix01_kilarski.docx", "label_pl": "CV i lista publikacji naukowych dr. Witolda Kilarskiego", "label_en": "CV and list of scientific publications of Dr. Witold Kilarski"}
+    {
+      "file": "Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.docx",
+      "label_pl": "Chronologiczna korespondencja mailowa Kilarski-Błocki-Drąg-NN (2020-2021)",
+      "label_en": "Chronological email correspondence Kilarski-Błocki-Drąg-NN (2020-2021)"
+    },
+    {
+      "file": "analiza_nagran_audio_kompletna.docx",
+      "label_pl": "Kompletna analiza 7 nagrań audio — dowody szantażu i korupcji w NCN",
+      "label_en": "Complete analysis of 7 audio recordings — evidence of blackmail and corruption at NCN"
+    },
+    {
+      "file": "Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.docx",
+      "label_pl": "Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)",
+      "label_en": "Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)"
+    },
+    {
+      "file": "I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.docx",
+      "label_pl": "Uzupełnienie apelacji od wyroku Sądu Okręgowego z 15 listopada 2024",
+      "label_en": "Supplementary appeal against Kraków District Court verdict of 15 November 2024"
+    },
+    {
+      "file": "Wnioski-Procesowe-Apelacja.docx",
+      "label_pl": "Wnioski procesowe — apelacja",
+      "label_en": "Procedural motions — appeal"
+    },
+    {
+      "file": "Babik-Liana-Zwonek-Blocki-3.docx",
+      "label_pl": "Analiza powiązań: Babik, Liana, Zwonek, Błocki — domniemany nepotyzm w NCN",
+      "label_en": "Analysis of connections: Babik, Liana, Zwonek, Błocki — alleged nepotism at NCN"
+    },
+    {
+      "file": "Zalacznik-2-do-prokuratur-viiiaa.docx",
+      "label_pl": "Załącznik do zawiadomienia do prokuratury",
+      "label_en": "Attachment to criminal complaint filed with prosecutor"
+    },
+    {
+      "file": "Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf",
+      "label_pl": "Postanowienie Prokuratury — odmowa wszczęcia śledztwa (prok. O.-W.)",
+      "label_en": "Prosecutor's decision — refusal to investigate (prosecutor O.-W.)"
+    },
+    {
+      "file": "wwyrok-laura-chmielarz.pdf",
+      "label_pl": "Wyrok w sprawie NN vs. Kilarski (skład z udziałem sędzi A. Ch.)",
+      "label_en": "Verdict in NN vs. Kilarski case (panel including Judge A. Ch.)"
+    },
+    {
+      "file": "cv_list-publications_teach_2023ix01_kilarski.docx",
+      "label_pl": "CV i lista publikacji naukowych dr. Witolda Kilarskiego",
+      "label_en": "CV and list of scientific publications of Dr. Witold Kilarski"
+    }
   ]
 }
