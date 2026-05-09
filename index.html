@@ -1892,6 +1892,109 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       .sub-nav-2-link { padding: 8px 12px; font-size: 11px; }
     }
 
+    /* ========== M14: Unified pill-tab style ==========
+       The last two tabs (sub-nav-2: Prokuratura O.-W. and Sędzia 400 tys. PLN)
+       use a pill / dot / gold-border format. These rules give the same look
+       to: (a) top-level main nav (.nav-links > .nav-link) and (b) sub-nav
+       row 1 tabs (.sub-nav-link). Dropdown items inside .sub-nav-dropdown
+       stay as before — they live in a different visual context (white
+       drop-down panel) and changing them would break the menu. */
+    .nav-links > .nav-link,
+    .sub-nav-link {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 600 !important;
+      color: rgba(240,240,240,0.92) !important;
+      padding: 9px 16px !important;
+      text-decoration: none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+      border: 1px solid rgba(214,170,108,0.45) !important;
+      border-radius: 999px !important;
+      transition: transform 0.15s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+      white-space: nowrap;
+      position: relative;
+      letter-spacing: 0.01em;
+    }
+    .nav-links > .nav-link::before,
+    .sub-nav-link::before {
+      content: '';
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--color-accent, #d6aa6c);
+      box-shadow: 0 0 0 3px rgba(214,170,108,0.18);
+      flex: 0 0 auto;
+    }
+    .nav-links > .nav-link:hover,
+    .sub-nav-link:hover,
+    .sub-nav-tab:hover .sub-nav-link,
+    .sub-nav-tab:focus-within .sub-nav-link {
+      color: #fff !important;
+      border-color: var(--color-accent, #d6aa6c) !important;
+      background: linear-gradient(180deg, rgba(214,170,108,0.18) 0%, rgba(214,170,108,0.06) 100%) !important;
+      box-shadow: 0 4px 14px rgba(214,170,108,0.20);
+      transform: translateY(-1px);
+    }
+    .nav-links > .nav-link.active,
+    .sub-nav-link.active,
+    .sub-nav-tab.active .sub-nav-link {
+      color: #fff !important;
+      border-color: var(--color-accent, #d6aa6c) !important;
+      background: linear-gradient(180deg, rgba(214,170,108,0.25) 0%, rgba(214,170,108,0.10) 100%) !important;
+    }
+    /* Sub-nav row 1: switch from underline/border-bottom layout to pill layout
+       on desktop. On narrow viewports the original horizontal-scroll behaviour
+       (defined in @media max-width:900px) takes over and we leave it alone. */
+    @media (min-width: 901px) {
+      .sub-nav-inner {
+        gap: 12px;
+        padding: 10px var(--space-5);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+      }
+    }
+    .sub-nav-link {
+      border-bottom: 1px solid rgba(214,170,108,0.45) !important; /* override the 2px underline */
+    }
+    /* The dropdown caret on .sub-nav-link::after stays — but our ::before dot
+       sits to the LEFT of the label and the caret sits to the right. Keep
+       both, lower its margin a touch so the pill stays balanced. */
+    .sub-nav-link::after {
+      margin-left: 4px;
+      opacity: 0.6;
+    }
+    /* Top-level nav: ensure the pills wrap nicely in the header.
+       The .nav-links container already has flex + wrap; tighten the gap. */
+    .nav-links {
+      gap: 8px;
+    }
+    /* Mobile tightening for both rows so tabs stay readable on narrow screens. */
+    @media (max-width: 720px) {
+      .nav-links > .nav-link,
+      .sub-nav-link {
+        padding: 8px 12px !important;
+        font-size: 11px;
+      }
+      .nav-links > .nav-link::before,
+      .sub-nav-link::before {
+        width: 6px; height: 6px;
+        box-shadow: 0 0 0 2px rgba(214,170,108,0.18);
+      }
+      .sub-nav-inner { gap: 8px !important; padding: 8px var(--space-3) !important; }
+    }
+    /* Mobile open hamburger menu: stack pills vertically with small gap so
+       each tab still looks like a pill but they don't overlap. */
+    @media (max-width: 768px) {
+      .nav-links.open { gap: 6px; padding-top: var(--space-3); }
+      .nav-links.open > .nav-link {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
     /* ========== Special section card (Prokuratura, Sędzia 400k) ========== */
     .special-card {
       margin: 24px 0;
