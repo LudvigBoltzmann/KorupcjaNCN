@@ -1,4 +1,47 @@
+# Robots policy for KorupcjaNCN — Dr Witold Kilarski (sygnalista / whistleblower)
+# All major search engines welcome to index every page.
+
 User-agent: *
 Allow: /
+Disallow:
 
+# Encourage GoogleBot, BingBot, YandexBot and others explicitly.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI crawlers (allow indexing, since this is public-interest reporting)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
 Sitemap: https://ludvigboltzmann.github.io/KorupcjaNCN/sitemap.xml
