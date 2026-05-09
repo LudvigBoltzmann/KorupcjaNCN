@@ -1995,6 +1995,49 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       }
     }
 
+    /* ========== M15: Language selector compactness fix ==========
+       After M14 made the main-nav pills wider, the header-controls (lang
+       switcher + theme toggle) got compressed by flex. Combined with the
+       global `*, *::before, *::after { overflow-wrap: anywhere; }` rule
+       (M4 layout hardening, line ~1645), this caused individual two-letter
+       language codes (PL / EN / FR / DE / UK) to break between characters
+       and stack vertically. Force the language selector and its buttons
+       to refuse shrinking below their content width and to never break
+       inside a code. The lang-switcher itself is NOT a navigation tab —
+       it's a compact language toggle and must keep its original tight
+       horizontal cluster appearance, untouched by pill/nav-link rules. */
+    .header-controls {
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      min-width: max-content;
+    }
+    .header-logo {
+      flex-shrink: 0;
+    }
+    .lang-switcher {
+      flex-shrink: 0;
+      flex-wrap: nowrap !important;
+      min-width: max-content;
+    }
+    .lang-btn {
+      flex: 0 0 auto;
+      min-width: max-content;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      writing-mode: horizontal-tb !important;
+      letter-spacing: 0;
+    }
+    .theme-toggle {
+      flex-shrink: 0;
+    }
+    /* Belt-and-braces: defensively neutralise any pill / nav-link
+       pseudo-element that could cascade onto a language button. */
+    .lang-switcher .lang-btn::before,
+    .lang-switcher .lang-btn::after {
+      content: none !important;
+    }
+
     /* ========== Special section card (Prokuratura, Sędzia 400k) ========== */
     .special-card {
       margin: 24px 0;
