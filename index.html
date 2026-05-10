@@ -287,35 +287,7 @@
   --color-link: #c0392b;
   --color-link-hover: #a93226;
 }
-[data-theme="dark"] {
-  --color-bg: #121220;
-  --color-surface: #1a1a2e;
-  --color-surface-2: #24243a;
-  --color-text: #e0e0e8;
-  --color-text-muted: #a0a0b0;
-  --color-text-faint: #70708a;
-  --color-accent: #e74c3c;
-  --color-accent-hover: #f06050;
-  --color-header-bg: #0d0d1a;
-  --color-header-text: #e0e0e8;
-  --color-border: rgba(224, 224, 232, 0.1);
-  --color-border-strong: rgba(224, 224, 232, 0.18);
-  --color-evidence-bg: rgba(192, 57, 43, 0.08);
-  --color-evidence-border: rgba(231, 76, 60, 0.25);
-  --color-timeline-line: rgba(224, 224, 232, 0.12);
-  --color-timeline-dot: #e74c3c;
-  --color-doc-bg: #1a1a2e;
-  --color-doc-hover: #24243a;
-  --color-shadow: rgba(0, 0, 0, 0.2);
-  --color-shadow-lg: rgba(0, 0, 0, 0.3);
-  --color-hero-overlay: rgba(13, 13, 26, 0.98);
-  --color-hero-text: #e0e0e8;
-  --color-hero-muted: rgba(224, 224, 232, 0.6);
-  --color-badge-bg: rgba(231, 76, 60, 0.15);
-  --color-badge-text: #e74c3c;
-  --color-link: #e74c3c;
-  --color-link-hover: #f06050;
-}
+/* M19: [data-theme="dark"] root variable override removed. */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -436,7 +408,6 @@ a:hover { color: var(--color-link-hover); }
 .sub-nav-inner > .sub-nav-tab { scroll-snap-align: start; flex: 0 0 auto; }
 .sub-nav-inner::-webkit-scrollbar { height: 4px; }
 .sub-nav-inner::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
-html[data-theme="dark"] .sub-nav-inner::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
 @media (max-width: 640px) {
   .sub-nav-link { font-size: 12px !important; padding: 6px 10px !important; }
 }
@@ -789,18 +760,7 @@ main {
   background: linear-gradient(135deg, #e6f4ea 0%, #ceead6 100%);
   color: #1e8e3e;
 }
-[data-theme="dark"] .doc-type-badge.badge-docx {
-  background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 100%);
-  color: #8ab4f8;
-}
-[data-theme="dark"] .doc-type-badge.badge-pdf {
-  background: linear-gradient(135deg, #3c1f1f 0%, #4a2222 100%);
-  color: #f28b82;
-}
-[data-theme="dark"] .doc-type-badge.badge-jpg {
-  background: linear-gradient(135deg, #1a3325 0%, #1e4d2b 100%);
-  color: #81c995;
-}
+/* M19: dark-theme badge gradients removed. */
 .doc-number {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -1200,14 +1160,9 @@ main {
 @media (max-width: 640px) {
   .summary-table td:first-child { width: auto; white-space: normal; }
 }
-html:not([data-theme="dark"]) .audio-placeholder {
-  border: 2px dashed rgba(26,26,46,0.2);
-  background: #fafaf8;
-}
-html[data-theme="dark"] .audio-placeholder {
-  border: 2px dashed rgba(255,255,255,0.18) !important;
-  background: #1a1d24 !important;
-  color: #c8c8cc !important;
+.audio-placeholder {
+  border: 2px dashed rgba(20,20,43,0.2) !important;
+  background: #fafaf8 !important;
 }
 
 /* CV Gallery Viewer */
@@ -1348,89 +1303,31 @@ html[data-theme="dark"] .audio-placeholder {
 /* Animation removed - sections always visible */
 .section { opacity: 1 !important; }
 /* ============================================================
-   Theme system — LIGHT (default) and DARK (toggleable via .theme-toggle)
-   The earlier M17 "emergency" block hard-pinned everything to light
-   with !important; that broke the sun toggle in the header. We keep
-   the strong light defaults but route them through `:root:not([data-theme="dark"])`
-   so that <html data-theme="dark"> can override every value.
-   Contrast: text #1a1a2e on #fafaf8 = 16.6:1 (AAA);
-             text #f3f3f0 on #0f1115 = 16.4:1 (AAA).
+   M19: Theme system removed entirely. The page is permanently
+   light-themed because dark mode caused contrast issues with
+   bold text and quote backgrounds. All [data-theme="dark"] rules
+   from M18 deleted. Force light values on every element.
+   Contrast: text #14142b on #fafaf8 = 17:1 (AAA).
    ============================================================ */
-:root:not([data-theme="dark"]) html,
-html:not([data-theme="dark"]) { background: #fafaf8; }
-html:not([data-theme="dark"]) body { background: #fafaf8; color: #1a1a2e; }
-html:not([data-theme="dark"]) .section { background: #fafaf8; color: #1a1a2e; }
-html:not([data-theme="dark"]) .doc-item { background: #ffffff; color: #1a1a2e; border: 1px solid rgba(26,26,46,0.12); }
-html:not([data-theme="dark"]) .doc-label { color: #1a1a2e; }
-html:not([data-theme="dark"]) .doc-type-badge { color: #ffffff; }
-html:not([data-theme="dark"]) .doc-type-badge.badge-docx { background: #2563eb; color: #ffffff; }
-html:not([data-theme="dark"]) .doc-type-badge.badge-pdf { background: #dc2626; color: #ffffff; }
-html:not([data-theme="dark"]) .doc-type-badge.badge-img { background: #16a34a; color: #ffffff; }
-html:not([data-theme="dark"]) .doc-number { color: #4b5563; }
-html:not([data-theme="dark"]) .doc-ext { color: #4b5563; }
-html:not([data-theme="dark"]) .section-label { color: #c0392b; }
-html:not([data-theme="dark"]) .section h2 { color: #1a1a2e; }
-html:not([data-theme="dark"]) .section h3 { color: #1a1a2e; }
-html:not([data-theme="dark"]) .section p { color: #1a1a2e; }
-html:not([data-theme="dark"]) .doc-list { background: transparent; }
-html:not([data-theme="dark"]) .doc-btn { border: 1px solid rgba(26,26,46,0.2); background: #ffffff; }
-html:not([data-theme="dark"]) .doc-btn-preview { background: #c0392b; color: #ffffff; border-color: #c0392b; }
-html:not([data-theme="dark"]) .doc-btn-download { background: #f2f1ed; color: #1a1a2e; }
-
-/* ---------- DARK THEME ---------- */
-html[data-theme="dark"] { background: #0f1115 !important; color-scheme: dark; }
-html[data-theme="dark"] body { background: #0f1115 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] .section,
-html[data-theme="dark"] .interview-section,
-html[data-theme="dark"] section { background: #0f1115 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] main,
-html[data-theme="dark"] footer { background: #0f1115 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3,
-html[data-theme="dark"] h4, html[data-theme="dark"] h5, html[data-theme="dark"] h6,
-html[data-theme="dark"] p, html[data-theme="dark"] li, html[data-theme="dark"] td,
-html[data-theme="dark"] th, html[data-theme="dark"] dt, html[data-theme="dark"] dd,
-html[data-theme="dark"] blockquote, html[data-theme="dark"] figcaption,
-html[data-theme="dark"] label, html[data-theme="dark"] span,
-html[data-theme="dark"] div { color: #e8e8eb; }
-html[data-theme="dark"] .section h2, html[data-theme="dark"] .section h3,
-html[data-theme="dark"] .section p, html[data-theme="dark"] .section li,
-html[data-theme="dark"] .interview-section h2, html[data-theme="dark"] .interview-section h3,
-html[data-theme="dark"] .interview-section p, html[data-theme="dark"] .interview-section li { color: #e8e8eb !important; }
-html[data-theme="dark"] a { color: #7dd3fc; }
-html[data-theme="dark"] a:hover { color: #bae6fd; }
-html[data-theme="dark"] strong, html[data-theme="dark"] b { color: #ffffff !important; }
-html[data-theme="dark"] em, html[data-theme="dark"] i { color: #fde68a; }
-html[data-theme="dark"] .section-label { color: #ff8a75 !important; }
-html[data-theme="dark"] .doc-item { background: #1a1d24 !important; color: #e8e8eb !important; border: 1px solid rgba(255,255,255,0.12) !important; }
-html[data-theme="dark"] .doc-label { color: #e8e8eb !important; }
-html[data-theme="dark"] .doc-number, html[data-theme="dark"] .doc-ext { color: #a1a1aa !important; }
-html[data-theme="dark"] .doc-meta { color: #a1a1aa !important; }
-html[data-theme="dark"] .doc-btn { background: #1a1d24 !important; color: #e8e8eb !important; border: 1px solid rgba(255,255,255,0.18) !important; }
-html[data-theme="dark"] .doc-btn-preview { background: #c0392b !important; color: #ffffff !important; border-color: #c0392b !important; }
-html[data-theme="dark"] .doc-btn-download { background: #2a2f38 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] .special-card { background: #1a1d24 !important; border-color: rgba(255,255,255,0.12) !important; }
-html[data-theme="dark"] .court-case { background: #1a1d24 !important; border-color: rgba(255,255,255,0.12) !important; }
-html[data-theme="dark"] blockquote { color: #e2e2e6 !important; border-left-color: #c0392b !important; background: #1a1d24 !important; }
-html[data-theme="dark"] code, html[data-theme="dark"] pre { background: #1a1d24 !important; color: #fde68a !important; }
-html[data-theme="dark"] .timeline-item, html[data-theme="dark"] .timeline-content { background: #1a1d24 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] .site-header { background: rgba(15,17,21,0.95) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
-html[data-theme="dark"] .nav-link, html[data-theme="dark"] .sub-nav-link, html[data-theme="dark"] .sub-nav-2-link { color: #e8e8eb !important; }
-html[data-theme="dark"] .sub-nav, html[data-theme="dark"] .sub-nav-2 { background: rgba(15,17,21,0.95) !important; border-color: rgba(255,255,255,0.08) !important; }
-html[data-theme="dark"] .sub-nav-dropdown { background: #1a1d24 !important; border-color: rgba(255,255,255,0.12) !important; }
-html[data-theme="dark"] .sub-nav-dropdown a { color: #e8e8eb !important; }
-html[data-theme="dark"] .sub-nav-dropdown a:hover { background: #2a2f38 !important; }
-html[data-theme="dark"] .footer { background: #0a0c10 !important; color: #c8c8cc !important; }
-html[data-theme="dark"] .footer a { color: #7dd3fc !important; }
-html[data-theme="dark"] .visitor-counter, html[data-theme="dark"] .visitor-counter span { color: #c8c8cc !important; }
-html[data-theme="dark"] .visitor-counter a { color: #7dd3fc !important; }
-html[data-theme="dark"] .lang-banner { background: #1a1d24 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] .doc-modal { background: #1a1d24 !important; color: #e8e8eb !important; }
-html[data-theme="dark"] hr { border-color: rgba(255,255,255,0.12) !important; }
-/* Smooth transition between themes */
-html, body, .section, .interview-section, .doc-item, .court-case, .special-card,
-.site-header, .sub-nav, .sub-nav-2, .nav-link, .sub-nav-link, .sub-nav-2-link {
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-}
+html { background: #fafaf8 !important; color-scheme: light !important; }
+body { background: #fafaf8 !important; color: #14142b !important; }
+.section { background: #fafaf8 !important; color: #14142b !important; }
+.doc-item { background: #ffffff !important; color: #14142b !important; border: 1px solid rgba(20,20,43,0.12) !important; }
+.doc-label { color: #14142b !important; }
+.doc-type-badge { color: #ffffff !important; }
+.doc-type-badge.badge-docx { background: #2563eb !important; color: #ffffff !important; }
+.doc-type-badge.badge-pdf { background: #dc2626 !important; color: #ffffff !important; }
+.doc-type-badge.badge-img { background: #16a34a !important; color: #ffffff !important; }
+.doc-number { color: #4b5563 !important; }
+.doc-ext { color: #4b5563 !important; }
+.section-label { color: #c0392b !important; }
+.section h2 { color: #14142b !important; }
+.section h3 { color: #14142b !important; }
+.section p { color: #14142b !important; }
+.doc-list { background: transparent !important; }
+.doc-btn { border: 1px solid rgba(20,20,43,0.2) !important; background: #ffffff !important; }
+.doc-btn-preview { background: #c0392b !important; color: #ffffff !important; border-color: #c0392b !important; }
+.doc-btn-download { background: #f2f1ed !important; color: #14142b !important; }
 /* Interview (Rozmowa) section */
 .interview-section {
   background: var(--color-surface);
@@ -1524,30 +1421,20 @@ html, body, .section, .interview-section, .doc-item, .court-case, .special-card,
   line-height: 1.6;
   font-size: var(--text-base);
 }
-/* Light-mode overrides for sub-components (limited to non-dark theme) */
-html:not([data-theme="dark"]) .interview-section { background: #f2f1ed; }
-html:not([data-theme="dark"]) .audio-player-wrap { background: #ffffff; border-color: rgba(26,26,46,0.2); }
-html:not([data-theme="dark"]) .interview-excerpt { background: #fef9f0; }
-html:not([data-theme="dark"]) .interview-section h2,
-html:not([data-theme="dark"]) .interview-section h3,
-html:not([data-theme="dark"]) .interview-section p { color: #1a1a2e; }
-html:not([data-theme="dark"]) .interview-section .section-label { color: #c0392b; }
-html:not([data-theme="dark"]) .audio-player-label { color: #1a1a2e; }
-html:not([data-theme="dark"]) .doc-modal { background: #fafaf8; }
-html:not([data-theme="dark"]) .doc-modal-header { background: #f2f1ed; border-color: rgba(26,26,46,0.12); }
-html:not([data-theme="dark"]) .doc-modal-title { color: #1a1a2e; }
-html:not([data-theme="dark"]) .hero-portrait { border-color: rgba(26,26,46,0.12); }
-html:not([data-theme="dark"]) .about-portrait { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-/* Dark-mode equivalents */
-html[data-theme="dark"] .interview-section { background: #14171d !important; }
-html[data-theme="dark"] .audio-player-wrap { background: #1a1d24 !important; border-color: rgba(255,255,255,0.18) !important; }
-html[data-theme="dark"] .interview-excerpt { background: #2a2418 !important; }
-html[data-theme="dark"] .interview-section h2,
-html[data-theme="dark"] .interview-section h3,
-html[data-theme="dark"] .interview-section p { color: #e8e8eb !important; }
-html[data-theme="dark"] .audio-player-label { color: #e8e8eb !important; }
-html[data-theme="dark"] .doc-modal-header { background: #14171d !important; border-color: rgba(255,255,255,0.12) !important; }
-html[data-theme="dark"] .doc-modal-title { color: #e8e8eb !important; }
+/* M19: light-mode component overrides (no dark variant any more) */
+.interview-section { background: #f2f1ed !important; }
+.audio-player-wrap { background: #ffffff !important; border-color: rgba(20,20,43,0.2) !important; }
+.interview-excerpt { background: #fef9f0 !important; }
+.interview-section h2,
+.interview-section h3,
+.interview-section p { color: #14142b !important; }
+.interview-section .section-label { color: #c0392b !important; }
+.audio-player-label { color: #14142b !important; }
+.doc-modal { background: #fafaf8 !important; }
+.doc-modal-header { background: #f2f1ed !important; border-color: rgba(20,20,43,0.12) !important; }
+.doc-modal-title { color: #14142b !important; }
+.hero-portrait { border-color: rgba(20,20,43,0.12) !important; }
+.about-portrait { box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important; }
 
 
 .interview-excerpt blockquote { color: #1a1a2e !important; }
@@ -2529,14 +2416,9 @@ html[data-theme="dark"] .doc-modal-title { color: #e8e8eb !important; }
   <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
   <button class="lang-btn" data-lang="uk" aria-label="Українська">UK</button>
   </div>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-  <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-  </svg>
-  <svg class="moon-icon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-  </svg>
-  </button>
+  <!-- M19: theme-toggle (sun/moon) removed entirely — dark mode caused
+       contrast issues with bold text and quote backgrounds, so the page
+       is permanently light. -->
   <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
   <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
@@ -6186,35 +6068,11 @@ html[data-theme="dark"] .doc-modal-title { color: #e8e8eb !important; }
   // Check hash for language on load
   const hashLang = window.location.hash.replace('#', '');
   if (langMap[hashLang]) setLanguage(hashLang);
-  // ---- Theme Toggle (persistent) ----
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    const sunIcon = themeToggle.querySelector('.sun-icon');
-    const moonIcon = themeToggle.querySelector('.moon-icon');
-    const THEME_KEY = 'kncn_theme';
-    function setTheme(dark) {
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-      if (sunIcon) sunIcon.style.display = dark ? 'none' : '';
-      if (moonIcon) moonIcon.style.display = dark ? '' : 'none';
-      themeToggle.setAttribute('aria-label', dark ? 'Tryb jasny / Light mode' : 'Tryb ciemny / Dark mode');
-      try { localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light'); } catch (e) {}
-    }
-    // Init: stored preference → system preference → light
-    let isDark = false;
-    try {
-      const stored = localStorage.getItem(THEME_KEY);
-      if (stored === 'dark') isDark = true;
-      else if (stored === 'light') isDark = false;
-      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) isDark = true;
-    } catch (e) {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) isDark = true;
-    }
-    setTheme(isDark);
-    themeToggle.addEventListener('click', () => {
-      isDark = !isDark;
-      setTheme(isDark);
-    });
-  }
+  // M19: Theme toggle removed. The page is now permanently light;
+  // any leftover localStorage preference from M18 is purged so it cannot
+  // re-activate dark mode if some style is reused elsewhere.
+  document.documentElement.removeAttribute('data-theme');
+  try { localStorage.removeItem('kncn_theme'); } catch (e) {}
   // ---- Sticky Header Shadow ----
   const header = document.getElementById('site-header');
   let lastScroll = 0;
