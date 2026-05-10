@@ -262,9 +262,9 @@
   --color-bg: #fafaf8;
   --color-surface: #f2f1ed;
   --color-surface-2: #e8e7e3;
-  --color-text: #1a1a2e;
-  --color-text-muted: #3a3a4a;
-  --color-text-faint: #5a5a6a;
+  --color-text: #14142b;
+  --color-text-muted: #2a2a3a;
+  --color-text-faint: #444454;
   --color-accent: #c0392b;
   --color-accent-hover: #a93226;
   --color-header-bg: #1a1a2e;
@@ -412,6 +412,33 @@ a:hover { color: var(--color-link-hover); }
 .theme-toggle svg { width: 18px; height: 18px; }
 .nav-links {
   display: flex; gap: var(--space-1); flex-wrap: wrap;
+}
+/* M18: on wide viewports the top-row repeats exactly the sub-nav
+   tabs, producing 4-5 rows of chrome at the top. The dropdown sub-nav
+   below already exposes every section + its sub-pages, so we hide
+   the duplicate top-row links on desktops. Logo, theme toggle and
+   language switcher stay visible. On mobile the existing burger menu
+   continues to expose nav-links. */
+@media (min-width: 992px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+/* Make the sub-nav a single-line horizontal scroll-track on narrow
+   screens so it never wraps into a 5-row mess. */
+.sub-nav-inner {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.sub-nav-inner > .sub-nav-tab { scroll-snap-align: start; flex: 0 0 auto; }
+.sub-nav-inner::-webkit-scrollbar { height: 4px; }
+.sub-nav-inner::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
+html[data-theme="dark"] .sub-nav-inner::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+@media (max-width: 640px) {
+  .sub-nav-link { font-size: 12px !important; padding: 6px 10px !important; }
 }
 .nav-link {
   font-family: var(--font-sans);
@@ -1173,9 +1200,14 @@ main {
 @media (max-width: 640px) {
   .summary-table td:first-child { width: auto; white-space: normal; }
 }
-.audio-placeholder {
-  border: 2px dashed rgba(26,26,46,0.2) !important;
-  background: #fafaf8 !important;
+html:not([data-theme="dark"]) .audio-placeholder {
+  border: 2px dashed rgba(26,26,46,0.2);
+  background: #fafaf8;
+}
+html[data-theme="dark"] .audio-placeholder {
+  border: 2px dashed rgba(255,255,255,0.18) !important;
+  background: #1a1d24 !important;
+  color: #c8c8cc !important;
 }
 
 /* CV Gallery Viewer */
@@ -1239,7 +1271,7 @@ main {
 }
 .cv-page-indicator {
   font-size: 14px;
-  color: #6b7280;
+  color: #4b5563;
   min-width: 80px;
   text-align: center;
 }
@@ -1315,28 +1347,90 @@ main {
 }
 /* Animation removed - sections always visible */
 .section { opacity: 1 !important; }
-/* Force light theme colors for all elements */
-html { background: #fafaf8 !important; }
-body { background: #fafaf8 !important; color: #1a1a2e !important; }
-[data-theme="dark"] { background: #fafaf8 !important; }
-[data-theme="dark"] body { background: #fafaf8 !important; color: #1a1a2e !important; }
-.section { background: #fafaf8 !important; color: #1a1a2e !important; }
-.doc-item { background: #ffffff !important; color: #1a1a2e !important; border: 1px solid rgba(26,26,46,0.12) !important; }
-.doc-label { color: #1a1a2e !important; }
-.doc-type-badge { color: #ffffff !important; }
-.doc-type-badge.badge-docx { background: #2563eb !important; color: #ffffff !important; }
-.doc-type-badge.badge-pdf { background: #dc2626 !important; color: #ffffff !important; }
-.doc-type-badge.badge-img { background: #16a34a !important; color: #ffffff !important; }
-.doc-number { color: #6b7280 !important; }
-.doc-ext { color: #6b7280 !important; }
-.section-label { color: #c0392b !important; }
-.section h2 { color: #1a1a2e !important; }
-.section h3 { color: #1a1a2e !important; }
-.section p { color: #1a1a2e !important; }
-.doc-list { background: transparent !important; }
-.doc-btn { border: 1px solid rgba(26,26,46,0.2) !important; background: #ffffff !important; }
-.doc-btn-preview { background: #c0392b !important; color: #ffffff !important; border-color: #c0392b !important; }
-.doc-btn-download { background: #f2f1ed !important; color: #1a1a2e !important; }
+/* ============================================================
+   Theme system — LIGHT (default) and DARK (toggleable via .theme-toggle)
+   The earlier M17 "emergency" block hard-pinned everything to light
+   with !important; that broke the sun toggle in the header. We keep
+   the strong light defaults but route them through `:root:not([data-theme="dark"])`
+   so that <html data-theme="dark"> can override every value.
+   Contrast: text #1a1a2e on #fafaf8 = 16.6:1 (AAA);
+             text #f3f3f0 on #0f1115 = 16.4:1 (AAA).
+   ============================================================ */
+:root:not([data-theme="dark"]) html,
+html:not([data-theme="dark"]) { background: #fafaf8; }
+html:not([data-theme="dark"]) body { background: #fafaf8; color: #1a1a2e; }
+html:not([data-theme="dark"]) .section { background: #fafaf8; color: #1a1a2e; }
+html:not([data-theme="dark"]) .doc-item { background: #ffffff; color: #1a1a2e; border: 1px solid rgba(26,26,46,0.12); }
+html:not([data-theme="dark"]) .doc-label { color: #1a1a2e; }
+html:not([data-theme="dark"]) .doc-type-badge { color: #ffffff; }
+html:not([data-theme="dark"]) .doc-type-badge.badge-docx { background: #2563eb; color: #ffffff; }
+html:not([data-theme="dark"]) .doc-type-badge.badge-pdf { background: #dc2626; color: #ffffff; }
+html:not([data-theme="dark"]) .doc-type-badge.badge-img { background: #16a34a; color: #ffffff; }
+html:not([data-theme="dark"]) .doc-number { color: #4b5563; }
+html:not([data-theme="dark"]) .doc-ext { color: #4b5563; }
+html:not([data-theme="dark"]) .section-label { color: #c0392b; }
+html:not([data-theme="dark"]) .section h2 { color: #1a1a2e; }
+html:not([data-theme="dark"]) .section h3 { color: #1a1a2e; }
+html:not([data-theme="dark"]) .section p { color: #1a1a2e; }
+html:not([data-theme="dark"]) .doc-list { background: transparent; }
+html:not([data-theme="dark"]) .doc-btn { border: 1px solid rgba(26,26,46,0.2); background: #ffffff; }
+html:not([data-theme="dark"]) .doc-btn-preview { background: #c0392b; color: #ffffff; border-color: #c0392b; }
+html:not([data-theme="dark"]) .doc-btn-download { background: #f2f1ed; color: #1a1a2e; }
+
+/* ---------- DARK THEME ---------- */
+html[data-theme="dark"] { background: #0f1115 !important; color-scheme: dark; }
+html[data-theme="dark"] body { background: #0f1115 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] .section,
+html[data-theme="dark"] .interview-section,
+html[data-theme="dark"] section { background: #0f1115 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] main,
+html[data-theme="dark"] footer { background: #0f1115 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3,
+html[data-theme="dark"] h4, html[data-theme="dark"] h5, html[data-theme="dark"] h6,
+html[data-theme="dark"] p, html[data-theme="dark"] li, html[data-theme="dark"] td,
+html[data-theme="dark"] th, html[data-theme="dark"] dt, html[data-theme="dark"] dd,
+html[data-theme="dark"] blockquote, html[data-theme="dark"] figcaption,
+html[data-theme="dark"] label, html[data-theme="dark"] span,
+html[data-theme="dark"] div { color: #e8e8eb; }
+html[data-theme="dark"] .section h2, html[data-theme="dark"] .section h3,
+html[data-theme="dark"] .section p, html[data-theme="dark"] .section li,
+html[data-theme="dark"] .interview-section h2, html[data-theme="dark"] .interview-section h3,
+html[data-theme="dark"] .interview-section p, html[data-theme="dark"] .interview-section li { color: #e8e8eb !important; }
+html[data-theme="dark"] a { color: #7dd3fc; }
+html[data-theme="dark"] a:hover { color: #bae6fd; }
+html[data-theme="dark"] strong, html[data-theme="dark"] b { color: #ffffff !important; }
+html[data-theme="dark"] em, html[data-theme="dark"] i { color: #fde68a; }
+html[data-theme="dark"] .section-label { color: #ff8a75 !important; }
+html[data-theme="dark"] .doc-item { background: #1a1d24 !important; color: #e8e8eb !important; border: 1px solid rgba(255,255,255,0.12) !important; }
+html[data-theme="dark"] .doc-label { color: #e8e8eb !important; }
+html[data-theme="dark"] .doc-number, html[data-theme="dark"] .doc-ext { color: #a1a1aa !important; }
+html[data-theme="dark"] .doc-meta { color: #a1a1aa !important; }
+html[data-theme="dark"] .doc-btn { background: #1a1d24 !important; color: #e8e8eb !important; border: 1px solid rgba(255,255,255,0.18) !important; }
+html[data-theme="dark"] .doc-btn-preview { background: #c0392b !important; color: #ffffff !important; border-color: #c0392b !important; }
+html[data-theme="dark"] .doc-btn-download { background: #2a2f38 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] .special-card { background: #1a1d24 !important; border-color: rgba(255,255,255,0.12) !important; }
+html[data-theme="dark"] .court-case { background: #1a1d24 !important; border-color: rgba(255,255,255,0.12) !important; }
+html[data-theme="dark"] blockquote { color: #e2e2e6 !important; border-left-color: #c0392b !important; background: #1a1d24 !important; }
+html[data-theme="dark"] code, html[data-theme="dark"] pre { background: #1a1d24 !important; color: #fde68a !important; }
+html[data-theme="dark"] .timeline-item, html[data-theme="dark"] .timeline-content { background: #1a1d24 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] .site-header { background: rgba(15,17,21,0.95) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+html[data-theme="dark"] .nav-link, html[data-theme="dark"] .sub-nav-link, html[data-theme="dark"] .sub-nav-2-link { color: #e8e8eb !important; }
+html[data-theme="dark"] .sub-nav, html[data-theme="dark"] .sub-nav-2 { background: rgba(15,17,21,0.95) !important; border-color: rgba(255,255,255,0.08) !important; }
+html[data-theme="dark"] .sub-nav-dropdown { background: #1a1d24 !important; border-color: rgba(255,255,255,0.12) !important; }
+html[data-theme="dark"] .sub-nav-dropdown a { color: #e8e8eb !important; }
+html[data-theme="dark"] .sub-nav-dropdown a:hover { background: #2a2f38 !important; }
+html[data-theme="dark"] .footer { background: #0a0c10 !important; color: #c8c8cc !important; }
+html[data-theme="dark"] .footer a { color: #7dd3fc !important; }
+html[data-theme="dark"] .visitor-counter, html[data-theme="dark"] .visitor-counter span { color: #c8c8cc !important; }
+html[data-theme="dark"] .visitor-counter a { color: #7dd3fc !important; }
+html[data-theme="dark"] .lang-banner { background: #1a1d24 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] .doc-modal { background: #1a1d24 !important; color: #e8e8eb !important; }
+html[data-theme="dark"] hr { border-color: rgba(255,255,255,0.12) !important; }
+/* Smooth transition between themes */
+html, body, .section, .interview-section, .doc-item, .court-case, .special-card,
+.site-header, .sub-nav, .sub-nav-2, .nav-link, .sub-nav-link, .sub-nav-2-link {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
 /* Interview (Rozmowa) section */
 .interview-section {
   background: var(--color-surface);
@@ -1430,18 +1524,30 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   line-height: 1.6;
   font-size: var(--text-base);
 }
-/* Force light theme for new sections */
-.interview-section { background: #f2f1ed !important; }
-.audio-player-wrap { background: #ffffff !important; border-color: rgba(26,26,46,0.2) !important; }
-.interview-excerpt { background: #fef9f0 !important; }
-.interview-section h2, .interview-section h3, .interview-section p { color: #1a1a2e !important; }
-.interview-section .section-label { color: #c0392b !important; }
-.audio-player-label { color: #1a1a2e !important; }
-.doc-modal { background: #fafaf8 !important; }
-.doc-modal-header { background: #f2f1ed !important; border-color: rgba(26,26,46,0.12) !important; }
-.doc-modal-title { color: #1a1a2e !important; }
-.hero-portrait { border-color: rgba(26,26,46,0.12) !important; }
-.about-portrait { box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important; }
+/* Light-mode overrides for sub-components (limited to non-dark theme) */
+html:not([data-theme="dark"]) .interview-section { background: #f2f1ed; }
+html:not([data-theme="dark"]) .audio-player-wrap { background: #ffffff; border-color: rgba(26,26,46,0.2); }
+html:not([data-theme="dark"]) .interview-excerpt { background: #fef9f0; }
+html:not([data-theme="dark"]) .interview-section h2,
+html:not([data-theme="dark"]) .interview-section h3,
+html:not([data-theme="dark"]) .interview-section p { color: #1a1a2e; }
+html:not([data-theme="dark"]) .interview-section .section-label { color: #c0392b; }
+html:not([data-theme="dark"]) .audio-player-label { color: #1a1a2e; }
+html:not([data-theme="dark"]) .doc-modal { background: #fafaf8; }
+html:not([data-theme="dark"]) .doc-modal-header { background: #f2f1ed; border-color: rgba(26,26,46,0.12); }
+html:not([data-theme="dark"]) .doc-modal-title { color: #1a1a2e; }
+html:not([data-theme="dark"]) .hero-portrait { border-color: rgba(26,26,46,0.12); }
+html:not([data-theme="dark"]) .about-portrait { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+/* Dark-mode equivalents */
+html[data-theme="dark"] .interview-section { background: #14171d !important; }
+html[data-theme="dark"] .audio-player-wrap { background: #1a1d24 !important; border-color: rgba(255,255,255,0.18) !important; }
+html[data-theme="dark"] .interview-excerpt { background: #2a2418 !important; }
+html[data-theme="dark"] .interview-section h2,
+html[data-theme="dark"] .interview-section h3,
+html[data-theme="dark"] .interview-section p { color: #e8e8eb !important; }
+html[data-theme="dark"] .audio-player-label { color: #e8e8eb !important; }
+html[data-theme="dark"] .doc-modal-header { background: #14171d !important; border-color: rgba(255,255,255,0.12) !important; }
+html[data-theme="dark"] .doc-modal-title { color: #e8e8eb !important; }
 
 
 .interview-excerpt blockquote { color: #1a1a2e !important; }
@@ -2402,7 +2508,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   <span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span>
   </a>
   <a href="#mudelsee" class="nav-link" data-nav="mudelsee">
-  <span class="nav-pl">Mudelsee</span><span class="nav-en" style="display:none">Mudelsee</span><span class="nav-fr" style="display:none">Mudelsee</span><span class="nav-de" style="display:none">Mudelsee</span><span class="nav-uk" style="display:none">Мудельзе</span>
+  <span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span>
   </a>
   <a href="#timeline" class="nav-link" data-nav="timeline">
   <span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span>
@@ -2477,7 +2583,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
-      <a href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="sady"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
+      <a href="#courts" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="sady"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
       <div class="sub-nav-dropdown" role="menu">
         <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Dokumenty sądowe</span><span class="nav-en" style="display:none">Court documents</span><span class="nav-fr" style="display:none">Documents judiciaires</span><span class="nav-de" style="display:none">Gerichtsunterlagen</span><span class="nav-uk" style="display:none">Судові документи</span></div>
         <a href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)</span><span class="nav-en" style="display:none">Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)</span><span class="nav-fr" style="display:none">Appel du verdict II K 321/23/P (NCN/Błocki c. Kilarski)</span><span class="nav-de" style="display:none">Berufung gegen Urteil II K 321/23/P (NCN/Błocki gegen Kilarski)</span><span class="nav-uk" style="display:none">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span></a>
@@ -2487,7 +2593,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
-      <a href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="prokuratura"><span class="nav-pl">Prokuratura / NIK</span><span class="nav-en" style="display:none">Prosecutor / NIK</span><span class="nav-fr" style="display:none">Parquet / NIK</span><span class="nav-de" style="display:none">Staatsanwaltschaft / NIK</span><span class="nav-uk" style="display:none">Прокуратура / НІК</span></a>
+      <a href="#prokuratura-ochonska" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="prokuratura"><span class="nav-pl">Prokuratura</span><span class="nav-en" style="display:none">Prosecutor</span><span class="nav-fr" style="display:none">Parquet</span><span class="nav-de" style="display:none">Staatsanwaltschaft</span><span class="nav-uk" style="display:none">Прокуратура</span></a>
       <div class="sub-nav-dropdown" role="menu">
         <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Prokuratura i NIK</span><span class="nav-en" style="display:none">Prosecutor & NIK</span><span class="nav-fr" style="display:none">Parquet et NIK</span><span class="nav-de" style="display:none">Staatsanwaltschaft & NIK</span><span class="nav-uk" style="display:none">Прокуратура та НІК</span></div>
         <a href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Postanowienie prokuratury — odmowa (prokurator referent — poprzednia sprawa, 4135-1.Ds.96.2022)</span><span class="nav-en" style="display:none">Prosecutor's decision — refusal (the prosecutor (earlier case), 4135-1.Ds.96.2022)</span><span class="nav-fr" style="display:none">Décision du parquet — refus (la procureure (dossier précédent), 4135-1.Ds.96.2022)</span><span class="nav-de" style="display:none">Beschluss der Staatsanwaltschaft — Ablehnung (die Staatsanwaltschaft (früheres Verfahren), 4135-1.Ds.96.2022)</span><span class="nav-uk" style="display:none">Постанова прокуратури — відмова (прокурор-доповідач (попередня справа), 4135-1.Ds.96.2022)</span></a>
@@ -2500,7 +2606,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
       </div>
     </div>
     <div class="sub-nav-tab align-right" role="none">
-      <a href="docs/Mudelsee.pdf" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="mudelsee"><span class="nav-pl">Mudelsee</span><span class="nav-en" style="display:none">Mudelsee</span><span class="nav-fr" style="display:none">Mudelsee</span><span class="nav-de" style="display:none">Mudelsee</span><span class="nav-uk" style="display:none">Мудельзе</span></a>
+      <a href="#mudelsee" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
       <div class="sub-nav-dropdown" role="menu">
         <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa Mudelsee</span><span class="nav-en" style="display:none">Mudelsee case</span><span class="nav-fr" style="display:none">Affaire Mudelsee</span><span class="nav-de" style="display:none">Fall Mudelsee</span><span class="nav-uk" style="display:none">Справа Мудельзе</span></div>
         <a href="docs/Mudelsee.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Analiza recenzji Mudelsee — kopiuj-wklej (GRIEG)</span><span class="nav-en" style="display:none">Analysis of Mudelsee's copy-paste reviews (GRIEG)</span><span class="nav-fr" style="display:none">Analyse des évaluations copiées-collées de Mudelsee (GRIEG)</span><span class="nav-de" style="display:none">Analyse von Mudelsees kopierten Gutachten (GRIEG)</span><span class="nav-uk" style="display:none">Аналіз скопійованих рецензій Мудельзе (GRIEG)</span></a>
@@ -2537,27 +2643,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     </div>
   </div>
 </nav>
-<!-- ==========================================
-     SUB-NAV ROW 2: Special tabs (Prokuratura Ochońska-Wróbel, Sędzia 400 tys. PLN)
-     ========================================== -->
-<nav aria-label="Special documents" class="sub-nav-2">
-<div class="sub-nav-2-inner">
-<a class="sub-nav-2-link" href="#prokuratura-ochonska">
-<span class="nav-pl">Prokuratura: prok. Ochońska-Wróbel</span>
-<span class="nav-en" style="display:none">Prosecutor Ochońska-Wróbel: refusal</span>
-<span class="nav-fr" style="display:none">Procureure Ochońska-Wróbel : refus</span>
-<span class="nav-de" style="display:none">Staatsanwältin Ochońska-Wróbel: Verweigerung</span>
-<span class="nav-uk" style="display:none">Прокурорка Охоньська-Врубель</span>
-</a>
-<a class="sub-nav-2-link" href="#sedzia-400k">
-<span class="nav-pl">Sędzia: darowizna 400 tys. PLN</span>
-<span class="nav-en" style="display:none">Judge: PLN 400,000 gift</span>
-<span class="nav-fr" style="display:none">Juge : donation de 400 000 PLN</span>
-<span class="nav-de" style="display:none">Richter: 400 000 PLN-Schenkung</span>
-<span class="nav-uk" style="display:none">Суддя: дар 400 тис. PLN</span>
-</a>
-</div>
-</nav>
+<!-- SUB-NAV ROW 2 removed in M18: Prokuratura O.-W. content moved
+     into Prokuratura/NIK section, Sędzia 400k content moved into
+     Courts (Sądy) section. -->
 
 
 <section class="hero">
@@ -2581,7 +2669,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="hero-video-title">Sygnalista w Polsce — pełna historia</div>
     <div class="hero-video-frame">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
       </div>
     </div>
     <div class="hero-video-subtitle">3 min 12 sek · Angielska narracja · Pełna animowana wersja: <a href="animation-en.html" target="_blank">otwórz</a></div>
@@ -2606,7 +2694,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="hero-video-title">A Whistleblower in Poland — the full story</div>
     <div class="hero-video-frame">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
       </div>
     </div>
     <div class="hero-video-subtitle">3 min 12 sec · English narration · Full animated version: <a href="animation-en.html" target="_blank">open</a></div>
@@ -2631,7 +2719,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="hero-video-title">Un lanceur d'alerte en Pologne — l'histoire complète</div>
     <div class="hero-video-frame">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
       </div>
     </div>
     <div class="hero-video-subtitle">3 min 12 sec · Narration anglaise · Version animée complète : <a href="animation-en.html" target="_blank">ouvrir</a></div>
@@ -2656,7 +2744,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="hero-video-title">Ein Whistleblower in Polen — die ganze Geschichte</div>
     <div class="hero-video-frame">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
       </div>
     </div>
     <div class="hero-video-subtitle">3 Min. 12 Sek. · Englische Erzählung · Vollständige animierte Version: <a href="animation-en.html" target="_blank">öffnen</a></div>
@@ -2681,7 +2769,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <div class="hero-video-title">Викривач у Польщі — повна історія</div>
     <div class="hero-video-frame">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/Z7DH_iRY78w" title="Whistleblower — A Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
       </div>
     </div>
     <div class="hero-video-subtitle">3 хв 12 сек · Англійська розповідь · Повна анімована версія: <a href="animation-en.html" target="_blank">відкрити</a></div>
@@ -2820,7 +2908,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -2834,7 +2922,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <section class="section" id="prokuratura-ochonska" style="scroll-margin-top:130px;">
 <div class="lang-block active" data-lang="pl">
 <div class="section-label">Prokuratura</div>
-<h2>Postanowienie prok. Elżbiety Ochońskiej-Wróbel o umorzeniu śledztwa</h2>
+<h2>Odmowa wszczęcia śledztwa przez prokuraturę</h2>
 <p class="intro">Sekcja zawiera <strong>moje pełne pismo do Prokuratury Krajowej z 7 stycznia 2025 r.</strong>, które jest <strong>odpowiedzią na uzasadnienie</strong> postanowienia o umorzeniu śledztwa wydanego 3 lipca 2024 r. przez prokurator <strong>Elżbietę Ochońską-Wróbel</strong> (Prokuratura Rejonowa Kraków-Podgórze, sygn. <strong>4135-1.Ds.96.2022</strong>). Poniżej najpierw krótkie streszczenie postanowienia prokurator, które moje pismo punkt po punkcie podważa; następnie pełny tekst mojego pisma.</p>
 
 <div class="special-card">
@@ -2939,7 +3027,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <!-- ===== EN ===== -->
 <div class="lang-block" data-lang="en" style="display:none">
 <div class="section-label">Prosecutor</div>
-<h2>Prosecutor Elżbieta Ochońska-Wróbel — ruling refusing to investigate</h2>
+<h2>Prosecutor's refusal to open an investigation</h2>
 <p class="intro">This section contains <strong>my full letter to the National Prosecutor’s Office of 7 January 2025</strong>, which is a <strong>response to the reasoning</strong> of the ruling of 3 July 2024 issued by Prosecutor <strong>Elżbieta Ochońska-Wróbel</strong> (District Prosecutor’s Office Kraków-Podgórze, ref. <strong>4135-1.Ds.96.2022</strong>) discontinuing the investigation. Below: a brief summary of the prosecutor’s ruling, then the full text of my letter.</p>
 
 <div class="special-card">
@@ -2985,7 +3073,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <!-- ===== FR ===== -->
 <div class="lang-block" data-lang="fr" style="display:none">
 <div class="section-label">Procureure</div>
-<h2>Ordonnance de la procureure Elżbieta Ochońska-Wróbel refusant l’enquête</h2>
+<h2>Refus du parquet d'ouvrir une enquête</h2>
 <p class="intro">Cette section contient <strong>ma lettre au Parquet national du 7 janvier 2025</strong>, qui constitue une <strong>réponse à la motivation</strong> de l’ordonnance du 3 juillet 2024 rendue par la procureure <strong>Elżbieta Ochońska-Wróbel</strong> (Parquet de district Kraków-Podgórze, n° <strong>4135-1.Ds.96.2022</strong>) classant l’enquête. Ci-dessous : un résumé de l’ordonnance de la procureure, puis le texte intégral de ma lettre.</p>
 <div class="special-card">
 <div class="special-card-header">
@@ -3021,7 +3109,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <!-- ===== DE ===== -->
 <div class="lang-block" data-lang="de" style="display:none">
 <div class="section-label">Staatsanwaltschaft</div>
-<h2>Beschluss von Staatsanwältin Elżbieta Ochońska-Wróbel über die Einstellung der Ermittlungen</h2>
+<h2>Ablehnung der Ermittlungseinleitung durch die Staatsanwaltschaft</h2>
 <p class="intro">Dieser Abschnitt enthält <strong>meinen Brief an die Generalstaatsanwaltschaft vom 7. Januar 2025</strong>, der eine <strong>Antwort auf die Begründung</strong> des Beschlusses vom 3. Juli 2024 von Staatsanwältin <strong>Elżbieta Ochońska-Wróbel</strong> (Bezirksstaatsanwaltschaft Kraków-Podgórze, Az. <strong>4135-1.Ds.96.2022</strong>) ist. Unten: kurze Zusammenfassung des Beschlusses, dann der vollständige Brieftext.</p>
 <div class="special-card">
 <div class="special-card-header">
@@ -3057,7 +3145,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 <!-- ===== UK ===== -->
 <div class="lang-block" data-lang="uk" style="display:none">
 <div class="section-label">Прокуратура</div>
-<h2>Постанова прокурорки Ельжбети Охоньської-Врубель про відмову в розслідуванні</h2>
+<h2>Відмова прокуратури в порушенні розслідування</h2>
 <p class="intro">Цей розділ містить <strong>мій лист до Національної прокуратури від 7 січня 2025 р.</strong>, який є <strong>відповіддю на обґрунтування</strong> постанови від 3 липня 2024 р. прокурорки <strong>Ельжбети Охоньської-Врубель</strong> (Прокуратура району Краків-Підгуже, спр. <strong>4135-1.Ds.96.2022</strong>) про закриття розслідування. Нижче: коротке резюме постанови та повний текст мого листа.</p>
 <div class="special-card">
 <div class="special-card-header">
@@ -3555,7 +3643,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -3728,7 +3816,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -3918,7 +4006,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -4041,7 +4129,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -4207,7 +4295,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -4333,7 +4421,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -4505,7 +4593,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -4677,18 +4765,20 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
-  </section>
 
 <!-- ==========================================
-     SECTION: JUDGE — PLN 400,000 GIFT (post-courts)
+     M18 — "Judge — PLN 400,000 gift" merged into the Courts (Sądy)
+     section as a sub-block (was a standalone section, now nested).
+     The id="sedzia-400k" anchor is preserved on the wrapper <div>.
      ========================================== -->
-<section class="section" id="sedzia-400k" style="scroll-margin-top:130px;">
+<hr style="max-width:1100px;margin:48px auto; border:none; border-top:1px solid rgba(26,26,46,0.12);">
+<div id="sedzia-400k" style="scroll-margin-top:130px;">
 <div class="lang-block active" data-lang="pl">
 <div class="section-label">Sędzia · darowizny 400 tys. PLN</div>
 <h2>Sędzia w mojej sprawie z NCN — łącznie 400 tys. PLN darowizn (nie od rodziny) w miesiącu losowania sprawy</h2>
@@ -4806,7 +4896,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 </details>
 </div>
 </div>
+</div>
 </section>
+<!-- ===== end of merged Courts (Sądy) section =====
 
 
   <!-- ==========================================
@@ -5039,7 +5131,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -5229,7 +5321,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -5392,7 +5484,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -5403,9 +5495,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
 
 <section class="section" id="mudelsee">
   <div class="lang-block active" data-lang="pl">
-  <div class="section-label">Sprawa Mudelsee</div>
-  <h2>Sfałszowane recenzje Manfreda Mudelsee</h2>
-  <p>Sprawa Mudelsee pokazuje, jak NCN chronił zagranicznego eksperta, który złożył skopiowane recenzje do wielu wniosków grantowych w programie GRIEG. Ekspert Manfred Mudelsee używał identycznych szablonów tekstowych do oceny różnych naukowców, niekiedy przyznając wysokie noty, a innym razem niskie — używając tych samych skopiowanych fraz.</p>
+  <div class="section-label">NCN: maszynowe recenzje</div>
+  <h2>NCN ignoruje seryjne (maszynowe) pisanie recenzji — sprawa Manfreda Mudelsee</h2>
+  <p>Sprawa pokazuje, jak NCN chronił zagranicznego eksperta, który złożył <strong>seryjnie powielone, niemalże maszynowo wygenerowane</strong> recenzje do wielu wniosków grantowych w programie GRIEG. Ekspert Manfred Mudelsee używał identycznych szablonów tekstowych do oceny różnych naukowców, niekiedy przyznając wysokie noty, a innym razem niskie — używając tych samych skopiowanych fraz. Mimo zgłoszenia, dyrekcja NCN świadomie zignorowała problem.</p>
   <p>Mimo formalnej skargi osoby NN do Komisji ds. Rzetelności Badań, dyrektor NCN Zbigniew Błocki oficjalnie odmówił zbadania sprawy, twierdząc, że zachowanie eksperta nie stanowi „przewinienia dyscyplinarnego w nauce". Decyzja ta zapadła tego samego dnia, gdy Błocki potajemnie przygotowywał odpowiedź NCN na audyt NIK (Najwyższej Izby Kontroli), który krytykował procedury kontrolne NCN.</p>
   <h3>Dokumenty</h3>
 <ul class="doc-list">
@@ -5437,9 +5529,9 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   </div>
 
   <div class="lang-block" data-lang="en">
-  <div class="section-label">Mudelsee Case</div>
-  <h2>Manfred Mudelsee's Falsified Reviews</h2>
-  <p>The Mudelsee case demonstrates how NCN protected a foreign expert who submitted copy-paste reviews for multiple grant applications in the GRIEG programme. Expert Manfred Mudelsee used identical text templates to evaluate different researchers, sometimes giving high marks and sometimes low marks using the same copied phrases.</p>
+  <div class="section-label">NCN: machine-generated reviews</div>
+  <h2>NCN ignores serial (machine-style) review writing — the Manfred Mudelsee case</h2>
+  <p>The case shows how NCN protected a foreign expert who submitted <strong>serially duplicated, near-machine-generated</strong> reviews for multiple grant applications in the GRIEG programme. Expert Manfred Mudelsee used identical text templates to evaluate different researchers, sometimes giving high marks and sometimes low marks using the same copied phrases. Despite formal notice, the NCN leadership chose to ignore the problem.</p>
   <p>Despite NN's formal complaint to the Research Integrity Commission, NCN Director Zbigniew Błocki officially refused to investigate, claiming the expert's behavior did not constitute "scientific misconduct." The decision came on the same day Błocki was secretly preparing NCN's response to the NIK (Supreme Audit Office) audit that criticized NCN's control procedures.</p>
   <h3>Documents</h3>
 <ul class="doc-list">
@@ -5577,7 +5669,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -5699,7 +5791,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -5881,7 +5973,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -5948,7 +6040,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     <a href="#interview"><span class="nav-pl">Nagrania</span><span class="nav-en" style="display:none">Recordings</span><span class="nav-fr" style="display:none">Enregistrements</span><span class="nav-de" style="display:none">Aufnahmen</span><span class="nav-uk" style="display:none">Записи</span></a>
     <a href="#courts"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
     <a href="#documents"><span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span></a>
-    <a href="#mudelsee">Mudelsee</a>
+    <a href="#mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#about"><span class="nav-pl">O mnie</span><span class="nav-en" style="display:none">About</span><span class="nav-fr" style="display:none">À propos</span><span class="nav-de" style="display:none">Über mich</span><span class="nav-uk" style="display:none">Про мене</span></a>
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
@@ -6094,26 +6186,35 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
   // Check hash for language on load
   const hashLang = window.location.hash.replace('#', '');
   if (langMap[hashLang]) setLanguage(hashLang);
-  // ---- Theme Toggle ----
+  // ---- Theme Toggle (persistent) ----
   const themeToggle = document.getElementById('theme-toggle');
-  const sunIcon = themeToggle.querySelector('.sun-icon');
-  const moonIcon = themeToggle.querySelector('.moon-icon');
-  function setTheme(dark) {
-  document.body.parentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  sunIcon.style.display = dark ? 'none' : '';
-  moonIcon.style.display = dark ? '' : 'none';
+  if (themeToggle) {
+    const sunIcon = themeToggle.querySelector('.sun-icon');
+    const moonIcon = themeToggle.querySelector('.moon-icon');
+    const THEME_KEY = 'kncn_theme';
+    function setTheme(dark) {
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      if (sunIcon) sunIcon.style.display = dark ? 'none' : '';
+      if (moonIcon) moonIcon.style.display = dark ? '' : 'none';
+      themeToggle.setAttribute('aria-label', dark ? 'Tryb jasny / Light mode' : 'Tryb ciemny / Dark mode');
+      try { localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    }
+    // Init: stored preference → system preference → light
+    let isDark = false;
+    try {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored === 'dark') isDark = true;
+      else if (stored === 'light') isDark = false;
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) isDark = true;
+    } catch (e) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) isDark = true;
+    }
+    setTheme(isDark);
+    themeToggle.addEventListener('click', () => {
+      isDark = !isDark;
+      setTheme(isDark);
+    });
   }
-  // Default to light mode
-  let isDark = false;
-  // Respect system preference
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  isDark = true;
-  }
-  setTheme(isDark);
-  themeToggle.addEventListener('click', () => {
-  isDark = !isDark;
-  setTheme(isDark);
-  });
   // ---- Sticky Header Shadow ----
   const header = document.getElementById('site-header');
   let lastScroll = 0;
@@ -6167,7 +6268,7 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     if (ext === 'jpg' || ext === 'jpeg' || ext === 'png' || ext === 'gif' || ext === 'webp') {
       docModalBody.innerHTML = '<img src="' + url + '" alt="' + (title || '') + '">';
     } else {
-      docModalBody.innerHTML = '<iframe src="' + url + '" title="' + (title || '') + '"></iframe>';
+      docModalBody.innerHTML = '<iframe loading="lazy" src="' + url + '" title="' + (title || '') + '"></iframe>';
     }
     docModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -6234,10 +6335,16 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
         async src="//gc.zgo.at/count.js"></script>
 
 <!-- ============================================================
-     Visitor counter display (isolated <script> so it runs even if
-     other inline scripts above throw).  Reads the public total from
-     GoatCounter and writes it into all .visitor-counter labels.
-     Retries up to 3 times before showing a localised fallback.
+     Visitor counter display — hybrid strategy resilient to ad
+     blockers and tracking-protection extensions:
+       (1) JSON fetch to GoatCounter API — fastest, exact number
+       (2) PNG image probe — GoatCounter serves a small badge image;
+           image requests are NOT blocked by most ad blockers
+           (uBlock Origin, AdGuard) the way XHR/fetch to tracker
+           hostnames sometimes are.
+       (3) localStorage cached value — last successful number, so
+           returning visitors never see "unavailable".
+       (4) Localised fallback link to public stats page.
      ============================================================ -->
 <script>
 (function () {
@@ -6250,17 +6357,17 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     uk: 'недоступно'
   };
   var FALLBACK_TITLE = {
-    pl: 'Licznik publiczny GoatCounter chwilowo niedostępny — kliknij, aby otworzyć statystyki.',
-    en: 'GoatCounter public counter is temporarily unavailable — click to open the stats page.',
-    fr: 'Le compteur public GoatCounter est temporairement indisponible — cliquez pour ouvrir les statistiques.',
-    de: 'Der öffentliche GoatCounter-Zähler ist vorübergehend nicht verfügbar — klicken zum Öffnen der Statistik.',
-    uk: 'Публічний лічильник GoatCounter тимчасово недоступний — натисніть, щоб відкрити статистику.'
+    pl: 'Licznik publiczny może być blokowany przez Twoją wtyczkę ochrony prywatności. Kliknij, aby otworzyć statystyki.',
+    en: 'The public counter may be blocked by your privacy extension. Click to open the public stats page.',
+    fr: 'Le compteur public peut être bloqué par votre extension de protection de la vie privée. Cliquez pour ouvrir les statistiques.',
+    de: 'Der öffentliche Zähler kann durch Ihre Datenschutz-Erweiterung blockiert werden. Klicken zum Öffnen der Statistik.',
+    uk: 'Публічний лічильник може бути заблокований розширенням приватності. Натисніть, щоб відкрити статистику.'
   };
   var STATS_URL = 'https://witekkilarski.goatcounter.com/';
-  var ENDPOINTS = [
-    'https://witekkilarski.goatcounter.com/counter/TOTAL.json',
-    'https://witekkilarski.goatcounter.com/counter//TOTAL.json'
-  ];
+  var JSON_ENDPOINT = 'https://witekkilarski.goatcounter.com/counter/TOTAL.json';
+  var PNG_ENDPOINT  = 'https://witekkilarski.goatcounter.com/counter/TOTAL.png';
+  var CACHE_KEY = 'kncn_visitor_count_v2';
+  var CACHE_TTL = 24 * 3600 * 1000; // 24 h
 
   function writeAll(text) {
     LANGS.forEach(function (lang) {
@@ -6269,11 +6376,23 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     });
   }
 
-  function setFallback() {
+  function showCachedOrFallback() {
+    // Try cached value first — better than "unavailable".
+    try {
+      var raw = localStorage.getItem(CACHE_KEY);
+      if (raw) {
+        var p = JSON.parse(raw);
+        if (p && p.value && p.ts && (Date.now() - p.ts) < CACHE_TTL) {
+          writeAll(p.value + '+');
+          return;
+        }
+      }
+    } catch (e) {}
+    // Final fallback — link to stats page.
     LANGS.forEach(function (lang) {
       var el = document.getElementById('gc-counter-' + lang);
       if (!el) return;
-      if (/[0-9]/.test(el.textContent)) return; // already filled in by a retry
+      if (/\d/.test(el.textContent)) return;
       var a = document.createElement('a');
       a.href = STATS_URL;
       a.target = '_blank';
@@ -6285,17 +6404,14 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
     });
   }
 
-  function tryFetch(idx, attempt) {
-    if (idx >= ENDPOINTS.length) {
-      if (attempt < 3) {
-        setTimeout(function () { tryFetch(0, attempt + 1); }, 1500 * attempt);
-      } else {
-        setFallback();
-      }
-      return;
-    }
-    var url = ENDPOINTS[idx] + '?v=' + Date.now();
-    fetch(url, { mode: 'cors', cache: 'no-store', credentials: 'omit' })
+  function cacheValue(formatted) {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ value: formatted, ts: Date.now() }));
+    } catch (e) {}
+  }
+
+  function tryJSON(attempt) {
+    return fetch(JSON_ENDPOINT + '?v=' + Date.now(), { mode: 'cors', cache: 'no-store', credentials: 'omit' })
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
@@ -6305,12 +6421,45 @@ body { background: #fafaf8 !important; color: #1a1a2e !important; }
         if (raw == null) throw new Error('no count field');
         var n = Number(String(raw).replace(/[\s,\u00a0]/g, ''));
         if (!isFinite(n)) throw new Error('not finite');
-        writeAll(n.toLocaleString());
+        var formatted = n.toLocaleString();
+        writeAll(formatted);
+        cacheValue(formatted);
+        return true;
       })
-      .catch(function () { tryFetch(idx + 1, attempt); });
+      .catch(function (err) {
+        if (attempt < 2) {
+          return new Promise(function (resolve) {
+            setTimeout(function () { resolve(tryJSON(attempt + 1)); }, 1500);
+          });
+        }
+        throw err;
+      });
   }
 
-  function start() { tryFetch(0, 1); }
+  // PNG probe: if the image loads, GoatCounter is reachable and counter
+  // exists; we cannot read pixel-text from a cross-origin image, but we
+  // CAN confirm reachability and then ask JSON again from same browser
+  // session in case the first attempt failed transiently. Most usefully,
+  // the PNG itself lives inside the <span> as visible badge.
+  function tryPNGProbe() {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      var done = false;
+      img.onload = function () { if (!done) { done = true; resolve(true); } };
+      img.onerror = function () { if (!done) { done = true; reject(new Error('png blocked')); } };
+      img.src = PNG_ENDPOINT + '?v=' + Date.now();
+      setTimeout(function () { if (!done) { done = true; reject(new Error('png timeout')); } }, 5000);
+    });
+  }
+
+  function start() {
+    tryJSON(0)
+      .catch(function () {
+        return tryPNGProbe().then(function () { return tryJSON(0); });
+      })
+      .catch(function () { showCachedOrFallback(); });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
