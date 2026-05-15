@@ -2356,6 +2356,124 @@ body { background: #fafaf8 !important; color: #14142b !important; }
        that JS used to flip — but keep the toggle button visible (it
        still does language preference cycling for the visitor counter
        in some flows). The button itself is harmless if clicked. */
+/* === KOMORNIK: priorytetowa, czerwona zakładka i sekcja === */
+.sub-nav-tab.priority-tab > .sub-nav-link {
+  background: #c81e1e !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 6px;
+  padding: 6px 14px !important;
+  position: relative;
+  animation: pulse-red 2s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(200,30,30,0.35);
+}
+.sub-nav-tab.priority-tab > .sub-nav-link::before {
+  content: "⚠";
+  margin-right: 6px;
+  font-size: 14px;
+}
+.sub-nav-tab.priority-tab > .sub-nav-link:hover,
+.sub-nav-tab.priority-tab:hover > .sub-nav-link,
+.sub-nav-tab.priority-tab:focus-within > .sub-nav-link {
+  background: #a01515 !important;
+  color: #fff !important;
+}
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 2px 8px rgba(200,30,30,0.35); }
+  50%      { box-shadow: 0 2px 16px rgba(200,30,30,0.85); }
+}
+
+.komornik-section {
+  background: linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);
+  border-top: 6px solid #c81e1e;
+  border-bottom: 6px solid #c81e1e;
+  padding: 40px 0;
+  margin-top: 0;
+  scroll-margin-top: 130px;
+}
+.komornik-banner {
+  background: #c81e1e;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+  font-weight: 700;
+  font-size: 1.05em;
+  text-align: center;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 14px rgba(200,30,30,0.3);
+}
+.komornik-section h2 {
+  color: #8a0f0f;
+  border-bottom: 3px solid #c81e1e;
+  padding-bottom: 8px;
+  margin-top: 32px;
+}
+.komornik-section h3 {
+  color: #c81e1e;
+  margin-top: 24px;
+}
+.komornik-callout {
+  background: #fff;
+  border-left: 5px solid #c81e1e;
+  padding: 14px 18px;
+  margin: 18px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.komornik-callout strong { color: #8a0f0f; }
+.komornik-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.komornik-card {
+  background: #fff;
+  border: 2px solid #f4cccc;
+  padding: 14px 18px;
+  border-radius: 8px;
+}
+.komornik-card h4 { margin: 0 0 6px; color: #8a0f0f; font-size: 1em; }
+.komornik-card p { margin: 0; font-size: 0.92em; color: #333; }
+.komornik-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.komornik-table th {
+  background: #c81e1e;
+  color: #fff;
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+.komornik-table td {
+  padding: 10px 12px;
+  border-top: 1px solid #f4cccc;
+  vertical-align: top;
+}
+.komornik-quote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #c81e1e;
+  padding: 8px 16px;
+  margin: 14px 0;
+  background: #fff8f8;
+}
+.komornik-cta {
+  background: #c81e1e;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 24px 0 0;
+  text-align: center;
+}
+.komornik-cta a { color: #fff; text-decoration: underline; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -2429,6 +2547,16 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </header>
 <nav class="sub-nav" aria-label="Document categories">
   <div class="sub-nav-inner" role="menubar">
+    <div class="sub-nav-tab priority-tab" role="none">
+      <a href="#komornik" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="komornik"><span class="nav-pl">KOMORNIK — PILNE</span><span class="nav-en" style="display:none">BAILIFF — URGENT</span><span class="nav-fr" style="display:none">HUISSIER — URGENT</span><span class="nav-de" style="display:none">GERICHTSVOLLZIEHER — DRINGEND</span><span class="nav-uk" style="display:none">СУДОВИЙ ВИКОНАВЕЦЬ — ТЕРМІНОВО</span></a>
+      <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa bezprawnej egzekucji Km 834/26</span><span class="nav-en" style="display:none">Unlawful enforcement case Km 834/26</span><span class="nav-fr" style="display:none">Saisie illégale Km 834/26</span><span class="nav-de" style="display:none">Rechtswidrige Vollstreckung Km 834/26</span><span class="nav-uk" style="display:none">Незаконна виконавча справа Km 834/26</span></div>
+        <a href="#komornik" class="nav-link" role="menuitem"><span class="nav-pl">Co się stało — 14 maja 2026</span><span class="nav-en" style="display:none">What happened — 14 May 2026</span><span class="nav-fr" style="display:none">Ce qui s'est passé — 14 mai 2026</span><span class="nav-de" style="display:none">Was geschah — 14. Mai 2026</span><span class="nav-uk" style="display:none">Що сталося — 14 травня 2026</span></a>
+        <a href="#komornik-analiza" class="nav-link" role="menuitem"><span class="nav-pl">Analiza prawna — 8 naruszeń</span><span class="nav-en" style="display:none">Legal analysis — 8 violations</span><span class="nav-fr" style="display:none">Analyse juridique — 8 violations</span><span class="nav-de" style="display:none">Rechtsanalyse — 8 Verstöße</span><span class="nav-uk" style="display:none">Правовий аналіз — 8 порушень</span></a>
+        <a href="#komornik-kontekst" class="nav-link" role="menuitem"><span class="nav-pl">Kontekst: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-en" style="display:none">Context: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-fr" style="display:none">Contexte : Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-de" style="display:none">Kontext: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-uk" style="display:none">Контекст: Генрих, NCN, Лора Бандура-Морган</span></a>
+        <a href="#komornik-pisma" class="nav-link" role="menuitem"><span class="nav-pl">Pisma złożone (15 maja 2026)</span><span class="nav-en" style="display:none">Letters filed (15 May 2026)</span><span class="nav-fr" style="display:none">Lettres déposées (15 mai 2026)</span><span class="nav-de" style="display:none">Eingereichte Schreiben (15. Mai 2026)</span><span class="nav-uk" style="display:none">Подані листи (15 травня 2026)</span></a>
+      </div>
+    </div>
     <div class="sub-nav-tab" role="none">
       <a href="#case" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="sprawa"><span class="nav-pl">Sprawa</span><span class="nav-en" style="display:none">The Case</span><span class="nav-fr" style="display:none">L'Affaire</span><span class="nav-de" style="display:none">Der Fall</span><span class="nav-uk" style="display:none">Справа</span></a>
       <div class="sub-nav-dropdown" role="menu">
@@ -2529,6 +2657,158 @@ body { background: #fafaf8 !important; color: #14142b !important; }
      into Prokuratura/NIK section, Sędzia 400k content moved into
      Courts (Sądy) section. -->
 
+<!-- ====== KOMORNIK — PRIORYTETOWA SEKCJA ====== -->
+<section class="komornik-section" id="komornik">
+  <div class="page-wrap">
+
+    <div class="komornik-banner">
+      ⚠ PILNE — 14 maja 2026: bezprawna egzekucja komornicza na koncie rodziny, w tym na koncie 12-letniego dziecka. Komornik Krzysztof Przybyła (Km 834/26) za dług 183,91 zł wpędził rodzinę w 74 425 zł zadłużenia.
+    </div>
+
+    <h2>Sprawa komornika — represja wobec sygnalisty</h2>
+
+    <p><strong>Data:</strong> 14–15 maja 2026 r.<br>
+    <strong>Komornik Sądowy:</strong> Krzysztof Przybyła (przy SR dla Krakowa-Krowodrzy)<br>
+    <strong>Kancelaria:</strong> ul. Kazimierza Wielkiego 112/8, 30-074 Kraków<br>
+    <strong>Sygnatura:</strong> Km 834/26<br>
+    <strong>Kwota dochodzona:</strong> 183,91 zł<br>
+    <strong>Skutek wykonany na rodzinie:</strong> ok. 74 425 zł zadłużenia (przekroczenie ok. 404-krotne)</p>
+
+    <div class="komornik-callout">
+      <strong>Tezy w skrócie:</strong>
+      <ol>
+        <li>Komornik zajął <strong>wspólny rachunek małżeński</strong> bez klauzuli wykonalności przeciwko małżonkowi dłużnika (art. 787 i 7761 § 1 k.p.c.).</li>
+        <li>Komornik i bank zajęli <strong>rachunek bankowy małoletniego (eKonto JUNIOR)</strong> 12-letniego syna, na którym było 90 zł oszczędności dziecka — doprowadzając saldo do −18 402,62 zł (art. 891 § 1 k.p.c.).</li>
+        <li><strong>Egzekucja kwoty 183,91 zł doprowadziła rodzinę do 74 425 zł zadłużenia</strong> — przekroczenie kwoty egzekwowanej <strong>404-krotne</strong> (art. 7991 k.p.c., art. 31 ust. 3 Konstytucji RP).</li>
+        <li>mBank uruchomił cztery kredyty odnawialne bez dyspozycji klienta (art. 8911 k.p.c.).</li>
+        <li>Brak doreczenia jakichkolwiek pism komorniczych (art. 805 § 1 k.p.c.).</li>
+        <li>Sprawa nastąpiła po <strong>moim zawiadomieniu CBA przeciwko sędziemu Henrychowi</strong> i jest, w mojej ocenie, dalszym ciągiem represji wobec sygnalisty NCN — zakazanych w art. 11 ustawy o ochronie sygnalistów (Dz.U. 2024 poz. 928) i dyrektywie UE 2019/1937.</li>
+      </ol>
+    </div>
+
+    <div class="komornik-grid">
+      <div class="komornik-card">
+        <h4>Konto wspólne małżeńskie</h4>
+        <p>eKonto Witolda i Jolanty Kilarskich — saldo: <strong>−18 421,30 zł</strong></p>
+      </div>
+      <div class="komornik-card">
+        <h4>eKonto JUNIOR — dziecko</h4>
+        <p>Piotr Kilarski (12 lat) — miał 90 zł, saldo: <strong>−18 402,62 zł</strong></p>
+      </div>
+      <div class="komornik-card">
+        <h4>eKonto walutowe EUR</h4>
+        <p>Saldo: <strong>−4 430,76 EUR</strong></p>
+      </div>
+      <div class="komornik-card">
+        <h4>eKonto walutowe CHF</h4>
+        <p>Saldo: <strong>−4 040,69 CHF</strong></p>
+      </div>
+    </div>
+
+    <h3>Co się stało</h3>
+    <p>14 maja 2026 r. — logujac się do aplikacji mobilnej mBank — stwierdziłem, że wszystkie cztery rachunki naszej rodziny zostały zajęte przez komornika i doprowadzone do głębokiego debetu. <strong>Nie otrzymałem żadnego pisma ani od komornika, ani od sądu, ani od wierzyciela.</strong> Z aplikacji banku ustaliłem, że działa Krzysztof Przybyła, komornik sądowy przy SR dla Krakowa-Krowodrzy, sygnatura Km 834/26, a <strong>kwota dochodzona to 183 zł 91 gr</strong>.</p>
+
+    <p>Mimo że dług — nieznanego pochodzenia, bo brak doreczenia jakiegokolwiek tytułu wykonawczego — wynosi 183 zł, komornik i mBank wprowadzili w rachunki rodziny <strong>74 425 zł zadłużenia</strong>. Wpędzono w debet:</p>
+    <ul>
+      <li>konto wspólne małżeńskie (eKonto), którego współwłaścicielką jest Jolanta Kilarska — niewinna osoba, niedotknięta żadnym tytułem wykonawczym;</li>
+      <li><strong>rachunek bankowy mojego 12-letniego syna Piotra Kilarskiego (eKonto JUNIOR)</strong>, na którym znajdowało się 90 zł jego oszczędności — doprowadzony do salda −18 402,62 zł;</li>
+      <li>rachunki walutowe EUR (−4 430,76 EUR) i CHF (−4 040,69 CHF) jako podkonta przy rachunku wspólnym.</li>
+    </ul>
+
+    <p>Rodzina — ja, moja żona i nasz dwunastoletni syn — została z dnia na dzień pozbawiona wszelkich środków do życia. <strong>Skazani jesteśmy na nędzę i głód.</strong></p>
+
+    <h2 id="komornik-analiza">Analiza prawna — osiem naruszeń</h2>
+
+    <table class="komornik-table">
+      <thead>
+        <tr><th>#</th><th>Naruszenie</th><th>Podstawa prawna</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Zajęcie konta małoletniego dziecka</strong> w egzekucji wobec ojca — rachunek osoby trzeciej.</td><td>art. 891 § 1 k.p.c.; art. 72 Konstytucji RP; art. 32 Konwencji o prawach dziecka; art. 24 Karty Praw Podstawowych UE</td></tr>
+        <tr><td>2</td><td><strong>Zajęcie wspólnego rachunku małżeńskiego</strong> bez odrębnej klauzuli wykonalności przeciwko małżonkowi dłużnika.</td><td>art. 787 k.p.c.; art. 7761 § 1 k.p.c.; art. 51 Prawa bankowego</td></tr>
+        <tr><td>3</td><td><strong>Rażące naruszenie proporcjonalności</strong>: egzekucja 183,91 zł doprowadziła do 74 425 zł zadłużenia rodziny (przekroczenie 404×).</td><td>art. 7991 k.p.c.; art. 31 ust. 3 Konstytucji RP</td></tr>
+        <tr><td>4</td><td><strong>Uruchomienie kredytów odnawialnych</strong> w imieniu klienta bez dyspozycji i bez odrębnego zajęcia wierzytelności.</td><td>art. 8911 § 1 k.p.c.</td></tr>
+        <tr><td>5</td><td><strong>Brak doręczenia</strong> zawiadomienia o wszczęciu egzekucji ani odpisu tytułu wykonawczego.</td><td>art. 805 § 1 k.p.c.</td></tr>
+        <tr><td>6</td><td><strong>Nieuwzględnienie kwoty wolnej od zajęcia</strong> (ok. 75% min. wynagrodzenia).</td><td>art. 54 ust. 1 Prawa bankowego; art. 833 § 6 k.p.c.</td></tr>
+        <tr><td>7</td><td><strong>Bezprawne przetwarzanie danych osobowych małoletniego</strong> (udostępnienie komornikowi).</td><td>art. 5, 6, 8, 13-14, 32 i 83 RODO; art. 24 KPP UE</td></tr>
+        <tr><td>8</td><td><strong>Działania odwetowe wobec sygnalisty</strong> — bezprawne wszczęcie egzekucji w odpowiedzi na zawiadomienia przeciwko funkcjonariuszom publicznym.</td><td>art. 11 ustawy o ochronie sygnalistów (Dz.U. 2024 poz. 928); dyrektywa UE 2019/1937</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Odpowiedzialność komornika</h3>
+    <p>Komornik Krzysztof Przybyła odpowiada osobiście i majątkowo za szkodę wyrządzoną działaniem bezprawnym — <strong>art. 36 ust. 1 i 2 ustawy o komornikach sądowych</strong> z 22 marca 2018 r. Żądam: (a) wszczęcia postępowania dyscyplinarnego, (b) orzeczenia kary najsurowszej — <strong>wydalenia z zawodu komornika</strong> (art. 222 ust. 1 pkt 5 u.k.s.), (c) zwrotu wszystkich kwot i wypłaty zadośćuczynienia rodzinie.</p>
+
+    <h3>Odpowiedzialność mBank S.A.</h3>
+    <p>Bank — jako profesjonalny uczestnik obrotu — miał obowiązek odmówić realizacji zajęcia rachunku osoby trzeciej (małoletniego) oraz rachunku wspólnego bez klauzuli przeciwko obu małżonkom. Bank odpowiada na podstawie <strong>art. 471 k.c.</strong> (nienależyte wykonanie zobowiązania), <strong>art. 415 k.c.</strong> (odpowiedzialność deliktowa), <strong>art. 24 i 448 k.c.</strong> (naruszenie dóbr osobistych). Skierowano pozew o zapłatę — wartość przedmiotu sporu: <strong>93 402,62 zł</strong>.</p>
+
+    <h2 id="komornik-kontekst">Kontekst: dlaczego to nie jest „zwykła” egzekucja</h2>
+
+    <p>Ta egzekucja następuje w momencie, w którym toczą się równolegle <strong>trzy sprawy</strong>, w których zgłosiłem korupcję lub nieprawidłowości w polskich instytucjach — i w których <strong>obrona prawna wymaga pieniędzy na adwokata</strong>. Pozbawienie nas środków to skuteczne wyeliminowanie nas z procesu.</p>
+
+    <h3>1. Sprawa II K 321/23/P — sędzia Henrych i zawiadomienie CBA</h3>
+    <p>W sprawie karnej II K 321/23/P, prowadzonej przez <strong>sędziego Henrycha</strong>, zapadł wyrok skazujący mnie m.in. za publiczne ujawnienie korupcji w NCN. Sąd uznał „oczywistą nieprawdziwość” mojej wypowiedzi <em>bez przesłuchania nagrań audio</em>, które były kluczowym dowodem (naruszenie art. 410 k.p.k.), odmówił kontratypu z art. 213 § 2 k.k., nie przesłuchał żony i drugiego świadka obrony, a wiarygodność kierownictwa NCN przyjął bezkrytycznie.</p>
+    <p>Złożyłem zawiadomienie do <strong>Centralnego Biura Antykorupcyjnego</strong> wobec sędziego Henrycha — według posiadanych przeze mnie informacji sędzia przyjął nieformalne świadczenie („darowiznę”) w okolicznościach uzasadniających kwalifikację z <strong>art. 228 k.k.</strong> (przyjęcie korzyści majątkowej przez funkcjonariusza publicznego). CBA przekazało sprawę do Prokuratury w Krakowie — i tu zaczyna się problem strukturalny: <strong>gabinet pani prokurator prowadzącej sprawę znajduje się w tym samym budynku co gabinet sędziego Henrycha</strong>. Zamiast wszcząć postępowanie z urzędu, prokuratura wezwała mnie do złożenia formalnego zawiadomienia o przestępstwie. To oczywista sytuacja konfliktu interesu (art. 47 § 1 w zw. z art. 41 k.p.k.), która czyni bezstronne prowadzenie sprawy w Krakowie strukturalnie niemożliwe.</p>
+
+    <h3>2. Sprawa NCN — status sygnalisty</h3>
+    <p>Od 2020 r. dokumentuję publicznie korupcję w <strong>Narodowym Centrum Nauki</strong>. Sprawa obejmuje:</p>
+    <ul>
+      <li><strong>prof. Zbigniewa Błockiego</strong> — byłego Dyrektora NCN (domniemany szantaż, ultimatum z 1 czerwca 2020),</li>
+      <li><strong>Marcina Lianę</strong> — byłego Wicedyrektora NCN,</li>
+      <li><strong>prof. Babika</strong> z UJ (konflikty interesów, recenzje grantołaczne)</li>
+      <li><strong>sprawę Mudelsee</strong> (recenzje grantów GRIEG metodą kopiuj-wklej, brak reakcji NCN).</li>
+    </ul>
+    <p>Posiadam status sygnalisty w rozumieniu <strong>ustawy z 14 czerwca 2024 r. o ochronie sygnalistów (Dz.U. 2024 poz. 928)</strong> oraz <strong>dyrektywy Parlamentu Europejskiego i Rady (UE) 2019/1937</strong>. Materiał dowodowy (9 nagrań audio + nagranie wideo + chronologiczna korespondencja) opublikowany jest na tej stronie.</p>
+
+    <h3>3. Sprawa I C 1671/22 — Laura Bandura-Morgan</h3>
+    <p><strong>Laura Bandura-Morgan</strong> — była urzędniczka NCN, późniejsza współpracowniczka prof. Błockiego — wytoczyła mi proces cywilny o ochronę dóbr osobistych (sygn. I C 1671/22). Sprawa ta jest powiązana ze sprawą karną II K 321/23/P i z aparatem NCN. Sama Bandura-Morgan w nagraniach (m.in. nagranie 7 z 30 września 2021) opowiada o mechanizmie zniszczenia mnie przez Błockiego i Drąga. Apelacja w jej sprawie i współpracujące dokumenty (Anne Chmielarz, 15 listopada 2024) są udokumentowane na stronie.</p>
+    <p>Pozbawienie nas środków do życia <strong>w trakcie toczących się równolegle procesów</strong> — to nie zbieg okoliczności. To skuteczne narzędzie odwetowe.</p>
+
+    <div class="komornik-callout">
+      <strong>Wzór ataków na rodzinę (grudzień 2025 — maj 2026):</strong>
+      <ul>
+        <li>31 grudnia 2025 — kradzież środków w bitcoinie (ok. 45-60 tys. EUR), sprawa 4136-0.Ko.53.2026 (Prokuratura Kraków-Krowodrza), KMP IV MKZKD-40/26.</li>
+        <li>Przejęcie dwóch kont Facebook (moje i żony).</li>
+        <li>Ataki na konta elektroniczne żony i niepełnoletniego syna.</li>
+        <li>14 maja 2026 — bezprawna egzekucja Km 834/26 (niniejsza sprawa).</li>
+      </ul>
+    </div>
+
+    <h3>To, co przypomina Proces Kafki</h3>
+    <div class="komornik-quote">
+      Jestem egzekwowany za nieznany dług, na rzecz nieznanego wierzyciela, w oparciu o nieznany tytuł, przez nieznanego mi do dnia 15 maja komornika — i mam się temu sam bronić, w tygodniowym terminie skargi z art. 767 k.p.c., bez dostępu do akt, bez środków na adwokata.
+    </div>
+
+    <h2 id="komornik-pisma">Pisma złożone 15 maja 2026 — 14 dokumentów</h2>
+    <p>Tego samego dnia, kiedy ustalono fakt egzekucji, złożono drogą e-mail i listem poleconym 12 pism do polskich i unijnych organów:</p>
+
+    <ol>
+      <li><a href="docs/komornik/01_Skarga_na_czynnosci_komornika_Sad_Rejonowy.pdf" target="_blank" rel="noopener">Skarga na czynności komornika (Sąd Rejonowy Kraków-Krowodrza, art. 767 k.p.c.)</a></li>
+      <li><a href="docs/komornik/02_Zawiadomienie_Prokuratura_Krakow_Krowodrza.pdf" target="_blank" rel="noopener">Zawiadomienie o podejrzeniu popełnienia przestępstwa (Prokuratura Rejonowa Kraków-Krowodrza, art. 231 i 286 k.k.)</a></li>
+      <li><a href="docs/komornik/03_Reklamacja_mBank.pdf" target="_blank" rel="noopener">Reklamacja i wezwanie do mBank S.A.</a></li>
+      <li><a href="docs/komornik/04_Skarga_Krajowa_Rada_Komornicza.pdf" target="_blank" rel="noopener">Skarga dyscyplinarna do Krajowej Rady Komorniczej — wniosek o wydalenie z zawodu</a></li>
+      <li><a href="docs/komornik/05_Skarga_Rzecznik_Praw_Dziecka.pdf" target="_blank" rel="noopener">Wniosek o interwencję Rzecznika Praw Dziecka</a></li>
+      <li><a href="docs/komornik/06_Skarga_KNF_Rzecznik_Finansowy_UOKiK.pdf" target="_blank" rel="noopener">Skarga do KNF, Rzecznika Finansowego i UOKiK</a></li>
+      <li><a href="docs/komornik/07_Skarga_Prezes_Sadu_Rejonowego.pdf" target="_blank" rel="noopener">Skarga w trybie nadzoru do Prezesa Sądu Rejonowego</a></li>
+      <li><a href="docs/komornik/08_Wniosek_Kurator_Sad_Rodzinny.pdf" target="_blank" rel="noopener">Wniosek o ustanowienie kuratora dla małoletniego (Sąd Rodzinny, art. 99 k.r.o.)</a></li>
+      <li><a href="docs/komornik/09_Wniosek_Zabezpieczenie_Wstrzymanie_Egzekucji.pdf" target="_blank" rel="noopener">Wniosek o zabezpieczenie i wstrzymanie egzekucji</a></li>
+      <li><a href="docs/komornik/10_Pozew_mBank_Zwrot_Odsetki_Zadoscuczynienie.pdf" target="_blank" rel="noopener">Pozew o zapłatę przeciwko mBank — 93 402,62 zł</a></li>
+      <li><a href="docs/komornik/11_Skarga_UODO.pdf" target="_blank" rel="noopener">Skarga do Prezesa UODO (RODO — dane małoletniego)</a></li>
+      <li><a href="docs/komornik/12_Skarga_EBA_BFG_Arbiter_NBP.pdf" target="_blank" rel="noopener">Skarga do EBA, BFG, Arbitra Bankowego i NBP (PL/EN)</a></li>
+    </ol>
+
+    <p>Pliki pomocnicze:
+      <a href="docs/komornik/00_LISTA_ADRESOW_WYSYLKA.pdf" target="_blank" rel="noopener">lista adresowa do wysyłki</a> —
+      <a href="docs/komornik/00b_ADRESY_INSTYTUCJI.pdf" target="_blank" rel="noopener">wykaz instytucji</a>.
+    </p>
+
+    <div class="komornik-cta">
+      Dziennikarzy, prawników, organizacje pozarządowe i sygnalistów proszę o kontakt:<br>
+      <a href="mailto:witek.kilarski@gmail.com">witek.kilarski@gmail.com</a> — tel. <a href="tel:+48782473130">+48 782 473 130</a>
+    </div>
+
+  </div>
+</section>
+<!-- ====== KONIEC SEKCJI KOMORNIK ====== -->
 
 <section class="hero">
   <div class="hero-inner">
