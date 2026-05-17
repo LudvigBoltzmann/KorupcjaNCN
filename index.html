@@ -1504,6 +1504,10 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   background: #22223e;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  /* Strażnik: kontener nigdy nie wystaje poza okno przeglądarki */
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 .sub-nav-inner {
   max-width: 1080px;
@@ -1512,11 +1516,14 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   display: flex;
   gap: var(--space-1);
   flex-wrap: nowrap;
-  /* Desktop: tabs fit, so do NOT clip (dropdowns need to escape this box).
-     Mobile: enable horizontal scroll via media query below. */
-  overflow-x: visible;
+  /* Na wszystkich widokach: scroll poziomy gdy zakładek jest więcej niż mieści się.
+     Dropdowny działają bo są absolutnie pozycjonowane względem .sub-nav-tab. */
+  overflow-x: auto;
+  overflow-y: visible;
   scrollbar-width: none;
   align-items: stretch;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
 }
 .sub-nav-inner::-webkit-scrollbar { display: none; }
 .sub-nav-tab {
