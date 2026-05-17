@@ -1516,13 +1516,15 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   display: flex;
   gap: var(--space-1);
   flex-wrap: nowrap;
-  /* Na wszystkich widokach: scroll poziomy gdy zakładek jest więcej niż mieści się.
+  /* Scroll poziomy gdy zakładek jest więcej niż mieści się.
      Dropdowny działają bo są absolutnie pozycjonowane względem .sub-nav-tab. */
   overflow-x: auto;
   overflow-y: visible;
   scrollbar-width: none;
   align-items: stretch;
-  scroll-snap-type: x proximity;
+  /* Zaczynamy od lewej strony — pierwsza zakładka zawsze widoczna */
+  justify-content: flex-start;
+  scroll-snap-type: none;
   -webkit-overflow-scrolling: touch;
 }
 .sub-nav-inner::-webkit-scrollbar { display: none; }
