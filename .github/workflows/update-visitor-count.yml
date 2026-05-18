@@ -1,0 +1,72 @@
+name: Update visitor count
+
+# Pobiera liczbę odwiedzin z publicznego API GoatCounter i zapisuje
+# do pliku visitor-count.json w repozytorium. Plik jest następnie
+# serwowany z GitHub Pages jako same-origin fallback, którego nie
+# blokują wtyczki prywatności (uBlock, AdGuard, Brave Shields, itd.).
+
+on:
+  schedule:
+    # Co godzinę — wystarczająco często by liczba była aktualna,
+    # a jednocześnie nie obciąża API GoatCounter.
+    - cron: '17 * * * *'
+  workflow_dispatch:   # pozwala uruchomić ręcznie z zakładki Actions
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-visitor-count.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-visitor-count
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch count from GoatCounter
+        id: fetch
+        run: |
+          set -euo pipefail
+          # Pobieramy łączną liczbę odwiedzin (TOTAL)
+          RESPONSE="$(curl -fsSL --retry 5 --retry-delay 10 \
+            'https://witekkilarski.goatcounter.com/counter/TOTAL.json')"
+          echo "API response: $RESPONSE"
+          COUNT="$(echo "$RESPONSE" | jq -r '.count // empty')"
+          COUNT_UNIQUE="$(echo "$RESPONSE" | jq -r '.count_unique // empty')"
+          if [ -z "$COUNT" ]; then
+            echo "::error::Nie udało się pobrać liczby z GoatCounter"
+            exit 1
+          fi
+          # Generujemy plik z liczbą i znacznikiem czasu w UTC
+          TS="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          cat > visitor-count.json <<EOF
+          {
+            "count": "$COUNT",
+            "count_unique": "$COUNT_UNIQUE",
+            "updated_at": "$TS",
+            "source": "goatcounter",
+            "site": "witekkilarski.goatcounter.com"
+          }
+          EOF
+          echo "Zapisano visitor-count.json:"
+          cat visitor-count.json
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- visitor-count.json; then
+            echo "Brak zmian w visitor-count.json — pomijam commit."
+            exit 0
+          fi
+          git add visitor-count.json
+          git commit -m "chore: update visitor count [skip ci]"
+          git push

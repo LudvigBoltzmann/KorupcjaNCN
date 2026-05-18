@@ -6595,6 +6595,10 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   var STATS_URL = 'https://witekkilarski.goatcounter.com/';
   var JSON_ENDPOINT = 'https://witekkilarski.goatcounter.com/counter/TOTAL.json';
   var PNG_ENDPOINT  = 'https://witekkilarski.goatcounter.com/counter/TOTAL.png';
+  // Same-origin fallback: plik aktualizowany co godzinę przez GitHub Action.
+  // Serwowany z tego samego origin co strona (github.io), więc nieblokowalny
+  // przez wtyczki prywatności (uBlock, AdGuard, Brave Shields, Pi-hole itd.).
+  var REPO_FALLBACK = 'visitor-count.json';
   var CACHE_KEY = 'kncn_visitor_count_v2';
   var CACHE_TTL = 24 * 3600 * 1000; // 24 h
 
@@ -6681,11 +6685,38 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     });
   }
 
+  // Same-origin fallback — pobiera plik visitor-count.json z tego samego
+  // hosta co strona. Plik jest aktualizowany co godzinę przez GitHub Action
+  // (.github/workflows/update-visitor-count.yml). Ten endpoint NIE jest
+  // blokowany przez wtyczki prywatności, ponieważ to ten sam origin.
+  function tryRepoFallback() {
+    return fetch(REPO_FALLBACK + '?v=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        var raw = data && (data.count_unique != null ? data.count_unique : data.count);
+        if (raw == null) throw new Error('no count field');
+        var n = Number(String(raw).replace(/[\s,\u00a0]/g, ''));
+        if (!isFinite(n)) throw new Error('not finite');
+        var formatted = n.toLocaleString();
+        writeAll(formatted);
+        cacheValue(formatted);
+        return true;
+      });
+  }
+
   function start() {
+    // 1) Próba bezpośrednia do GoatCounter (najświeższe dane).
     tryJSON(0)
+      // 2) Sonda PNG + ponowna próba JSON (czasem działa po pierwszej porażce).
       .catch(function () {
         return tryPNGProbe().then(function () { return tryJSON(0); });
       })
+      // 3) Same-origin fallback — plik w repo, aktualizowany co godzinę.
+      .catch(function () { return tryRepoFallback(); })
+      // 4) Cache localStorage lub link do statystyk publicznych.
       .catch(function () { showCachedOrFallback(); });
   }
 
