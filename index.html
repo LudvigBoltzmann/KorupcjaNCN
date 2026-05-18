@@ -391,26 +391,31 @@ a:hover { color: var(--color-link-hover); }
    the duplicate top-row links on desktops. Logo, theme toggle and
    language switcher stay visible. On mobile the existing burger menu
    continues to expose nav-links. */
-@media (min-width: 992px) {
+/* M20 (2026-05-18): sub-nav teraz zawija zakładki do kilku rzędów,
+   więc górny rząd .nav-links jest duplikatem i można go ukryć
+   od 768px w górę. Na <768px burger menu nadal go pokazuje. */
+@media (min-width: 768px) {
   .nav-links {
     display: none !important;
   }
 }
-/* Make the sub-nav a single-line horizontal scroll-track on narrow
-   screens so it never wraps into a 5-row mess. */
+/* M20 (2026-05-18): sub-nav allows tabs to wrap to multiple rows
+   on narrow viewports, so every tab stays visible instead of being
+   hidden in a horizontal scroll track. */
 .sub-nav-inner {
-  flex-wrap: nowrap !important;
-  overflow-x: auto;
-  overflow-y: hidden;
+  flex-wrap: wrap !important;
+  overflow-x: visible;
+  overflow-y: visible;
   max-width: 100%;
-  scrollbar-width: thin;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
+  row-gap: 4px;
+  justify-content: center;
 }
-/* Strażnik: kontener sub-nav nigdy nie wystaje poza viewport */
+/* Strażnik: kontener sub-nav nigdy nie wystaje poza viewport.
+   overflow-y: visible aby dropdowny były widoczne po zawinięciu zakładek. */
 .sub-nav {
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: visible;
   box-sizing: border-box;
 }
 .sub-nav-inner > .sub-nav-tab { scroll-snap-align: start; flex: 0 0 auto; }
@@ -578,6 +583,19 @@ main {
   max-width: 780px;
   margin: 0 auto;
   padding: 0 var(--space-5);
+  text-align: center;
+}
+/* M20 (2026-05-18): text-align center dla głównej treści i sekcji
+   komornika; listy/timeline/tabele/dokumenty pozostają wyrównane
+   do lewej dla czytelności. */
+.komornik-section, .komornik-section .page-wrap {
+  text-align: center;
+}
+main ul, main ol, main .timeline, main .doc-list, main .doc-item,
+main .court-cases, main figure, main pre, main code, main table,
+.komornik-section ul, .komornik-section ol, .komornik-section .komornik-table,
+.komornik-section .komornik-callout, .komornik-section .komornik-quote {
+  text-align: left;
 }
 .section {
   padding: clamp(var(--space-12), 6vw, var(--space-20)) 0;
@@ -1512,20 +1530,16 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 .sub-nav-inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 var(--space-5);
+  padding: 6px var(--space-5);
   display: flex;
   gap: var(--space-1);
-  flex-wrap: nowrap;
-  /* Scroll poziomy gdy zakładek jest więcej niż mieści się.
-     Dropdowny działają bo są absolutnie pozycjonowane względem .sub-nav-tab. */
-  overflow-x: auto;
+  /* M20: zakładki zawijają się do nowej linii zamiast znikać w scrollu */
+  flex-wrap: wrap;
+  overflow-x: visible;
   overflow-y: visible;
-  scrollbar-width: none;
+  row-gap: 4px;
   align-items: stretch;
-  /* Zaczynamy od lewej strony — pierwsza zakładka zawsze widoczna */
-  justify-content: flex-start;
-  scroll-snap-type: none;
-  -webkit-overflow-scrolling: touch;
+  justify-content: center;
 }
 .sub-nav-inner::-webkit-scrollbar { display: none; }
 .sub-nav-tab {
@@ -2837,7 +2851,7 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <p>Posiadam status sygnalisty w rozumieniu <strong>ustawy z 14 czerwca 2024 r. o ochronie sygnalistów (Dz.U. 2024 poz. 928)</strong> oraz <strong>dyrektywy Parlamentu Europejskiego i Rady (UE) 2019/1937</strong>. Materiał dowodowy (9 nagrań audio + nagranie wideo + chronologiczna korespondencja) opublikowany jest na tej stronie.</p>
 
     <h3>3. Sprawa I C 1671/22 — Laura Bandura-Morgan</h3>
-    <p><strong>Laura Bandura-Morgan</strong> — była urzędniczka NCN, późniejsza współpracowniczka prof. Błockiego — wytoczyła mi proces cywilny o ochronę dóbr osobistych (sygn. I C 1671/22). Sprawa ta jest powiązana ze sprawą karną II K 321/23/P i z aparatem NCN. Sama Bandura-Morgan w nagraniach (m.in. nagranie 7 z 30 września 2021) opowiada o mechanizmie zniszczenia mnie przez Błockiego i Drąga. Apelacja w jej sprawie i współpracujące dokumenty (Anne Chmielarz, 15 listopada 2024) są udokumentowane na stronie.</p>
+    <p><strong>Laura Bandura-Morgan</strong> — ówczesna kierownik Wydziału Kontroli i Audytu NCN, podwładna prof. Błockiego — wytoczyła mi proces cywilny o ochronę dóbr osobistych (sygn. I C 1671/22). Sprawa ta jest powiązana ze sprawą karną II K 321/23/P i z aparatem NCN. Sama Bandura-Morgan w nagraniach (m.in. nagranie 7 z 30 września 2021) opowiada o mechanizmie zniszczenia mnie przez Błockiego i Drąga. Apelacja w jej sprawie i współpracujące dokumenty (Anne Chmielarz, 15 listopada 2024) są udokumentowane na stronie.</p>
     <p>Pozbawienie nas środków do życia <strong>w trakcie toczących się równolegle procesów</strong> — to nie zbieg okoliczności. To skuteczne narzędzie odwetowe.</p>
 
     <div class="komornik-callout">
