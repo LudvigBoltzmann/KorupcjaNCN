@@ -2425,6 +2425,86 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   50%      { box-shadow: 0 2px 16px rgba(200,30,30,0.85); }
 }
 
+/* === UKRAINA: niebieska zakładka === */
+.sub-nav-tab.priority-tab-blue > .sub-nav-link {
+  background: #1e5bc8 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 6px;
+  padding: 6px 14px !important;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(30,91,200,0.35);
+  animation: pulse-blue 2.4s ease-in-out infinite;
+}
+.sub-nav-tab.priority-tab-blue > .sub-nav-link::before {
+  content: "💙";
+  margin-right: 6px;
+  font-size: 13px;
+}
+.sub-nav-tab.priority-tab-blue > .sub-nav-link:hover,
+.sub-nav-tab.priority-tab-blue:hover > .sub-nav-link,
+.sub-nav-tab.priority-tab-blue:focus-within > .sub-nav-link {
+  background: #154396 !important;
+  color: #fff !important;
+}
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 2px 8px rgba(30,91,200,0.35); }
+  50%      { box-shadow: 0 2px 16px rgba(30,91,200,0.75); }
+}
+
+/* === UKRAINA: sekcja pomocy === */
+.ukraina-section {
+  background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+  border-top: 6px solid #1e5bc8;
+  border-bottom: 6px solid #ffd500;
+  padding: 48px 0;
+  scroll-margin-top: 130px;
+}
+.ukraina-section .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 var(--space-5); }
+.ukraina-banner {
+  background: linear-gradient(90deg, #1e5bc8 0%, #1e5bc8 50%, #ffd500 50%, #ffd500 100%);
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 10px;
+  margin-bottom: var(--space-5);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+.ukraina-section h2 {
+  color: #1e5bc8;
+  margin-bottom: var(--space-4);
+}
+.ukraina-section .section-label {
+  color: #1e5bc8;
+}
+.ukraina-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e5bc8;
+  color: #fff !important;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-top: var(--space-4);
+  box-shadow: 0 3px 10px rgba(30,91,200,0.30);
+  transition: background 0.15s, transform 0.15s;
+}
+.ukraina-download:hover {
+  background: #154396;
+  transform: translateY(-1px);
+}
+.ukraina-money-note {
+  font-size: 11px;
+  color: #888;
+  margin-top: var(--space-4);
+  font-style: italic;
+}
+
 .komornik-section {
   background: linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);
   border-top: 6px solid #c81e1e;
@@ -2711,6 +2791,9 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Uzupełnienie apelacji — sprawa I C 1671/22</span><span class="nav-en" style="display:none">Supplement to appeal — case I C 1671/22</span><span class="nav-fr" style="display:none">Complément d'appel — affaire I C 1671/22</span><span class="nav-de" style="display:none">Berufungsergänzung — Sache I C 1671/22</span><span class="nav-uk" style="display:none">Доповнення апеляції — справа I C 1671/22</span></a>
         <a href="docs/Zalacznik-2-do-prokuratur-viiiaa.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wniosek o wznowienie śledztwa</span><span class="nav-en" style="display:none">Motion to reopen investigation</span><span class="nav-fr" style="display:none">Demande de réouverture de l'enquête</span><span class="nav-de" style="display:none">Antrag auf Wiederaufnahme</span><span class="nav-uk" style="display:none">Клопотання про відновлення слідства</span></a>
       </div>
+    </div>
+    <div class="sub-nav-tab priority-tab priority-tab-blue align-right" role="none">
+      <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
     </div>
   </div>
 </nav>
@@ -6406,6 +6489,114 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
   </section>
+
+<!-- ==========================================
+     SECTION: UKRAINA — POMOC OFIAROM ATAKÓW
+     ========================================== -->
+<section class="ukraina-section" id="ukraina">
+  <div class="page-wrap">
+
+    <div class="ukraina-banner">
+      <span class="nav-pl">💙💛 Jesteś z Ukrainy i jesteś atakowany w Polsce? Nie jesteś sam.</span>
+      <span class="nav-en" style="display:none">💙💛 Are you Ukrainian and being attacked in Poland? You are not alone.</span>
+      <span class="nav-fr" style="display:none">💙💛 ÊTes-vous ukrainien et attaqué en Pologne ? Vous n'êtes pas seul.</span>
+      <span class="nav-de" style="display:none">💙💛 Sind Sie Ukrainer und werden in Polen angegriffen? Sie sind nicht allein.</span>
+      <span class="nav-uk" style="display:none">💙💛 Ви з України і на вас нападають у Польщі? Ви не самі.</span>
+    </div>
+
+    <div class="lang-block active" data-lang="pl">
+      <div class="section-label">Pomoc Ukraińcom</div>
+      <h2>Jestem dla Was — każdego, kto czuje się zastraszany</h2>
+
+      <p class="intro">Ostatnio zszokowała mnie informacja, że Ukraińcy w Polsce są prześladowani, atakowani i nękani. <strong>Niech każdy Ukrainiec wie, że ja jestem dla nich</strong> — wszystkich, którzy czują się zastraszani. W miarę czasu i możliwości, zrobię wszystko, by pomóc.</p>
+
+      <p>Jako obywatel tego kraju i doktor nauk jestem zawsze bardzo wiarygodny dla polskich władz — znacznie bardziej niż obywatel innego kraju. <strong>Wiem to z doświadczenia</strong>, bo byłem na granicy polsko-ukraińskiej wiele razy i widziałem, jak działają polscy urzędnicy wobec Ukraińców. Wobec mnie tak działać nie będą.</p>
+
+      <p>Nie jestem prawnikiem, ale jestem człowiekiem, którego <strong>zawsze obchodzą najbardziej losy tych najbardziej słabych</strong> — bo po prostu taki jestem i koniec. Tych, których państwo czy świnia (bo tak ich trzeba nazywać) chce terroryzować, bo może.</p>
+
+      <p>Wychowałem się traumatycznie na losach Żydów w moim mieście. <strong>Spałem w łóżku po żydowskim dziecku, które rozstrzelano na lokalnym kirkucie.</strong> Tego się nie zapomina. I tego nie pozwolę powtórzyć — nigdy, nigdzie, nikomu.</p>
+
+      <p><strong>Możesz zadzwonić 24/7:</strong> <a href="tel:+48782473130" style="color:#1e5bc8;font-weight:700;">+48 782 473 130</a> — Dr Witold Kilarski, Kraków.</p>
+
+      <p>Poniżej plakat A4 z wszystkimi informacjami w języku polskim i ukraińskim. <strong>Możesz go pobrać, wydrukować i rozdać</strong> tam, gdzie może trafić do kogoś, kto tej pomocy potrzebuje — w sklepie, na klatce, w przychodni, w szkole, w pracy.</p>
+
+      <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="ukraina-download" download>
+        ⬇ Pobierz plakat A4 (PDF) — PL / UA
+      </a>
+
+      <p class="ukraina-money-note">Żadnych pieniędzy nie chcę i nigdy nie będę chciał. Pomoc jest bezpłatna.</p>
+    </div>
+
+    <div class="lang-block" data-lang="en" style="display:none">
+      <div class="section-label">Help for Ukrainians</div>
+      <h2>I am here for you — anyone who feels intimidated</h2>
+
+      <p class="intro">I was recently shocked to learn that Ukrainians in Poland are being persecuted, attacked, and harassed. <strong>Let every Ukrainian know that I am here for them</strong> — for all those who feel intimidated. As far as time and means allow, I will do everything I can to help.</p>
+
+      <p>As a citizen of this country and a Doctor of Science, I am always far more credible to Polish authorities than a foreign citizen. <strong>I know this from experience</strong> — I have been at the Polish-Ukrainian border many times and have seen how Polish officials treat Ukrainians. They will not treat me that way.</p>
+
+      <p>I am not a lawyer, but I am a person who <strong>has always cared most about the fate of the weakest</strong> — because that's simply who I am. Those whom the state, or some swine in it, wants to terrorize because it can.</p>
+
+      <p>I grew up traumatically on the fate of the Jews of my city. <strong>I slept in the bed of a Jewish child who was shot at the local Jewish cemetery.</strong> You don't forget that. And I won't let it happen again — never, nowhere, to anyone.</p>
+
+      <p><strong>You can call me 24/7:</strong> <a href="tel:+48782473130" style="color:#1e5bc8;font-weight:700;">+48 782 473 130</a> — Dr Witold Kilarski, Kraków.</p>
+
+      <p>Below is an A4 poster with all the information in Polish and Ukrainian. <strong>You can download it, print it, and hand it out</strong> wherever it might reach someone who needs this help — in a shop, a stairwell, a clinic, a school, a workplace.</p>
+
+      <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="ukraina-download" download>
+        ⬇ Download A4 poster (PDF) — PL / UA
+      </a>
+
+      <p class="ukraina-money-note">I do not want any money and never will. This help is free.</p>
+    </div>
+
+    <div class="lang-block" data-lang="fr" style="display:none">
+      <div class="section-label">Aide aux Ukrainiens</div>
+      <h2>Je suis là pour vous — quiconque se sent intimidé</h2>
+      <p class="intro">J'ai été récemment choqué d'apprendre que les Ukrainiens en Pologne sont persécutés, attaqués et harcelés. <strong>Que chaque Ukrainien sache que je suis là pour lui.</strong></p>
+      <p>En tant que citoyen de ce pays et docteur en sciences, je suis bien plus crédible auprès des autorités polonaises qu'un étranger. J'ai vu à la frontière comment les fonctionnaires polonais traitent les Ukrainiens. Avec moi, ce sera différent.</p>
+      <p>Je ne suis pas avocat, mais je suis quelqu'un que <strong>le sort des plus faibles a toujours profondément touché</strong>. J'ai grandi avec la mémoire des Juifs de ma ville — j'ai dormi dans le lit d'un enfant juif fusillé au cimetière juif local. Cela ne s'oublie pas.</p>
+      <p><strong>Vous pouvez m'appeler 24/7 :</strong> <a href="tel:+48782473130" style="color:#1e5bc8;font-weight:700;">+48 782 473 130</a> — Dr Witold Kilarski, Cracovie.</p>
+      <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="ukraina-download" download>⬇ Télécharger l'affiche A4 (PDF) — PL / UA</a>
+      <p class="ukraina-money-note">Je ne veux pas d'argent et n'en voudrai jamais.</p>
+    </div>
+
+    <div class="lang-block" data-lang="de" style="display:none">
+      <div class="section-label">Hilfe für Ukrainer</div>
+      <h2>Ich bin für Sie da — für jeden, der sich eingeschüchtert fühlt</h2>
+      <p class="intro">Vor kurzem war ich schockiert zu erfahren, dass Ukrainer in Polen verfolgt, angegriffen und schikaniert werden. <strong>Jeder Ukrainer soll wissen: Ich bin für Sie da.</strong></p>
+      <p>Als Bürger dieses Landes und Doktor der Wissenschaften bin ich bei polnischen Behörden weit glaubwürdiger als ein ausländischer Bürger. Ich war oft an der polnisch-ukrainischen Grenze und habe gesehen, wie polnische Beamte mit Ukrainern umgehen. Mit mir werden sie es nicht so machen.</p>
+      <p>Ich bin kein Anwalt, aber ich bin ein Mensch, dem <strong>das Schicksal der Schwächsten immer am wichtigsten war</strong>. Ich bin traumatisch mit dem Schicksal der Juden meiner Stadt aufgewachsen — ich schlief im Bett eines jüdischen Kindes, das auf dem jüdischen Friedhof erschossen wurde. Das vergisst man nicht.</p>
+      <p><strong>Sie können mich 24/7 anrufen:</strong> <a href="tel:+48782473130" style="color:#1e5bc8;font-weight:700;">+48 782 473 130</a> — Dr Witold Kilarski, Krakau.</p>
+      <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="ukraina-download" download>⬇ A4-Plakat (PDF) herunterladen — PL / UA</a>
+      <p class="ukraina-money-note">Ich will kein Geld und werde es niemals wollen.</p>
+    </div>
+
+    <div class="lang-block" data-lang="uk" style="display:none">
+      <div class="section-label">Допомога українцям</div>
+      <h2>Я для вас — для кожного, хто почуває себе заляканим</h2>
+
+      <p class="intro">Нещодавно мене вразила інформація, що українців у Польщі переслідують, на них нападають та знущаються. <strong>Нехай кожен українець знає, що я для вас</strong> — для всіх, хто почуває себе заляканим. Наскільки дозволять час і можливості, я зроблю все, щоб допомогти.</p>
+
+      <p>Як громадянин цієї країни і доктор наук, я завжди значно більш вірогідний для польської влади, ніж громадянин іншої країни. <strong>Я це знаю з досвіду</strong> — я був на польсько-українському кордоні багато разів і бачив, як польські чиновники поводяться з українцями. Зі мною вони так не вчинять.</p>
+
+      <p>Я не юрист, але я людина, яку <strong>завжди найбільше хвилювала доля найслабших</strong> — бо я просто такий. Тих, кого держава або свиня в ній хоче тероризувати просто тому, що може.</p>
+
+      <p>Я виріс травматично на долі євреїв мійого міста. <strong>Я спав у ліжку єврейської дитини, яку розстріляли на місцевому єврейському кладовищі.</strong> Цього не забувають. І я не дозволю цьому повторитися — ніколи, ніде, нікому.</p>
+
+      <p><strong>Ви можете телефонувати мені 24/7:</strong> <a href="tel:+48782473130" style="color:#1e5bc8;font-weight:700;">+48 782 473 130</a> — Д-р Вітольд Кілярський, Краків.</p>
+
+      <p>Нижче — плакат формату A4 з усією інформацією польською та українською мовами. <strong>Ви можете його завантажити, роздрукувати та роздати</strong> там, де він може потрапити до когось, хто потребує цієї допомоги — в магазині, під'їзді, поліклініці, школі, на роботі.</p>
+
+      <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="ukraina-download" download>
+        ⬇ Завантажити плакат A4 (PDF) — PL / UA
+      </a>
+
+      <p class="ukraina-money-note">Ніяких грошей я не хочу і ніколи не захочу. Допомога безкоштовна.</p>
+    </div>
+
+  </div>
+</section>
 </main>
 
 <!-- ==========================================
