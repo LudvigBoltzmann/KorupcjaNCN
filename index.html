@@ -2411,6 +2411,8 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     main .kultura-section .kultura-note { color: #f2e9ff !important; }
     main .kultura-section .kultura-note strong { color: #ffd700 !important; }
     main .kultura-section .kultura-outro { color: #a89bd0 !important; }
+    main .kultura-section .kultura-finale { color: #ffd700 !important; }
+    main .kultura-section .kultura-song-num { color: #1a1030 !important; }
     main .kultura-section a { color: #ffd700 !important; }
 
     /* (3) DO NOT TOUCH white-on-dark containers. We explicitly do
@@ -2608,12 +2610,27 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   margin-top: var(--space-4);
   box-shadow: 0 8px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,215,0,0.08) inset;
   backdrop-filter: blur(2px);
+  position: relative;
+}
+.kultura-song-num {
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+  color: #1a1030;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45);
 }
 .kultura-song-title {
   font-size: var(--text-xl);
   font-weight: 700;
   color: #ffd700;
   margin-bottom: 6px;
+  margin-top: 4px;
 }
 .kultura-song-artist {
   font-size: var(--text-base);
@@ -2651,6 +2668,24 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   color: #a89bd0;
   font-style: italic;
   text-align: center;
+}
+.kultura-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.4) 50%, transparent 100%);
+  margin: var(--space-5) 0;
+}
+.kultura-finale {
+  margin-top: var(--space-5);
+  padding: 22px 24px;
+  border: 2px solid rgba(255,215,0,0.55);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,215,0,0.10) 0%, rgba(200,120,255,0.10) 100%);
+  text-align: center;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(255,215,0,0.30);
 }
 
 .komornik-section {
@@ -6609,104 +6644,600 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
 </section>
 
 <!-- ====== Kulturowe analogie ;) — sekcja z piosenkami z YouTube ======
-     Kulturowe komentarze do sprawy: pieśń słowiańska o człowieku,
-     który mówi prawdę w świecie układów. Dodane 2026-07-10. -->
+     9 utworów: od Mickiewicza (Reduta Ordona) i Herberta (Potęga smaku)
+     przez Tuwima, Kaczmarskiego, Cohena, aż do Rob Baileya (I am not done).
+     Zaktualizowane 2026-07-10 (Witek). -->
 <section class="kultura-section" id="kulturowe-analogie">
   <div class="page-wrap">
 
     <div class="lang-block active" data-lang="pl">
       <div class="section-label">Kulturowe analogie ;)</div>
       <h2>Czasem pieśń mówi więcej niż akta sądowe</h2>
-      <p class="intro">Miejsce na kulturowe komentarze do tej historii — piosenki, wiersze, sceny, które rezonują z tym, co się tu wydarzyło. Nauka i prawo mówią swój język, ale czasem trafniej powie to <strong>kruk, duchy i słowiańska saga</strong>.</p>
+      <p class="intro">Miejsce na kulturowe komentarze do tej historii — piosenki, wiersze, sceny, które rezonują z tym, co się tu wydarzyło. Nauka i prawo mówią swój język, ale czasem trafniej powie to <strong>kruk, duchy, słowiańska saga i Rob Bailey</strong>.</p>
 
       <div class="kultura-song">
+        <div class="kultura-song-num">#01</div>
         <div class="kultura-song-title">Wpływy i chamstwo</div>
         <div class="kultura-song-artist">Mia Hipnosis — z serii <em>Kruk i Duchy | Słowiańska Saga</em></div>
         <div class="kultura-video-frame">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
           <strong>Dlaczego tu?</strong> „Historia o człowieku, który odważył się mówić prawdę w świecie pełnym układów” — tak autorka opisuje utwór. Zbieżność z tym, co znajdziesz na tej stronie, jest tu przypadkowa — i zupełnie nieprzypadkowa.
         </div>
       </div>
 
-      <p class="kultura-outro">Ciąg dalszy nastąpi — więcej piosenek i analogii dojdzie z czasem.</p>
+      <div class="kultura-song">
+        <div class="kultura-song-num">#02</div>
+        <div class="kultura-song-title">Całujcie mnie wszyscy w d…</div>
+        <div class="kultura-song-artist">sł. <strong>Julian Tuwim</strong>, wyk. Piotr Hryń — spektakl „Tuwim dla dorosłych”, Teatr Roma</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> Tuwim, 1937. Kiedy hipokryzja establishmentu przekroczy wszelkie granice, ktoś w końcu musi powiedzieć głośno to, co inni tylko myślą. „Bardzo mi przykro, panowie dygnitarze…” — dalej wiadomo.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#03</div>
+        <div class="kultura-song-title">Reduta Ordona</div>
+        <div class="kultura-song-artist"><strong>Adam Mickiewicz</strong> — scena recytacji Bernarda Zygiera z ekranizacji <em>Syzyfowych prac</em> Stefana Żeromskiego</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> „Gdzie się gwałt na prawo sadzi, tam Bóg z armat wystrzela”. Scena, w której polska młodzież pod rusyfikacją odzyskuje głos przez wiersz. Kiedy państwo używa siły, żeby zamknąć usta — słowo staje się fortyfikacją.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#04</div>
+        <div class="kultura-song-title">Try 'n Hold Me Back</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> „Spróbujcie mnie powstrzymać”. Motto dla każdego, komu instytucja próbowała zabrać głos — i się nie udało. Rytm walki, kiedy adwokaci już powiedzieli swoje, a Ty jeszcze nie skończyłeś.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#05</div>
+        <div class="kultura-song-title">Potęga smaku</div>
+        <div class="kultura-song-artist">sł. <strong>Zbigniew Herbert</strong>, muz. i wyk. <strong>Przemysław Gintrowski</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> „To wcale nie wymagało wielkiego charakteru, / nasza odmowa niezgoda i upór / mieliśmy odrobinę koniecznej odwagi / lecz w gruncie rzeczy była to sprawa smaku”. Herbert wyjaśnia, dlaczego niektórzy po prostu nie mogą się zgodzić — nawet gdy się bardzo opłaca.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#06</div>
+        <div class="kultura-song-title">Beast</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/p2ZljzdGPUg" title="Beast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> Kiedy grzeczne prośby, procedury i pisma do organów nie działają — trzeba obudzić bestię w sobie. Nie tę wściekłą, tylko tę wytrwałą, która nie idzie spać, dopóki nie doprowadzi rzeczy do końca.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#07</div>
+        <div class="kultura-song-title">Autoportret Witkacego</div>
+        <div class="kultura-song-artist">sł. i muz. <strong>Jacek Kaczmarski</strong>, wyk. Jacek Bończyk (spektakl „Galeria”, PPA Wrocław 2004)</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/sK57UDkZ6cY" title="Autoportret Witkacego" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> Witkacy patrzy w lustro i widzi, jak epoka go zniekształca. Kaczmarski robi z tego pieśń o człowieku, który wie, że świat wokół zwariował — i że jego autoportret nie musi się do tego świata dopasować.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#08</div>
+        <div class="kultura-song-title">I'm Your Man</div>
+        <div class="kultura-song-artist"><strong>Leonard Cohen</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iEgvklCCovw" title="I'm Your Man" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> „If you want a boxer, I will step into the ring for you”. Cohen o człowieku, który jest gotowy na wszystko — być kochankiem, ojcem, kierowcą, bokserem. W kontekście tej strony: jestem gotów stanąć w każdym ringu, w jakim trzeba.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#09</div>
+        <div class="kultura-song-title">I Am Not Done</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong> feat. Moxiie</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/FviwAYUP0vw" title="I Am Not Done" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> Puenta całej listy. Wyrok, komornik, prokuratura, milczenie instytucji — a mimo to: <strong>nie skończyłem</strong>. Tak długo, jak strona istnieje i jak działa telefon 24/7 — jestem tu.
+        </div>
+      </div>
+
+      <div class="kultura-divider"></div>
+      <div class="kultura-finale">„I am not done.” — i to jest cała pointa.</div>
+      <p class="kultura-outro">Playlist rośnie — kolejne utwory dojdą, kiedy życie podrzuci następne analogie.</p>
     </div>
 
     <div class="lang-block" data-lang="en">
       <div class="section-label">Cultural analogies ;)</div>
       <h2>Sometimes a song says more than a court file</h2>
-      <p class="intro">A space for cultural commentary on this story — songs, poems, scenes that resonate with what happened here. Science and law speak their own language, but sometimes it takes <strong>a raven, ghosts and a Slavic saga</strong> to say it right.</p>
+      <p class="intro">A space for cultural commentary on this story — songs, poems, scenes that resonate with what happened here. Science and law speak their own language, but sometimes it takes <strong>a raven, ghosts, a Slavic saga and Rob Bailey</strong> to say it right.</p>
 
       <div class="kultura-song">
-        <div class="kultura-song-title">Wpływy i chamstwo („Influence and Boorishness”)</div>
+        <div class="kultura-song-num">#01</div>
+        <div class="kultura-song-title">Wpływy i chamstwo</div>
         <div class="kultura-song-artist">Mia Hipnosis — from the series <em>Kruk i Duchy | The Slavic Saga</em></div>
         <div class="kultura-video-frame">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Why here?</strong> “A story of a man who dared to speak the truth in a world full of arrangements” — that is how the author describes the song. Any resemblance to what you will find on this website is entirely coincidental — and entirely not.
+          <strong>Why here?</strong> "A story of a man who dared to speak the truth in a world full of arrangements" — that is how the author describes the song. Any resemblance to what you will find on this website is entirely coincidental — and entirely not.
         </div>
       </div>
 
-      <p class="kultura-outro">To be continued — more songs and analogies will be added over time.</p>
+      <div class="kultura-song">
+        <div class="kultura-song-num">#02</div>
+        <div class="kultura-song-title">Całujcie mnie wszyscy w d…</div>
+        <div class="kultura-song-artist">words by <strong>Julian Tuwim</strong>, performed by Piotr Hryń — play <em>Tuwim for Adults</em>, Teatr Roma</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> Tuwim, 1937. When establishment hypocrisy crosses every line, someone eventually has to say aloud what others only think. The rest of the title needs no translation for anyone who has dealt with Polish officialdom.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#03</div>
+        <div class="kultura-song-title">Reduta Ordona</div>
+        <div class="kultura-song-artist"><strong>Adam Mickiewicz</strong> — Bernard Zygier's recitation scene from the film adaptation of <em>Syzyfowe prace</em> by Stefan Żeromski</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> "Where force is set upon right, God fires the cannons." The scene where Polish youth under Russification regain their voice through a poem. When the state uses force to silence — the word itself becomes a fortification.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#04</div>
+        <div class="kultura-song-title">Try 'n Hold Me Back</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> "Try and hold me back." A motto for anyone whom an institution tried to silence — and failed. The rhythm of the fight, when the lawyers have said their piece and you are not done yet.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#05</div>
+        <div class="kultura-song-title">Potęga smaku</div>
+        <div class="kultura-song-artist">words by <strong>Zbigniew Herbert</strong>, music &amp; performance by <strong>Przemysław Gintrowski</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> "It did not require great character at all — / our refusal, disagreement and stubbornness. / We had a scrap of necessary courage / but essentially it was a matter of taste." Herbert explains why some people simply cannot go along — even when going along would pay very well.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#06</div>
+        <div class="kultura-song-title">Beast</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/p2ZljzdGPUg" title="Beast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> When polite requests, procedures and letters to authorities stop working — you have to wake the beast in yourself. Not the enraged one, the relentless one — the one that will not sleep until the thing is finished.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#07</div>
+        <div class="kultura-song-title">Autoportret Witkacego</div>
+        <div class="kultura-song-artist">words &amp; music by <strong>Jacek Kaczmarski</strong>, performed by Jacek Bończyk (play <em>Galeria</em>, Wrocław 2004)</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/sK57UDkZ6cY" title="Autoportret Witkacego" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> Witkacy looks in the mirror and sees the age distorting him. Kaczmarski turns it into a song about a man who knows the world around him has gone mad — and that his self-portrait need not conform to that world.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#08</div>
+        <div class="kultura-song-title">I'm Your Man</div>
+        <div class="kultura-song-artist"><strong>Leonard Cohen</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iEgvklCCovw" title="I'm Your Man" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> "If you want a boxer, I will step into the ring for you." Cohen on a man who is ready for anything — lover, father, driver, boxer. In the context of this website: I am ready to step into whatever ring is required.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#09</div>
+        <div class="kultura-song-title">I Am Not Done</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong> feat. Moxiie</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/FviwAYUP0vw" title="I Am Not Done" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> The punchline of the whole list. The verdict, the bailiff, the prosecutor, the institutional silence — and yet: <strong>I am not done</strong>. As long as this website exists and the 24/7 phone works — I am here.
+        </div>
+      </div>
+
+      <div class="kultura-divider"></div>
+      <div class="kultura-finale">"I am not done." — and that is the whole point.</div>
+      <p class="kultura-outro">The playlist keeps growing — more tracks will come as life throws up the next analogies.</p>
     </div>
 
     <div class="lang-block" data-lang="fr">
       <div class="section-label">Analogies culturelles ;)</div>
       <h2>Parfois une chanson en dit plus qu'un dossier judiciaire</h2>
-      <p class="intro">Un espace pour les commentaires culturels sur cette histoire — chansons, poèmes, scènes qui résonnent avec ce qui s'est passé ici. La science et le droit parlent leur langue, mais parfois il faut <strong>un corbeau, des fantômes et une saga slave</strong> pour le dire vraiment.</p>
+      <p class="intro">Un espace pour les commentaires culturels sur cette histoire — chansons, poèmes, scènes qui résonnent avec ce qui s'est passé ici. La science et le droit parlent leur langue, mais parfois il faut <strong>un corbeau, des fantômes, une saga slave et Rob Bailey</strong> pour le dire vraiment.</p>
 
       <div class="kultura-song">
-        <div class="kultura-song-title">Wpływy i chamstwo (« Influence et grossièreté »)</div>
+        <div class="kultura-song-num">#01</div>
+        <div class="kultura-song-title">Wpływy i chamstwo</div>
         <div class="kultura-song-artist">Mia Hipnosis — de la série <em>Kruk i Duchy | La Saga slave</em></div>
         <div class="kultura-video-frame">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Pourquoi ici ?</strong> « L'histoire d'un homme qui a osé dire la vérité dans un monde plein d'arrangements » — c'est ainsi que l'auteure décrit la chanson. Toute ressemblance avec ce que vous trouverez sur ce site est purement fortuite — et pas du tout.
+          <strong>Pourquoi ici ?</strong> « L'histoire d'un homme qui a osé dire la vérité dans un monde plein d'arrangements » — c'est ainsi que l'auteure décrit la chanson. Toute ressemblance avec ce site est purement fortuite — et pas du tout.
         </div>
       </div>
 
-      <p class="kultura-outro">À suivre — d'autres chansons et analogies viendront avec le temps.</p>
+      <div class="kultura-song">
+        <div class="kultura-song-num">#02</div>
+        <div class="kultura-song-title">Całujcie mnie wszyscy w d…</div>
+        <div class="kultura-song-artist">texte <strong>Julian Tuwim</strong>, interprété par Piotr Hryń — spectacle « Tuwim pour adultes », Teatr Roma</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> Tuwim, 1937. Quand l'hypocrisie du pouvoir dépasse toute mesure, quelqu'un finit par dire à haute voix ce que les autres ne font que penser.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#03</div>
+        <div class="kultura-song-title">Reduta Ordona</div>
+        <div class="kultura-song-artist"><strong>Adam Mickiewicz</strong> — scène de récitation de Bernard Zygier tirée de l'adaptation cinématographique de <em>Syzyfowe prace</em> de Stefan Żeromski</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> « Là où la force veut asseoir la loi, Dieu tire au canon. » La scène où la jeunesse polonaise sous la russification retrouve sa voix par un poème. Quand l'État recourt à la force pour faire taire — la parole devient un rempart.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#04</div>
+        <div class="kultura-song-title">Try 'n Hold Me Back</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> « Essayez de m'arrêter. » Une devise pour quiconque a été bâillonné par une institution — sans succès. Le rythme du combat, quand les avocats ont dit leur mot et que vous, vous n'avez pas fini.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#05</div>
+        <div class="kultura-song-title">Potęga smaku</div>
+        <div class="kultura-song-artist">texte <strong>Zbigniew Herbert</strong>, musique et interprétation <strong>Przemysław Gintrowski</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> « Cela ne demandait pas un grand caractère : / notre refus, notre désaccord, notre obstination. / Nous avions un brin de courage nécessaire — / mais au fond, c'était une affaire de goût. » Herbert explique pourquoi certains ne peuvent tout simplement pas se plier — même quand se plier rapporte gros.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#06</div>
+        <div class="kultura-song-title">Beast</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/p2ZljzdGPUg" title="Beast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> Quand les demandes polies, les procédures et les courriers aux autorités n'aboutissent plus — il faut réveiller la bête en soi. Pas la bête furieuse : la bête tenace, celle qui ne dort pas tant que la chose n'est pas terminée.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#07</div>
+        <div class="kultura-song-title">Autoportret Witkacego</div>
+        <div class="kultura-song-artist">texte et musique <strong>Jacek Kaczmarski</strong>, interprété par Jacek Bończyk (spectacle « Galeria », Wrocław 2004)</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/sK57UDkZ6cY" title="Autoportret Witkacego" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> Witkacy se regarde dans le miroir et voit l'époque le déformer. Kaczmarski en fait une chanson sur un homme qui sait que le monde autour de lui est devenu fou — et que son autoportrait n'a pas à s'y conformer.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#08</div>
+        <div class="kultura-song-title">I'm Your Man</div>
+        <div class="kultura-song-artist"><strong>Leonard Cohen</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iEgvklCCovw" title="I'm Your Man" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> « If you want a boxer, I will step into the ring for you. » Cohen sur un homme prêt à tout — amant, père, chauffeur, boxeur. Dans le contexte de ce site : je suis prêt à monter sur n'importe quel ring.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#09</div>
+        <div class="kultura-song-title">I Am Not Done</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong> feat. Moxiie</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/FviwAYUP0vw" title="I Am Not Done" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> La chute de toute la liste. Le verdict, l'huissier, le procureur, le silence des institutions — et malgré tout : <strong>je n'ai pas fini</strong>. Tant que ce site existe et que le téléphone 24/7 fonctionne — je suis là.
+        </div>
+      </div>
+
+      <div class="kultura-divider"></div>
+      <div class="kultura-finale">« I am not done. » — et c'est là toute la morale.</div>
+      <p class="kultura-outro">La playlist s'agrandit — d'autres morceaux viendront quand la vie apportera les prochaines analogies.</p>
     </div>
 
     <div class="lang-block" data-lang="de">
       <div class="section-label">Kulturelle Analogien ;)</div>
       <h2>Manchmal sagt ein Lied mehr als eine Gerichtsakte</h2>
-      <p class="intro">Ein Raum für kulturelle Kommentare zu dieser Geschichte — Lieder, Gedichte, Szenen, die mit dem widerhallen, was hier geschah. Wissenschaft und Recht sprechen ihre eigene Sprache, aber manchmal braucht es <strong>einen Raben, Geister und eine slawische Saga</strong>, um es wirklich zu sagen.</p>
+      <p class="intro">Ein Raum für kulturelle Kommentare zu dieser Geschichte — Lieder, Gedichte, Szenen, die mit dem widerhallen, was hier geschah. Wissenschaft und Recht sprechen ihre eigene Sprache, aber manchmal braucht es <strong>einen Raben, Geister, eine slawische Saga und Rob Bailey</strong>, um es wirklich zu sagen.</p>
 
       <div class="kultura-song">
-        <div class="kultura-song-title">Wpływy i chamstwo („Einfluss und Grobheit“)</div>
+        <div class="kultura-song-num">#01</div>
+        <div class="kultura-song-title">Wpływy i chamstwo</div>
         <div class="kultura-song-artist">Mia Hipnosis — aus der Reihe <em>Kruk i Duchy | Die Slawische Saga</em></div>
         <div class="kultura-video-frame">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Warum hier?</strong> „Die Geschichte eines Mannes, der es wagte, die Wahrheit in einer Welt voller Absprachen auszusprechen“ — so beschreibt die Autorin das Lied. Jede Ähnlichkeit mit dem, was Sie auf dieser Seite finden, ist rein zufällig — und ganz und gar nicht.
+          <strong>Warum hier?</strong> „Die Geschichte eines Mannes, der es wagte, die Wahrheit in einer Welt voller Absprachen auszusprechen“ — so beschreibt die Autorin das Lied. Jede Ähnlichkeit mit dieser Website ist rein zufällig — und ganz und gar nicht.
         </div>
       </div>
 
-      <p class="kultura-outro">Fortsetzung folgt — weitere Lieder und Analogien kommen mit der Zeit hinzu.</p>
+      <div class="kultura-song">
+        <div class="kultura-song-num">#02</div>
+        <div class="kultura-song-title">Całujcie mnie wszyscy w d…</div>
+        <div class="kultura-song-artist">Text <strong>Julian Tuwim</strong>, gesungen von Piotr Hryń — Stück „Tuwim für Erwachsene“, Teatr Roma</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> Tuwim, 1937. Wenn die Heuchelei der Obrigkeit jede Grenze überschreitet, muss jemand schließlich laut aussprechen, was andere nur denken.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#03</div>
+        <div class="kultura-song-title">Reduta Ordona</div>
+        <div class="kultura-song-artist"><strong>Adam Mickiewicz</strong> — Bernard Zygiers Rezitationsszene aus der Verfilmung von <em>Syzyfowe prace</em> von Stefan Żeromski</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> „Wo Gewalt sich aufs Recht setzt, dort feuert Gott aus Kanonen.“ Die Szene, in der die polnische Jugend unter der Russifizierung ihre Stimme durch ein Gedicht wiedererlangt. Wenn der Staat mit Gewalt zum Schweigen bringen will — wird das Wort zur Festung.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#04</div>
+        <div class="kultura-song-title">Try 'n Hold Me Back</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> „Versucht, mich aufzuhalten.“ Ein Motto für jeden, den eine Institution zum Schweigen bringen wollte — und daran gescheitert ist. Der Rhythmus des Kampfes, wenn die Anwälte ihr Wort gesagt haben und du noch nicht fertig bist.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#05</div>
+        <div class="kultura-song-title">Potęga smaku</div>
+        <div class="kultura-song-artist">Text <strong>Zbigniew Herbert</strong>, Musik &amp; Vortrag <strong>Przemysław Gintrowski</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> „Es erforderte gar keinen großen Charakter — / unsere Weigerung, unser Nichteinverständnis, unser Trotz. / Wir hatten ein Quäntchen des nötigen Mutes — / im Grunde war es eine Frage des Geschmacks.“ Herbert erklärt, warum manche einfach nicht mitmachen können — auch wenn Mitmachen sich lohnen würde.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#06</div>
+        <div class="kultura-song-title">Beast</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/p2ZljzdGPUg" title="Beast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> Wenn höfliche Bitten, Verfahren und Schreiben an Behörden nicht mehr wirken — dann muss man das Biest in sich wecken. Nicht das wütende, sondern das unermüdliche — das nicht schlafen geht, bis die Sache zu Ende ist.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#07</div>
+        <div class="kultura-song-title">Autoportret Witkacego</div>
+        <div class="kultura-song-artist">Text &amp; Musik <strong>Jacek Kaczmarski</strong>, gesungen von Jacek Bończyk (Stück „Galeria“, Wrocław 2004)</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/sK57UDkZ6cY" title="Autoportret Witkacego" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> Witkacy blickt in den Spiegel und sieht, wie die Epoche ihn verzerrt. Kaczmarski macht daraus ein Lied über einen Menschen, der weiß, dass die Welt um ihn verrückt geworden ist — und dass sein Selbstporträt sich dieser Welt nicht anpassen muss.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#08</div>
+        <div class="kultura-song-title">I'm Your Man</div>
+        <div class="kultura-song-artist"><strong>Leonard Cohen</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iEgvklCCovw" title="I'm Your Man" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> „If you want a boxer, I will step into the ring for you.“ Cohen über einen Mann, der zu allem bereit ist — Liebhaber, Vater, Fahrer, Boxer. Im Kontext dieser Website: Ich bin bereit, in jeden Ring zu steigen, in den es sein muss.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#09</div>
+        <div class="kultura-song-title">I Am Not Done</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong> feat. Moxiie</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/FviwAYUP0vw" title="I Am Not Done" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> Die Pointe der ganzen Liste. Das Urteil, der Gerichtsvollzieher, der Staatsanwalt, das Schweigen der Institutionen — und dennoch: <strong>ich bin nicht fertig</strong>. Solange diese Website existiert und das Telefon 24/7 funktioniert — bin ich hier.
+        </div>
+      </div>
+
+      <div class="kultura-divider"></div>
+      <div class="kultura-finale">„I am not done.“ — und das ist die ganze Pointe.</div>
+      <p class="kultura-outro">Die Playlist wächst — weitere Stücke folgen, wenn das Leben die nächsten Analogien liefert.</p>
     </div>
 
     <div class="lang-block" data-lang="uk">
       <div class="section-label">Культурні аналогії ;)</div>
       <h2>Іноді пісня говорить більше, ніж судова справа</h2>
-      <p class="intro">Місце для культурних коментарів до цієї історії — пісні, вірші, сцени, які резонують із тим, що тут сталося. Наука й право говорять своєю мовою, але іноді потрібен <strong>крук, духи та слов’янська сага</strong>, щоб сказати це точніше.</p>
+      <p class="intro">Місце для культурних коментарів до цієї історії — пісні, вірші, сцени, які резонують із тим, що тут сталося. Наука й право говорять своєю мовою, але іноді потрібен <strong>крук, духи, слов'янська сага та Роб Бейлі</strong>, щоб сказати це точніше.</p>
 
       <div class="kultura-song">
-        <div class="kultura-song-title">Wpływy i chamstwo («Впливи та хамство»)</div>
+        <div class="kultura-song-num">#01</div>
+        <div class="kultura-song-title">Wpływy i chamstwo</div>
         <div class="kultura-song-artist">Mia Hipnosis — із циклу <em>Kruk i Duchy | Слов’янська Сага</em></div>
         <div class="kultura-video-frame">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Чому тут?</strong> «Історія про людину, яка наважилася говорити правду в світі, повному домовленостей» — так описує пісню авторка. Будь-яка схожість із тим, що ви знайдете на цьому сайті, є чисто випадковою — і абсолютно не випадковою.
+          <strong>Чому тут?</strong> «Історія про людину, яка наважилася говорити правду в світі, повному домовленостей» — так описує пісню авторка. Будь-яка схожість із цим сайтом чисто випадкова — і зовсім не випадкова.
         </div>
       </div>
 
-      <p class="kultura-outro">Далі буде — з часом додадуться інші пісні та аналогії.</p>
+      <div class="kultura-song">
+        <div class="kultura-song-num">#02</div>
+        <div class="kultura-song-title">Całujcie mnie wszyscy w d…</div>
+        <div class="kultura-song-artist">текст <strong>Юліана Тувіма</strong>, виконує Пьотр Гринь — вистава «Тувім для дорослих», Teatr Roma</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> Тувім, 1937. Коли лицемірство влади переходить усі межі, хтось врешті мусить сказати вголос те, про що інші лише думають.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#03</div>
+        <div class="kultura-song-title">Reduta Ordona</div>
+        <div class="kultura-song-artist"><strong>Адам Міцкевич</strong> — сцена декламації Бернарда Зиґера з екранізації <em>Сізіфових праць</em> Стефана Жеромського</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> «Де силою насаджують право, там Бог з гармат стріляє». Сцена, у якій польська молодь під русифікацією повертає собі голос через вірш. Коли держава силою затикає рота — слово стає укріпленням.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#04</div>
+        <div class="kultura-song-title">Try 'n Hold Me Back</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> «Спробуйте мене зупинити». Гасло для кожного, кого установа намагалася змусити замовкнути — і не змогла. Ритм боротьби, коли адвокати вже сказали своє, а ти ще не закінчив.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#05</div>
+        <div class="kultura-song-title">Potęga smaku</div>
+        <div class="kultura-song-artist">текст <strong>Збіґнєв Герберт</strong>, музика й виконання <strong>Пшемислав Ґінтровський</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> «Це зовсім не вимагало великого характеру, / наша відмова, незгода й упертість — / ми мали дрібку потрібної відваги, / але в суті це була справа смаку». Герберт пояснює, чому дехто просто не може погодитися — навіть коли погодитися вигідно.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#06</div>
+        <div class="kultura-song-title">Beast</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/p2ZljzdGPUg" title="Beast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> Коли ввічливі прохання, процедури й листи до органів перестають працювати — треба розбудити в собі звіра. Не лютого, а впертого — того, хто не піде спати, поки справа не доведена до кінця.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#07</div>
+        <div class="kultura-song-title">Autoportret Witkacego</div>
+        <div class="kultura-song-artist">текст і музика <strong>Яцек Качмарський</strong>, виконує Яцек Бончик (вистава «Галерея», Вроцлав 2004)</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/sK57UDkZ6cY" title="Autoportret Witkacego" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> Віткаци дивиться в дзеркало й бачить, як епоха його спотворює. Качмарський робить із цього пісню про людину, яка знає, що світ навколо збожеволів — і що її автопортрет не мусить під цей світ підлаштовуватися.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#08</div>
+        <div class="kultura-song-title">I'm Your Man</div>
+        <div class="kultura-song-artist"><strong>Leonard Cohen</strong></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/iEgvklCCovw" title="I'm Your Man" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> «If you want a boxer, I will step into the ring for you». Коен про людину, готову на все — коханця, батька, водія, боксера. У контексті цього сайту: я готовий вийти на будь-який ринг, який знадобиться.
+        </div>
+      </div>
+
+      <div class="kultura-song">
+        <div class="kultura-song-num">#09</div>
+        <div class="kultura-song-title">I Am Not Done</div>
+        <div class="kultura-song-artist"><strong>Rob Bailey &amp; The Hustle Standard</strong> feat. Moxiie</div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/FviwAYUP0vw" title="I Am Not Done" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> Розв'язка всього списку. Вирок, судовий виконавець, прокурор, мовчання інституцій — і попри все: <strong>я не закінчив</strong>. Доки існує цей сайт і працює телефон 24/7 — я тут.
+        </div>
+      </div>
+
+      <div class="kultura-divider"></div>
+      <div class="kultura-finale">«I am not done.» — і в цьому вся суть.</div>
+      <p class="kultura-outro">Плейлист зростає — інші треки додадуться, коли життя підкине наступні аналогії.</p>
     </div>
 
   </div>
