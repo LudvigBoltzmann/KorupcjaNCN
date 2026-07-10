@@ -2381,6 +2381,38 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     main .section-label { color: #c0392b !important; }
     main .court-case-id { border-bottom-color: var(--color-accent) !important; }
 
+    /* M21 (2026-07-10): .kultura-section jest ciemnym kontenerem
+       wewnątrz <main> — wyłączamy dla niej readability-override,
+       inaczej tekst nie jest widoczny na fioletowo-czarnym tle. */
+    main .kultura-section h1,
+    main .kultura-section h2,
+    main .kultura-section h3,
+    main .kultura-section h4,
+    main .kultura-section h5,
+    main .kultura-section h6,
+    main .kultura-section p,
+    main .kultura-section li,
+    main .kultura-section blockquote,
+    main .kultura-section .intro,
+    main .kultura-section .kultura-note,
+    main .kultura-section .kultura-outro,
+    main .kultura-section .kultura-song-title,
+    main .kultura-section .kultura-song-artist,
+    main .kultura-section strong,
+    main .kultura-section em {
+      color: inherit !important;
+    }
+    main .kultura-section h2 { color: #ffd700 !important; }
+    main .kultura-section .section-label { color: #ffd700 !important; }
+    main .kultura-section .intro,
+    main .kultura-section p { color: #e8dcff !important; }
+    main .kultura-section .kultura-song-title { color: #ffd700 !important; }
+    main .kultura-section .kultura-song-artist { color: #d9c9ff !important; }
+    main .kultura-section .kultura-note { color: #f2e9ff !important; }
+    main .kultura-section .kultura-note strong { color: #ffd700 !important; }
+    main .kultura-section .kultura-outro { color: #a89bd0 !important; }
+    main .kultura-section a { color: #ffd700 !important; }
+
     /* (3) DO NOT TOUCH white-on-dark containers. We explicitly do
        NOTHING to:
          .site-header, .site-header *
@@ -2503,6 +2535,122 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   color: #888;
   margin-top: var(--space-4);
   font-style: italic;
+}
+
+/* ===== Kulturowe analogie ;) — słowiańsko-mistyczna sekcja z osadzonymi
+   piosenkami z YouTube. Motyw: fiolet nocy + złoto świecące, żeby
+   odróżniało się od reszty strony (spraw prawnych) i miało trochę
+   „rizzu" — jak prosił syn. ===== */
+.kultura-section {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,215,0,0.10), transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(200,120,255,0.12), transparent 55%),
+    linear-gradient(180deg, #1a1030 0%, #241645 60%, #1a1030 100%);
+  color: #f2e9ff;
+  border-top: 6px solid #ffd700;
+  border-bottom: 6px solid #7b3fbf;
+  padding: 56px 0;
+  scroll-margin-top: 130px;
+  position: relative;
+  overflow: hidden;
+}
+.kultura-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(1px 1px at 78% 34%, rgba(255,255,255,0.45), transparent 60%),
+    radial-gradient(1.5px 1.5px at 42% 68%, rgba(255,215,0,0.60), transparent 60%),
+    radial-gradient(1px 1px at 88% 78%, rgba(255,255,255,0.40), transparent 60%),
+    radial-gradient(1px 1px at 28% 88%, rgba(255,215,0,0.45), transparent 60%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+.kultura-section .page-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+  position: relative;
+  z-index: 1;
+}
+.kultura-section .section-label {
+  color: #ffd700 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.kultura-section h2 {
+  color: #ffd700;
+  margin-bottom: var(--space-3);
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.15;
+  text-shadow: 0 2px 20px rgba(255,215,0,0.20);
+}
+.kultura-section .intro {
+  color: #e8dcff;
+  font-size: var(--text-lg);
+  max-width: 720px;
+  margin-bottom: var(--space-5);
+}
+.kultura-section p { color: #e8dcff; }
+.kultura-section a {
+  color: #ffd700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.kultura-section a:hover { color: #fff2a8; }
+.kultura-song {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,215,0,0.35);
+  border-radius: 14px;
+  padding: 22px;
+  margin-top: var(--space-4);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,215,0,0.08) inset;
+  backdrop-filter: blur(2px);
+}
+.kultura-song-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 6px;
+}
+.kultura-song-artist {
+  font-size: var(--text-base);
+  color: #d9c9ff;
+  margin-bottom: var(--space-3);
+  font-style: italic;
+}
+.kultura-video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(255,215,0,0.25);
+}
+.kultura-video-frame iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.kultura-note {
+  margin-top: var(--space-3);
+  padding: 14px 18px;
+  border-left: 3px solid #ffd700;
+  background: rgba(255,215,0,0.06);
+  border-radius: 4px;
+  font-size: var(--text-base);
+  color: #f2e9ff;
+}
+.kultura-note strong { color: #ffd700; }
+.kultura-outro {
+  margin-top: var(--space-5);
+  font-size: 12px;
+  color: #a89bd0;
+  font-style: italic;
+  text-align: center;
 }
 
 .komornik-section {
@@ -2801,6 +2949,9 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     </div>
     <div class="sub-nav-tab priority-tab priority-tab-blue align-right" role="none">
       <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
+    </div>
+    <div class="sub-nav-tab align-right" role="none">
+      <a href="#kulturowe-analogie" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="kulturowe-analogie"><span class="nav-pl">Kulturowe analogie ;)</span><span class="nav-en" style="display:none">Cultural analogies ;)</span><span class="nav-fr" style="display:none">Analogies culturelles ;)</span><span class="nav-de" style="display:none">Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">Культурні аналогії ;)</span></a>
     </div>
   </div>
 </nav>
@@ -6452,6 +6603,110 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
       </a>
 
       <p class="ukraina-money-note">Ніяких грошей я не хочу і ніколи не захочу. Допомога безкоштовна.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== Kulturowe analogie ;) — sekcja z piosenkami z YouTube ======
+     Kulturowe komentarze do sprawy: pieśń słowiańska o człowieku,
+     który mówi prawdę w świecie układów. Dodane 2026-07-10. -->
+<section class="kultura-section" id="kulturowe-analogie">
+  <div class="page-wrap">
+
+    <div class="lang-block active" data-lang="pl">
+      <div class="section-label">Kulturowe analogie ;)</div>
+      <h2>Czasem pieśń mówi więcej niż akta sądowe</h2>
+      <p class="intro">Miejsce na kulturowe komentarze do tej historii — piosenki, wiersze, sceny, które rezonują z tym, co się tu wydarzyło. Nauka i prawo mówią swój język, ale czasem trafniej powie to <strong>kruk, duchy i słowiańska saga</strong>.</p>
+
+      <div class="kultura-song">
+        <div class="kultura-song-title">Wpływy i chamstwo</div>
+        <div class="kultura-song-artist">Mia Hipnosis — z serii <em>Kruk i Duchy | Słowiańska Saga</em></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Dlaczego tu?</strong> „Historia o człowieku, który odważył się mówić prawdę w świecie pełnym układów” — tak autorka opisuje utwór. Zbieżność z tym, co znajdziesz na tej stronie, jest tu przypadkowa — i zupełnie nieprzypadkowa.
+        </div>
+      </div>
+
+      <p class="kultura-outro">Ciąg dalszy nastąpi — więcej piosenek i analogii dojdzie z czasem.</p>
+    </div>
+
+    <div class="lang-block" data-lang="en">
+      <div class="section-label">Cultural analogies ;)</div>
+      <h2>Sometimes a song says more than a court file</h2>
+      <p class="intro">A space for cultural commentary on this story — songs, poems, scenes that resonate with what happened here. Science and law speak their own language, but sometimes it takes <strong>a raven, ghosts and a Slavic saga</strong> to say it right.</p>
+
+      <div class="kultura-song">
+        <div class="kultura-song-title">Wpływy i chamstwo („Influence and Boorishness”)</div>
+        <div class="kultura-song-artist">Mia Hipnosis — from the series <em>Kruk i Duchy | The Slavic Saga</em></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Why here?</strong> “A story of a man who dared to speak the truth in a world full of arrangements” — that is how the author describes the song. Any resemblance to what you will find on this website is entirely coincidental — and entirely not.
+        </div>
+      </div>
+
+      <p class="kultura-outro">To be continued — more songs and analogies will be added over time.</p>
+    </div>
+
+    <div class="lang-block" data-lang="fr">
+      <div class="section-label">Analogies culturelles ;)</div>
+      <h2>Parfois une chanson en dit plus qu'un dossier judiciaire</h2>
+      <p class="intro">Un espace pour les commentaires culturels sur cette histoire — chansons, poèmes, scènes qui résonnent avec ce qui s'est passé ici. La science et le droit parlent leur langue, mais parfois il faut <strong>un corbeau, des fantômes et une saga slave</strong> pour le dire vraiment.</p>
+
+      <div class="kultura-song">
+        <div class="kultura-song-title">Wpływy i chamstwo (« Influence et grossièreté »)</div>
+        <div class="kultura-song-artist">Mia Hipnosis — de la série <em>Kruk i Duchy | La Saga slave</em></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Pourquoi ici ?</strong> « L'histoire d'un homme qui a osé dire la vérité dans un monde plein d'arrangements » — c'est ainsi que l'auteure décrit la chanson. Toute ressemblance avec ce que vous trouverez sur ce site est purement fortuite — et pas du tout.
+        </div>
+      </div>
+
+      <p class="kultura-outro">À suivre — d'autres chansons et analogies viendront avec le temps.</p>
+    </div>
+
+    <div class="lang-block" data-lang="de">
+      <div class="section-label">Kulturelle Analogien ;)</div>
+      <h2>Manchmal sagt ein Lied mehr als eine Gerichtsakte</h2>
+      <p class="intro">Ein Raum für kulturelle Kommentare zu dieser Geschichte — Lieder, Gedichte, Szenen, die mit dem widerhallen, was hier geschah. Wissenschaft und Recht sprechen ihre eigene Sprache, aber manchmal braucht es <strong>einen Raben, Geister und eine slawische Saga</strong>, um es wirklich zu sagen.</p>
+
+      <div class="kultura-song">
+        <div class="kultura-song-title">Wpływy i chamstwo („Einfluss und Grobheit“)</div>
+        <div class="kultura-song-artist">Mia Hipnosis — aus der Reihe <em>Kruk i Duchy | Die Slawische Saga</em></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Warum hier?</strong> „Die Geschichte eines Mannes, der es wagte, die Wahrheit in einer Welt voller Absprachen auszusprechen“ — so beschreibt die Autorin das Lied. Jede Ähnlichkeit mit dem, was Sie auf dieser Seite finden, ist rein zufällig — und ganz und gar nicht.
+        </div>
+      </div>
+
+      <p class="kultura-outro">Fortsetzung folgt — weitere Lieder und Analogien kommen mit der Zeit hinzu.</p>
+    </div>
+
+    <div class="lang-block" data-lang="uk">
+      <div class="section-label">Культурні аналогії ;)</div>
+      <h2>Іноді пісня говорить більше, ніж судова справа</h2>
+      <p class="intro">Місце для культурних коментарів до цієї історії — пісні, вірші, сцени, які резонують із тим, що тут сталося. Наука й право говорять своєю мовою, але іноді потрібен <strong>крук, духи та слов’янська сага</strong>, щоб сказати це точніше.</p>
+
+      <div class="kultura-song">
+        <div class="kultura-song-title">Wpływy i chamstwo («Впливи та хамство»)</div>
+        <div class="kultura-song-artist">Mia Hipnosis — із циклу <em>Kruk i Duchy | Слов’янська Сага</em></div>
+        <div class="kultura-video-frame">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Mia Hipnosis — Wpływy i chamstwo (Kruk i Duchy)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="kultura-note">
+          <strong>Чому тут?</strong> «Історія про людину, яка наважилася говорити правду в світі, повному домовленостей» — так описує пісню авторка. Будь-яка схожість із тим, що ви знайдете на цьому сайті, є чисто випадковою — і абсолютно не випадковою.
+        </div>
+      </div>
+
+      <p class="kultura-outro">Далі буде — з часом додадуться інші пісні та аналогії.</p>
     </div>
 
   </div>
