@@ -2486,6 +2486,92 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   50%      { box-shadow: 0 2px 16px rgba(30,91,200,0.75); }
 }
 
+/* === LIST OTWARTY: sekcja z listem do Premiera i Ministra === */
+.listotwarty-section {
+  background: linear-gradient(180deg, #f5f0eb 0%, #ffffff 100%);
+  border-top: 6px solid #7a1a1a;
+  border-bottom: 6px solid #01696F;
+  padding: 48px 0;
+  scroll-margin-top: 130px;
+}
+.listotwarty-section .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 var(--space-5); }
+.listotwarty-banner {
+  background: linear-gradient(90deg, #7a1a1a 0%, #7a1a1a 50%, #01696F 50%, #01696F 100%);
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 10px;
+  margin-bottom: var(--space-5);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+.listotwarty-section h2 {
+  color: #7a1a1a;
+  margin-bottom: var(--space-4);
+}
+.listotwarty-section .section-label {
+  color: #7a1a1a;
+  letter-spacing: 0.5px;
+}
+.listotwarty-recipients {
+  background: #ffffff;
+  border: 1px solid #e5d9d9;
+  border-left: 4px solid #7a1a1a;
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: var(--space-4) 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.listotwarty-recipients strong { color: #7a1a1a; }
+.listotwarty-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #7a1a1a;
+  color: #fff !important;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-top: var(--space-3);
+  margin-right: 10px;
+  box-shadow: 0 3px 10px rgba(122,26,26,0.30);
+  transition: background 0.15s, transform 0.15s;
+}
+.listotwarty-download:hover {
+  background: #5a1010;
+  transform: translateY(-1px);
+}
+.listotwarty-embed {
+  margin-top: var(--space-4);
+  border: 1px solid #d4c9c9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eee;
+}
+.listotwarty-embed iframe {
+  width: 100%;
+  height: 720px;
+  border: 0;
+  display: block;
+}
+.listotwarty-status {
+  background: #fdf6e3;
+  border-left: 4px solid #01696F;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-top: var(--space-3);
+  font-size: 14px;
+  color: #333;
+}
+.listotwarty-status strong { color: #01696F; }
+@media (max-width: 640px) {
+  .listotwarty-embed iframe { height: 500px; }
+}
+
 /* === UKRAINA: sekcja pomocy === */
 .ukraina-section {
   background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
@@ -3003,6 +3089,7 @@ body { background: #fafaf8 !important; color: #14142b !important; }
       <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
     </div>
     <div class="sub-nav-tab align-right" role="none">
+      <a href="#list-otwarty" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="list-otwarty"><span class="nav-pl">📜 List otwarty</span><span class="nav-en" style="display:none">📜 Open letter</span><span class="nav-fr" style="display:none">📜 Lettre ouverte</span><span class="nav-de" style="display:none">📜 Offener Brief</span><span class="nav-uk" style="display:none">📜 Відкритий лист</span></a>
       <a href="#kulturowe-analogie" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="kulturowe-analogie"><span class="nav-pl">Kulturowe analogie ;)</span><span class="nav-en" style="display:none">Cultural analogies ;)</span><span class="nav-fr" style="display:none">Analogies culturelles ;)</span><span class="nav-de" style="display:none">Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">Культурні аналогії ;)</span></a>
     </div>
   </div>
@@ -6551,6 +6638,121 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
   </section>
+
+<!-- ==========================================
+     SECTION: LIST OTWARTY do Premiera i Ministra Sprawiedliwości
+     Opublikowany i wysłany: 13 lipca 2026
+     ========================================== -->
+<section class="listotwarty-section" id="list-otwarty">
+  <div class="page-wrap">
+
+    <div class="listotwarty-banner">
+      <span class="nav-pl">📜 List otwarty do Prezesa Rady Ministrów i Ministra Sprawiedliwości</span>
+      <span class="nav-en" style="display:none">📜 Open letter to the Prime Minister and Minister of Justice</span>
+      <span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au ministre de la Justice</span>
+      <span class="nav-de" style="display:none">📜 Offener Brief an den Ministerpräsidenten und den Justizminister</span>
+      <span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра юстиції</span>
+    </div>
+
+    <div class="lang-block active" data-lang="pl">
+      <div class="section-label">List otwarty</div>
+      <h2>Do Prezesa Rady Ministrów Donalda Tuska<br>i Ministra Sprawiedliwości Waldemara Żurka</h2>
+
+      <p class="intro"><strong>Kraków, 13 lipca 2026 r.</strong> Po pięciu latach bezskutecznych zawiadomień do polityków, dziennikarzy, CBA, prokuratur i ministrów — dziś opublikowałem i wysłałem list otwarty w sprawie systemowej odmowy ścigania korupcji, szantażu i nepotyzmu w Narodowym Centrum Nauki oraz Narodowej Agencji Wymiany Akademickiej.</p>
+
+      <p>List dotyczy postępowania prowadzonego pod sygn. akt <strong>4135-1.Ds.96.2022</strong> przez Prokuraturę Rejonową Kraków-Podgórze, zakończonego postanowieniem o odmowie wszczęcia śledztwa, którego uzasadnienie zawiera — w mojej ocenie — rażące błędy proceduralne i logiczne, opisane szczegółowo w załączonym dokumencie.</p>
+
+      <div class="listotwarty-recipients">
+        <strong>Adresaci główni:</strong> Kancelaria Prezesa Rady Ministrów, Biuro Ministra Sprawiedliwości.<br>
+        <strong>Do wiadomości:</strong> Prokuratura Krajowa, Małopolski Wydział Zamiejscowy Departamentu ds. Przestępczości Zorganizowanej i Korupcji w Krakowie, Rzecznik Praw Obywatelskich, Najwyższa Izba Kontroli, Ministerstwo Nauki i Szkolnictwa Wyższego, przewodnicząca sejmowej Komisji Edukacji, Nauki i Młodzieży, Rada Etyki Mediów, redakcje: Press.pl, Wirtualnemedia.pl, OKO.press, Forum Akademickie, Rzeczpospolita, Onet, Interia, Gazeta Wyborcza.<br>
+        <strong>Do rozpatrzenia przez OLAF</strong> (Europejski Urząd ds. Zwalczania Nadużyć Finansowych) — z uwagi na współfinansowanie środków przez UE.
+      </div>
+
+      <a href="docs/list_otwarty_kilarski_2026-07-13.pdf" target="_blank" rel="noopener noreferrer" class="listotwarty-download" download>
+        ⬇ Pobierz list otwarty (PDF, 5 stron, A4)
+      </a>
+
+      <div class="listotwarty-status">
+        <strong>Status:</strong> Wysłany 13 lipca 2026 r. do wszystkich wymienionych adresatów za pośrednictwem poczty elektronicznej. Oczekuję odpowiedzi merytorycznej w terminie 30 dni.
+      </div>
+
+      <div class="listotwarty-embed">
+        <iframe src="docs/list_otwarty_kilarski_2026-07-13.pdf#view=FitH" title="List otwarty — dr Witold Kilarski, 13 lipca 2026" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="lang-block" data-lang="en">
+      <div class="section-label">Open letter</div>
+      <h2>To Prime Minister Donald Tusk<br>and Minister of Justice Waldemar Żurek</h2>
+
+      <p class="intro"><strong>Kraków, 13 July 2026.</strong> After five years of unanswered notifications to politicians, journalists, the anti-corruption bureau (CBA), prosecutors and ministers — today I published and sent an open letter regarding the systemic refusal to prosecute corruption, blackmail, and nepotism in Poland's National Science Centre (NCN) and Polish National Agency for Academic Exchange (NAWA).</p>
+
+      <p>The letter concerns proceedings held under case ref. <strong>4135-1.Ds.96.2022</strong> before the Kraków-Podgórze District Prosecutor's Office, closed with a refusal to open an investigation — a decision whose reasoning contains, in my assessment, grave procedural and logical failures documented in detail in the attached filing.</p>
+
+      <div class="listotwarty-recipients">
+        <strong>Main recipients:</strong> Chancellery of the Prime Minister; Cabinet of the Minister of Justice.<br>
+        <strong>Cc:</strong> National Prosecutor's Office (Kraków anti-corruption department), Ombudsman, Supreme Audit Office (NIK), Ministry of Science, Chair of the Sejm Committee on Education, Science and Youth, Media Ethics Council, and Polish newsrooms including Press.pl, Wirtualnemedia.pl, OKO.press, Forum Akademickie, Rzeczpospolita, Onet, Interia, Gazeta Wyborcza.<br>
+        <strong>To be reviewed by OLAF</strong> (European Anti-Fraud Office) — due to EU co-financing of the funds concerned.
+      </div>
+
+      <a href="docs/list_otwarty_kilarski_2026-07-13.pdf" target="_blank" rel="noopener noreferrer" class="listotwarty-download" download>
+        ⬇ Download open letter (PDF, 5 pages, A4)
+      </a>
+
+      <div class="listotwarty-status">
+        <strong>Status:</strong> Sent 13 July 2026 by email to all listed recipients. Substantive response requested within 30 days.
+      </div>
+
+      <div class="listotwarty-embed">
+        <iframe src="docs/list_otwarty_kilarski_2026-07-13.pdf#view=FitH" title="Open letter — Dr Witold Kilarski, 13 July 2026" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="lang-block" data-lang="fr">
+      <div class="section-label">Lettre ouverte</div>
+      <h2>Au Premier ministre Donald Tusk<br>et au ministre de la Justice Waldemar Żurek</h2>
+      <p class="intro"><strong>Cracovie, 13 juillet 2026.</strong> Après cinq ans de signalements sans réponse — j'ai publié et envoyé aujourd'hui une lettre ouverte concernant le refus systémique de poursuivre la corruption, le chantage et le népotisme au sein du Centre national des sciences (NCN) et de l'Agence nationale d'échange universitaire (NAWA) polonais.</p>
+      <p>L'affaire concerne la procédure <strong>4135-1.Ds.96.2022</strong> devant le Parquet de district de Cracovie-Podgórze, close par un refus d'ouvrir une enquête entaché — à mon sens — de graves défaillances procédurales.</p>
+      <a href="docs/list_otwarty_kilarski_2026-07-13.pdf" target="_blank" rel="noopener noreferrer" class="listotwarty-download" download>
+        ⬇ Télécharger la lettre ouverte (PDF, 5 pages, A4)
+      </a>
+      <div class="listotwarty-status"><strong>Statut :</strong> Envoyée le 13 juillet 2026 à tous les destinataires listés. Réponse attendue dans un délai de 30 jours.</div>
+      <div class="listotwarty-embed">
+        <iframe src="docs/list_otwarty_kilarski_2026-07-13.pdf#view=FitH" title="Lettre ouverte" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="lang-block" data-lang="de">
+      <div class="section-label">Offener Brief</div>
+      <h2>An Ministerpräsident Donald Tusk<br>und Justizminister Waldemar Żurek</h2>
+      <p class="intro"><strong>Krakau, 13. Juli 2026.</strong> Nach fünf Jahren erfolgloser Meldungen an Politiker, Journalisten, die Antikorruptionsbehörde CBA, Staatsanwaltschaften und Minister habe ich heute einen offenen Brief veröffentlicht und versandt — zur systemischen Weigerung, Korruption, Erpressung und Vetternwirtschaft im polnischen Nationalen Wissenschaftszentrum (NCN) und in der Nationalen Agentur für akademischen Austausch (NAWA) zu verfolgen.</p>
+      <p>Es geht um das Verfahren <strong>4135-1.Ds.96.2022</strong> vor der Bezirksstaatsanwaltschaft Krakau-Podgórze, das mit einer Ablehnung der Ermittlungsaufnahme endete — mit — nach meiner Einschätzung — schweren Verfahrensmängeln.</p>
+      <a href="docs/list_otwarty_kilarski_2026-07-13.pdf" target="_blank" rel="noopener noreferrer" class="listotwarty-download" download>
+        ⬇ Offenen Brief herunterladen (PDF, 5 Seiten, A4)
+      </a>
+      <div class="listotwarty-status"><strong>Status:</strong> Am 13. Juli 2026 an alle aufgeführten Adressaten per E-Mail versandt. Erwartete inhaltliche Antwort innerhalb von 30 Tagen.</div>
+      <div class="listotwarty-embed">
+        <iframe src="docs/list_otwarty_kilarski_2026-07-13.pdf#view=FitH" title="Offener Brief" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="lang-block" data-lang="uk">
+      <div class="section-label">Відкритий лист</div>
+      <h2>До Прем'єр-міністра Дональда Туска<br>та Міністра юстиції Вальдемара Журка</h2>
+      <p class="intro"><strong>Краків, 13 липня 2026 р.</strong> Після п'яти років безрезультатних звернень до політиків, журналістів, CBA, прокуратур і міністрів — сьогодні я опублікував і надіслав відкритий лист про системну відмову переслідувати корупцію, шантаж і непотизм у польському Національному центрі науки (NCN) та Національному агентстві академічних обмінів (NAWA).</p>
+      <p>Справа стосується провадження за номером <strong>4135-1.Ds.96.2022</strong> у Районній прокуратурі Краків-Подгуже, закритого відмовою у порушенні розслідування, — з, на мою думку, грубими процесуальними порушеннями.</p>
+      <a href="docs/list_otwarty_kilarski_2026-07-13.pdf" target="_blank" rel="noopener noreferrer" class="listotwarty-download" download>
+        ⬇ Завантажити відкритий лист (PDF, 5 сторінок, A4)
+      </a>
+      <div class="listotwarty-status"><strong>Статус:</strong> Надіслано 13 липня 2026 р. усім переліченим адресатам електронною поштою. Очікую змістовної відповіді протягом 30 днів.</div>
+      <div class="listotwarty-embed">
+        <iframe src="docs/list_otwarty_kilarski_2026-07-13.pdf#view=FitH" title="Відкритий лист" loading="lazy"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ==========================================
      SECTION: UKRAINA — POMOC OFIAROM ATAKÓW
