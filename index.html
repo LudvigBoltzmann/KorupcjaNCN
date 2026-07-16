@@ -2910,7 +2910,191 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   text-align: center;
 }
 .komornik-cta a { color: #fff; text-decoration: underline; font-weight: 700; }
-  </style>
+  
+/* === Section-end navigation === */
+.section-nav {
+  max-width: 1100px;
+  margin: 48px auto 24px;
+  padding: 24px var(--space-5);
+  background: linear-gradient(180deg, #f8f5f0 0%, #ffffff 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.section-nav-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1030;
+  margin-bottom: 4px;
+}
+.section-nav-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+.section-nav-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+.section-nav-tile {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1030;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+}
+.section-nav-tile:hover {
+  background: #1a1030;
+  color: #ffffff;
+  border-color: #1a1030;
+  transform: translateY(-1px);
+}
+.section-nav-tile.section-nav-red {
+  background: #c81e1e;
+  color: #ffffff;
+  border-color: #c81e1e;
+}
+.section-nav-tile.section-nav-red:hover {
+  background: #a01515;
+  border-color: #a01515;
+}
+.section-nav-tile.section-nav-blue {
+  background: #1e5bc8;
+  color: #ffffff;
+  border-color: #1e5bc8;
+}
+.section-nav-tile.section-nav-blue:hover {
+  background: #154396;
+  border-color: #154396;
+}
+.section-nav-tile.section-nav-yellow {
+  background: #f2c800;
+  color: #1a1030;
+  border-color: #f2c800;
+}
+.section-nav-tile.section-nav-yellow:hover {
+  background: #d9b400;
+  border-color: #d9b400;
+}
+.section-nav-tile.section-nav-current {
+  background: rgba(26,16,48,0.08);
+  color: #1a1030;
+  border-color: rgba(26,16,48,0.25);
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.55;
+}
+.section-nav-top {
+  margin-top: 14px;
+  text-align: right;
+}
+.section-nav-top-link {
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+.section-nav-top-link:hover {
+  background: #1a1030;
+  color: #ffffff;
+}
+@media (max-width: 640px) {
+  .section-nav { padding: 16px 12px; margin: 32px 8px 16px; }
+  .section-nav-tile { padding: 6px 10px; font-size: 12px; }
+}
+
+/* Override dark-themed section colours for the section-nav component,
+   so links inside kultura/komornik/ukraina/list-otwarty sections stay
+   readable against the light .section-nav background. */
+.kultura-section .section-nav,
+.komornik-section .section-nav,
+.ukraina-section .section-nav,
+.listotwarty-section .section-nav {
+  background: linear-gradient(180deg, #f8f5f0 0%, #ffffff 100%) !important;
+  color: #1a1030 !important;
+}
+.kultura-section .section-nav .section-nav-title,
+.komornik-section .section-nav .section-nav-title,
+.ukraina-section .section-nav .section-nav-title,
+.listotwarty-section .section-nav .section-nav-title {
+  color: #1a1030 !important;
+}
+.kultura-section .section-nav .section-nav-subtitle,
+.komornik-section .section-nav .section-nav-subtitle,
+.ukraina-section .section-nav .section-nav-subtitle,
+.listotwarty-section .section-nav .section-nav-subtitle {
+  color: #666 !important;
+}
+.kultura-section .section-nav .section-nav-tile,
+.komornik-section .section-nav .section-nav-tile,
+.ukraina-section .section-nav .section-nav-tile,
+.listotwarty-section .section-nav .section-nav-tile {
+  color: #1a1030 !important;
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.15) !important;
+}
+.kultura-section .section-nav .section-nav-tile:hover,
+.komornik-section .section-nav .section-nav-tile:hover,
+.ukraina-section .section-nav .section-nav-tile:hover,
+.listotwarty-section .section-nav .section-nav-tile:hover {
+  color: #ffffff !important;
+  background: #1a1030 !important;
+  border-color: #1a1030 !important;
+}
+.kultura-section .section-nav .section-nav-tile.section-nav-red,
+.komornik-section .section-nav .section-nav-tile.section-nav-red,
+.ukraina-section .section-nav .section-nav-tile.section-nav-red,
+.listotwarty-section .section-nav .section-nav-tile.section-nav-red {
+  color: #ffffff !important;
+  background: #c81e1e !important;
+  border-color: #c81e1e !important;
+}
+.kultura-section .section-nav .section-nav-tile.section-nav-blue,
+.komornik-section .section-nav .section-nav-tile.section-nav-blue,
+.ukraina-section .section-nav .section-nav-tile.section-nav-blue,
+.listotwarty-section .section-nav .section-nav-tile.section-nav-blue {
+  color: #ffffff !important;
+  background: #1e5bc8 !important;
+  border-color: #1e5bc8 !important;
+}
+.kultura-section .section-nav .section-nav-tile.section-nav-yellow,
+.komornik-section .section-nav .section-nav-tile.section-nav-yellow,
+.ukraina-section .section-nav .section-nav-tile.section-nav-yellow,
+.listotwarty-section .section-nav .section-nav-tile.section-nav-yellow {
+  color: #1a1030 !important;
+  background: #f2c800 !important;
+  border-color: #f2c800 !important;
+}
+.kultura-section .section-nav .section-nav-tile.section-nav-current,
+.komornik-section .section-nav .section-nav-tile.section-nav-current,
+.ukraina-section .section-nav .section-nav-tile.section-nav-current,
+.listotwarty-section .section-nav .section-nav-tile.section-nav-current {
+  color: #1a1030 !important;
+  background: rgba(26,16,48,0.08) !important;
+  border-color: rgba(26,16,48,0.25) !important;
+}
+.kultura-section .section-nav .section-nav-top-link,
+.komornik-section .section-nav .section-nav-top-link,
+.ukraina-section .section-nav .section-nav-top-link,
+.listotwarty-section .section-nav .section-nav-top-link {
+  color: #666 !important;
+}
+.kultura-section .section-nav .section-nav-top-link:hover,
+.komornik-section .section-nav .section-nav-top-link:hover,
+.ukraina-section .section-nav .section-nav-top-link:hover,
+.listotwarty-section .section-nav .section-nav-top-link:hover {
+  color: #ffffff !important;
+  background: #1a1030 !important;
+}
+</style>
 <!-- IndexNow key reference for fast Bing/Yandex/Seznam indexing -->
 <link rel="index-now" href="https://ludvigboltzmann.github.io/KorupcjaNCN/1e5af76defc57ea04fc50e613cfcb2b0.txt">
 
@@ -3157,28 +3341,6 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="#case" class="nav-link" role="menuitem"><span class="nav-pl">Wróć do wprowadzenia sprawy</span><span class="nav-en" style="display:none">Back to case introduction</span><span class="nav-fr" style="display:none">Retour à l'introduction de l'affaire</span><span class="nav-de" style="display:none">Zurück zur Fall-Einführung</span><span class="nav-uk" style="display:none">Повернутися до вступу справи</span></a>
       </div>
     </div>
-    <div class="sub-nav-tab priority-tab-blue align-right" role="none">
-      <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
-          <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Pomoc Ukraińcom — dokumenty i akcje</span><span class="nav-en" style="display:none">Help for Ukrainians — documents and actions</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens — documents et actions</span><span class="nav-de" style="display:none">Hilfe für Ukrainer — Dokumente und Aktionen</span><span class="nav-uk" style="display:none">Допомога українцям — документи та акції</span></div>
-        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie do sekcji</span><span class="nav-en" style="display:none">Introduction to the section</span><span class="nav-fr" style="display:none">Introduction à la section</span><span class="nav-de" style="display:none">Einführung in den Abschnitt</span><span class="nav-uk" style="display:none">Вступ до розділу</span></a>
-        <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Plakat A4 — pomoc dla Ukrainy (PDF)</span><span class="nav-en" style="display:none">A4 poster — help for Ukraine (PDF)</span><span class="nav-fr" style="display:none">Affiche A4 — aide à l'Ukraine (PDF)</span><span class="nav-de" style="display:none">A4-Plakat — Hilfe für die Ukraine (PDF)</span><span class="nav-uk" style="display:none">Плакат A4 — допомога Україні (PDF)</span></a>
-        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">List otwarty (kontekst)</span><span class="nav-en" style="display:none">Open letter (context)</span><span class="nav-fr" style="display:none">Lettre ouverte (contexte)</span><span class="nav-de" style="display:none">Offener Brief (Kontext)</span><span class="nav-uk" style="display:none">Відкритий лист (контекст)</span></a>
-      </div>
-    </div>
-    <div class="sub-nav-tab priority-tab-yellow align-right" role="none">
-      <a href="#kulturowe-analogie" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="kulturowe-analogie"><span class="nav-pl">Kulturowe analogie ;)</span><span class="nav-en" style="display:none">Cultural analogies ;)</span><span class="nav-fr" style="display:none">Analogies culturelles ;)</span><span class="nav-de" style="display:none">Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">Культурні аналогії ;)</span></a>
-          <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Kulturowe analogie — playlist</span><span class="nav-en" style="display:none">Cultural analogies — playlist</span><span class="nav-fr" style="display:none">Analogies culturelles — playlist</span><span class="nav-de" style="display:none">Kulturelle Analogien — Playlist</span><span class="nav-uk" style="display:none">Культурні аналогії — плейлист</span></div>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie i cała playlista</span><span class="nav-en" style="display:none">Introduction and full playlist</span><span class="nav-fr" style="display:none">Introduction et playlist complète</span><span class="nav-de" style="display:none">Einführung und vollständige Playlist</span><span class="nav-uk" style="display:none">Вступ і повний плейлист</span></a>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-en" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-fr" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-de" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-uk" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span></a>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-en" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-fr" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-de" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-uk" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span></a>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#03 Reduta Ordona — Mickiewicz</span><span class="nav-en" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-fr" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-de" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-uk" style="display:none">#03 Reduta Ordona — Mickiewicz</span></a>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-en" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-fr" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-de" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-uk" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span></a>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-en" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-fr" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-de" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-uk" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span></a>
-        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#10 I Am Not Done — Rob Bailey</span><span class="nav-en" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-fr" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-de" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-uk" style="display:none">#10 I Am Not Done — Rob Bailey</span></a>
-      </div>
-    </div>
     <div class="sub-nav-tab align-right" role="none">
       <a href="#wyrok-kafkowski" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="wyrok-kafkowski"><span class="nav-pl">Wyrok kafkowski</span><span class="nav-en" style="display:none">Kafkaesque verdict</span><span class="nav-fr" style="display:none">Verdict kafkaïen</span><span class="nav-de" style="display:none">Kafkaeskes Urteil</span><span class="nav-uk" style="display:none">Кафкіанський вирок</span></a>
       <div class="sub-nav-dropdown" role="menu">
@@ -3207,6 +3369,28 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
         <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
         <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab priority-tab-yellow align-right" role="none">
+      <a href="#kulturowe-analogie" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="kulturowe-analogie"><span class="nav-pl">Kulturowe analogie ;)</span><span class="nav-en" style="display:none">Cultural analogies ;)</span><span class="nav-fr" style="display:none">Analogies culturelles ;)</span><span class="nav-de" style="display:none">Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">Культурні аналогії ;)</span></a>
+          <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Kulturowe analogie — playlist</span><span class="nav-en" style="display:none">Cultural analogies — playlist</span><span class="nav-fr" style="display:none">Analogies culturelles — playlist</span><span class="nav-de" style="display:none">Kulturelle Analogien — Playlist</span><span class="nav-uk" style="display:none">Культурні аналогії — плейлист</span></div>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie i cała playlista</span><span class="nav-en" style="display:none">Introduction and full playlist</span><span class="nav-fr" style="display:none">Introduction et playlist complète</span><span class="nav-de" style="display:none">Einführung und vollständige Playlist</span><span class="nav-uk" style="display:none">Вступ і повний плейлист</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-en" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-fr" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-de" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-uk" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-en" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-fr" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-de" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-uk" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#03 Reduta Ordona — Mickiewicz</span><span class="nav-en" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-fr" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-de" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-uk" style="display:none">#03 Reduta Ordona — Mickiewicz</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-en" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-fr" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-de" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-uk" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-en" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-fr" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-de" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-uk" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#10 I Am Not Done — Rob Bailey</span><span class="nav-en" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-fr" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-de" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-uk" style="display:none">#10 I Am Not Done — Rob Bailey</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab priority-tab-blue align-right" role="none">
+      <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
+          <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Pomoc Ukraińcom — dokumenty i akcje</span><span class="nav-en" style="display:none">Help for Ukrainians — documents and actions</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens — documents et actions</span><span class="nav-de" style="display:none">Hilfe für Ukrainer — Dokumente und Aktionen</span><span class="nav-uk" style="display:none">Допомога українцям — документи та акції</span></div>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie do sekcji</span><span class="nav-en" style="display:none">Introduction to the section</span><span class="nav-fr" style="display:none">Introduction à la section</span><span class="nav-de" style="display:none">Einführung in den Abschnitt</span><span class="nav-uk" style="display:none">Вступ до розділу</span></a>
+        <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Plakat A4 — pomoc dla Ukrainy (PDF)</span><span class="nav-en" style="display:none">A4 poster — help for Ukraine (PDF)</span><span class="nav-fr" style="display:none">Affiche A4 — aide à l'Ukraine (PDF)</span><span class="nav-de" style="display:none">A4-Plakat — Hilfe für die Ukraine (PDF)</span><span class="nav-uk" style="display:none">Плакат A4 — допомога Україні (PDF)</span></a>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">List otwarty (kontekst)</span><span class="nav-en" style="display:none">Open letter (context)</span><span class="nav-fr" style="display:none">Lettre ouverte (contexte)</span><span class="nav-de" style="display:none">Offener Brief (Kontext)</span><span class="nav-uk" style="display:none">Відкритий лист (контекст)</span></a>
       </div>
     </div>
   </div>
@@ -3484,7 +3668,115 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
-  </section>
+  
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <span class="section-nav-tile section-nav-current" aria-current="true">Sprawa</span>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <span class="section-nav-tile section-nav-current" aria-current="true">The Case</span>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <span class="section-nav-tile section-nav-current" aria-current="true">L'Affaire</span>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <span class="section-nav-tile section-nav-current" aria-current="true">Der Fall</span>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <span class="section-nav-tile section-nav-current" aria-current="true">Справа</span>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
+</section>
 
 <!-- ==========================================
      SECTION: PROSECUTOR OCHOŃSKA-WRÓBEL — REFUSAL TO INVESTIGATE
@@ -3748,6 +4040,114 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </div>
 </div>
 
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Prokuratura</span>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Prosecutor</span>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Parquet</span>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Staatsanwaltschaft</span>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Прокуратура</span>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 
@@ -5169,6 +5569,114 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Nagrania</span>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Recordings</span>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Enregistrements</span>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Aufnahmen</span>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Записи</span>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 
@@ -5523,6 +6031,114 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </div>
 </div>
 </div>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Sądy</span>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Courts</span>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Tribunaux</span>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Gerichte</span>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Суди</span>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 <!-- ===== end of merged Courts (Sądy) section =====
 
@@ -5763,7 +6379,115 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
-  </section>
+  
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Ultimatum</span>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Ultimatum</span>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Ultimatum</span>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Ultimatum</span>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Ультиматум</span>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
+</section>
   <!-- ==========================================
   SECTION: MUDELSEE CASE
   ========================================== -->
@@ -5953,6 +6677,114 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Sprawa: Rektor UJ/NCN</span>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Case: UJ Rector / NCN</span>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Affaire : Recteur UJ / NCN</span>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Fall: UJ-Rektor / NCN</span>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Справа: Ректор UJ / NCN</span>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 
@@ -6116,6 +6948,114 @@ body { background: #fafaf8 !important; color: #14142b !important; }
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Sprawa: Błocki, Babik, Liana</span>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Case: Błocki, Babik, Liana</span>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Affaire : Błocki, Babik, Liana</span>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Fall: Błocki, Babik, Liana</span>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Справа: Блоцький, Бабік, Ліана</span>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 
@@ -6266,6 +7206,114 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     <a href="#timeline"><span class="nav-pl">Chronologia</span><span class="nav-en" style="display:none">Timeline</span><span class="nav-fr" style="display:none">Chronologie</span><span class="nav-de" style="display:none">Chronologie</span><span class="nav-uk" style="display:none">Хронологія</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Blocki cyngiel</span>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Błocki — the trigger</span>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Błocki — la gâchette</span>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Błocki — der Auslöser</span>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Блоцкі — спусковий гачок</span>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 <section class="section" id="mudelsee">
@@ -6450,7 +7498,115 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     <a href="#comments"><span class="nav-pl">Komentarze</span><span class="nav-en" style="display:none">Comments</span><span class="nav-fr" style="display:none">Commentaires</span><span class="nav-de" style="display:none">Kommentare</span><span class="nav-uk" style="display:none">Коментарі</span></a>
     <a href="#site-header" class="is-top"><span class="nav-pl">↑ Góra</span><span class="nav-en" style="display:none">↑ Top</span><span class="nav-fr" style="display:none">↑ Haut</span><span class="nav-de" style="display:none">↑ Oben</span><span class="nav-uk" style="display:none">↑ Гора</span></a>
   </nav>
-  </section>
+  
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">NCN: maszynowe recenzje</span>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">NCN: machine-generated reviews</span>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">NCN : évaluations automatisées</span>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">NCN: maschinelle Gutachten</span>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">NCN: машинні рецензії</span>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
+</section>
   <!-- ==========================================
   SECTION: TIMELINE
   ========================================== -->
@@ -6868,6 +8024,114 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     </div>
 
   </div>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <span class="section-nav-tile section-nav-red section-nav-current" aria-current="true">📜 List otwarty</span>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <span class="section-nav-tile section-nav-red section-nav-current" aria-current="true">📜 Open letter</span>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <span class="section-nav-tile section-nav-red section-nav-current" aria-current="true">📜 Lettre ouverte</span>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <span class="section-nav-tile section-nav-red section-nav-current" aria-current="true">📜 Offener Brief</span>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <span class="section-nav-tile section-nav-red section-nav-current" aria-current="true">📜 Відкритий лист</span>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 
@@ -6977,6 +8241,114 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     </div>
 
   </div>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <span class="section-nav-tile section-nav-blue section-nav-current" aria-current="true">💙 Pomoc Ukraińcom</span>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <span class="section-nav-tile section-nav-blue section-nav-current" aria-current="true">💙 Help for Ukrainians</span>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <span class="section-nav-tile section-nav-blue section-nav-current" aria-current="true">💙 Aide aux Ukrainiens</span>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <span class="section-nav-tile section-nav-blue section-nav-current" aria-current="true">💙 Hilfe für Ukrainer</span>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <span class="section-nav-tile section-nav-blue section-nav-current" aria-current="true">💙 Допомога українцям</span>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 <!-- ====== Kulturowe analogie ;) — sekcja z piosenkami z YouTube ======
@@ -7633,6 +9005,114 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     </div>
 
   </div>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <span class="section-nav-tile section-nav-yellow section-nav-current" aria-current="true">🎵 Kulturowe analogie ;)</span>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <span class="section-nav-tile section-nav-yellow section-nav-current" aria-current="true">🎵 Cultural analogies ;)</span>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <span class="section-nav-tile section-nav-yellow section-nav-current" aria-current="true">🎵 Analogies culturelles ;)</span>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <span class="section-nav-tile section-nav-yellow section-nav-current" aria-current="true">🎵 Kulturelle Analogien ;)</span>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <span class="section-nav-tile section-nav-yellow section-nav-current" aria-current="true">🎵 Культурні аналогії ;)</span>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 </main>
 
@@ -8036,6 +9516,114 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     </div><!-- /lang-block uk -->
 
   </div>
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Wyrok kafkowski</span>
+      <a href="#komornik" class="section-nav-tile">KOMORNIK</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Kafkaesque verdict</span>
+      <a href="#komornik" class="section-nav-tile">BAILIFF</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Verdict kafkaïen</span>
+      <a href="#komornik" class="section-nav-tile">HUISSIER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Kafkaeskes Urteil</span>
+      <a href="#komornik" class="section-nav-tile">GERICHTSVOLLZIEHER</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">Кафкіанський вирок</span>
+      <a href="#komornik" class="section-nav-tile">СУДОВИЙ ВИКОНАВЕЦЬ</a>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 
 <section class="komornik-section" id="komornik">
@@ -9374,6 +10962,114 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
     </div><!-- /lang-block uk -->
 
   </div><!-- /page-wrap -->
+
+<nav class="section-nav" aria-label="Section navigation">
+  <div class="lang-block active" data-lang="pl">
+    <div class="section-nav-title">Nawigacja</div>
+    <div class="section-nav-subtitle">Przejdź do innej sekcji</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Sprawa</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Blocki cyngiel</a>
+      <a href="#rec-1" class="section-nav-tile">Nagrania</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prokuratura</a>
+      <a href="#courts" class="section-nav-tile">Sądy</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maszynowe recenzje</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Sprawa: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Sprawa: Rektor UJ/NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 List otwarty</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Wyrok kafkowski</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">KOMORNIK</span>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturowe analogie ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Pomoc Ukraińcom</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Do góry</a></div>
+  </div>
+  <div class="lang-block " data-lang="en">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Jump to another section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">The Case</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — the trigger</a>
+      <a href="#rec-1" class="section-nav-tile">Recordings</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Prosecutor</a>
+      <a href="#courts" class="section-nav-tile">Courts</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: machine-generated reviews</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Case: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Case: UJ Rector / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Open letter</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaesque verdict</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">BAILIFF</span>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Cultural analogies ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Help for Ukrainians</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Back to top</a></div>
+  </div>
+  <div class="lang-block " data-lang="fr">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Aller à une autre section</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">L'Affaire</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — la gâchette</a>
+      <a href="#rec-1" class="section-nav-tile">Enregistrements</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Parquet</a>
+      <a href="#courts" class="section-nav-tile">Tribunaux</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN : évaluations automatisées</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Affaire : Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Affaire : Recteur UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Lettre ouverte</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Verdict kafkaïen</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">HUISSIER</span>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Analogies culturelles ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Aide aux Ukrainiens</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Retour en haut</a></div>
+  </div>
+  <div class="lang-block " data-lang="de">
+    <div class="section-nav-title">Navigation</div>
+    <div class="section-nav-subtitle">Zu einem anderen Abschnitt</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Der Fall</a>
+      <a href="#documents" class="section-nav-tile">Ultimatum</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Błocki — der Auslöser</a>
+      <a href="#rec-1" class="section-nav-tile">Aufnahmen</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Staatsanwaltschaft</a>
+      <a href="#courts" class="section-nav-tile">Gerichte</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: maschinelle Gutachten</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Fall: Błocki, Babik, Liana</a>
+      <a href="#uj-inaction" class="section-nav-tile">Fall: UJ-Rektor / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Offener Brief</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Kafkaeskes Urteil</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">GERICHTSVOLLZIEHER</span>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Kulturelle Analogien ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Hilfe für Ukrainer</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Nach oben</a></div>
+  </div>
+  <div class="lang-block " data-lang="uk">
+    <div class="section-nav-title">Навігація</div>
+    <div class="section-nav-subtitle">Перейти до іншого розділу</div>
+    <div class="section-nav-grid">
+      <a href="#case" class="section-nav-tile">Справа</a>
+      <a href="#documents" class="section-nav-tile">Ультиматум</a>
+      <a href="#blocki-cyngiel" class="section-nav-tile">Блоцкі — спусковий гачок</a>
+      <a href="#rec-1" class="section-nav-tile">Записи</a>
+      <a href="#prokuratura-ochonska" class="section-nav-tile">Прокуратура</a>
+      <a href="#courts" class="section-nav-tile">Суди</a>
+      <a href="#mudelsee" class="section-nav-tile">NCN: машинні рецензії</a>
+      <a href="#sprawa-blocki-babik-liana" class="section-nav-tile">Справа: Блоцький, Бабік, Ліана</a>
+      <a href="#uj-inaction" class="section-nav-tile">Справа: Ректор UJ / NCN</a>
+      <a href="#list-otwarty" class="section-nav-tile section-nav-red">📜 Відкритий лист</a>
+      <a href="#wyrok-kafkowski" class="section-nav-tile">Кафкіанський вирок</a>
+      <span class="section-nav-tile section-nav-current" aria-current="true">СУДОВИЙ ВИКОНАВЕЦЬ</span>
+      <a href="#kulturowe-analogie" class="section-nav-tile section-nav-yellow">🎵 Культурні аналогії ;)</a>
+      <a href="#ukraina" class="section-nav-tile section-nav-blue">💙 Допомога українцям</a>
+    </div>
+    <div class="section-nav-top"><a href="#top" class="section-nav-top-link">↑ Нагору</a></div>
+  </div>
+</nav>
 </section>
 <!-- ====== KONIEC SEKCJI KOMORNIK ====== -->
 <!-- ====== KONIEC PRZENIESIONYCH SEKCJI ====== -->
