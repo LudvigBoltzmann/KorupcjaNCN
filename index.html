@@ -2486,6 +2486,34 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   50%      { box-shadow: 0 2px 16px rgba(30,91,200,0.75); }
 }
 
+/* === KULTUROWE ANALOGIE: żółta zakładka === */
+.sub-nav-tab.priority-tab-yellow > .sub-nav-link {
+  background: #f2c800 !important;
+  color: #1a1030 !important;
+  font-weight: 700 !important;
+  border-radius: 6px;
+  padding: 6px 14px !important;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(242,200,0,0.35);
+  animation: pulse-yellow 3s ease-in-out infinite;
+}
+.sub-nav-tab.priority-tab-yellow > .sub-nav-link::before {
+  content: "🎵";
+  margin-right: 6px;
+  font-size: 13px;
+}
+.sub-nav-tab.priority-tab-yellow > .sub-nav-link:hover,
+.sub-nav-tab.priority-tab-yellow:hover > .sub-nav-link,
+.sub-nav-tab.priority-tab-yellow:focus-within > .sub-nav-link {
+  background: #d9b400 !important;
+  color: #1a1030 !important;
+}
+@keyframes pulse-yellow {
+  0%, 100% { box-shadow: 0 2px 8px rgba(242,200,0,0.35); }
+  50%      { box-shadow: 0 2px 16px rgba(242,200,0,0.85); }
+}
+
+
 /* === LIST OTWARTY: sekcja z listem do Premiera i Ministra === */
 .listotwarty-section {
   background: linear-gradient(180deg, #f5f0eb 0%, #ffffff 100%);
@@ -2972,33 +3000,6 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </header>
 <nav class="sub-nav" aria-label="Document categories">
   <div class="sub-nav-inner" role="menubar">
-    <div class="sub-nav-tab priority-tab" role="none">
-      <a href="#wyrok-kafkowski" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="wyrok-kafkowski"><span class="nav-pl">Wyrok kafkowski</span><span class="nav-en" style="display:none">Kafkaesque verdict</span><span class="nav-fr" style="display:none">Verdict kafkaïen</span><span class="nav-de" style="display:none">Kafkaeskes Urteil</span><span class="nav-uk" style="display:none">Кафкіанський вирок</span></a>
-      <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa I C 1671/22 — apelacja odrzucona bez mojej wiedzy</span><span class="nav-en" style="display:none">Case I C 1671/22 — appeal dismissed without my knowledge</span><span class="nav-fr" style="display:none">Affaire I C 1671/22 — appel rejeté à mon insu</span><span class="nav-de" style="display:none">Sache I C 1671/22 — Berufung ohne mein Wissen verworfen</span><span class="nav-uk" style="display:none">Справа I C 1671/22 — апеляцію відхилено без мого відома</span></div>
-        <a href="#wyrok-kafkowski" class="nav-link" role="menuitem"><span class="nav-pl">Co wiem, a czego nie wiedziałem</span><span class="nav-en" style="display:none">What I know and what I didn't</span><span class="nav-fr" style="display:none">Ce que je sais et ce que j'ignorais</span><span class="nav-de" style="display:none">Was ich weiß und nicht wusste</span><span class="nav-uk" style="display:none">Що я знаю і чого не знав</span></a>
-        <a href="#wyrok-kafkowski-komornik" class="nav-link" role="menuitem"><span class="nav-pl">Co już zrobił komornik</span><span class="nav-en" style="display:none">What the bailiff has already done</span><span class="nav-fr" style="display:none">Ce que l'huissier a déjà fait</span><span class="nav-de" style="display:none">Was der Gerichtsvollzieher bereits getan hat</span><span class="nav-uk" style="display:none">Що вже зробив виконавець</span></a>
-        <a href="#wyrok-kafkowski-sad" class="nav-link" role="menuitem"><span class="nav-pl">Co orzekł Sąd Okręgowy</span><span class="nav-en" style="display:none">What the Regional Court ruled</span><span class="nav-fr" style="display:none">Ce qu'a jugé le tribunal régional</span><span class="nav-de" style="display:none">Was das Landgericht entschieden hat</span><span class="nav-uk" style="display:none">Що постановив окружний суд</span></a>
-        <a href="#wyrok-kafkowski-reakcja" class="nav-link" role="menuitem"><span class="nav-pl">Reakcja prawna — 5 pism</span><span class="nav-en" style="display:none">Legal response — 5 filings</span><span class="nav-fr" style="display:none">Réaction juridique — 5 actes</span><span class="nav-de" style="display:none">Rechtliche Reaktion — 5 Schriftsätze</span><span class="nav-uk" style="display:none">Правова реакція — 5 документів</span></a>
-      </div>
-    </div>
-    <div class="sub-nav-tab priority-tab" role="none">
-      <a href="#komornik" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="komornik"><span class="nav-pl">KOMORNIK — PILNE</span><span class="nav-en" style="display:none">BAILIFF — URGENT</span><span class="nav-fr" style="display:none">HUISSIER — URGENT</span><span class="nav-de" style="display:none">GERICHTSVOLLZIEHER — DRINGEND</span><span class="nav-uk" style="display:none">СУДОВИЙ ВИКОНАВЕЦЬ — ТЕРМІНОВО</span></a>
-      <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa bezprawnej egzekucji Km 834/26</span><span class="nav-en" style="display:none">Unlawful enforcement case Km 834/26</span><span class="nav-fr" style="display:none">Saisie illégale Km 834/26</span><span class="nav-de" style="display:none">Rechtswidrige Vollstreckung Km 834/26</span><span class="nav-uk" style="display:none">Незаконна виконавча справа Km 834/26</span></div>
-        <a href="#komornik" class="nav-link" role="menuitem"><span class="nav-pl">Co się stało — 14 maja 2026</span><span class="nav-en" style="display:none">What happened — 14 May 2026</span><span class="nav-fr" style="display:none">Ce qui s'est passé — 14 mai 2026</span><span class="nav-de" style="display:none">Was geschah — 14. Mai 2026</span><span class="nav-uk" style="display:none">Що сталося — 14 травня 2026</span></a>
-        <a href="#komornik-analiza" class="nav-link" role="menuitem"><span class="nav-pl">Analiza prawna — 8 naruszeń</span><span class="nav-en" style="display:none">Legal analysis — 8 violations</span><span class="nav-fr" style="display:none">Analyse juridique — 8 violations</span><span class="nav-de" style="display:none">Rechtsanalyse — 8 Verstöße</span><span class="nav-uk" style="display:none">Правовий аналіз — 8 порушень</span></a>
-        <a href="#komornik-kontekst" class="nav-link" role="menuitem"><span class="nav-pl">Kontekst: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-en" style="display:none">Context: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-fr" style="display:none">Contexte : Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-de" style="display:none">Kontext: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-uk" style="display:none">Контекст: Генрих, NCN, Лора Бандура-Морган</span></a>
-        <a href="#komornik-pisma" class="nav-link" role="menuitem"><span class="nav-pl">Pisma złożone (15 maja 2026)</span><span class="nav-en" style="display:none">Letters filed (15 May 2026)</span><span class="nav-fr" style="display:none">Lettres déposées (15 mai 2026)</span><span class="nav-de" style="display:none">Eingereichte Schreiben (15. Mai 2026)</span><span class="nav-uk" style="display:none">Подані листи (15 травня 2026)</span></a>
-      </div>
-    </div>
-    <div class="sub-nav-tab priority-tab" role="none">
-      <a href="#blocki-cyngiel" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="blocki-cyngiel"><span class="nav-pl">Blocki cyngiel</span><span class="nav-en" style="display:none">Błocki — the trigger</span><span class="nav-fr" style="display:none">Błocki — la gâchette</span><span class="nav-de" style="display:none">Błocki — der Auslöser</span><span class="nav-uk" style="display:none">Блоцкі — спусковий гачок</span></a>
-      <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">WUM odcina mnie po piśmie Dyrektora NCN</span><span class="nav-en" style="display:none">WUM cuts me off after the NCN Director's letter</span><span class="nav-fr" style="display:none">WUM me coupe après la lettre du directeur du NCN</span><span class="nav-de" style="display:none">WUM bricht den Kontakt nach dem Schreiben des NCN-Direktors ab</span><span class="nav-uk" style="display:none">WUM відсікає мене після листа Директора NCN</span></div>
-        <a href="#blocki-cyngiel" class="nav-link" role="menuitem"><span class="nav-pl">E-mail Anetty Pszczołowskiej (11.03.2022)</span><span class="nav-en" style="display:none">Email from Anetta Pszczołowska (11 Mar 2022)</span><span class="nav-fr" style="display:none">E-mail d'Anetta Pszczołowska (11 mars 2022)</span><span class="nav-de" style="display:none">E-Mail von Anetta Pszczołowska (11. März 2022)</span><span class="nav-uk" style="display:none">Лист Анетти Пщоловської (11.03.2022)</span></a>
-      </div>
-    </div>
     <div class="sub-nav-tab" role="none">
       <a href="#case" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="sprawa"><span class="nav-pl">Sprawa</span><span class="nav-en" style="display:none">The Case</span><span class="nav-fr" style="display:none">L'Affaire</span><span class="nav-de" style="display:none">Der Fall</span><span class="nav-uk" style="display:none">Справа</span></a>
       <div class="sub-nav-dropdown" role="menu">
@@ -3009,6 +3010,11 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="docs/Mudelsee.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Recenzje Mudelsee — kopiuj-wklej</span><span class="nav-en" style="display:none">Mudelsee reviews — copy-paste</span><span class="nav-fr" style="display:none">Évaluations Mudelsee — copier-coller</span><span class="nav-de" style="display:none">Mudelsee-Gutachten — Copy-Paste</span><span class="nav-uk" style="display:none">Рецензії Мудельзе — копіювання</span></a>
         <a href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Raport NIK o finansowaniu badań podstawowych</span><span class="nav-en" style="display:none">NIK report on basic research funding</span><span class="nav-fr" style="display:none">Rapport NIK sur le financement de la recherche fondamentale</span><span class="nav-de" style="display:none">NIK-Bericht zur Grundlagenforschungsförderung</span><span class="nav-uk" style="display:none">Звіт НІК про фінансування фундаментальних досліджень</span></a>
         <a href="docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Odmowa prokuratury — 4135-1.Ds.96.2022</span><span class="nav-en" style="display:none">Prosecutor's refusal — 4135-1.Ds.96.2022</span><span class="nav-fr" style="display:none">Refus du procureur — 4135-1.Ds.96.2022</span><span class="nav-de" style="display:none">Ablehnung der Staatsanwaltschaft — 4135-1.Ds.96.2022</span><span class="nav-uk" style="display:none">Відмова прокуратури — 4135-1.Ds.96.2022</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
@@ -3018,6 +3024,23 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="#documents" class="nav-link" role="menuitem"><span class="nav-pl">Ultimatum NCN — e-mail osoby NN (1 czerwca 2020)</span><span class="nav-en" style="display:none">NCN Ultimatum — NN's email (1 June 2020)</span><span class="nav-fr" style="display:none">Ultimatum NCN — e-mail de NN (1 juin 2020)</span><span class="nav-de" style="display:none">NCN-Ultimatum — E-Mail von NN (1. Juni 2020)</span><span class="nav-uk" style="display:none">Ультиматум NCN — лист особи NN (1 червня 2020)</span></a>
         <a href="docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Chronologiczna korespondencja Kilarski–Błocki–Drąg–NN</span><span class="nav-en" style="display:none">Chronological correspondence Kilarski–Błocki–Drąg–NN</span><span class="nav-fr" style="display:none">Correspondance chronologique Kilarski–Błocki–Drąg–NN</span><span class="nav-de" style="display:none">Chronologische Korrespondenz Kilarski–Błocki–Drąg–NN</span><span class="nav-uk" style="display:none">Хронологічна переписка Кіларський–Блоцкі–Дронг–NN</span></a>
         <a href="docs/analiza_nagran_audio_kompletna.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Kompletna analiza 7 nagrań audio</span><span class="nav-en" style="display:none">Complete analysis of 7 audio recordings</span><span class="nav-fr" style="display:none">Analyse complète des 7 enregistrements audio</span><span class="nav-de" style="display:none">Vollständige Analyse der 7 Audioaufnahmen</span><span class="nav-uk" style="display:none">Повний аналіз 7 аудіозаписів</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab" role="none">
+      <a href="#blocki-cyngiel" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="blocki-cyngiel"><span class="nav-pl">Blocki cyngiel</span><span class="nav-en" style="display:none">Błocki — the trigger</span><span class="nav-fr" style="display:none">Błocki — la gâchette</span><span class="nav-de" style="display:none">Błocki — der Auslöser</span><span class="nav-uk" style="display:none">Блоцкі — спусковий гачок</span></a>
+      <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">WUM odcina mnie po piśmie Dyrektora NCN</span><span class="nav-en" style="display:none">WUM cuts me off after the NCN Director's letter</span><span class="nav-fr" style="display:none">WUM me coupe après la lettre du directeur du NCN</span><span class="nav-de" style="display:none">WUM bricht den Kontakt nach dem Schreiben des NCN-Direktors ab</span><span class="nav-uk" style="display:none">WUM відсікає мене після листа Директора NCN</span></div>
+        <a href="#blocki-cyngiel" class="nav-link" role="menuitem"><span class="nav-pl">E-mail Anetty Pszczołowskiej (11.03.2022)</span><span class="nav-en" style="display:none">Email from Anetta Pszczołowska (11 Mar 2022)</span><span class="nav-fr" style="display:none">E-mail d'Anetta Pszczołowska (11 mars 2022)</span><span class="nav-de" style="display:none">E-Mail von Anetta Pszczołowska (11. März 2022)</span><span class="nav-uk" style="display:none">Лист Анетти Пщоловської (11.03.2022)</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
@@ -3032,18 +3055,11 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="#rec-5b" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 5b — 20 marca 2021 (część B)</span><span class="nav-en" style="display:none">Recording 5b — 20 March 2021 (part B)</span><span class="nav-fr" style="display:none">Enregistrement 5b — 20 mars 2021 (partie B)</span><span class="nav-de" style="display:none">Aufnahme 5b — 20. März 2021 (Teil B)</span><span class="nav-uk" style="display:none">Запис 5b — 20 березня 2021 (частина B)</span></a>
         <a href="#rec-6" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 6 — NN z Jareniówki (telefon)</span><span class="nav-en" style="display:none">Recording 6 — NN from Jareniówka (phone call)</span><span class="nav-fr" style="display:none">Enregistrement 6 — NN depuis Jareniówka (appel)</span><span class="nav-de" style="display:none">Aufnahme 6 — NN aus Jareniówka (Telefonat)</span><span class="nav-uk" style="display:none">Запис 6 — NN з Яренювки (телефон)</span></a>
         <a href="#rec-7" class="nav-link" role="menuitem"><span class="nav-pl">Nagranie 7 — 30 września 2021 (mechanizm zniszczenia)</span><span class="nav-en" style="display:none">Recording 7 — 30 September 2021 (the destruction mechanism)</span><span class="nav-fr" style="display:none">Enregistrement 7 — 30 septembre 2021 (le mécanisme de destruction)</span><span class="nav-de" style="display:none">Aufnahme 7 — 30. September 2021 (der Zerstörungsmechanismus)</span><span class="nav-uk" style="display:none">Запис 7 — 30 вересня 2021 (механізм знищення)</span></a>
-      </div>
-    </div>
-    <div class="sub-nav-tab" role="none">
-      <a href="#courts" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="sady"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
-      <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Dokumenty sądowe</span><span class="nav-en" style="display:none">Court documents</span><span class="nav-fr" style="display:none">Documents judiciaires</span><span class="nav-de" style="display:none">Gerichtsunterlagen</span><span class="nav-uk" style="display:none">Судові документи</span></div>
-        <a href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)</span><span class="nav-en" style="display:none">Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)</span><span class="nav-fr" style="display:none">Appel du verdict II K 321/23/P (NCN/Błocki c. Kilarski)</span><span class="nav-de" style="display:none">Berufung gegen Urteil II K 321/23/P (NCN/Błocki gegen Kilarski)</span><span class="nav-uk" style="display:none">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span></a>
-        <a href="docs/Apelacja-Zieby-od-wyroku-Chmielarz-13-01-2025.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja adw. Zięby od wyroku I C 1671/22 (sprawa cywilna Bandura-Morgan vs. Kilarski, 13.01.2025)</span><span class="nav-en" style="display:none">Adv. Zięba's appeal against verdict I C 1671/22 (civil case Bandura-Morgan vs. Kilarski, 13 Jan 2025)</span><span class="nav-fr" style="display:none">Appel de M® Zięba contre le jugement I C 1671/22 (affaire civile Bandura-Morgan c. Kilarski, 13 janv. 2025)</span><span class="nav-de" style="display:none">Berufung von RA Zięba gegen Urteil I C 1671/22 (Zivilverfahren Bandura-Morgan gegen Kilarski, 13.01.2025)</span><span class="nav-uk" style="display:none">Апеляція адв. Зєнби на вирок I C 1671/22 (цивільна справа Бандура-Морган проти Кіларського, 13.01.2025)</span></a>
-        <a href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Uzupełnienie apelacji (sędzia Anna Chmielarz, 15 listopada 2024)</span><span class="nav-en" style="display:none">Supplementary appeal (Judge Anna Chmielarz, 15 Nov 2024)</span><span class="nav-fr" style="display:none">Complément d'appel (juge Anna Chmielarz, 15 nov. 2024)</span><span class="nav-de" style="display:none">Ergänzung der Berufung (Richterin Anna Chmielarz, 15. Nov. 2024)</span><span class="nav-uk" style="display:none">Доповнення до апеляції (суддя Анна Хмеляж, 15 листопада 2024)</span></a>
-        <a href="docs/Wnioski-Procesowe-Apelacja.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wnioski procesowe — apelacja</span><span class="nav-en" style="display:none">Procedural motions — appeal</span><span class="nav-fr" style="display:none">Conclusions de procédure — appel</span><span class="nav-de" style="display:none">Verfahrensanträge — Berufung</span><span class="nav-uk" style="display:none">Процесуальні клопотання — апеляція</span></a>
-        <a href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wyrok Bandura-Morgan vs. Kilarski (sędzia Anna Chmielarz, I C 1671/22, 15.11.2024)</span><span class="nav-en" style="display:none">Verdict Bandura-Morgan vs. Kilarski (Judge Anna Chmielarz, I C 1671/22, 15 Nov 2024)</span><span class="nav-fr" style="display:none">Jugement Bandura-Morgan c. Kilarski (juge Anna Chmielarz, I C 1671/22, 15 nov. 2024)</span><span class="nav-de" style="display:none">Urteil Bandura-Morgan gegen Kilarski (Richterin Anna Chmielarz, I C 1671/22, 15.11.2024)</span><span class="nav-uk" style="display:none">Вирок Бандура-Морган проти Кіларського (суддя Анна Хмеляж, I C 1671/22, 15.11.2024)</span></a>
-        <a href="docs/komornik-2026-05/02-Tytul-wykonawczy.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Tytuł wykonawczy (wyrok SO Kraków + postanowienie SA I ACa 3378/25, SSA Andrzej Żelazowski, 28.02.2026)</span><span class="nav-en" style="display:none">Writ of execution (KO Kraków verdict + SA decision I ACa 3378/25, Judge Andrzej Żelazowski, 28 Feb 2026)</span><span class="nav-fr" style="display:none">Titre exécutoire (jugement KO + décision SA I ACa 3378/25, juge Andrzej Żelazowski, 28 fév. 2026)</span><span class="nav-de" style="display:none">Vollstreckungstitel (LG-Urteil + OLG-Beschluss I ACa 3378/25, Richter Andrzej Żelazowski, 28.02.2026)</span><span class="nav-uk" style="display:none">Виконавчий документ (вирок Окружного Суду + постанова Апеляційного Суду I ACa 3378/25, 28.02.2026)</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
       </div>
     </div>
     <div class="sub-nav-tab" role="none">
@@ -3057,9 +3073,31 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="docs/Zalacznik-2-do-prokuratur-viiiaa.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Załącznik do zawiadomienia do prokuratury</span><span class="nav-en" style="display:none">Attachment to criminal complaint</span><span class="nav-fr" style="display:none">Annexe à la plainte pénale</span><span class="nav-de" style="display:none">Anlage zur Strafanzeige</span><span class="nav-uk" style="display:none">Додаток до кримінальної скарги</span></a>
         <a href="docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Raport NIK — finansowanie badań podstawowych przez NCN</span><span class="nav-en" style="display:none">NIK audit — NCN funding of basic research</span><span class="nav-fr" style="display:none">Rapport NIK — financement de la recherche fondamentale par le NCN</span><span class="nav-de" style="display:none">NIK-Prüfbericht — NCN-Förderung der Grundlagenforschung</span><span class="nav-uk" style="display:none">Звіт НІК — фінансування фундаментальних досліджень NCN</span></a>
         <a href="docs/Blocki-secret-replay-to-NIK-control.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Tajna odpowiedź Błockiego na kontrolę NIK (29.05.2020)</span><span class="nav-en" style="display:none">Błocki's secret reply to the NIK audit (29 May 2020)</span><span class="nav-fr" style="display:none">Réponse secrète de Błocki à l'audit NIK (29 mai 2020)</span><span class="nav-de" style="display:none">Błockis geheime Antwort auf die NIK-Prüfung (29. Mai 2020)</span><span class="nav-uk" style="display:none">Таємна відповідь Блоцкого на аудит НІК (29.05.2020)</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
       </div>
     </div>
-    <div class="sub-nav-tab align-right" role="none">
+    <div class="sub-nav-tab" role="none">
+      <a href="#courts" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="sady"><span class="nav-pl">Sądy</span><span class="nav-en" style="display:none">Courts</span><span class="nav-fr" style="display:none">Tribunaux</span><span class="nav-de" style="display:none">Gerichte</span><span class="nav-uk" style="display:none">Суди</span></a>
+      <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Dokumenty sądowe</span><span class="nav-en" style="display:none">Court documents</span><span class="nav-fr" style="display:none">Documents judiciaires</span><span class="nav-de" style="display:none">Gerichtsunterlagen</span><span class="nav-uk" style="display:none">Судові документи</span></div>
+        <a href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja od wyroku II K 321/23/P (NCN/Błocki vs. Kilarski)</span><span class="nav-en" style="display:none">Appeal against verdict II K 321/23/P (NCN/Błocki vs. Kilarski)</span><span class="nav-fr" style="display:none">Appel du verdict II K 321/23/P (NCN/Błocki c. Kilarski)</span><span class="nav-de" style="display:none">Berufung gegen Urteil II K 321/23/P (NCN/Błocki gegen Kilarski)</span><span class="nav-uk" style="display:none">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span></a>
+        <a href="docs/Apelacja-Zieby-od-wyroku-Chmielarz-13-01-2025.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja adw. Zięby od wyroku I C 1671/22 (sprawa cywilna Bandura-Morgan vs. Kilarski, 13.01.2025)</span><span class="nav-en" style="display:none">Adv. Zięba's appeal against verdict I C 1671/22 (civil case Bandura-Morgan vs. Kilarski, 13 Jan 2025)</span><span class="nav-fr" style="display:none">Appel de M® Zięba contre le jugement I C 1671/22 (affaire civile Bandura-Morgan c. Kilarski, 13 janv. 2025)</span><span class="nav-de" style="display:none">Berufung von RA Zięba gegen Urteil I C 1671/22 (Zivilverfahren Bandura-Morgan gegen Kilarski, 13.01.2025)</span><span class="nav-uk" style="display:none">Апеляція адв. Зєнби на вирок I C 1671/22 (цивільна справа Бандура-Морган проти Кіларського, 13.01.2025)</span></a>
+        <a href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Uzupełnienie apelacji (sędzia Anna Chmielarz, 15 listopada 2024)</span><span class="nav-en" style="display:none">Supplementary appeal (Judge Anna Chmielarz, 15 Nov 2024)</span><span class="nav-fr" style="display:none">Complément d'appel (juge Anna Chmielarz, 15 nov. 2024)</span><span class="nav-de" style="display:none">Ergänzung der Berufung (Richterin Anna Chmielarz, 15. Nov. 2024)</span><span class="nav-uk" style="display:none">Доповнення до апеляції (суддя Анна Хмеляж, 15 листопада 2024)</span></a>
+        <a href="docs/Wnioski-Procesowe-Apelacja.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wnioski procesowe — apelacja</span><span class="nav-en" style="display:none">Procedural motions — appeal</span><span class="nav-fr" style="display:none">Conclusions de procédure — appel</span><span class="nav-de" style="display:none">Verfahrensanträge — Berufung</span><span class="nav-uk" style="display:none">Процесуальні клопотання — апеляція</span></a>
+        <a href="docs/wwyrok-laura-chmielarz.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wyrok Bandura-Morgan vs. Kilarski (sędzia Anna Chmielarz, I C 1671/22, 15.11.2024)</span><span class="nav-en" style="display:none">Verdict Bandura-Morgan vs. Kilarski (Judge Anna Chmielarz, I C 1671/22, 15 Nov 2024)</span><span class="nav-fr" style="display:none">Jugement Bandura-Morgan c. Kilarski (juge Anna Chmielarz, I C 1671/22, 15 nov. 2024)</span><span class="nav-de" style="display:none">Urteil Bandura-Morgan gegen Kilarski (Richterin Anna Chmielarz, I C 1671/22, 15.11.2024)</span><span class="nav-uk" style="display:none">Вирок Бандура-Морган проти Кіларського (суддя Анна Хмеляж, I C 1671/22, 15.11.2024)</span></a>
+        <a href="docs/komornik-2026-05/02-Tytul-wykonawczy.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Tytuł wykonawczy (wyrok SO Kraków + postanowienie SA I ACa 3378/25, SSA Andrzej Żelazowski, 28.02.2026)</span><span class="nav-en" style="display:none">Writ of execution (KO Kraków verdict + SA decision I ACa 3378/25, Judge Andrzej Żelazowski, 28 Feb 2026)</span><span class="nav-fr" style="display:none">Titre exécutoire (jugement KO + décision SA I ACa 3378/25, juge Andrzej Żelazowski, 28 fév. 2026)</span><span class="nav-de" style="display:none">Vollstreckungstitel (LG-Urteil + OLG-Beschluss I ACa 3378/25, Richter Andrzej Żelazowski, 28.02.2026)</span><span class="nav-uk" style="display:none">Виконавчий документ (вирок Окружного Суду + постанова Апеляційного Суду I ACa 3378/25, 28.02.2026)</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab" role="none">
       <a href="#mudelsee" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="mudelsee"><span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span></a>
       <div class="sub-nav-dropdown" role="menu">
         <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa Mudelsee</span><span class="nav-en" style="display:none">Mudelsee case</span><span class="nav-fr" style="display:none">Affaire Mudelsee</span><span class="nav-de" style="display:none">Fall Mudelsee</span><span class="nav-uk" style="display:none">Справа Мудельзе</span></div>
@@ -3069,9 +3107,30 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="docs/kontrola-NIK.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wewnętrzne maile NCN o kontroli NIK</span><span class="nav-en" style="display:none">Internal NCN emails about the NIK audit</span><span class="nav-fr" style="display:none">E-mails internes du NCN sur le contrôle NIK</span><span class="nav-de" style="display:none">Interne NCN-E-Mails zur NIK-Kontrolle</span><span class="nav-uk" style="display:none">Внутрішні листи NCN про аудит НІК</span></a>
         <a href="docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Posiedzenie Rady NCN, 13–14 stycznia 2021</span><span class="nav-en" style="display:none">NCN Council meeting, 13–14 January 2021</span><span class="nav-fr" style="display:none">Réunion du Conseil NCN, 13–14 janvier 2021</span><span class="nav-de" style="display:none">NCN-Ratssitzung, 13.–14. Januar 2021</span><span class="nav-uk" style="display:none">Засідання Ради NCN, 13–14 січня 2021</span></a>
         <a href="docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Posiedzenie Rady NCN, 10–11 lutego 2021</span><span class="nav-en" style="display:none">NCN Council meeting, 10–11 February 2021</span><span class="nav-fr" style="display:none">Réunion du Conseil NCN, 10–11 février 2021</span><span class="nav-de" style="display:none">NCN-Ratssitzung, 10.–11. Februar 2021</span><span class="nav-uk" style="display:none">Засідання Ради NCN, 10–11 лютого 2021</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
       </div>
     </div>
-    <div class="sub-nav-tab align-right" role="none">
+    <div class="sub-nav-tab" role="none">
+      <a href="#sprawa-blocki-babik-liana" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="blocki-babik-liana"><span class="nav-pl">Sprawa: Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-en" style="display:none">Case: Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-fr" style="display:none">Affaire : Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-de" style="display:none">Fall: Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-uk" style="display:none">Справа: Блоцький, Бабік, Ліана (NCN/UJ)</span></a>
+      <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa przeciwko Błockiemu, Babikowi i Lianie</span><span class="nav-en" style="display:none">Case against Błocki, Babik and Liana</span><span class="nav-fr" style="display:none">Affaire contre Błocki, Babik et Liana</span><span class="nav-de" style="display:none">Verfahren gegen Błocki, Babik und Liana</span><span class="nav-uk" style="display:none">Справа проти Блоцького, Бабіка та Ліани</span></div>
+        <a href="#sprawa-blocki-babik-liana" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie</span><span class="nav-en" style="display:none">Introduction</span><span class="nav-fr" style="display:none">Introduction</span><span class="nav-de" style="display:none">Einführung</span><span class="nav-uk" style="display:none">Вступ</span></a>
+        <a href="docs/Babik-Liana-Zwonek-Blocki-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Konflikty interesów — dokumentacja</span><span class="nav-en" style="display:none">Conflicts of interest — documentation</span><span class="nav-fr" style="display:none">Conflits d'intérêts — documentation</span><span class="nav-de" style="display:none">Interessenkonflikte — Dokumentation</span><span class="nav-uk" style="display:none">Конфлікти інтересів — документація</span></a>
+        <a href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja II K 321/23/P</span><span class="nav-en" style="display:none">Appeal II K 321/23/P</span><span class="nav-fr" style="display:none">Appel II K 321/23/P</span><span class="nav-de" style="display:none">Berufung II K 321/23/P</span><span class="nav-uk" style="display:none">Апеляція II K 321/23/P</span></a>
+        <a href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Uzupełnienie apelacji — sprawa I C 1671/22</span><span class="nav-en" style="display:none">Supplement to appeal — case I C 1671/22</span><span class="nav-fr" style="display:none">Complément d'appel — affaire I C 1671/22</span><span class="nav-de" style="display:none">Berufungsergänzung — Sache I C 1671/22</span><span class="nav-uk" style="display:none">Доповнення апеляції — справа I C 1671/22</span></a>
+        <a href="docs/Zalacznik-2-do-prokuratur-viiiaa.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wniosek o wznowienie śledztwa</span><span class="nav-en" style="display:none">Motion to reopen investigation</span><span class="nav-fr" style="display:none">Demande de réouverture de l'enquête</span><span class="nav-de" style="display:none">Antrag auf Wiederaufnahme</span><span class="nav-uk" style="display:none">Клопотання про відновлення слідства</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab" role="none">
       <a href="#uj-inaction" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="uj"><span class="nav-pl">Sprawa: Rektor UJ/NCN</span><span class="nav-en" style="display:none">Case: UJ Rector / NCN</span><span class="nav-fr" style="display:none">Affaire : Recteur UJ / NCN</span><span class="nav-de" style="display:none">Fall: UJ-Rektor / NCN</span><span class="nav-uk" style="display:none">Справа: Ректор UJ / NCN</span></a>
       <div class="sub-nav-dropdown" role="menu">
         <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa przeciwko Rektorowi UJ / NCN (2025–2026)</span><span class="nav-en" style="display:none">Case against the UJ Rector / NCN (2025–2026)</span><span class="nav-fr" style="display:none">Affaire contre le Recteur de l'UJ / NCN (2025–2026)</span><span class="nav-de" style="display:none">Verfahren gegen den UJ-Rektor / NCN (2025–2026)</span><span class="nav-uk" style="display:none">Справа проти Ректора UJ / NCN (2025–2026)</span></div>
@@ -3082,25 +3141,73 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="docs/zazalenie_FINAL_19_04_2026.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Zażalenie na postanowienie prokurator referent (19.04.2026)</span><span class="nav-en" style="display:none">Appeal against the prosecutor's decision (19 Apr 2026)</span><span class="nav-fr" style="display:none">Recours contre la décision du procureur (19 avr. 2026)</span><span class="nav-de" style="display:none">Beschwerde gegen den Beschluss der Staatsanwaltschaft (19.04.2026)</span><span class="nav-uk" style="display:none">Скарга на постанову прокурор-доповідач (19.04.2026)</span></a>
         <a href="docs/skarga_do_prokuratora_nadrzednego_19_04_2026.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Skarga do prokuratora nadrzędnego (19.04.2026)</span><span class="nav-en" style="display:none">Complaint to supervising prosecutor (19 Apr 2026)</span><span class="nav-fr" style="display:none">Plainte au procureur supérieur (19 avr. 2026)</span><span class="nav-de" style="display:none">Beschwerde an übergeordneten Staatsanwalt (19.04.2026)</span><span class="nav-uk" style="display:none">Скарга до вищестоящого прокурора (19.04.2026)</span></a>
         <a href="docs/Zarzadzenie-Berus-przyjecie-srodka-odwolawczego-24_04_2026.jpg" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Zarządzenie o przyjęciu środka odwoławczego (24.04.2026)</span><span class="nav-en" style="display:none">Order accepting the appeal (24 Apr 2026)</span><span class="nav-fr" style="display:none">Ordonnance acceptant le recours (24 avr. 2026)</span><span class="nav-de" style="display:none">Verfügung über die Annahme des Rechtsmittels (24.04.2026)</span><span class="nav-uk" style="display:none">Розпорядження про прийняття засобу оскарження (24.04.2026)</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab priority-tab align-right" role="none">
+      <a href="#list-otwarty" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="list-otwarty"><span class="nav-pl">📜 List otwarty</span><span class="nav-en" style="display:none">📜 Open letter</span><span class="nav-fr" style="display:none">📜 Lettre ouverte</span><span class="nav-de" style="display:none">📜 Offener Brief</span><span class="nav-uk" style="display:none">📜 Відкритий лист</span></a>
+          <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">Open letter to the Prime Minister and Minister</span><span class="nav-fr" style="display:none">Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">Offener Brief an Premierminister und Minister</span><span class="nav-uk" style="display:none">Відкритий лист до Прем'єр-міністра та Міністра</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">Treść listu otwartego</span><span class="nav-en" style="display:none">Text of the open letter</span><span class="nav-fr" style="display:none">Texte de la lettre ouverte</span><span class="nav-de" style="display:none">Text des offenen Briefs</span><span class="nav-uk" style="display:none">Текст відкритого листа</span></a>
+        <a href="docs/list_otwarty_kilarski_2026-07-13.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">List otwarty — pełny PDF (13.07.2026)</span><span class="nav-en" style="display:none">Open letter — full PDF (13 Jul 2026)</span><span class="nav-fr" style="display:none">Lettre ouverte — PDF complet (13 juil. 2026)</span><span class="nav-de" style="display:none">Offener Brief — vollständiges PDF (13.07.2026)</span><span class="nav-uk" style="display:none">Відкритий лист — повний PDF (13.07.2026)</span></a>
+        <a href="#case" class="nav-link" role="menuitem"><span class="nav-pl">Wróć do wprowadzenia sprawy</span><span class="nav-en" style="display:none">Back to case introduction</span><span class="nav-fr" style="display:none">Retour à l'introduction de l'affaire</span><span class="nav-de" style="display:none">Zurück zur Fall-Einführung</span><span class="nav-uk" style="display:none">Повернутися до вступу справи</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab priority-tab-blue align-right" role="none">
+      <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
+          <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Pomoc Ukraińcom — dokumenty i akcje</span><span class="nav-en" style="display:none">Help for Ukrainians — documents and actions</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens — documents et actions</span><span class="nav-de" style="display:none">Hilfe für Ukrainer — Dokumente und Aktionen</span><span class="nav-uk" style="display:none">Допомога українцям — документи та акції</span></div>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie do sekcji</span><span class="nav-en" style="display:none">Introduction to the section</span><span class="nav-fr" style="display:none">Introduction à la section</span><span class="nav-de" style="display:none">Einführung in den Abschnitt</span><span class="nav-uk" style="display:none">Вступ до розділу</span></a>
+        <a href="docs/plakat_pomoc_ukraina_A4.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Plakat A4 — pomoc dla Ukrainy (PDF)</span><span class="nav-en" style="display:none">A4 poster — help for Ukraine (PDF)</span><span class="nav-fr" style="display:none">Affiche A4 — aide à l'Ukraine (PDF)</span><span class="nav-de" style="display:none">A4-Plakat — Hilfe für die Ukraine (PDF)</span><span class="nav-uk" style="display:none">Плакат A4 — допомога Україні (PDF)</span></a>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">List otwarty (kontekst)</span><span class="nav-en" style="display:none">Open letter (context)</span><span class="nav-fr" style="display:none">Lettre ouverte (contexte)</span><span class="nav-de" style="display:none">Offener Brief (Kontext)</span><span class="nav-uk" style="display:none">Відкритий лист (контекст)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab priority-tab-yellow align-right" role="none">
+      <a href="#kulturowe-analogie" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="kulturowe-analogie"><span class="nav-pl">Kulturowe analogie ;)</span><span class="nav-en" style="display:none">Cultural analogies ;)</span><span class="nav-fr" style="display:none">Analogies culturelles ;)</span><span class="nav-de" style="display:none">Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">Культурні аналогії ;)</span></a>
+          <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Kulturowe analogie — playlist</span><span class="nav-en" style="display:none">Cultural analogies — playlist</span><span class="nav-fr" style="display:none">Analogies culturelles — playlist</span><span class="nav-de" style="display:none">Kulturelle Analogien — Playlist</span><span class="nav-uk" style="display:none">Культурні аналогії — плейлист</span></div>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie i cała playlista</span><span class="nav-en" style="display:none">Introduction and full playlist</span><span class="nav-fr" style="display:none">Introduction et playlist complète</span><span class="nav-de" style="display:none">Einführung und vollständige Playlist</span><span class="nav-uk" style="display:none">Вступ і повний плейлист</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-en" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-fr" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-de" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span><span class="nav-uk" style="display:none">#01 Wpływy i chamstwo — Mia Hipnosis</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-en" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-fr" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-de" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span><span class="nav-uk" style="display:none">#02 Całujcie mnie... — Tuwim / Hryń</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#03 Reduta Ordona — Mickiewicz</span><span class="nav-en" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-fr" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-de" style="display:none">#03 Reduta Ordona — Mickiewicz</span><span class="nav-uk" style="display:none">#03 Reduta Ordona — Mickiewicz</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-en" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-fr" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-de" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span><span class="nav-uk" style="display:none">#05 Potęga smaku — Herbert / Gintrowski</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-en" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-fr" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-de" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span><span class="nav-uk" style="display:none">#09 Spać, nic więcej — Obywatel G.C.</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">#10 I Am Not Done — Rob Bailey</span><span class="nav-en" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-fr" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-de" style="display:none">#10 I Am Not Done — Rob Bailey</span><span class="nav-uk" style="display:none">#10 I Am Not Done — Rob Bailey</span></a>
       </div>
     </div>
     <div class="sub-nav-tab align-right" role="none">
-      <a href="#sprawa-blocki-babik-liana" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="blocki-babik-liana"><span class="nav-pl">Sprawa: Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-en" style="display:none">Case: Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-fr" style="display:none">Affaire : Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-de" style="display:none">Fall: Błocki, Babik, Liana (NCN/UJ)</span><span class="nav-uk" style="display:none">Справа: Блоцький, Бабік, Ліана (NCN/UJ)</span></a>
+      <a href="#wyrok-kafkowski" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="wyrok-kafkowski"><span class="nav-pl">Wyrok kafkowski</span><span class="nav-en" style="display:none">Kafkaesque verdict</span><span class="nav-fr" style="display:none">Verdict kafkaïen</span><span class="nav-de" style="display:none">Kafkaeskes Urteil</span><span class="nav-uk" style="display:none">Кафкіанський вирок</span></a>
       <div class="sub-nav-dropdown" role="menu">
-        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa przeciwko Błockiemu, Babikowi i Lianie</span><span class="nav-en" style="display:none">Case against Błocki, Babik and Liana</span><span class="nav-fr" style="display:none">Affaire contre Błocki, Babik et Liana</span><span class="nav-de" style="display:none">Verfahren gegen Błocki, Babik und Liana</span><span class="nav-uk" style="display:none">Справа проти Блоцького, Бабіка та Ліани</span></div>
-        <a href="#sprawa-blocki-babik-liana" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie</span><span class="nav-en" style="display:none">Introduction</span><span class="nav-fr" style="display:none">Introduction</span><span class="nav-de" style="display:none">Einführung</span><span class="nav-uk" style="display:none">Вступ</span></a>
-        <a href="docs/Babik-Liana-Zwonek-Blocki-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Konflikty interesów — dokumentacja</span><span class="nav-en" style="display:none">Conflicts of interest — documentation</span><span class="nav-fr" style="display:none">Conflits d'intérêts — documentation</span><span class="nav-de" style="display:none">Interessenkonflikte — Dokumentation</span><span class="nav-uk" style="display:none">Конфлікти інтересів — документація</span></a>
-        <a href="docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Apelacja II K 321/23/P</span><span class="nav-en" style="display:none">Appeal II K 321/23/P</span><span class="nav-fr" style="display:none">Appel II K 321/23/P</span><span class="nav-de" style="display:none">Berufung II K 321/23/P</span><span class="nav-uk" style="display:none">Апеляція II K 321/23/P</span></a>
-        <a href="docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Uzupełnienie apelacji — sprawa I C 1671/22</span><span class="nav-en" style="display:none">Supplement to appeal — case I C 1671/22</span><span class="nav-fr" style="display:none">Complément d'appel — affaire I C 1671/22</span><span class="nav-de" style="display:none">Berufungsergänzung — Sache I C 1671/22</span><span class="nav-uk" style="display:none">Доповнення апеляції — справа I C 1671/22</span></a>
-        <a href="docs/Zalacznik-2-do-prokuratur-viiiaa.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Wniosek o wznowienie śledztwa</span><span class="nav-en" style="display:none">Motion to reopen investigation</span><span class="nav-fr" style="display:none">Demande de réouverture de l'enquête</span><span class="nav-de" style="display:none">Antrag auf Wiederaufnahme</span><span class="nav-uk" style="display:none">Клопотання про відновлення слідства</span></a>
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa I C 1671/22 — apelacja odrzucona bez mojej wiedzy</span><span class="nav-en" style="display:none">Case I C 1671/22 — appeal dismissed without my knowledge</span><span class="nav-fr" style="display:none">Affaire I C 1671/22 — appel rejeté à mon insu</span><span class="nav-de" style="display:none">Sache I C 1671/22 — Berufung ohne mein Wissen verworfen</span><span class="nav-uk" style="display:none">Справа I C 1671/22 — апеляцію відхилено без мого відома</span></div>
+        <a href="#wyrok-kafkowski" class="nav-link" role="menuitem"><span class="nav-pl">Co wiem, a czego nie wiedziałem</span><span class="nav-en" style="display:none">What I know and what I didn't</span><span class="nav-fr" style="display:none">Ce que je sais et ce que j'ignorais</span><span class="nav-de" style="display:none">Was ich weiß und nicht wusste</span><span class="nav-uk" style="display:none">Що я знаю і чого не знав</span></a>
+        <a href="#wyrok-kafkowski-komornik" class="nav-link" role="menuitem"><span class="nav-pl">Co już zrobił komornik</span><span class="nav-en" style="display:none">What the bailiff has already done</span><span class="nav-fr" style="display:none">Ce que l'huissier a déjà fait</span><span class="nav-de" style="display:none">Was der Gerichtsvollzieher bereits getan hat</span><span class="nav-uk" style="display:none">Що вже зробив виконавець</span></a>
+        <a href="#wyrok-kafkowski-sad" class="nav-link" role="menuitem"><span class="nav-pl">Co orzekł Sąd Okręgowy</span><span class="nav-en" style="display:none">What the Regional Court ruled</span><span class="nav-fr" style="display:none">Ce qu'a jugé le tribunal régional</span><span class="nav-de" style="display:none">Was das Landgericht entschieden hat</span><span class="nav-uk" style="display:none">Що постановив окружний суд</span></a>
+        <a href="#wyrok-kafkowski-reakcja" class="nav-link" role="menuitem"><span class="nav-pl">Reakcja prawna — 5 pism</span><span class="nav-en" style="display:none">Legal response — 5 filings</span><span class="nav-fr" style="display:none">Réaction juridique — 5 actes</span><span class="nav-de" style="display:none">Rechtliche Reaktion — 5 Schriftsätze</span><span class="nav-uk" style="display:none">Правова реакція — 5 документів</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
       </div>
     </div>
-    <div class="sub-nav-tab priority-tab priority-tab-blue align-right" role="none">
-      <a href="#ukraina" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="ukraina"><span class="nav-pl">Pomoc Ukraińcom</span><span class="nav-en" style="display:none">Help for Ukrainians</span><span class="nav-fr" style="display:none">Aide aux Ukrainiens</span><span class="nav-de" style="display:none">Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">Допомога українцям</span></a>
-    </div>
     <div class="sub-nav-tab align-right" role="none">
-      <a href="#list-otwarty" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="list-otwarty"><span class="nav-pl">📜 List otwarty</span><span class="nav-en" style="display:none">📜 Open letter</span><span class="nav-fr" style="display:none">📜 Lettre ouverte</span><span class="nav-de" style="display:none">📜 Offener Brief</span><span class="nav-uk" style="display:none">📜 Відкритий лист</span></a>
-      <a href="#kulturowe-analogie" class="sub-nav-link nav-link" role="menuitem" data-subnav-tab="kulturowe-analogie"><span class="nav-pl">Kulturowe analogie ;)</span><span class="nav-en" style="display:none">Cultural analogies ;)</span><span class="nav-fr" style="display:none">Analogies culturelles ;)</span><span class="nav-de" style="display:none">Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">Культурні аналогії ;)</span></a>
+      <a href="#komornik" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="komornik"><span class="nav-pl">KOMORNIK</span><span class="nav-en" style="display:none">BAILIFF</span><span class="nav-fr" style="display:none">HUISSIER</span><span class="nav-de" style="display:none">GERICHTSVOLLZIEHER</span><span class="nav-uk" style="display:none">СУДОВИЙ ВИКОНАВЕЦЬ</span></a>
+      <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Sprawa bezprawnej egzekucji Km 834/26</span><span class="nav-en" style="display:none">Unlawful enforcement case Km 834/26</span><span class="nav-fr" style="display:none">Saisie illégale Km 834/26</span><span class="nav-de" style="display:none">Rechtswidrige Vollstreckung Km 834/26</span><span class="nav-uk" style="display:none">Незаконна виконавча справа Km 834/26</span></div>
+        <a href="#komornik" class="nav-link" role="menuitem"><span class="nav-pl">Co się stało — 14 maja 2026</span><span class="nav-en" style="display:none">What happened — 14 May 2026</span><span class="nav-fr" style="display:none">Ce qui s'est passé — 14 mai 2026</span><span class="nav-de" style="display:none">Was geschah — 14. Mai 2026</span><span class="nav-uk" style="display:none">Що сталося — 14 травня 2026</span></a>
+        <a href="#komornik-analiza" class="nav-link" role="menuitem"><span class="nav-pl">Analiza prawna — 8 naruszeń</span><span class="nav-en" style="display:none">Legal analysis — 8 violations</span><span class="nav-fr" style="display:none">Analyse juridique — 8 violations</span><span class="nav-de" style="display:none">Rechtsanalyse — 8 Verstöße</span><span class="nav-uk" style="display:none">Правовий аналіз — 8 порушень</span></a>
+        <a href="#komornik-kontekst" class="nav-link" role="menuitem"><span class="nav-pl">Kontekst: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-en" style="display:none">Context: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-fr" style="display:none">Contexte : Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-de" style="display:none">Kontext: Henrych, NCN, Laura Bandura-Morgan</span><span class="nav-uk" style="display:none">Контекст: Генрих, NCN, Лора Бандура-Морган</span></a>
+        <a href="#komornik-pisma" class="nav-link" role="menuitem"><span class="nav-pl">Pisma złożone (15 maja 2026)</span><span class="nav-en" style="display:none">Letters filed (15 May 2026)</span><span class="nav-fr" style="display:none">Lettres déposées (15 mai 2026)</span><span class="nav-de" style="display:none">Eingereichte Schreiben (15. Mai 2026)</span><span class="nav-uk" style="display:none">Подані листи (15 травня 2026)</span></a>
+      
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
+        <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -6893,7 +7000,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Historia o człowieku, który odważył się mówić prawdę w świecie pełnym układów” — tak autorka opisuje utwór. Zbieżność z tym, co znajdziesz na tej stronie, jest tu przypadkowa — i zupełnie nieprzypadkowa.
+          Nieliczni stali za nim jak skała, reszta hołoty radośnie milczała.
         </div>
       </div>
 
@@ -6905,7 +7012,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          Tuwim, 1937. Kiedy hipokryzja establishmentu przekroczy wszelkie granice, ktoś w końcu musi powiedzieć głośno to, co inni tylko myślą. „Bardzo mi przykro, panowie dygnitarze…” — dalej wiadomo.
+          Pocałujcie mnie wszyscy w dupę
         </div>
       </div>
 
@@ -6929,7 +7036,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Spróbujcie mnie powstrzymać”
+          Spróbujcie mnie powstrzymać”
         </div>
       </div>
 
@@ -6941,7 +7048,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „To wcale nie wymagało wielkiego charakteru, / nasza odmowa niezgoda i upór / mieliśmy odrobinę koniecznej odwagi / lecz w gruncie rzeczy była to sprawa smaku”. Herbert wyjaśnia, dlaczego niektórzy po prostu nie mogą się zgodzić — nawet gdy się bardzo opłaca.
+          To wcale nie wymagało wielkiego charakteru, / nasza odmowa niezgoda i upór / mieliśmy odrobinę koniecznej odwagi / lecz w gruncie rzeczy była to sprawa smaku”. Herbert wyjaśnia, dlaczego niektórzy po prostu nie mogą się zgodzić — nawet gdy się bardzo opłaca.
         </div>
       </div>
 
@@ -6990,7 +7097,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EWGZ6NNJiz4" title="Spać, nic więcej" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Być albo nie być — oto jest pytanie. Czy dla umysłu godniej jest znosić <em>strzały i razy nieprzytomne losu</em>, czy też wystąpić czynnie przeciwko morzu nieszczęść i poprzez opór skończyć z nimi, zgnieść je? Spać. Spać, nic więcej. Któż bowiem zechciałby znosić <em>drwiny i chłosty epoki</em>, ból wzgardzonej miłości, <strong>bezczelność urzędów, łamanie prawa i upokorzenia, których miernota nie szczędzi zasługom</strong>, jeśli sam mógłby zamknąć ów rachunek kawałkiem stali? Zamknąć ów rachunek”. Ciechowski śpiewa Hamleta w Polsce końca lat 80. — fraza „bezczelność urzędów” brzmi jakby była napisana specjalnie do tej strony. Cały film Kijowskiego: <a href="https://www.youtube.com/watch?v=97bVgy8Fh6Q" target="_blank" rel="noopener">Stan strachu (1989)</a>.
+          Być albo nie być — oto jest pytanie. Czy dla umysłu godniej jest znosić <em>strzały i razy nieprzytomne losu</em>, czy też wystąpić czynnie przeciwko morzu nieszczęść i poprzez opór skończyć z nimi, zgnieść je? Spać. Spać, nic więcej. Któż bowiem zechciałby znosić <em>drwiny i chłosty epoki</em>, ból wzgardzonej miłości, <strong>bezczelność urzędów, łamanie prawa i upokorzenia, których miernota nie szczędzi zasługom</strong>, jeśli sam mógłby zamknąć ów rachunek kawałkiem stali? Zamknąć ów rachunek”. Ciechowski śpiewa Hamleta w Polsce końca lat 80. — fraza bezczelność urzędów” brzmi jakby była napisana specjalnie do tej strony. Cały film Kijowskiego: <a href=https://www.youtube.com/watch?v=97bVgy8Fh6Q target=_blank rel=noopener>Stan strachu (1989)</a>.
         </div>
       </div>
 
@@ -7022,7 +7129,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Why here?</strong> "A story of a man who dared to speak the truth in a world full of arrangements" — that is how the author describes the song. Any resemblance to what you will find on this website is entirely coincidental — and entirely not.
+          Nieliczni stali za nim jak skała, reszta hołoty radośnie milczała.
         </div>
       </div>
 
@@ -7034,7 +7141,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Why here?</strong> Tuwim, 1937. When establishment hypocrisy crosses every line, someone eventually has to say aloud what others only think. The rest of the title needs no translation for anyone who has dealt with Polish officialdom.
+          Pocałujcie mnie wszyscy w dupę
         </div>
       </div>
 
@@ -7046,7 +7153,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Why here?</strong> "Where force is set upon right, God fires the cannons." The scene where Polish youth under Russification regain their voice through a poem. When the state uses force to silence — the word itself becomes a fortification.
+          <strong>Why here?</strong> Where force is set upon right, God fires the cannons. The scene where Polish youth under Russification regain their voice through a poem. When the state uses force to silence — the word itself becomes a fortification.
         </div>
       </div>
 
@@ -7058,7 +7165,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Spróbujcie mnie powstrzymać”
+          Spróbujcie mnie powstrzymać”
         </div>
       </div>
 
@@ -7070,7 +7177,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Why here?</strong> "It did not require great character at all — / our refusal, disagreement and stubbornness. / We had a scrap of necessary courage / but essentially it was a matter of taste." Herbert explains why some people simply cannot go along — even when going along would pay very well.
+          <strong>Why here?</strong> It did not require great character at all — / our refusal, disagreement and stubbornness. / We had a scrap of necessary courage / but essentially it was a matter of taste. Herbert explains why some people simply cannot go along — even when going along would pay very well.
         </div>
       </div>
 
@@ -7119,7 +7226,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EWGZ6NNJiz4" title="Spać, nic więcej" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Why here?</strong> "To be or not to be — that is the question. Whether it is nobler in the mind to endure <em>the arrows and reckless blows of fate</em>, or to rise up actively against a sea of misfortunes and by resisting end them, crush them? To sleep. To sleep, nothing more. For who would bear <em>the mockeries and lashes of the age</em>, the pain of spurned love, <strong>the insolence of office, the breaking of the law and the humiliations that mediocrity does not spare merit</strong>, if he himself could close that account with a piece of steel? Close that account." Ciechowski singing Hamlet in late-1980s Poland — the phrase "insolence of office" reads as if written for this website. Kijowski's full film: <a href="https://www.youtube.com/watch?v=97bVgy8Fh6Q" target="_blank" rel="noopener">Stan strachu (1989)</a>.
+          <strong>Why here?</strong> To be or not to be — that is the question. Whether it is nobler in the mind to endure <em>the arrows and reckless blows of fate</em>, or to rise up actively against a sea of misfortunes and by resisting end them, crush them? To sleep. To sleep, nothing more. For who would bear <em>the mockeries and lashes of the age</em>, the pain of spurned love, <strong>the insolence of office, the breaking of the law and the humiliations that mediocrity does not spare merit</strong>, if he himself could close that account with a piece of steel? Close that account. Ciechowski singing Hamlet in late-1980s Poland — the phrase insolence of office reads as if written for this website. Kijowski's full film: <a href=https://www.youtube.com/watch?v=97bVgy8Fh6Q target=_blank rel=noopener>Stan strachu (1989)</a>.
         </div>
       </div>
 
@@ -7151,7 +7258,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Pourquoi ici ?</strong> « L'histoire d'un homme qui a osé dire la vérité dans un monde plein d'arrangements » — c'est ainsi que l'auteure décrit la chanson. Toute ressemblance avec ce site est purement fortuite — et pas du tout.
+          Nieliczni stali za nim jak skała, reszta hołoty radośnie milczała.
         </div>
       </div>
 
@@ -7163,7 +7270,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Pourquoi ici ?</strong> Tuwim, 1937. Quand l'hypocrisie du pouvoir dépasse toute mesure, quelqu'un finit par dire à haute voix ce que les autres ne font que penser.
+          Pocałujcie mnie wszyscy w dupę
         </div>
       </div>
 
@@ -7175,7 +7282,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Pourquoi ici ?</strong> « Là où la force veut asseoir la loi, Dieu tire au canon. » La scène où la jeunesse polonaise sous la russification retrouve sa voix par un poème. Quand l'État recourt à la force pour faire taire — la parole devient un rempart.
+          <strong>Pourquoi ici ?</strong>  Là où la force veut asseoir la loi, Dieu tire au canon.  La scène où la jeunesse polonaise sous la russification retrouve sa voix par un poème. Quand l'État recourt à la force pour faire taire — la parole devient un rempart.
         </div>
       </div>
 
@@ -7187,7 +7294,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Spróbujcie mnie powstrzymać”
+          Spróbujcie mnie powstrzymać”
         </div>
       </div>
 
@@ -7199,7 +7306,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Pourquoi ici ?</strong> « Cela ne demandait pas un grand caractère : / notre refus, notre désaccord, notre obstination. / Nous avions un brin de courage nécessaire — / mais au fond, c'était une affaire de goût. » Herbert explique pourquoi certains ne peuvent tout simplement pas se plier — même quand se plier rapporte gros.
+          <strong>Pourquoi ici ?</strong>  Cela ne demandait pas un grand caractère : / notre refus, notre désaccord, notre obstination. / Nous avions un brin de courage nécessaire — / mais au fond, c'était une affaire de goût.  Herbert explique pourquoi certains ne peuvent tout simplement pas se plier — même quand se plier rapporte gros.
         </div>
       </div>
 
@@ -7248,7 +7355,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EWGZ6NNJiz4" title="Spać, nic więcej" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Pourquoi ici ?</strong> Ciechowski chante Hamlet dans la Pologne de la fin des années 1980 — le monologue d'Hamlet dans une traduction où l'on entend « <em>l'insolence des bureaux</em>, la violation du droit et les humiliations que la médiocrité n'épargne pas au mérite ». Comme s'il avait été écrit pour ce site. Film complet de Kijowski : <a href="https://www.youtube.com/watch?v=97bVgy8Fh6Q" target="_blank" rel="noopener">Stan strachu (1989)</a>.
+          <strong>Pourquoi ici ?</strong> Ciechowski chante Hamlet dans la Pologne de la fin des années 1980 — le monologue d'Hamlet dans une traduction où l'on entend  <em>l'insolence des bureaux</em>, la violation du droit et les humiliations que la médiocrité n'épargne pas au mérite . Comme s'il avait été écrit pour ce site. Film complet de Kijowski : <a href=https://www.youtube.com/watch?v=97bVgy8Fh6Q target=_blank rel=noopener>Stan strachu (1989)</a>.
         </div>
       </div>
 
@@ -7280,7 +7387,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Warum hier?</strong> „Die Geschichte eines Mannes, der es wagte, die Wahrheit in einer Welt voller Absprachen auszusprechen“ — so beschreibt die Autorin das Lied. Jede Ähnlichkeit mit dieser Website ist rein zufällig — und ganz und gar nicht.
+          Nieliczni stali za nim jak skała, reszta hołoty radośnie milczała.
         </div>
       </div>
 
@@ -7292,7 +7399,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Warum hier?</strong> Tuwim, 1937. Wenn die Heuchelei der Obrigkeit jede Grenze überschreitet, muss jemand schließlich laut aussprechen, was andere nur denken.
+          Pocałujcie mnie wszyscy w dupę
         </div>
       </div>
 
@@ -7304,7 +7411,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Warum hier?</strong> „Wo Gewalt sich aufs Recht setzt, dort feuert Gott aus Kanonen.“ Die Szene, in der die polnische Jugend unter der Russifizierung ihre Stimme durch ein Gedicht wiedererlangt. Wenn der Staat mit Gewalt zum Schweigen bringen will — wird das Wort zur Festung.
+          <strong>Warum hier?</strong> Wo Gewalt sich aufs Recht setzt, dort feuert Gott aus Kanonen.“ Die Szene, in der die polnische Jugend unter der Russifizierung ihre Stimme durch ein Gedicht wiedererlangt. Wenn der Staat mit Gewalt zum Schweigen bringen will — wird das Wort zur Festung.
         </div>
       </div>
 
@@ -7316,7 +7423,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Spróbujcie mnie powstrzymać”
+          Spróbujcie mnie powstrzymać”
         </div>
       </div>
 
@@ -7328,7 +7435,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Warum hier?</strong> „Es erforderte gar keinen großen Charakter — / unsere Weigerung, unser Nichteinverständnis, unser Trotz. / Wir hatten ein Quäntchen des nötigen Mutes — / im Grunde war es eine Frage des Geschmacks.“ Herbert erklärt, warum manche einfach nicht mitmachen können — auch wenn Mitmachen sich lohnen würde.
+          <strong>Warum hier?</strong> Es erforderte gar keinen großen Charakter — / unsere Weigerung, unser Nichteinverständnis, unser Trotz. / Wir hatten ein Quäntchen des nötigen Mutes — / im Grunde war es eine Frage des Geschmacks.“ Herbert erklärt, warum manche einfach nicht mitmachen können — auch wenn Mitmachen sich lohnen würde.
         </div>
       </div>
 
@@ -7377,7 +7484,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EWGZ6NNJiz4" title="Spać, nic więcej" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Warum hier?</strong> Ciechowski singt Hamlet im Polen der späten 1980er — Hamlets Monolog in einer Übersetzung, in der es heißt: „<em>die Frechheit der Ämter</em>, Rechtsbruch und Erniedrigungen, die Mittelmaß dem Verdienst nicht erspart“. Wie für diese Website geschrieben. Kijowskis vollständiger Film: <a href="https://www.youtube.com/watch?v=97bVgy8Fh6Q" target="_blank" rel="noopener">Stan strachu (1989)</a>.
+          <strong>Warum hier?</strong> Ciechowski singt Hamlet im Polen der späten 1980er — Hamlets Monolog in einer Übersetzung, in der es heißt: <em>die Frechheit der Ämter</em>, Rechtsbruch und Erniedrigungen, die Mittelmaß dem Verdienst nicht erspart“. Wie für diese Website geschrieben. Kijowskis vollständiger Film: <a href=https://www.youtube.com/watch?v=97bVgy8Fh6Q target=_blank rel=noopener>Stan strachu (1989)</a>.
         </div>
       </div>
 
@@ -7409,7 +7516,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/oWk48voIQAk" title="Wpływy i chamstwo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Чому тут?</strong> «Історія про людину, яка наважилася говорити правду в світі, повному домовленостей» — так описує пісню авторка. Будь-яка схожість із цим сайтом чисто випадкова — і зовсім не випадкова.
+          Nieliczni stali za nim jak skała, reszta hołoty radośnie milczała.
         </div>
       </div>
 
@@ -7421,7 +7528,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EdmZYu9Lths" title="Całujcie mnie wszyscy w d…" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Чому тут?</strong> Тувім, 1937. Коли лицемірство влади переходить усі межі, хтось врешті мусить сказати вголос те, про що інші лише думають.
+          Pocałujcie mnie wszyscy w dupę
         </div>
       </div>
 
@@ -7433,7 +7540,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/lDGuU0GsbM0" title="Reduta Ordona" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Чому тут?</strong> «Де силою насаджують право, там Бог з гармат стріляє». Сцена, у якій польська молодь під русифікацією повертає собі голос через вірш. Коли держава силою затикає рота — слово стає укріпленням.
+          <strong>Чому тут?</strong> Де силою насаджують право, там Бог з гармат стріляє. Сцена, у якій польська молодь під русифікацією повертає собі голос через вірш. Коли держава силою затикає рота — слово стає укріпленням.
         </div>
       </div>
 
@@ -7445,7 +7552,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/Yh0HzeeX30Q" title="Try 'n Hold Me Back" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          „Spróbujcie mnie powstrzymać”
+          Spróbujcie mnie powstrzymać”
         </div>
       </div>
 
@@ -7457,7 +7564,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/zBVIeSSXTEU" title="Potęga smaku" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Чому тут?</strong> «Це зовсім не вимагало великого характеру, / наша відмова, незгода й упертість — / ми мали дрібку потрібної відваги, / але в суті це була справа смаку». Герберт пояснює, чому дехто просто не може погодитися — навіть коли погодитися вигідно.
+          <strong>Чому тут?</strong> Це зовсім не вимагало великого характеру, / наша відмова, незгода й упертість — / ми мали дрібку потрібної відваги, / але в суті це була справа смаку. Герберт пояснює, чому дехто просто не може погодитися — навіть коли погодитися вигідно.
         </div>
       </div>
 
@@ -7506,7 +7613,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
           <iframe loading="lazy" src="https://www.youtube.com/embed/EWGZ6NNJiz4" title="Spać, nic więcej" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="kultura-note">
-          <strong>Чому тут?</strong> Цєховський співає Гамлета в Польщі кінця 1980-х — монолог Гамлета в перекладі, де звучить: «<em>безцеремонність установ</em>, порушення права та приниження, якими нікчемність не щадить заслуг». Ніби написано для цього сайту. Повний фільм Кієвського: <a href="https://www.youtube.com/watch?v=97bVgy8Fh6Q" target="_blank" rel="noopener">Stan strachu (1989)</a>.
+          <strong>Чому тут?</strong> Цєховський співає Гамлета в Польщі кінця 1980-х — монолог Гамлета в перекладі, де звучить: <em>безцеремонність установ</em>, порушення права та приниження, якими нікчемність не щадить заслуг. Ніби написано для цього сайту. Повний фільм Кієвського: <a href=https://www.youtube.com/watch?v=97bVgy8Fh6Q target=_blank rel=noopener>Stan strachu (1989)</a>.
         </div>
       </div>
 
