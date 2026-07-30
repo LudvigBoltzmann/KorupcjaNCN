@@ -4,14 +4,14 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#pl"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#en"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#de"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/#uk"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ludvigboltzmann.github.io/KorupcjaNCN/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ludvigboltzmann.github.io/KorupcjaNCN/de/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/uk/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Z7DH_iRY78w/maxresdefault.jpg</video:thumbnail_loc>
@@ -28,85 +28,103 @@
       <video:tag>sygnalista</video:tag>
       <video:tag>whistleblower</video:tag>
       <video:tag>Zbigniew Błocki</video:tag>
-      <video:category>News & Politics</video:category>
+      <video:category>News &amp; Politics</video:category>
     </video:video>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#about</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/en/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ludvigboltzmann.github.io/KorupcjaNCN/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ludvigboltzmann.github.io/KorupcjaNCN/de/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#case</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#interview</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#timeline</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#documents</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#mudelsee</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/fr/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ludvigboltzmann.github.io/KorupcjaNCN/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ludvigboltzmann.github.io/KorupcjaNCN/de/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#sprawa-blocki-babik-liana</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/de/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ludvigboltzmann.github.io/KorupcjaNCN/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ludvigboltzmann.github.io/KorupcjaNCN/de/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#uj-inaction</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/uk/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ludvigboltzmann.github.io/KorupcjaNCN/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ludvigboltzmann.github.io/KorupcjaNCN/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ludvigboltzmann.github.io/KorupcjaNCN/de/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ludvigboltzmann.github.io/KorupcjaNCN/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ludvigboltzmann.github.io/KorupcjaNCN/"/>
+  </url>
+  <url>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/sprawa-komornika/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#prokuratura-ochonska</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#sedzia-400k</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#courts</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/wyrok-kafkowski/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/animation-en.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/bezczynnosc-uj/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/#kulturowe-analogie</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/blocki-babik-liana/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/maszynowe-recenzje-ncn/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/dokumenty/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/sprawy-sadowe/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ludvigboltzmann.github.io/KorupcjaNCN/prokuratura/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
