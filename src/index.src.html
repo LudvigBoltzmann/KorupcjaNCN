@@ -2459,6 +2459,20 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   50%      { box-shadow: 0 2px 16px rgba(200,30,30,0.85); }
 }
 
+/* === WNIOSEK O KONTROLĘ: czerwony wpis w górnym rzędzie / menu mobilnym === */
+.nav-links .nav-link.nav-priority {
+  background: #c81e1e;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.nav-links .nav-link.nav-priority:hover,
+.nav-links .nav-link.nav-priority:focus {
+  background: #a01515;
+  color: #fff !important;
+}
+
 /* === UKRAINA: niebieska zakładka === */
 .sub-nav-tab.priority-tab-blue > .sub-nav-link {
   background: #1e5bc8 !important;
@@ -3151,7 +3165,10 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   <a href="#documents" class="nav-link" data-nav="documents">
   <span class="nav-pl">Dokumenty</span><span class="nav-en" style="display:none">Documents</span><span class="nav-fr" style="display:none">Documents</span><span class="nav-de" style="display:none">Dokumente</span><span class="nav-uk" style="display:none">Документи</span>
   </a>
-  <a href="#mudelsee" class="nav-link" data-nav="mudelsee">
+  <a href="#wniosek-kontrola-ncn" class="nav-link nav-priority" data-nav="wniosek-kontrola-ncn">
+<span class="nav-pl">Wniosek o kontrolę NCN i UJ</span><span class="nav-en" style="display:none">Request for audit: NCN and UJ</span><span class="nav-fr" style="display:none">Demande de contrôle : NCN et UJ</span><span class="nav-de" style="display:none">Antrag auf Kontrolle: NCN und UJ</span><span class="nav-uk" style="display:none">Запит про контроль: NCN та UJ</span>
+</a>
+<a href="#mudelsee" class="nav-link" data-nav="mudelsee">
   <span class="nav-pl">NCN: maszynowe recenzje</span><span class="nav-en" style="display:none">NCN: machine-generated reviews</span><span class="nav-fr" style="display:none">NCN : évaluations automatisées</span><span class="nav-de" style="display:none">NCN: maschinelle Gutachten</span><span class="nav-uk" style="display:none">NCN: машинні рецензії</span>
   </a>
   <a href="#timeline" class="nav-link" data-nav="timeline">
@@ -3344,6 +3361,17 @@ body { background: #fafaf8 !important; color: #14142b !important; }
         <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
         <a href="#ukraina" class="nav-link" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span><span class="nav-en" style="display:none">💙 Help for Ukrainians</span><span class="nav-fr" style="display:none">💙 Aide aux Ukrainiens</span><span class="nav-de" style="display:none">💙 Hilfe für Ukrainer</span><span class="nav-uk" style="display:none">💙 Допомога українцям</span></a>
         <a href="#kulturowe-analogie" class="nav-link" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span><span class="nav-en" style="display:none">🎵 Cultural analogies ;)</span><span class="nav-fr" style="display:none">🎵 Analogies culturelles ;)</span><span class="nav-de" style="display:none">🎵 Kulturelle Analogien ;)</span><span class="nav-uk" style="display:none">🎵 Культурні аналогії ;)</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-tab priority-tab" role="none">
+      <a href="#wniosek-kontrola-ncn" class="sub-nav-link nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" data-subnav-tab="wniosek-kontrola-ncn"><span class="nav-pl">Wniosek o kontrolę NCN i UJ</span><span class="nav-en" style="display:none">Request for audit: NCN and UJ</span><span class="nav-fr" style="display:none">Demande de contrôle : NCN et UJ</span><span class="nav-de" style="display:none">Antrag auf Kontrolle: NCN und UJ</span><span class="nav-uk" style="display:none">Запит про контроль: NCN та UJ</span></a>
+      <div class="sub-nav-dropdown" role="menu">
+        <div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Wniosek o kontrolę w trybie nadzoru (30.07.2026)</span><span class="nav-en" style="display:none">Request for a supervisory audit (30 Jul 2026)</span><span class="nav-fr" style="display:none">Demande de contrôle en régime de tutelle (30 juil. 2026)</span><span class="nav-de" style="display:none">Antrag auf Aufsichtskontrolle (30.07.2026)</span><span class="nav-uk" style="display:none">Запит про наглядову перевірку (30.07.2026)</span></div>
+        <a href="#wniosek-kontrola-ncn" class="nav-link" role="menuitem"><span class="nav-pl">Wprowadzenie i podstawa prawna</span><span class="nav-en" style="display:none">Introduction and legal basis</span><span class="nav-fr" style="display:none">Introduction et base légale</span><span class="nav-de" style="display:none">Einführung und Rechtsgrundlage</span><span class="nav-uk" style="display:none">Вступ і правова підстава</span></a>
+        <a href="docs/Dokumentacja-NCN-konflikty-interesow-2026.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" role="menuitem"><span class="nav-pl">Dokumentacja — konflikty interesów NCN/UJ (PDF, 13 s.)</span><span class="nav-en" style="display:none">Documentation — NCN/UJ conflicts of interest (PDF, 13 pp.)</span><span class="nav-fr" style="display:none">Documentation — conflits d'intérêts NCN/UJ (PDF, 13 p.)</span><span class="nav-de" style="display:none">Dokumentation — Interessenkonflikte NCN/UJ (PDF, 13 S.)</span><span class="nav-uk" style="display:none">Документація — конфлікти інтересів NCN/UJ (PDF, 13 с.)</span></a>
+        <div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span><span class="nav-en" style="display:none">See also</span><span class="nav-fr" style="display:none">Voir aussi</span><span class="nav-de" style="display:none">Siehe auch</span><span class="nav-uk" style="display:none">Дивіться також</span></div>
+        <a href="#list-otwarty" class="nav-link" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span><span class="nav-en" style="display:none">📜 Open letter to the PM and Minister</span><span class="nav-fr" style="display:none">📜 Lettre ouverte au Premier ministre et au Ministre</span><span class="nav-de" style="display:none">📜 Offener Brief an PM und Minister</span><span class="nav-uk" style="display:none">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
+        <a href="#uj-inaction" class="nav-link" role="menuitem"><span class="nav-pl">Sprawa: Rektor UJ/NCN</span><span class="nav-en" style="display:none">Case: UJ Rector / NCN</span><span class="nav-fr" style="display:none">Affaire : Recteur UJ / NCN</span><span class="nav-de" style="display:none">Fall: UJ-Rektor / NCN</span><span class="nav-uk" style="display:none">Справа: Ректор UJ / NCN</span></a>
       </div>
     </div>
     <div class="sub-nav-tab priority-tab align-right" role="none">

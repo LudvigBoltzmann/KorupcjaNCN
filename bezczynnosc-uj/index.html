@@ -2301,6 +2301,20 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   50%      { box-shadow: 0 2px 16px rgba(200,30,30,0.85); }
 }
 
+/* === WNIOSEK O KONTROLĘ: czerwony wpis w górnym rzędzie / menu mobilnym === */
+.nav-links .nav-link.nav-priority {
+  background: #c81e1e;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.nav-links .nav-link.nav-priority:hover,
+.nav-links .nav-link.nav-priority:focus {
+  background: #a01515;
+  color: #fff !important;
+}
+
 /* === UKRAINA: niebieska zakładka === */
 .sub-nav-tab.priority-tab-blue > .sub-nav-link {
   background: #1e5bc8 !important;
@@ -3044,6 +3058,9 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 <a class="nav-link" data-nav="documents" href="/KorupcjaNCN/dokumenty/">
 <span class="nav-pl">Dokumenty</span>
 </a>
+<a class="nav-link nav-priority" data-nav="wniosek-kontrola-ncn" href="/KorupcjaNCN/#wniosek-kontrola-ncn">
+<span class="nav-pl">Wniosek o kontrolę NCN i UJ</span>
+</a>
 <a class="nav-link" data-nav="mudelsee" href="/KorupcjaNCN/maszynowe-recenzje-ncn/">
 <span class="nav-pl">NCN: maszynowe recenzje</span>
 </a>
@@ -3221,6 +3238,17 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 <a class="nav-link" href="/KorupcjaNCN/#list-otwarty" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span></a>
 <a class="nav-link" href="/KorupcjaNCN/#ukraina" role="menuitem"><span class="nav-pl">💙 Pomoc Ukraińcom</span></a>
 <a class="nav-link" href="/KorupcjaNCN/#kulturowe-analogie" role="menuitem"><span class="nav-pl">🎵 Kulturowe analogie ;)</span></a>
+</div>
+</div>
+<div class="sub-nav-tab priority-tab" role="none">
+<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="wniosek-kontrola-ncn" href="/KorupcjaNCN/#wniosek-kontrola-ncn" role="menuitem"><span class="nav-pl">Wniosek o kontrolę NCN i UJ</span></a>
+<div class="sub-nav-dropdown" role="menu">
+<div class="sub-nav-dropdown-title nav-link"><span class="nav-pl">Wniosek o kontrolę w trybie nadzoru (30.07.2026)</span></div>
+<a class="nav-link" href="/KorupcjaNCN/#wniosek-kontrola-ncn" role="menuitem"><span class="nav-pl">Wprowadzenie i podstawa prawna</span></a>
+<a class="nav-link" href="/KorupcjaNCN/docs/Dokumentacja-NCN-konflikty-interesow-2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-pl">Dokumentacja — konflikty interesów NCN/UJ (PDF, 13 s.)</span></a>
+<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-pl">Zobacz też</span></div>
+<a class="nav-link" href="/KorupcjaNCN/#list-otwarty" role="menuitem"><span class="nav-pl">📜 List otwarty do Premiera i Ministra</span></a>
+<a class="nav-link" href="#uj-inaction" role="menuitem"><span class="nav-pl">Sprawa: Rektor UJ/NCN</span></a>
 </div>
 </div>
 <div class="sub-nav-tab priority-tab align-right" role="none">

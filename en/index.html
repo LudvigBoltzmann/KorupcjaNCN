@@ -2464,6 +2464,20 @@ body { background: #fafaf8 !important; color: #14142b !important; }
   50%      { box-shadow: 0 2px 16px rgba(200,30,30,0.85); }
 }
 
+/* === WNIOSEK O KONTROLĘ: czerwony wpis w górnym rzędzie / menu mobilnym === */
+.nav-links .nav-link.nav-priority {
+  background: #c81e1e;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.nav-links .nav-link.nav-priority:hover,
+.nav-links .nav-link.nav-priority:focus {
+  background: #a01515;
+  color: #fff !important;
+}
+
 /* === UKRAINA: niebieska zakładka === */
 .sub-nav-tab.priority-tab-blue > .sub-nav-link {
   background: #1e5bc8 !important;
@@ -3167,6 +3181,9 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 <a class="nav-link" data-nav="documents" href="#documents">
 <span class="nav-en">Documents</span>
 </a>
+<a class="nav-link nav-priority" data-nav="wniosek-kontrola-ncn" href="#wniosek-kontrola-ncn">
+<span class="nav-en">Request for audit: NCN and UJ</span>
+</a>
 <a class="nav-link" data-nav="mudelsee" href="#mudelsee">
 <span class="nav-en">NCN: machine-generated reviews</span>
 </a>
@@ -3344,6 +3361,17 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 <a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-en">📜 Open letter to the PM and Minister</span></a>
 <a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-en">💙 Help for Ukrainians</span></a>
 <a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-en">🎵 Cultural analogies ;)</span></a>
+</div>
+</div>
+<div class="sub-nav-tab priority-tab" role="none">
+<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="wniosek-kontrola-ncn" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-en">Request for audit: NCN and UJ</span></a>
+<div class="sub-nav-dropdown" role="menu">
+<div class="sub-nav-dropdown-title nav-link"><span class="nav-en">Request for a supervisory audit (30 Jul 2026)</span></div>
+<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-en">Introduction and legal basis</span></a>
+<a class="nav-link" href="/KorupcjaNCN/docs/Dokumentacja-NCN-konflikty-interesow-2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-en">Documentation — NCN/UJ conflicts of interest (PDF, 13 pp.)</span></a>
+<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-en">See also</span></div>
+<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-en">📜 Open letter to the PM and Minister</span></a>
+<a class="nav-link" href="#uj-inaction" role="menuitem"><span class="nav-en">Case: UJ Rector / NCN</span></a>
 </div>
 </div>
 <div class="sub-nav-tab priority-tab align-right" role="none">
