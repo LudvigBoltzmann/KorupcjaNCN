@@ -44,4 +44,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://ludvigboltzmann.github.io/KorupcjaNCN/sitemap.xml
+Sitemap: https://whistleblower.witekkilarski.org/sitemap.xml

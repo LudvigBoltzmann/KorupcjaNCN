@@ -31,8 +31,8 @@ from bs4 import BeautifulSoup, Comment
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "src", "index.src.html")
 
-BASE = "/KorupcjaNCN"
-SITE = "https://ludvigboltzmann.github.io/KorupcjaNCN"
+BASE = ""
+SITE = "https://whistleblower.witekkilarski.org"
 BUILD_DATE = "2026-07-30"
 PUBLISHED = "2026-03-03"
 
@@ -241,7 +241,7 @@ EXTRA_CSS = """
 
 HASH_REDIRECT_JS = """
 (function(){
-  var m = {en:'/KorupcjaNCN/en/', fr:'/KorupcjaNCN/fr/', de:'/KorupcjaNCN/de/', uk:'/KorupcjaNCN/uk/', pl:'/KorupcjaNCN/'};
+  var m = {en:'/en/', fr:'/fr/', de:'/de/', uk:'/uk/', pl:'/'};
   var h = location.hash.replace('#','');
   if (m[h] && location.pathname.replace(/index\\.html$/,'') !== m[h]) { location.replace(m[h]); }
 })();
@@ -266,7 +266,9 @@ def load_source():
         raw = fh.read()
 
     for old, new in AUDIO_RENAMES:
-        expect(old in raw, "brak w zrodle sciezki audio do naprawy: %s" % old)
+        # Nazwy moga byc juz poprawione w zrodle - wtedy nie ma czego zamieniac.
+        expect(old in raw or new in raw,
+               "brak w zrodle sciezki audio (ani starej, ani nowej): %s" % old)
         raw = raw.replace(old, new)
 
     # Data ostatniej modyfikacji (OG + JSON-LD).

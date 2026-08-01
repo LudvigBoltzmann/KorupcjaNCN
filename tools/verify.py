@@ -144,7 +144,7 @@ def check_single_language(rep):
 
 
 def check_local_links(rep):
-    rep.head("4. Lokalne linki /KorupcjaNCN/... wskazuja istniejace pliki")
+    rep.head("4. Lokalne linki wskazuja istniejace pliki")
     missing = Counter()
     checked = 0
     for path, _lang in PAGES + [("404.html", "pl")]:
@@ -153,6 +153,8 @@ def check_local_links(rep):
             for attr in ("href", "src", "poster"):
                 value = tag.get(attr)
                 if not isinstance(value, str) or not value.startswith(BASE + "/"):
+                    continue
+                if value.startswith("//"):  # zasob zewnetrzny (protocol-relative)
                     continue
                 checked += 1
                 target = url_to_path(value)
