@@ -97,6 +97,14 @@ LANG_META = {
 # Wydzielane sekcje PL (punkt 5 i 7 specyfikacji)
 SECTIONS = [
     {
+        "slug": "sprostowania",
+        "id": "sprostowania",
+        "short": "Sprostowania i korekty",
+        "title": "Sprostowania i korekty | Dr Witold Kilarski",
+        "desc": "Rejestr sprostowan i korekt wprowadzonych w archiwum dowodowym dotyczacym "
+                "Narodowego Centrum Nauki - z data i uzasadnieniem kazdej zmiany.",
+    },
+    {
         "slug": "wniosek-o-kontrole-ncn",
         "id": "wniosek-kontrola-ncn",
         "short": "Wniosek o kontrolę NCN i UJ",
