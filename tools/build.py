@@ -97,6 +97,17 @@ LANG_META = {
 # Wydzielane sekcje PL (punkt 5 i 7 specyfikacji)
 SECTIONS = [
     {
+        "slug": "wniosek-o-kontrole-ncn",
+        "id": "wniosek-kontrola-ncn",
+        "short": "Wniosek o kontrolę NCN i UJ",
+        "title": "Wniosek o kontrolę NCN i UJ w trybie nadzoru ministra "
+                 "(art. 426 i 427) | Dr Witold Kilarski",
+        "desc": "Wniosek do Ministra Nauki i Szkolnictwa Wyższego o czynności nadzorcze "
+                "wobec Narodowego Centrum Nauki i Uniwersytetu Jagiellońskiego: 170 grantów "
+                "przyznanych z odwołania o wartości 157 153 339 zł, 27 miesięcy bez "
+                "aktualizacji listy publicznej, bezczynność Prorektora UJ ds. nauki.",
+    },
+    {
         "slug": "sprawa-komornika",
         "id": "komornik",
         "short": "Sprawa komornicza Km 834/26",

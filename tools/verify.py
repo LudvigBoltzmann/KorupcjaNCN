@@ -245,11 +245,12 @@ def check_no_hash_leftovers(rep):
         rep.fail("sitemap.xml zawiera URL-e z fragmentami: %s" % hashed[:5])
         bad = True
     locs = re.findall(r"<loc>([^<]+)</loc>", sitemap)
-    if len(locs) != 13:
-        rep.fail("sitemap.xml: %d URL-i (oczekiwano 13)" % len(locs))
+    expected = len(SECTIONS) + 5
+    if len(locs) != expected:
+        rep.fail("sitemap.xml: %d URL-i (oczekiwano %d)" % (len(locs), expected))
         bad = True
     else:
-        rep.ok("sitemap.xml — 13 URL-i, bez fragmentow")
+        rep.ok("sitemap.xml — %d URL-i, bez fragmentow" % len(locs))
     expected_locs = [LANG_URL[l] for l in LANGS] + \
                     ["%s/%s/" % (SITE, s["slug"]) for s in SECTIONS]
     if locs and locs != expected_locs:
@@ -277,7 +278,7 @@ def check_extras(rep):
         for needle, count in hits.items():
             rep.fail("martwy link audio nadal obecny (%d stron): %s" % (count, needle))
     else:
-        rep.ok("brak martwych linkow audio na wszystkich 13 stronach")
+        rep.ok("brak martwych linkow audio na wszystkich %d stronach" % (len(SECTIONS) + 5))
 
     for path, _lang in PAGES:
         raw, soup = load(path)
