@@ -281,11 +281,16 @@ Commity (logiczne, w kolejności):
 2. `d207952` — Zadanie 1+4: nowa treść strony głównej i nota o numeracji (źródło `src/`)
 3. `641e84b` — Zadania 1–5: generator — wydzielenie podstron, sześć zakładek, dostępność, SEO
 4. `3d52723` — Zadania 1–5: przebudowa wygenerowanych stron
-5. (kolejny) — Zadanie 6 + naprawa składni JS + testy i raport końcowy
+5. `e3bef86` — Zadanie 6: testy, naprawa składni JS witryny, raport końcowy
+6. `9d88f79` — Zadanie 6: zapis kodów odpowiedzi 46 adresów (46 × 200, zero 404)
 
-Podgląd gałęzi: repozytorium jest gałęzią bez GitHub Pages (workflow `build-pages`
-uruchamia się wyłącznie na `main`), więc podgląd zrobiłem jako osobną, prywatną
-kopię witryny — link przekazuję w wiadomości. Aby zobaczyć gałąź lokalnie:
+Gałąź jest wypchnięta na GitHub:
+https://github.com/LudvigBoltzmann/KorupcjaNCN/tree/odtluszczenie-2026-08
+
+Podgląd: GitHub Pages buduje wyłącznie z `main` (workflow `build-pages` ma
+warunek `github.ref == refs/heads/main`), więc gałąź robocza nie ma własnego
+adresu w internecie. Podgląd zrobiłem jako osobną, prywatną kopię witryny —
+link przekazuję w wiadomości. Aby zobaczyć gałąź lokalnie:
 
 ```bash
 git fetch origin odtluszczenie-2026-08
