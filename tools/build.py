@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generator stron statycznych KorupcjaNCN (Pakiet B).
+"""Generator stron statycznych KorupcjaNCN (Pakiet B + odtluszczenie 2026-08).
 
 Zrodlo prawdy: src/index.src.html (5 jezykow w jednym pliku, bloki .lang-block).
 Skrypt generuje:
-  * index.html                      — PL (hub, skroty wydzielonych sekcji)
+  * index.html                      — PL, strona glowna po odtluszczeniu
+                                      (naglowek, streszczenie, cytat, 6 kafli,
+                                      skrocona chronologia, nota o autorze)
   * en/ fr/ de/ uk/ index.html      — pelna tresc w danym jezyku
-  * 8 stron sekcyjnych PL           — pelna tresc jednej sekcji
+  * 4 strony-huby dzialow           — nagrania, postepowania, instytucje, o-mnie
+  * 17 podstron PL z trescia        — CONTENT_PAGES (dawne sekcje strony glownej)
+  * nagrania/1 ... nagrania/7       — po jednej podstronie na nagranie
+  * skorowidz/ (5 jezykow)          — pelna lista odnosnikow z dawnej sub-nav
   * sitemap.xml, 404.html
 
 Uruchomienie: python3 tools/build.py
@@ -21,6 +26,7 @@ import re
 import shutil
 import sys
 from collections import Counter
+from urllib.parse import unquote, urlparse
 
 from bs4 import BeautifulSoup, Comment
 
@@ -33,7 +39,7 @@ SRC = os.path.join(ROOT, "src", "index.src.html")
 
 BASE = ""
 SITE = "https://whistleblower.witekkilarski.org"
-BUILD_DATE = "2026-07-30"
+BUILD_DATE = "2026-08-20"
 PUBLISHED = "2026-03-03"
 
 LANGS = ["pl", "en", "fr", "de", "uk"]
@@ -198,6 +204,358 @@ SECTIONS = [
 
 SECTION_BY_ID = {s["id"]: s for s in SECTIONS}
 
+# ==========================================================================
+# ODTLUSZCZENIE STRONY GLOWNEJ — 2026-08-20
+#
+# Strona glowna PL zawiera wylacznie: naglowek, streszczenie sprawy, jeden
+# cytat, szesc kafli dzialow, skrocona chronologie, note o autorze i stopke
+# (sekcja #home-hub w src/index.src.html). Cala pozostala tresc jest
+# PRZENOSZONA na podstrony — nic nie jest usuwane z witryny.
+# ==========================================================================
+
+# Sekcje przeniesione ze strony glownej na wlasne podstrony (poza SECTIONS,
+# ktore mialy podstrony juz wczesniej).
+MOVED_PAGES = [
+    {
+        "slug": "wprowadzenie",
+        "id": "case",
+        "short": "Wprowadzenie do sprawy",
+        "title": "Wprowadzenie do sprawy — korupcja w Narodowym Centrum Nauki "
+                 "| Dr Witold Kilarski",
+        "desc": "Wprowadzenie do sprawy: ultimatum dyrektora NCN z 29 maja 2020 r., "
+                "e-mail z konta NCN z 1 czerwca 2020 r., związek z wnioskiem NAWA "
+                "Polskie Powroty i rodzaje zebranych dowodów.",
+    },
+    {
+        "slug": "chronologia",
+        "id": "timeline",
+        "short": "Pełna chronologia",
+        "title": "Pełna chronologia sprawy NCN (2009–2026) | Dr Witold Kilarski",
+        "desc": "Pełna chronologia sprawy: kariera naukowa, ultimatum z 29 maja 2020 r., "
+                "konkursy NAWA Polskie Powroty, odmowy prokuratury i postępowania "
+                "sądowe przeciwko sygnaliście.",
+    },
+    {
+        "slug": "cv",
+        "id": "about",
+        "short": "O mnie i CV",
+        "title": "Dr Witold Kilarski — nota biograficzna i CV | archiwum sygnalisty",
+        "desc": "Nota biograficzna i pełne CV dr. Witolda Kilarskiego: Uppsala, EPFL "
+                "Lozanna, Bordeaux, University of Chicago, badania nad układem "
+                "limfatycznym i wniosek NAWA Polskie Powroty.",
+    },
+    {
+        "slug": "wum-blocki-cyngiel",
+        "id": "blocki-cyngiel",
+        "short": "WUM odcina mnie po piśmie dyrektora NCN",
+        "title": "WUM odcina mnie po piśmie Dyrektora NCN — e-mail z 11 marca 2022 r. "
+                 "| Dr Witold Kilarski",
+        "desc": "E-mail Warszawskiego Uniwersytetu Medycznego z 11 marca 2022 r.: po "
+                "piśmie dyrektora NCN uczelnia odmawia podpisania wniosku o ponowne "
+                "rozpatrzenie sprawy do NAWA (Polskie Powroty 2021).",
+    },
+    {
+        "slug": "list-otwarty",
+        "id": "list-otwarty",
+        "short": "List otwarty do Premiera i Ministra",
+        "title": "List otwarty do Prezesa Rady Ministrów i Ministra Sprawiedliwości "
+                 "| Dr Witold Kilarski",
+        "desc": "List otwarty z 13 lipca 2026 r. w sprawie systemowej odmowy ścigania "
+                "korupcji, szantażu i nepotyzmu w Narodowym Centrum Nauki oraz NAWA.",
+    },
+    {
+        "slug": "pomoc-ukraincom",
+        "id": "ukraina",
+        "short": "Pomoc Ukraińcom",
+        "title": "Pomoc Ukraińcom zastraszanym w Polsce | Dr Witold Kilarski",
+        "desc": "Otwarta oferta pomocy dla Ukraińców nękanych lub zastraszanych w Polsce "
+                "— kontakt całodobowy i plakat informacyjny po polsku i ukraińsku.",
+    },
+    {
+        "slug": "kulturowe-analogie",
+        "id": "kulturowe-analogie",
+        "short": "Kulturowe analogie",
+        "title": "Kulturowe analogie — pieśni, wiersze i sceny wokół tej sprawy "
+                 "| Dr Witold Kilarski",
+        "desc": "Kulturowe komentarze do sprawy sygnalisty NCN: Herbert, Tuwim, "
+                "Mickiewicz, Kaczmarski i inne utwory, które rezonują z tą historią.",
+    },
+    {
+        "slug": "dyskusja",
+        "id": "comments",
+        "short": "Dyskusja",
+        "title": "Dyskusja — komentarze czytelników | Dr Witold Kilarski",
+        "desc": "Miejsce na komentarze i pytania czytelników archiwum dowodowego "
+                "dotyczącego domniemanej korupcji w Narodowym Centrum Nauki.",
+    },
+]
+
+# Siedem nagran audio — kazde na wlasnej podstronie /nagrania/N/.
+# "analiza" = numer tego samego nagrania w dokumencie
+# analiza_nagran_audio_kompletna (numeracja 1-10). Zadnej numeracji nie
+# zmieniamy — tabela przeliczenia jest w /sprostowania/.
+RECORDINGS = [
+    {
+        "n": 1, "id": "interview", "slug": "nagrania/1",
+        "short": "Nagranie 1 — 29 maja 2020",
+        "date": "29 maja 2020 r.",
+        "people": "osoba NN i dr Witold Kilarski",
+        "length": "ok. 1 godz. 2 min",
+        "analiza": "1",
+        "title": "Nagranie 1 (29 maja 2020) — rozmowa z osobą NN po ultimatum "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 1 z 29 maja 2020 r.: rozmowa z osobą NN po ultimatum "
+                "dyrektora NCN — szantaż, dostęp do prywatnej korespondencji, "
+                "recenzje Mudelsee. Transkrypcja tematyczna i odtwarzacz.",
+    },
+    {
+        "n": 2, "id": "interview-3-4", "slug": "nagrania/2",
+        "short": "Nagranie 2 — 2 czerwca 2020",
+        "date": "2 czerwca 2020 r.",
+        "people": "osoba NN i dyrektor NCN Zbigniew Błocki",
+        "length": "ok. 1 godz. 36 min",
+        "analiza": "2",
+        "title": "Nagranie 2 (2 czerwca 2020) — spotkanie osoby NN z dyrektorem NCN "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 2 z 2 czerwca 2020 r.: nagrane spotkanie osoby NN "
+                "z dyrektorem NCN Zbigniewem Błockim — powrót do ultimatum "
+                "w sprawie wniosku NAWA i listy rankingowe.",
+    },
+    {
+        "n": 3, "id": "interview-4", "slug": "nagrania/3",
+        "short": "Nagranie 3 — 4 czerwca 2020",
+        "date": "4 czerwca 2020 r.",
+        "people": "osoba NN i dyrektor NCN Zbigniew Błocki",
+        "length": "ok. 1 godz. 52 min",
+        "analiza": "3",
+        "title": "Nagranie 3 (4 czerwca 2020) — trzecia rozmowa ze Zbigniewem Błockim "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 3 z 4 czerwca 2020 r.: trzecia rozmowa ze Zbigniewem Błockim "
+                "— przeniesienie odpowiedzialności na osobę NN i relacje "
+                "o nastrojach wśród pracowników NCN.",
+    },
+    {
+        "n": 4, "id": "rec-4", "slug": "nagrania/4",
+        "short": "Nagranie 4 — 10 października 2020",
+        "date": "10 października 2020 r.",
+        "people": "osoba NN i dr Witold Kilarski",
+        "length": "ok. 45 min",
+        "analiza": "5",
+        "title": "Nagranie 4 (10 października 2020) — osoba NN o chęci odejścia z NCN "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 4 z 10 października 2020 r.: osoba NN o systemie przyznawania "
+                "grantów, nieprawidłowościach w NCN i zamiarze odejścia z instytucji.",
+    },
+    {
+        "n": 5, "id": "rec-5a", "slug": "nagrania/5",
+        "short": "Nagranie 5 — 20 marca 2021 (części A i B)",
+        "date": "20 marca 2021 r.",
+        "people": "osoba NN i dr Witold Kilarski",
+        "length": "ok. 2 godz. 21 min (dwie części)",
+        "analiza": "7 i 8",
+        "title": "Nagranie 5 (20 marca 2021) — jedna rozmowa w dwóch częściach "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 5 z 20 marca 2021 r. w dwóch częściach: sprawa Mudelsee "
+                "i „14 identycznych recenzji\", konflikty interesów w Radzie NCN "
+                "oraz reakcje wewnątrz instytucji.",
+    },
+    {
+        "n": 6, "id": "rec-6", "slug": "nagrania/6",
+        "short": "Nagranie 6 — telefon osoby NN",
+        "date": "16 grudnia 2023 r. (data pliku źródłowego)",
+        "people": "osoba NN i dr Witold Kilarski (rozmowa telefoniczna)",
+        "length": "nieustalony — plik audio niedostępny",
+        "analiza": "9",
+        "title": "Nagranie 6 — telefon osoby NN do dr. Kilarskiego "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 6: telefon osoby NN do dr. Kilarskiego — eskalacja konfliktu "
+                "z prof. Marcinem Drągiem, stanowisko prof. Melody Swartz i decyzja "
+                "o drodze sądowej. Plik audio chwilowo niedostępny.",
+    },
+    {
+        "n": 7, "id": "rec-7", "slug": "nagrania/7",
+        "short": "Nagranie 7 — 30 września 2021",
+        "date": "30 września 2021 r.",
+        "people": "osoba NN i dr Witold Kilarski",
+        "length": "ok. 40 min",
+        "analiza": "10",
+        "title": "Nagranie 7 (30 września 2021) — mechanizm zniszczenia "
+                 "| Dr Witold Kilarski",
+        "desc": "Nagranie 7 z 30 września 2021 r.: skąd dyrektor NCN wiedział "
+                "o wniosku NAWA, manipulacja progiem punktowym w panelu NAWA "
+                "i powód usunięcia osoby NN z NCN.",
+    },
+]
+
+RECORDINGS_BY_ID = {r["id"]: r for r in RECORDINGS}
+
+NUMBERING_NOTE_URL = BASE + "/sprostowania/#errata-numeracja-nagran"
+NUMBERING_NOTE_TEXT = (
+    "Numeracja: to nagranie %s na stronie odpowiada nagraniu %s w dokumencie "
+    "analiza_nagran_audio_kompletna — zob. notę o numeracji z 20 sierpnia 2026 r."
+)
+
+# Strony-huby szesciu dzialow menu. Zawieraja wylacznie nawigacje (pionowa
+# lista podstron dzialu) — zadnej tresci dowodowej.
+HUBS = [
+    {
+        "slug": "nagrania",
+        "short": "Nagrania",
+        "h1": "Nagrania audio (2020–2021)",
+        "title": "Nagrania audio 1–7 — archiwum dowodów sygnalisty NCN "
+                 "| Dr Witold Kilarski",
+        "desc": "Siedem nagrań audio z lat 2020–2021 dokumentujących domniemany "
+                "szantaż i nieprawidłowości w Narodowym Centrum Nauki. Każde "
+                "nagranie na osobnej podstronie, z opisem tematycznym i odtwarzaczem.",
+        "intro": "Każde nagranie ma osobną podstronę: opis, uczestnicy, czas trwania, "
+                 "odtwarzacz, podział tematyczny (sekcje A–G) i notę źródłową. "
+                 "Nagrania nie odtwarzają się automatycznie.",
+        "items": [],  # uzupelniane z RECORDINGS
+    },
+    {
+        "slug": "postepowania",
+        "short": "Postępowania",
+        "h1": "Postępowania — prokuratura, sądy, egzekucja, nadzór ministra",
+        "title": "Postępowania: prokuratura, sądy, komornik, wniosek o kontrolę "
+                 "| Dr Witold Kilarski",
+        "desc": "Wszystkie postępowania w sprawie: odmowy wszczęcia śledztwa, sprawy "
+                "sądowe przeciwko sygnaliście, egzekucja komornicza Km 834/26 "
+                "i wniosek o kontrolę NCN oraz UJ w trybie nadzoru ministra.",
+        "intro": "Postępowania prowadzone w tej sprawie — zarówno te, których "
+                 "organy odmówiły, jak i te wszczęte przeciwko sygnaliście.",
+        "items": ["prokuratura", "sprawy-sadowe", "wyrok-kafkowski",
+                  "sprawa-komornika", "wniosek-o-kontrole-ncn"],
+    },
+    {
+        "slug": "instytucje",
+        "short": "Instytucje",
+        "h1": "Instytucje — NCN, Uniwersytet Jagielloński, WUM",
+        "title": "Instytucje: NCN, Uniwersytet Jagielloński, WUM "
+                 "| Dr Witold Kilarski",
+        "desc": "Dokumentacja dotycząca instytucji: maszynowe recenzje NCN (sprawa "
+                "Mudelsee), bezczynność Uniwersytetu Jagiellońskiego, pismo "
+                "dyrektora NCN do WUM oraz wątek Błocki–Babik–Liana.",
+        "intro": "Cztery wątki instytucjonalne: co zrobiły — i czego nie zrobiły — "
+                 "instytucje, do których kierowano zgłoszenia.",
+        "items": ["maszynowe-recenzje-ncn", "bezczynnosc-uj",
+                  "wum-blocki-cyngiel", "blocki-babik-liana"],
+    },
+    {
+        "slug": "o-mnie",
+        "short": "O mnie",
+        "h1": "O mnie — biografia, sprostowania, kontakt",
+        "title": "O mnie — CV, sprostowania i kontakt | Dr Witold Kilarski",
+        "desc": "Nota biograficzna i CV dr. Witolda Kilarskiego, rejestr sprostowań "
+                "i korekt, dane kontaktowe oraz pozostałe materiały: list otwarty, "
+                "pomoc Ukraińcom, kulturowe analogie i dyskusja.",
+        "intro": "Kim jestem, jak poprawiam własne błędy i jak się ze mną skontaktować. "
+                 "Kontakt: witek.kilarski@gmail.com, +48 782 473 130.",
+        "items": ["cv", "sprostowania", "list-otwarty", "pomoc-ukraincom",
+                  "kulturowe-analogie", "dyskusja"],
+    },
+]
+
+HUB_BY_SLUG = {h["slug"]: h for h in HUBS}
+
+# Skorowidz: pelna lista odnosnikow z dawnego drugiego rzedu zakladek
+# (nav.sub-nav). Rzad zakladek zniknal z witryny, ale ani jeden odnosnik nie
+# zostal usuniety — wszystkie sa tutaj.
+SKOROWIDZ_META = {
+    "pl": ("Skorowidz dokumentów i sekcji | Dr Witold Kilarski",
+           "Pełny skorowidz archiwum: wszystkie dokumenty, pisma i sekcje "
+           "dotyczące domniemanej korupcji w Narodowym Centrum Nauki.",
+           "Skorowidz dokumentów i sekcji",
+           "Pełna lista odnośników z dawnego rzędu zakładek. Nic nie zostało "
+           "usunięte — zmieniło się tylko miejsce."),
+    "en": ("Index of documents and sections | Dr Witold Kilarski",
+           "Full index of the archive: every document, letter and section "
+           "documenting alleged corruption at Poland's National Science Centre.",
+           "Index of documents and sections",
+           "The complete list of links from the former tab row. Nothing was "
+           "removed — only moved."),
+    "fr": ("Index des documents et sections | Dr Witold Kilarski",
+           "Index complet des archives : tous les documents, courriers et sections "
+           "concernant la corruption présumée au Centre national des sciences.",
+           "Index des documents et sections",
+           "La liste complète des liens de l'ancienne rangée d'onglets. Rien n'a "
+           "été supprimé — seulement déplacé."),
+    "de": ("Index der Dokumente und Abschnitte | Dr Witold Kilarski",
+           "Vollständiger Index des Archivs: alle Dokumente, Schreiben und "
+           "Abschnitte zur mutmaßlichen Korruption am NCN.",
+           "Index der Dokumente und Abschnitte",
+           "Die vollständige Liste der Links aus der früheren Registerkartenreihe. "
+           "Nichts wurde entfernt — nur verschoben."),
+    "uk": ("Покажчик документів і розділів | Dr Witold Kilarski",
+           "Повний покажчик архіву: усі документи, листи та розділи щодо ймовірної "
+           "корупції в Національному науковому центрі Польщі.",
+           "Покажчик документів і розділів",
+           "Повний список посилань із колишнього рядка вкладок. Нічого не "
+           "видалено — лише переміщено."),
+}
+
+# Dokladnie szesc zakladek menu (Zadanie 3). Etykiety PL dokladnie jak
+# w zleceniu. Dla jezykow bez tlumaczenia etykiet uzywamy wersji angielskiej
+# (odnotowane w raporcie).
+NAV_TABS = [
+    ("sprawa", BASE + "/", {"pl": "Sprawa", "en": "Case", "fr": "Case",
+                            "de": "Case", "uk": "Case"}),
+    ("nagrania", BASE + "/nagrania/", {"pl": "Nagrania", "en": "Recordings",
+                                       "fr": "Recordings", "de": "Recordings",
+                                       "uk": "Recordings"}),
+    ("dokumenty", BASE + "/dokumenty/", {"pl": "Dokumenty", "en": "Documents",
+                                         "fr": "Documents", "de": "Documents",
+                                         "uk": "Documents"}),
+    ("postepowania", BASE + "/postepowania/", {"pl": "Postępowania",
+                                               "en": "Proceedings",
+                                               "fr": "Proceedings",
+                                               "de": "Proceedings",
+                                               "uk": "Proceedings"}),
+    ("instytucje", BASE + "/instytucje/", {"pl": "Instytucje", "en": "Institutions",
+                                           "fr": "Institutions",
+                                           "de": "Institutions",
+                                           "uk": "Institutions"}),
+    ("o-mnie", BASE + "/o-mnie/", {"pl": "O mnie", "en": "About me",
+                                   "fr": "About me", "de": "About me",
+                                   "uk": "About me"}),
+]
+
+FOOTER_LINKS = {
+    "pl": [(BASE + "/skorowidz/", "Pełne archiwum — skorowidz"),
+           (BASE + "/nagrania/", "Nagrania 1–7"),
+           (BASE + "/sprostowania/", "Sprostowania i korekty")],
+    "en": [(BASE + "/en/skorowidz/", "Full archive — index"),
+           (BASE + "/nagrania/", "Recordings 1–7"),
+           (BASE + "/sprostowania/", "Corrections")],
+    "fr": [(BASE + "/fr/skorowidz/", "Full archive — index"),
+           (BASE + "/nagrania/", "Recordings 1–7"),
+           (BASE + "/sprostowania/", "Corrections")],
+    "de": [(BASE + "/de/skorowidz/", "Full archive — index"),
+           (BASE + "/nagrania/", "Recordings 1–7"),
+           (BASE + "/sprostowania/", "Corrections")],
+    "uk": [(BASE + "/uk/skorowidz/", "Full archive — index"),
+           (BASE + "/nagrania/", "Recordings 1–7"),
+           (BASE + "/sprostowania/", "Corrections")],
+}
+
+# Wszystkie strony PL z trescia (dawne SECTIONS + sekcje przeniesione).
+CONTENT_PAGES = SECTIONS + MOVED_PAGES
+PAGE_BY_ID = {p["id"]: p for p in CONTENT_PAGES}
+PAGE_BY_SLUG = {p["slug"]: p for p in CONTENT_PAGES}
+
+# Przypisanie podstron do dzialow (do bloku "Powiazane strony").
+GROUP_OF_SLUG = {}
+for _hub in HUBS:
+    for _slug in _hub["items"]:
+        GROUP_OF_SLUG[_slug] = _hub["slug"]
+GROUP_OF_SLUG["dokumenty"] = "dokumenty"
+GROUP_OF_SLUG["chronologia"] = "sprawa"
+GROUP_OF_SLUG["wprowadzenie"] = "sprawa"
+for _rec in RECORDINGS:
+    GROUP_OF_SLUG[_rec["slug"]] = "nagrania"
+
+# Sekcje strony glownej, ktore zostaja na home (poza <main> hero i stopka).
+HOME_KEEP_SECTION_IDS = {"home-hub"}
+
 # Naprawa martwych linkow audio (punkt 8 specyfikacji)
 AUDIO_RENAMES = [
     (
@@ -245,6 +603,115 @@ EXTRA_CSS = """
 .related-pages a{display:inline-block;padding:var(--space-2) var(--space-4);border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);text-decoration:none;color:var(--color-link);}
 .related-pages a:hover{border-color:var(--color-accent);color:var(--color-accent);}
 .audio-unavailable{margin:var(--space-4) 0;padding:var(--space-4);border:1px dashed var(--color-border-strong);border-radius:6px;background:var(--color-surface);font-size:var(--text-sm);color:var(--color-text-muted);}
+
+/* ============================================================
+   Odtluszczenie strony glownej (2026-08-20):
+   menu sześciu zakładek, kafle działów, huby, skorowidz,
+   szerokosc kolumny tekstu i odstepy miedzy sekcjami.
+   ============================================================ */
+
+/* --- MENU: jeden rzad, szesc klikalnych zakladek, bez hovera --- */
+.nav-links{display:flex;gap:var(--space-2);flex-wrap:nowrap;align-items:center;}
+@media (min-width:768px){.nav-links{display:flex !important;}}
+.nav-links .nav-link{padding:var(--space-2) var(--space-3);border-radius:6px;white-space:nowrap;}
+.nav-links .nav-link[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.14);font-weight:700;}
+.nav-links .nav-link:focus-visible,.lang-btn:focus-visible,.mobile-menu-btn:focus-visible{outline:2px solid #ffd166;outline-offset:2px;}
+@media (max-width:900px){
+  .nav-links{position:absolute;left:0;right:0;top:100%;display:none !important;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--color-header-bg);border-bottom:1px solid rgba(255,255,255,0.12);
+    padding:var(--space-2) var(--space-4) var(--space-4);}
+  .nav-links.open{display:flex !important;}
+  .nav-links .nav-link{padding:var(--space-3) 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .mobile-menu-btn{display:flex !important;}
+  .header-inner{position:relative;}
+}
+@media (min-width:901px){.mobile-menu-btn{display:none !important;}}
+
+/* --- STRONA GLOWNA: kolumna tekstu, cytat, kafle, chronologia --- */
+#home-hub{max-width:820px;margin:0 auto;padding-left:var(--space-5);padding-right:var(--space-5);}
+#home-hub h2{margin-top:var(--space-12);}
+#home-hub > .lang-block > h2:first-of-type{margin-top:0;}
+#home-hub p{max-width:70ch;}
+.hero-name{font-family:var(--font-sans);font-size:var(--text-sm);font-weight:600;
+  letter-spacing:0.02em;color:var(--color-hero-muted);margin:0 0 var(--space-2);}
+.home-quote{margin:var(--space-8) 0;padding:var(--space-6);border-left:4px solid var(--color-accent);
+  background:#fef9f0;border-radius:4px;}
+.home-quote p{font-size:var(--text-lg);font-style:italic;margin:0 0 var(--space-3);}
+.home-quote footer{font-style:normal;font-size:var(--text-sm);color:var(--color-text-muted);}
+.hub-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:var(--space-5);margin:var(--space-6) 0 var(--space-4);text-align:left;}
+.hub-card{border:1px solid var(--color-border);border-radius:8px;padding:var(--space-5);
+  background:var(--color-surface,#fff);}
+.hub-card h3{margin:0 0 var(--space-3);font-size:var(--text-lg);}
+.hub-card p{margin:0 0 var(--space-3);font-size:var(--text-sm);line-height:1.6;}
+.hub-card-cta{margin:0;}
+.hub-card-cta a{display:inline-block;font-weight:700;color:var(--color-accent);
+  border:1px solid var(--color-accent);border-radius:6px;padding:var(--space-2) var(--space-4);
+  font-size:var(--text-sm);}
+.hub-card-cta a:hover{background:var(--color-accent);color:#fff;}
+.home-chrono{list-style:none;padding:0;margin:0 0 var(--space-4);text-align:left;max-width:70ch;}
+.home-chrono li{padding:var(--space-3) 0;border-bottom:1px solid var(--color-border);
+  font-size:var(--text-sm);line-height:1.6;}
+.home-about{max-width:70ch;}
+
+/* --- STRONY-HUBY I SKOROWIDZ --- */
+.hub-page{max-width:820px;margin:0 auto;padding:var(--space-8) var(--space-5);text-align:left;}
+.hub-page h1{font-family:var(--font-serif);font-size:var(--text-2xl);line-height:1.2;
+  margin:0 0 var(--space-4);}
+.hub-page .hub-intro{font-size:var(--text-base);color:var(--color-text-muted);
+  margin:0 0 var(--space-8);max-width:70ch;}
+.hub-list{list-style:none;padding:0;margin:0;}
+.hub-list > li{border-top:1px solid var(--color-border);padding:var(--space-5) 0;}
+.hub-list > li:last-child{border-bottom:1px solid var(--color-border);}
+.hub-list a.hub-list-title{font-family:var(--font-serif);font-size:var(--text-lg);font-weight:700;}
+.hub-list p{margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--color-text-muted);
+  max-width:70ch;}
+.skorowidz h2{font-family:var(--font-serif);font-size:var(--text-xl);
+  margin:var(--space-8) 0 var(--space-3);}
+.skorowidz h3{font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--color-accent);margin:var(--space-5) 0 var(--space-2);}
+.skorowidz ul{list-style:none;padding:0;margin:0;}
+.skorowidz li{padding:4px 0;font-size:var(--text-sm);}
+
+/* --- PODSTRONY NAGRAN: numeracja, nawigacja poprzednie/nastepne --- */
+.rec-meta{list-style:none;padding:var(--space-4);margin:0 0 var(--space-6);
+  border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);
+  text-align:left;max-width:70ch;}
+.rec-meta li{padding:2px 0;}
+.rec-numbering{font-size:var(--text-sm);color:var(--color-text-muted);
+  border-left:3px solid #b45309;padding:var(--space-2) var(--space-4);
+  margin:0 0 var(--space-6);text-align:left;max-width:70ch;}
+.rec-prevnext{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;
+  margin:var(--space-8) 0 var(--space-4);font-size:var(--text-sm);}
+.rec-prevnext a{font-weight:600;}
+.errata-tabela{border-collapse:collapse;margin:var(--space-4) 0;font-size:var(--text-sm);}
+.errata-tabela th,.errata-tabela td{border:1px solid var(--color-border);
+  padding:6px 10px;text-align:left;}
+
+/* --- CZYTELNOSC: naglowek H1 na podstronach, odstepy miedzy sekcjami --- */
+main .section h1,main .interview-section h1,main .komornik-section h1,
+main .listotwarty-section h1,main .ukraina-section h1,main .kultura-section h1,
+main .comments-section h1{font-family:var(--font-serif);font-size:var(--text-2xl);
+  font-weight:700;line-height:1.2;letter-spacing:-0.015em;
+  margin:0 0 var(--space-6);color:var(--color-text);}
+main > section{margin-bottom:var(--space-12);}
+main p{max-width:78ch;}
+main .section p,main .interview-section p{line-height:1.7;}
+"""
+
+# Menu mobilne: Escape zamyka, aria-expanded utrzymane (WCAG 2.1.1).
+MENU_A11Y_JS = """
+(function(){
+  var btn = document.getElementById('mobile-menu-btn');
+  var nav = document.getElementById('nav-links');
+  if (!btn || !nav) return;
+  function close(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && nav.classList.contains('open')) { close(); btn.focus(); }
+  });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
+})();
 """
 
 HASH_REDIRECT_JS = """
@@ -773,29 +1240,188 @@ def build_breadcrumb(soup, section):
     return nav
 
 
+def page_short(slug):
+    """Krotka nazwa strony o danym slugu (podstrona tresci, nagranie albo hub)."""
+    if slug in PAGE_BY_SLUG:
+        return PAGE_BY_SLUG[slug]["short"]
+    for rec in RECORDINGS:
+        if rec["slug"] == slug:
+            return rec["short"]
+    if slug in HUB_BY_SLUG:
+        return HUB_BY_SLUG[slug]["short"]
+    raise BuildError("nieznany slug: %s" % slug)
+
+
+def siblings_of(slug):
+    """Pozostale strony tego samego dzialu — do bloku „Powiazane strony”."""
+    group = GROUP_OF_SLUG.get(slug)
+    out = []
+    if group == "nagrania":
+        out = [r["slug"] for r in RECORDINGS if r["slug"] != slug]
+    elif group == "sprawa":
+        out = [s for s in ("wprowadzenie", "chronologia") if s != slug]
+    elif group in HUB_BY_SLUG:
+        out = [s for s in HUB_BY_SLUG[group]["items"] if s != slug]
+    return out
+
+
 def build_related(soup, current_slug):
     nav = soup.new_tag("nav")
     nav["class"] = ["related-pages"]
-    nav["aria-label"] = "Powiązane sekcje"
+    nav["aria-label"] = "Powiązane strony"
     heading = soup.new_tag("h2")
-    heading.string = "Powiązane sekcje"
+    heading.string = "Powiązane strony"
     nav.append(heading)
     ul = soup.new_tag("ul")
-    for other in SECTIONS:
-        if other["slug"] == current_slug:
-            continue
+
+    targets = []
+    group = GROUP_OF_SLUG.get(current_slug)
+    if group in HUB_BY_SLUG:
+        targets.append((BASE + "/" + group + "/", HUB_BY_SLUG[group]["short"]))
+    for slug in siblings_of(current_slug):
+        targets.append((BASE + "/" + slug + "/", page_short(slug)))
+    targets.append((BASE + "/skorowidz/", "Skorowidz archiwum"))
+    targets.append((BASE + "/", "Strona główna"))
+
+    for href, label in targets:
         li = soup.new_tag("li")
-        a = soup.new_tag("a", href=BASE + "/" + other["slug"] + "/")
-        a.string = other["short"]
+        a = soup.new_tag("a", href=href)
+        a.string = label
         li.append(a)
         ul.append(li)
-    li = soup.new_tag("li")
-    a = soup.new_tag("a", href=BASE + "/")
-    a.string = "Strona główna"
-    li.append(a)
-    ul.append(li)
     nav.append(ul)
     return nav
+
+
+# --------------------------------------------------------------------------
+# Menu szesciu zakladek, stopka, elementy wspolne (2026-08-20)
+# --------------------------------------------------------------------------
+
+def install_nav(soup, lang, current=None):
+    """Dokladnie szesc klikalnych zakladek w jednym rzedzie; drugi rzad znika."""
+    nav = soup.find("nav", id="nav-links")
+    expect(nav is not None, "brak nav#nav-links")
+    nav.clear()
+    for key, href, labels in NAV_TABS:
+        a = soup.new_tag("a", href=href)
+        a["class"] = ["nav-link"]
+        a["data-nav"] = key
+        if key == current:
+            a["aria-current"] = "page"
+        span = soup.new_tag("span")
+        span["class"] = ["nav-" + lang]
+        span.string = labels[lang]
+        a.append(span)
+        nav.append(a)
+
+    sub = soup.find("nav", class_="sub-nav")
+    if sub is not None:
+        sub.decompose()
+
+    script = soup.new_tag("script")
+    script.string = MENU_A11Y_JS
+    soup.body.append(script)
+
+
+def install_footer_links(soup, lang):
+    footer = soup.find("footer", class_="site-footer")
+    expect(footer is not None, "brak stopki")
+    block = footer.find("div", class_="lang-block")
+    expect(block is not None, "stopka bez bloku jezykowego")
+    nav = soup.new_tag("nav")
+    nav["class"] = ["footer-links"]
+    nav["aria-label"] = "Stopka"
+    for i, (href, label) in enumerate(FOOTER_LINKS[lang]):
+        if i:
+            nav.append(" · ")
+        a = soup.new_tag("a", href=href)
+        a.string = label
+        nav.append(a)
+    block.append(nav)
+
+
+def strip_inpage_navs(soup):
+    """Usuwa wewnatrzstronowe rzedy zakladek (.section-nav, .section-jumpnav)."""
+    removed = 0
+    for nav in soup.select("nav.section-nav, nav.section-jumpnav"):
+        nav.decompose()
+        removed += 1
+    return removed
+
+
+def promote_first_heading(container):
+    """Pierwszy <h2> podstrony staje sie <h1> (hierarchia H1/H2/H3)."""
+    heading = container.find("h2")
+    if heading is not None:
+        heading.name = "h1"
+        return heading.get_text(" ", strip=True)
+    return None
+
+
+def build_breadcrumb_for(soup, label, hub_slug=None):
+    nav = soup.new_tag("nav")
+    nav["class"] = ["breadcrumb"]
+    nav["aria-label"] = "Breadcrumb"
+    home = soup.new_tag("a", href=BASE + "/")
+    home.string = "Strona główna"
+    nav.append(home)
+    if hub_slug and hub_slug in HUB_BY_SLUG:
+        nav.append(" › ")
+        hub = soup.new_tag("a", href=BASE + "/" + hub_slug + "/")
+        hub.string = HUB_BY_SLUG[hub_slug]["short"]
+        nav.append(hub)
+    nav.append(" › ")
+    current = soup.new_tag("span")
+    current.string = label
+    nav.append(current)
+    return nav
+
+
+# --------------------------------------------------------------------------
+# Przekierowanie dawnych kotwic strony glownej na nowe adresy
+# --------------------------------------------------------------------------
+
+def anchor_redirect_js(mapping):
+    """Dawne #kotwice strony glownej -> nowe adresy podstron.
+
+    GitHub Pages nie obsluguje przekierowan 301 po stronie serwera (a fragment
+    URL nigdy nie dociera do serwera), wiec zachowanie dawnych odnosnikow
+    realizuje przekierowanie po stronie przegladarki — natychmiastowe,
+    z location.replace (bez wpisu w historii, jak przy 301).
+    """
+    return (
+        "\n(function(){\n  var m = "
+        + json.dumps(mapping, ensure_ascii=False, sort_keys=True)
+        + ";\n  var h = location.hash.replace('#','');"
+        "\n  if (h && m[h]) { location.replace(m[h]); }\n})();\n"
+    )
+
+
+def install_anchor_redirect(soup, mapping):
+    script = soup.new_tag("script")
+    script.string = anchor_redirect_js(mapping)
+    anchor = soup.head.find("meta", attrs={"name": "viewport"})
+    if anchor is not None:
+        anchor.insert_after(script)
+    else:
+        soup.head.insert(0, script)
+
+
+def collect_old_anchors(raw, id_to_url):
+    """Kotwice, ktore wystepowaly w zrodle jako <a href="#..."> i zmienily adres."""
+    frags = set(re.findall(r'href="#([^"]+)"', raw))
+    mapping = {}
+    for frag in sorted(frags):
+        if frag in NATIVE_FRAGMENTS:
+            continue
+        if frag in id_to_url:
+            mapping[frag] = id_to_url[frag]
+    # kotwice sekcji i nagran zawsze, nawet jesli nikt do nich nie linkowal
+    for page in CONTENT_PAGES:
+        mapping[page["id"]] = id_to_url[page["id"]]
+    for rec in RECORDINGS:
+        mapping[rec["id"]] = id_to_url[rec["id"]]
+    return mapping
 
 
 # --------------------------------------------------------------------------
@@ -813,13 +1439,13 @@ def collect_section_id_map(raw):
     """id -> URL strony, na ktora przeniesiono element (dla kotwic i JSON-LD)."""
     soup = prepared_soup(raw, "pl")
     id_to_url = {}
-    for section in SECTIONS:
-        tag = soup.find(id=section["id"])
-        expect(tag is not None, "brak sekcji #%s w zrodle" % section["id"])
-        url = BASE + "/" + section["slug"] + "/"
+    for page in CONTENT_PAGES + RECORDINGS:
+        tag = soup.find(id=page["id"])
+        expect(tag is not None, "brak sekcji #%s w zrodle" % page["id"])
+        url = BASE + "/" + page["slug"] + "/"
         for inner in tag.find_all(attrs={"id": True}):
             id_to_url[inner["id"]] = url + "#" + inner["id"]
-        id_to_url[section["id"]] = url
+        id_to_url[page["id"]] = url
     return id_to_url
 
 
@@ -835,7 +1461,7 @@ def finish(soup, path):
     return out
 
 
-def build_language_page(raw, lang, id_to_url, hub_headlines=None):
+def build_language_page(raw, lang, id_to_url, anchor_map=None):
     soup = prepared_soup(raw, lang)
     rewrite_lang_switcher(soup, lang)
     transform_scripts(soup)
@@ -847,66 +1473,299 @@ def build_language_page(raw, lang, id_to_url, hub_headlines=None):
              hreflang_cluster=True, keep_faq=(lang == "pl"))
 
     if lang == "pl":
-        # Skroty wydzielonych sekcji + linki do nowych URL-i.
-        for section in SECTIONS:
-            tag = soup.find(id=section["id"])
-            expect(tag is not None, "brak sekcji #%s" % section["id"])
-            headline = build_summary(soup, tag, section)
-            if hub_headlines is not None:
-                hub_headlines[section["id"]] = headline
+        # ODTLUSZCZENIE: na stronie glownej zostaje hero + sekcja #home-hub.
+        # Cala pozostala tresc jest na podstronach (patrz CONTENT_PAGES,
+        # RECORDINGS) — z home jest wylacznie USUWANA, nigdy skracana.
+        hub = soup.find(id="home-hub")
+        expect(hub is not None, "brak sekcji #home-hub w zrodle")
+        for sec in soup.find_all("section"):
+            classes = set(sec.get("class") or [])
+            if "hero" in classes or sec.get("id") in HOME_KEEP_SECTION_IDS:
+                continue
+            sec.decompose()
+        strip_inpage_navs(soup)
         update_graph_for_language(soup, lang, page_url, id_to_url)
         rewrite_anchors(soup, id_to_url=id_to_url, always_remap=True)
+        if anchor_map:
+            install_anchor_redirect(soup, anchor_map)
     else:
+        # Strony jezykowe maja nadal pelna tresc jednej strony —
+        # zmienia sie wylacznie nawigacja (szesc zakladek).
+        hub = soup.find(id="home-hub")
+        if hub is not None:
+            hub.decompose()
         update_graph_for_language(soup, lang, page_url, {})
-        # Strony jezykowe maja pelna tresc — kotwice hashowe zostaja bez zmian.
+
+    install_nav(soup, lang, current="sprawa")
+    install_footer_links(soup, lang)
 
     path = "index.html" if lang == "pl" else "%s/index.html" % lang
     return finish(soup, path)
 
 
-def build_section_page(raw, section, id_to_url, headline):
+def page_chrome(raw, page_title, page_desc, page_url, nav_current):
+    """Wspolny szkielet podstrony PL: naglowek, menu, pusty <main>, stopka."""
     soup = prepared_soup(raw, "pl")
     rewrite_lang_switcher(soup, "pl")
     transform_scripts(soup)
     append_css(soup)
-
-    page_url = SITE + "/" + section["slug"] + "/"
-    set_head(soup, lang="pl", title=section["title"], description=section["desc"],
+    set_head(soup, lang="pl", title=page_title, description=page_desc,
              page_url=page_url, hreflang_cluster=False, keep_faq=False)
 
-    # Sekcja + nowy <main>: breadcrumb, tresc sekcji, powiazane strony.
-    section_tag = soup.find(id=section["id"])
-    expect(section_tag is not None, "brak sekcji #%s" % section["id"])
+    hero = soup.find("section", class_="hero")
+    if hero is not None:
+        hero.decompose()
+    hub = soup.find(id="home-hub")
+    if hub is not None:
+        hub.decompose()
+
+    main = soup.find("main")
+    expect(main is not None, "brak <main>")
+    return soup, main
+
+
+def put_ld(soup, data):
+    for script in ld_scripts(soup):
+        script.decompose()
+    ld = soup.new_tag("script", attrs={"type": "application/ld+json"})
+    ld.string = "\n" + json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+    soup.head.append(ld)
+
+
+def build_content_page(raw, page, id_to_url, extra_top=None, extra_bottom=None):
+    """Podstrona z trescia przeniesiona ze strony glownej — HTML kopiowany 1:1."""
+    page_url = SITE + "/" + page["slug"] + "/"
+    soup, main = page_chrome(raw, page["title"], page["desc"], page_url,
+                             GROUP_OF_SLUG.get(page["slug"]))
+
+    section_tag = soup.find(id=page["id"])
+    expect(section_tag is not None, "brak sekcji #%s" % page["id"])
     section_tag.extract()
+
+    for stray in soup.find_all("section"):
+        stray.decompose()
+
+    strip_inpage_navs(section_tag)
+    headline = promote_first_heading(section_tag) or page["short"]
+
+    main.clear()
+    group = GROUP_OF_SLUG.get(page["slug"])
+    main.append(build_breadcrumb_for(soup, page["short"], group))
+    for node in (extra_top or []):
+        main.append(node)
+    main.append(section_tag)
+    for node in (extra_bottom or []):
+        main.append(node)
+    main.append(build_related(soup, page["slug"]))
+
+    put_ld(soup, section_ld(page, headline))
+    install_nav(soup, "pl", current=nav_current_for(page["slug"]))
+    install_footer_links(soup, "pl")
+    rewrite_anchors(soup, id_to_url=id_to_url)
+    return finish(soup, "%s/index.html" % page["slug"])
+
+
+def nav_current_for(slug):
+    group = GROUP_OF_SLUG.get(slug)
+    if group == "sprawa":
+        return "sprawa"
+    if group in ("nagrania", "postepowania", "instytucje", "o-mnie", "dokumenty"):
+        return group
+    return None
+
+
+def build_recording_page(raw, rec, id_to_url):
+    """Podstrona jednego nagrania: metryczka, nota o numeracji, nawigacja."""
+    soup_tmp = BeautifulSoup("<div></div>", "html.parser")
+
+    meta = soup_tmp.new_tag("ul")
+    meta["class"] = ["rec-meta"]
+    for label, value in (("Data", rec["date"]), ("Uczestnicy", rec["people"]),
+                         ("Czas trwania", rec["length"])):
+        li = soup_tmp.new_tag("li")
+        strong = soup_tmp.new_tag("strong")
+        strong.string = label + ": "
+        li.append(strong)
+        li.append(value)
+        meta.append(li)
+
+    note = soup_tmp.new_tag("p")
+    note["class"] = ["rec-numbering"]
+    note.append(NUMBERING_NOTE_TEXT % (rec["n"], rec["analiza"]) + " ")
+    link = soup_tmp.new_tag("a", href=NUMBERING_NOTE_URL)
+    link.string = "Nota o numeracji nagrań (20 sierpnia 2026 r.)"
+    note.append(link)
+
+    idx = [r["n"] for r in RECORDINGS].index(rec["n"])
+    prevnext = soup_tmp.new_tag("nav")
+    prevnext["class"] = ["rec-prevnext"]
+    prevnext["aria-label"] = "Nawigacja między nagraniami"
+    if idx > 0:
+        before = RECORDINGS[idx - 1]
+        a = soup_tmp.new_tag("a", href=BASE + "/" + before["slug"] + "/")
+        a.string = "← poprzednie: %s" % before["short"]
+        prevnext.append(a)
+    hub = soup_tmp.new_tag("a", href=BASE + "/nagrania/")
+    hub.string = "Wszystkie nagrania"
+    prevnext.append(hub)
+    if idx < len(RECORDINGS) - 1:
+        after = RECORDINGS[idx + 1]
+        a = soup_tmp.new_tag("a", href=BASE + "/" + after["slug"] + "/")
+        a.string = "następne: %s →" % after["short"]
+        prevnext.append(a)
+
+    return build_content_page(raw, rec, id_to_url,
+                             extra_top=[meta, note],
+                             extra_bottom=[prevnext])
+
+
+def hub_items(hub):
+    """Lista (url, tytul, opis) podstron danego dzialu."""
+    out = []
+    if hub["slug"] == "nagrania":
+        for rec in RECORDINGS:
+            out.append((BASE + "/" + rec["slug"] + "/", rec["short"], rec["desc"]))
+        return out
+    for slug in hub["items"]:
+        page = PAGE_BY_SLUG[slug]
+        out.append((BASE + "/" + slug + "/", page["short"], page["desc"]))
+    return out
+
+
+def build_hub_page(raw, hub, id_to_url):
+    """Strona-hub dzialu: wylacznie pionowa lista podstron (bez tresci)."""
+    page_url = SITE + "/" + hub["slug"] + "/"
+    soup, main = page_chrome(raw, hub["title"], hub["desc"], page_url, hub["slug"])
+
+    for stray in soup.find_all("section"):
+        stray.decompose()
+
+    main.clear()
+    wrap = soup.new_tag("div")
+    wrap["class"] = ["hub-page"]
+    wrap.append(build_breadcrumb_for(soup, hub["short"]))
+    h1 = soup.new_tag("h1")
+    h1.string = hub["h1"]
+    wrap.append(h1)
+    intro = soup.new_tag("p")
+    intro["class"] = ["hub-intro"]
+    intro.string = hub["intro"]
+    wrap.append(intro)
+
+    ul = soup.new_tag("ul")
+    ul["class"] = ["hub-list"]
+    for href, label, desc in hub_items(hub):
+        li = soup.new_tag("li")
+        a = soup.new_tag("a", href=href)
+        a["class"] = ["hub-list-title"]
+        a.string = label
+        li.append(a)
+        p = soup.new_tag("p")
+        p.string = desc
+        li.append(p)
+        ul.append(li)
+    wrap.append(ul)
+
+    if hub["slug"] == "nagrania":
+        note = soup.new_tag("p")
+        note["class"] = ["rec-numbering"]
+        note.append("Witryna numeruje nagrania 1–7, a dokument "
+                    "analiza_nagran_audio_kompletna — 1–10. Żadnej numeracji nie "
+                    "zmieniono; tabela przeliczenia: ")
+        link = soup.new_tag("a", href=NUMBERING_NOTE_URL)
+        link.string = "nota o numeracji z 20 sierpnia 2026 r."
+        note.append(link)
+        wrap.append(note)
+
+    main.append(wrap)
+
+    put_ld(soup, section_ld({"slug": hub["slug"], "desc": hub["desc"],
+                             "short": hub["short"]}, hub["h1"]))
+    install_nav(soup, "pl", current=hub["slug"])
+    install_footer_links(soup, "pl")
+    rewrite_anchors(soup, id_to_url=id_to_url)
+    return finish(soup, "%s/index.html" % hub["slug"])
+
+
+def build_skorowidz_page(raw, lang, id_to_url):
+    """Pelna lista odnosnikow z dawnego drugiego rzedu zakladek (nav.sub-nav).
+
+    Rzad zakladek zostal usuniety z chrome witryny, ale ani jeden odnosnik
+    nie zniknal — wszystkie sa tutaj, w pionowej liscie.
+    """
+    title, desc, h1_text, intro_text = SKOROWIDZ_META[lang]
+    slug = "skorowidz" if lang == "pl" else "%s/skorowidz" % lang
+    page_url = SITE + "/" + slug + "/"
+
+    soup = prepared_soup(raw, lang)
+    rewrite_lang_switcher(soup, lang)
+    transform_scripts(soup)
+    append_css(soup)
+    set_head(soup, lang=lang, title=title, description=desc, page_url=page_url,
+             hreflang_cluster=False, keep_faq=False)
+
+    subnav = soup.find("nav", class_="sub-nav")
+    expect(subnav is not None, "brak nav.sub-nav w zrodle (%s)" % lang)
+    subnav.extract()
+
+    hero = soup.find("section", class_="hero")
+    if hero is not None:
+        hero.decompose()
+    for stray in soup.find_all("section"):
+        stray.decompose()
 
     main = soup.find("main")
     expect(main is not None, "brak <main>")
     main.clear()
-    main.append(build_breadcrumb(soup, section))
-    main.append(section_tag)
-    main.append(build_related(soup, section["slug"]))
 
-    # Elementy calej witryny, ktorych nie ma na podstronie.
-    hero = soup.find("section", class_="hero")
-    if hero is not None:
-        hero.decompose()
-    comments = soup.find(id="comments")
-    if comments is not None:
-        comments.decompose()
-    for stray in soup.find_all("section"):
-        if stray is not section_tag and not stray.find_parent("main"):
-            stray.decompose()
+    wrap = soup.new_tag("div")
+    wrap["class"] = ["hub-page", "skorowidz"]
+    wrap.append(build_breadcrumb_for(soup, h1_text))
+    h1 = soup.new_tag("h1")
+    h1.string = h1_text
+    wrap.append(h1)
+    intro = soup.new_tag("p")
+    intro["class"] = ["hub-intro"]
+    intro.string = intro_text
+    wrap.append(intro)
 
-    # JSON-LD: tylko Article + BreadcrumbList tej podstrony.
-    for script in ld_scripts(soup):
-        script.decompose()
-    ld = soup.new_tag("script", attrs={"type": "application/ld+json"})
-    ld.string = "\n" + json.dumps(section_ld(section, headline),
-                                 ensure_ascii=False, indent=2) + "\n"
-    soup.head.append(ld)
+    for tab in subnav.select("div.sub-nav-tab"):
+        head_link = tab.find("a", class_="sub-nav-link")
+        if head_link is None:
+            continue
+        h2 = soup.new_tag("h2")
+        h2.string = head_link.get_text(" ", strip=True)
+        wrap.append(h2)
+        ul = soup.new_tag("ul")
+        for node in tab.select(".sub-nav-dropdown > *"):
+            classes = set(node.get("class") or [])
+            if "sub-nav-dropdown-title" in classes:
+                if ul.find("li") is not None:
+                    wrap.append(ul)
+                    ul = soup.new_tag("ul")
+                h3 = soup.new_tag("h3")
+                h3.string = node.get_text(" ", strip=True)
+                wrap.append(h3)
+                continue
+            if node.name == "a":
+                li = soup.new_tag("li")
+                a = soup.new_tag("a", href=node.get("href", "#"))
+                if node.get("target"):
+                    a["target"] = node["target"]
+                    a["rel"] = "noopener noreferrer"
+                a.string = node.get_text(" ", strip=True)
+                li.append(a)
+                ul.append(li)
+        if ul.find("li") is not None:
+            wrap.append(ul)
 
-    rewrite_anchors(soup, id_to_url=id_to_url)
-    return finish(soup, "%s/index.html" % section["slug"])
+    main.append(wrap)
+
+    put_ld(soup, section_ld({"slug": slug, "desc": desc, "short": h1_text}, h1_text))
+    install_nav(soup, lang, current=None)
+    install_footer_links(soup, lang)
+    rewrite_anchors(soup, id_to_url=id_to_url, always_remap=True)
+    return finish(soup, "%s/index.html" % slug)
 
 
 # --------------------------------------------------------------------------
@@ -959,12 +1818,12 @@ def build_sitemap():
             lines.append(VIDEO_BLOCK.rstrip("\n"))
         lines.append("  </url>")
 
-    for section in SECTIONS:
+    for slug, priority in sitemap_slugs():
         lines.append("  <url>")
-        lines.append("    <loc>%s/%s/</loc>" % (SITE, section["slug"]))
+        lines.append("    <loc>%s/%s/</loc>" % (SITE, slug))
         lines.append("    <lastmod>%s</lastmod>" % BUILD_DATE)
         lines.append("    <changefreq>monthly</changefreq>")
-        lines.append("    <priority>0.7</priority>")
+        lines.append("    <priority>%s</priority>" % priority)
         lines.append("  </url>")
 
     lines.append("</urlset>")
@@ -1028,9 +1887,23 @@ __LANGS__
 """
 
 
+def sitemap_slugs():
+    """Slugi wszystkich generowanych podstron + priorytety (kolejnosc = sitemap)."""
+    out = [(h["slug"], "0.9") for h in HUBS]
+    out += [(p["slug"], "0.7") for p in CONTENT_PAGES]
+    out += [(r["slug"], "0.7") for r in RECORDINGS]
+    out += [("skorowidz", "0.5")]
+    out += [("%s/skorowidz" % l, "0.4") for l in LANGS if l != "pl"]
+    return out
+
+
 def build_404():
-    items = "\n".join('<li><a href="%s/%s/">%s</a></li>' % (BASE, s["slug"], s["short"])
-                      for s in SECTIONS)
+    items = "\n".join(
+        '<li><a href="%s/%s/">%s</a></li>' % (BASE, h["slug"], h["short"])
+        for h in HUBS)
+    items += "\n" + "\n".join(
+        '<li><a href="%s/%s/">%s</a></li>' % (BASE, s["slug"], s["short"])
+        for s in CONTENT_PAGES)
     langs = "\n".join('<li><a href="%s" hreflang="%s">%s</a></li>'
                       % (LANG_PATH[l], l, LANG_BTN[l][1]) for l in LANGS)
     out = os.path.join(ROOT, "404.html")
@@ -1056,28 +1929,74 @@ def check_robots():
 # main
 # --------------------------------------------------------------------------
 
+def all_generated_paths():
+    paths = ["index.html"] + ["%s/index.html" % l for l in LANGS if l != "pl"]
+    paths += ["%s/index.html" % slug for slug, _p in sitemap_slugs()]
+    paths += ["404.html"]
+    return paths
+
+
+def check_no_broken_links():
+    """Kontrola koncowa: kazdy lokalny odnosnik ma istniejacy plik, kazda
+    kotwica #... ma odpowiadajace id na tej samej stronie."""
+    problems = []
+    for rel in all_generated_paths():
+        path = os.path.join(ROOT, rel)
+        with open(path, encoding="utf-8") as fh:
+            soup = BeautifulSoup(fh.read(), "html.parser")
+        ids = {t["id"] for t in soup.find_all(attrs={"id": True})}
+        for tag in soup.find_all(True):
+            for attr in ("href", "src", "poster"):
+                value = tag.get(attr)
+                if not isinstance(value, str):
+                    continue
+                value = value.strip()
+                if value.startswith("#"):
+                    frag = value[1:]
+                    if frag not in NATIVE_FRAGMENTS and frag not in ids:
+                        problems.append("%s: osierocona kotwica #%s" % (rel, frag))
+                    continue
+                if not value.startswith(BASE + "/") or value.startswith("//"):
+                    continue
+                target = unquote(urlparse(value).path)[len(BASE):].lstrip("/")
+                if target == "" or target.endswith("/"):
+                    target += "index.html"
+                if not os.path.exists(os.path.join(ROOT, target)):
+                    problems.append("%s: brak pliku %s" % (rel, target))
+    problems = sorted(set(problems))
+    expect(not problems,
+           "zerwane odnosniki (%d): %s" % (len(problems), "; ".join(problems[:12])))
+
+
 def main():
     raw = load_source()
     id_to_url = collect_section_id_map(raw)
+    anchor_map = collect_old_anchors(raw, id_to_url)
 
     written = []
-    headlines = {}
-    written.append(build_language_page(raw, "pl", id_to_url, headlines))
+    written.append(build_language_page(raw, "pl", id_to_url, anchor_map))
     for lang in LANGS:
         if lang == "pl":
             continue
         written.append(build_language_page(raw, lang, id_to_url))
-    for section in SECTIONS:
-        written.append(build_section_page(raw, section, id_to_url,
-                                         headlines[section["id"]]))
+    for hub in HUBS:
+        written.append(build_hub_page(raw, hub, id_to_url))
+    for page in CONTENT_PAGES:
+        written.append(build_content_page(raw, page, id_to_url))
+    for rec in RECORDINGS:
+        written.append(build_recording_page(raw, rec, id_to_url))
+    for lang in LANGS:
+        written.append(build_skorowidz_page(raw, lang, id_to_url))
     written.append(build_sitemap())
     written.append(build_404())
     check_robots()
+    check_no_broken_links()
 
     print("Zbudowano (%s):" % BUILD_DATE)
     for path in written:
         rel = os.path.relpath(path, ROOT)
         print("  %-42s %8.1f KB" % (rel, os.path.getsize(path) / 1024))
+    print("  Kotwic przekierowanych na nowe adresy: %d" % len(anchor_map))
     return 0
 
 
