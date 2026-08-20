@@ -4,7 +4,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://whistleblower.witekkilarski.org/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/en/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
@@ -45,7 +45,7 @@
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/fr/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/de/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/uk/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
@@ -80,63 +80,207 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/"/>
   </url>
   <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/postepowania/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/instytucje/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/o-mnie/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://whistleblower.witekkilarski.org/sprostowania/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprawa-komornika/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wyrok-kafkowski/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/bezczynnosc-uj/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/blocki-babik-liana/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/dokumenty/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprawy-sadowe/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/prokuratura/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/wprowadzenie/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/chronologia/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/cv/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/list-otwarty/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/pomoc-ukraincom/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/kulturowe-analogie/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/dyskusja/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/1/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/2/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/3/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/4/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/5/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/6/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/nagrania/7/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/skorowidz/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/skorowidz/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/skorowidz/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/skorowidz/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/skorowidz/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

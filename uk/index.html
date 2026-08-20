@@ -41,7 +41,7 @@
 <meta content="KorupcjaNCN — Dr Witold Kilarski" property="og:site_name"/>
 <meta content="Dr Witold Kilarski" property="article:author"/>
 <meta content="2026-03-03" property="article:published_time"/>
-<meta content="2026-07-30" property="article:modified_time"/>
+<meta content="2026-08-20" property="article:modified_time"/>
 <meta content="Whistleblowing / Science integrity" property="article:section"/>
 <meta content="NCN" property="article:tag"/>
 <meta content="Narodowe Centrum Nauki" property="article:tag"/>
@@ -106,7 +106,7 @@
         "name": "Dr Witold Kilarski"
       },
       "datePublished": "2026-03-03",
-      "dateModified": "2026-07-30",
+      "dateModified": "2026-08-20",
       "description": "Архів доказів викривача: аудіозаписи, документи та судові рішення щодо ймовірної корупції в Національному науковому центрі Польщі (NCN). Справа д-ра Вітольда Кіларського та директора NCN Збігнєва Блоцького.",
       "inLanguage": "uk",
       "publisher": {
@@ -3137,6 +3137,101 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 .related-pages a{display:inline-block;padding:var(--space-2) var(--space-4);border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);text-decoration:none;color:var(--color-link);}
 .related-pages a:hover{border-color:var(--color-accent);color:var(--color-accent);}
 .audio-unavailable{margin:var(--space-4) 0;padding:var(--space-4);border:1px dashed var(--color-border-strong);border-radius:6px;background:var(--color-surface);font-size:var(--text-sm);color:var(--color-text-muted);}
+
+/* ============================================================
+   Odtluszczenie strony glownej (2026-08-20):
+   menu sześciu zakładek, kafle działów, huby, skorowidz,
+   szerokosc kolumny tekstu i odstepy miedzy sekcjami.
+   ============================================================ */
+
+/* --- MENU: jeden rzad, szesc klikalnych zakladek, bez hovera --- */
+.nav-links{display:flex;gap:var(--space-2);flex-wrap:nowrap;align-items:center;}
+@media (min-width:768px){.nav-links{display:flex !important;}}
+.nav-links .nav-link{padding:var(--space-2) var(--space-3);border-radius:6px;white-space:nowrap;}
+.nav-links .nav-link[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.14);font-weight:700;}
+.nav-links .nav-link:focus-visible,.lang-btn:focus-visible,.mobile-menu-btn:focus-visible{outline:2px solid #ffd166;outline-offset:2px;}
+@media (max-width:900px){
+  .nav-links{position:absolute;left:0;right:0;top:100%;display:none !important;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--color-header-bg);border-bottom:1px solid rgba(255,255,255,0.12);
+    padding:var(--space-2) var(--space-4) var(--space-4);}
+  .nav-links.open{display:flex !important;}
+  .nav-links .nav-link{padding:var(--space-3) 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .mobile-menu-btn{display:flex !important;}
+  .header-inner{position:relative;}
+}
+@media (min-width:901px){.mobile-menu-btn{display:none !important;}}
+
+/* --- STRONA GLOWNA: kolumna tekstu, cytat, kafle, chronologia --- */
+#home-hub{max-width:820px;margin:0 auto;padding-left:var(--space-5);padding-right:var(--space-5);}
+#home-hub h2{margin-top:var(--space-12);}
+#home-hub > .lang-block > h2:first-of-type{margin-top:0;}
+#home-hub p{max-width:70ch;}
+.hero-name{font-family:var(--font-sans);font-size:var(--text-sm);font-weight:600;
+  letter-spacing:0.02em;color:var(--color-hero-muted);margin:0 0 var(--space-2);}
+.home-quote{margin:var(--space-8) 0;padding:var(--space-6);border-left:4px solid var(--color-accent);
+  background:#fef9f0;border-radius:4px;}
+.home-quote p{font-size:var(--text-lg);font-style:italic;margin:0 0 var(--space-3);}
+.home-quote footer{font-style:normal;font-size:var(--text-sm);color:var(--color-text-muted);}
+.hub-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:var(--space-5);margin:var(--space-6) 0 var(--space-4);text-align:left;}
+.hub-card{border:1px solid var(--color-border);border-radius:8px;padding:var(--space-5);
+  background:var(--color-surface,#fff);}
+.hub-card h3{margin:0 0 var(--space-3);font-size:var(--text-lg);}
+.hub-card p{margin:0 0 var(--space-3);font-size:var(--text-sm);line-height:1.6;}
+.hub-card-cta{margin:0;}
+.hub-card-cta a{display:inline-block;font-weight:700;color:var(--color-accent);
+  border:1px solid var(--color-accent);border-radius:6px;padding:var(--space-2) var(--space-4);
+  font-size:var(--text-sm);}
+.hub-card-cta a:hover{background:var(--color-accent);color:#fff;}
+.home-chrono{list-style:none;padding:0;margin:0 0 var(--space-4);text-align:left;max-width:70ch;}
+.home-chrono li{padding:var(--space-3) 0;border-bottom:1px solid var(--color-border);
+  font-size:var(--text-sm);line-height:1.6;}
+.home-about{max-width:70ch;}
+
+/* --- STRONY-HUBY I SKOROWIDZ --- */
+.hub-page{max-width:820px;margin:0 auto;padding:var(--space-8) var(--space-5);text-align:left;}
+.hub-page h1{font-family:var(--font-serif);font-size:var(--text-2xl);line-height:1.2;
+  margin:0 0 var(--space-4);}
+.hub-page .hub-intro{font-size:var(--text-base);color:var(--color-text-muted);
+  margin:0 0 var(--space-8);max-width:70ch;}
+.hub-list{list-style:none;padding:0;margin:0;}
+.hub-list > li{border-top:1px solid var(--color-border);padding:var(--space-5) 0;}
+.hub-list > li:last-child{border-bottom:1px solid var(--color-border);}
+.hub-list a.hub-list-title{font-family:var(--font-serif);font-size:var(--text-lg);font-weight:700;}
+.hub-list p{margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--color-text-muted);
+  max-width:70ch;}
+.skorowidz h2{font-family:var(--font-serif);font-size:var(--text-xl);
+  margin:var(--space-8) 0 var(--space-3);}
+.skorowidz h3{font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--color-accent);margin:var(--space-5) 0 var(--space-2);}
+.skorowidz ul{list-style:none;padding:0;margin:0;}
+.skorowidz li{padding:4px 0;font-size:var(--text-sm);}
+
+/* --- PODSTRONY NAGRAN: numeracja, nawigacja poprzednie/nastepne --- */
+.rec-meta{list-style:none;padding:var(--space-4);margin:0 0 var(--space-6);
+  border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);
+  text-align:left;max-width:70ch;}
+.rec-meta li{padding:2px 0;}
+.rec-numbering{font-size:var(--text-sm);color:var(--color-text-muted);
+  border-left:3px solid #b45309;padding:var(--space-2) var(--space-4);
+  margin:0 0 var(--space-6);text-align:left;max-width:70ch;}
+.rec-prevnext{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;
+  margin:var(--space-8) 0 var(--space-4);font-size:var(--text-sm);}
+.rec-prevnext a{font-weight:600;}
+.errata-tabela{border-collapse:collapse;margin:var(--space-4) 0;font-size:var(--text-sm);}
+.errata-tabela th,.errata-tabela td{border:1px solid var(--color-border);
+  padding:6px 10px;text-align:left;}
+
+/* --- CZYTELNOSC: naglowek H1 na podstronach, odstepy miedzy sekcjami --- */
+main .section h1,main .interview-section h1,main .komornik-section h1,
+main .listotwarty-section h1,main .ukraina-section h1,main .kultura-section h1,
+main .comments-section h1{font-family:var(--font-serif);font-size:var(--text-2xl);
+  font-weight:700;line-height:1.2;letter-spacing:-0.015em;
+  margin:0 0 var(--space-6);color:var(--color-text);}
+main > section{margin-bottom:var(--space-12);}
+main p{max-width:78ch;}
+main .section p,main .interview-section p{line-height:1.7;}
 </style>
 <!-- IndexNow key reference for fast Bing/Yandex/Seznam indexing -->
 <link href="https://whistleblower.witekkilarski.org/1e5af76defc57ea04fc50e613cfcb2b0.txt" rel="index-now"/>
@@ -3172,35 +3267,7 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </svg>
 <span class="header-logo-text">Dr Kilarski</span>
 </a>
-<nav aria-label="Main navigation" class="nav-links" id="nav-links">
-<a class="nav-link" data-nav="case" href="#case">
-<span class="nav-uk">Справа</span>
-</a>
-<a class="nav-link" data-nav="interview" href="#interview">
-<span class="nav-uk">Записи</span>
-</a>
-<a class="nav-link" data-nav="courts" href="#courts">
-<span class="nav-uk">Суди</span>
-</a>
-<a class="nav-link" data-nav="documents" href="#documents">
-<span class="nav-uk">Документи</span>
-</a>
-<a class="nav-link nav-priority" data-nav="wniosek-kontrola-ncn" href="#wniosek-kontrola-ncn">
-<span class="nav-uk">Запит про контроль</span>
-</a>
-<a class="nav-link" data-nav="mudelsee" href="#mudelsee">
-<span class="nav-uk">Машинні рецензії</span>
-</a>
-<a class="nav-link" data-nav="timeline" href="#timeline">
-<span class="nav-uk">Хронологія</span>
-</a>
-<a class="nav-link" data-nav="about" href="#about">
-<span class="nav-uk">Про мене</span>
-</a>
-<a class="nav-link" data-nav="comments" href="#comments">
-<span class="nav-uk">Коментарі</span>
-</a>
-</nav>
+<nav aria-label="Main navigation" class="nav-links" id="nav-links"><a aria-current="page" class="nav-link" data-nav="sprawa" href="/"><span class="nav-uk">Case</span></a><a class="nav-link" data-nav="nagrania" href="/nagrania/"><span class="nav-uk">Recordings</span></a><a class="nav-link" data-nav="dokumenty" href="/dokumenty/"><span class="nav-uk">Documents</span></a><a class="nav-link" data-nav="postepowania" href="/postepowania/"><span class="nav-uk">Proceedings</span></a><a class="nav-link" data-nav="instytucje" href="/instytucje/"><span class="nav-uk">Institutions</span></a><a class="nav-link" data-nav="o-mnie" href="/o-mnie/"><span class="nav-uk">About me</span></a></nav>
 <div class="header-controls">
 <div aria-label="Language" class="lang-switcher" role="group"><a aria-label="Polski" class="lang-btn" href="/" hreflang="pl">PL</a><a aria-label="English" class="lang-btn" href="/en/" hreflang="en">EN</a><a aria-label="Français" class="lang-btn" href="/fr/" hreflang="fr">FR</a><a aria-label="Deutsch" class="lang-btn" href="/de/" hreflang="de">DE</a><a aria-label="Українська" class="lang-btn active" href="/uk/" hreflang="uk">UA</a></div>
 <!-- M19: theme-toggle (sun/moon) removed entirely — dark mode caused
@@ -3214,233 +3281,7 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </div>
 </div>
 </header>
-<nav aria-label="Document categories" class="sub-nav">
-<div class="sub-nav-inner" role="menubar">
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="sprawa" href="#case" role="menuitem"><span class="nav-uk">Справа</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Корупція в Національному науковому центрі</span></div>
-<a class="nav-link" href="#case" role="menuitem"><span class="nav-uk">Вступ до справи</span></a>
-<a class="nav-link" href="/docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Листування Кіларський–Блоцкі–Дронг–NN</span></a>
-<a class="nav-link" href="/docs/analiza_nagran_audio_kompletna.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Аналіз записів як документ справи</span></a>
-<a class="nav-link" href="/docs/Mudelsee.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Рецензії Мудельзе — копіювання</span></a>
-<a class="nav-link" href="/docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Звіт НІК про фінансування фундаментальних досліджень</span></a>
-<a class="nav-link" href="/docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Відмова прокуратури — 4135-1.Ds.96.2022</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="ultimatum" href="#documents" role="menuitem"><span class="nav-uk">Ультиматум</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Ключові докази ультиматуму</span></div>
-<a class="nav-link" href="#documents" role="menuitem"><span class="nav-uk">Ультиматум NCN — лист особи NN (1 червня 2020)</span></a>
-<a class="nav-link" href="/docs/Chrono_Mails-Kilarski-Blocki-Drag-Bandura-MD-7.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Хронологічна переписка Кіларський–Блоцкі–Дронг–NN</span></a>
-<a class="nav-link" href="/docs/analiza_nagran_audio_kompletna.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Повний аналіз 7 аудіозаписів</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="blocki-cyngiel" href="#blocki-cyngiel" role="menuitem"><span class="nav-uk">Блоцкі — спусковий гачок</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">WUM відсікає мене після листа Директора NCN</span></div>
-<a class="nav-link" href="#blocki-cyngiel" role="menuitem"><span class="nav-uk">Лист Анетти Пщоловської (11.03.2022)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="nagrania" href="#rec-1" role="menuitem"><span class="nav-uk">Записи</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Аудіозаписи (2020–2021)</span></div>
-<a class="nav-link" href="#rec-1" role="menuitem"><span class="nav-uk">Запис 1 — 29 травня 2020 (після ультиматуму)</span></a>
-<a class="nav-link" href="#rec-2" role="menuitem"><span class="nav-uk">Запис 2 — 2 червня 2020 (після п'ятничного ультиматуму)</span></a>
-<a class="nav-link" href="#rec-3" role="menuitem"><span class="nav-uk">Запис 3 — 4 червня 2020</span></a>
-<a class="nav-link" href="#rec-4" role="menuitem"><span class="nav-uk">Запис 4 — 10 жовтня 2020 (NN про вихід з NCN)</span></a>
-<a class="nav-link" href="#rec-5a" role="menuitem"><span class="nav-uk">Запис 5a — 20 березня 2021 (частина A)</span></a>
-<a class="nav-link" href="#rec-5b" role="menuitem"><span class="nav-uk">Запис 5b — 20 березня 2021 (частина B)</span></a>
-<a class="nav-link" href="#rec-6" role="menuitem"><span class="nav-uk">Запис 6 — дзвінок NN до мене, коли я був у Яренювці</span></a>
-<a class="nav-link" href="#rec-7" role="menuitem"><span class="nav-uk">Запис 7 — 30 вересня 2021 (механізм знищення)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="prokuratura" href="#prokuratura-ochonska" role="menuitem"><span class="nav-uk">Прокуратура</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Прокуратура та НІК</span></div>
-<a class="nav-link" href="/docs/Prokuratura-Ochonska-Wrobel-4135-1.Ds.96.2022.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Постанова прокуратури — відмова (прокурор-доповідач (попередня справа), 4135-1.Ds.96.2022)</span></a>
-<a class="nav-link" href="/docs/Postanowienie-Berus-4138-1.Ds.104.2026-14_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Постанова прокурор-доповідач — відмова (4138-1.Ds.104.2026, 14.04.2026)</span></a>
-<a class="nav-link" href="/docs/zazalenie_FINAL_19_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Скарга на постанову прокурор-доповідач (19.04.2026)</span></a>
-<a class="nav-link" href="/docs/skarga_do_prokuratora_nadrzednego_19_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Скарга до вищестоящого прокурора (19.04.2026)</span></a>
-<a class="nav-link" href="/docs/Zalacznik-2-do-prokuratur-viiiaa.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Додаток до кримінальної скарги</span></a>
-<a class="nav-link" href="/docs/informacja-o-wynikach-kontroli_Finansowanie-Badan-Podstawowych-NIK.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Звіт НІК — фінансування фундаментальних досліджень NCN</span></a>
-<a class="nav-link" href="/docs/Blocki-secret-replay-to-NIK-control.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Таємна відповідь Блоцкого на аудит НІК (29.05.2020)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="sady" href="#courts" role="menuitem"><span class="nav-uk">Суди</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Судові документи</span></div>
-<a class="nav-link" href="/docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Апеляція на вирок II K 321/23/P (NCN/Блоцкі проти Кіларського)</span></a>
-<a class="nav-link" href="/docs/Apelacja-Zieby-od-wyroku-Chmielarz-13-01-2025.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Апеляція адв. Зєнби на вирок I C 1671/22 (цивільна справа Бандура-Морган проти Кіларського, 13.01.2025)</span></a>
-<a class="nav-link" href="/docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Доповнення до апеляції (суддя Анна Хмеляж, 15 листопада 2024)</span></a>
-<a class="nav-link" href="/docs/Wnioski-Procesowe-Apelacja.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Процесуальні клопотання — апеляція</span></a>
-<a class="nav-link" href="/docs/wwyrok-laura-chmielarz.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Вирок Бандура-Морган проти Кіларського (суддя Анна Хмеляж, I C 1671/22, 15.11.2024)</span></a>
-<a class="nav-link" href="/docs/komornik-2026-05/02-Tytul-wykonawczy.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Виконавчий документ (вирок Окружного Суду + постанова Апеляційного Суду I ACa 3378/25, 28.02.2026)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="mudelsee" href="#mudelsee" role="menuitem"><span class="nav-uk">Машинні рецензії</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Справа Мудельзе</span></div>
-<a class="nav-link" href="/docs/Mudelsee.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Аналіз скопійованих рецензій Мудельзе (GRIEG)</span></a>
-<a class="nav-link" href="/docs/NN-vs-NCN-about-Mundelsee-expert.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Внутрішні листи NCN — NN повідомляє про Мудельзе</span></a>
-<a class="nav-link" href="/docs/Pismo-informujace-Zglaszajacego-Manfred-Mudelsee.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Лист NCN — відмова розслідувати Мудельзе (Блоцкі, 04.12.2020)</span></a>
-<a class="nav-link" href="/docs/kontrola-NIK.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Внутрішні листи NCN про аудит НІК</span></a>
-<a class="nav-link" href="/docs/Posiedzenie-Rady-NCN-13-14-stycznia-2021r.-program.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Засідання Ради NCN, 13–14 січня 2021</span></a>
-<a class="nav-link" href="/docs/Posiedzenie-Rady-NCN-10-11-lutego-2021r.-program.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Засідання Ради NCN, 10–11 лютого 2021</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="blocki-babik-liana" href="#sprawa-blocki-babik-liana" role="menuitem"><span class="nav-uk">Блоцький, Бабік, Ліана</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Справа проти Блоцького, Бабіка та Ліани</span></div>
-<a class="nav-link" href="#sprawa-blocki-babik-liana" role="menuitem"><span class="nav-uk">Вступ</span></a>
-<a class="nav-link" href="/docs/Babik-Liana-Zwonek-Blocki-3.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Конфлікти інтересів — документація</span></a>
-<a class="nav-link" href="/docs/Apelacja-wyrok-321-23-P_NCN_Blocki-perp2-3.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Апеляція II K 321/23/P</span></a>
-<a class="nav-link" href="/docs/I-Uzupelnienie-apelacji-pozwanego-od-wyroku-Sadu-Okregowego-w-Krakowie-z-dnia-15-listopada-2024-Anne-Chmielarz1.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Доповнення апеляції — справа I C 1671/22</span></a>
-<a class="nav-link" href="/docs/Zalacznik-2-do-prokuratur-viiiaa.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Клопотання про відновлення слідства</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="uj" href="#uj-inaction" role="menuitem"><span class="nav-uk">Ректор UJ / NCN</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Справа проти Ректора UJ / NCN (2025–2026)</span></div>
-<a class="nav-link" href="#uj-inaction" role="menuitem"><span class="nav-uk">Вступ — бездіяльність UJ</span></a>
-<a class="nav-link" href="/docs/Maile-UJ-Rektor-18_03_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Листи до Ректора UJ (18.03.2026) — без відповіді</span></a>
-<a class="nav-link" href="/docs/Maile-UJ-Policja-02_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Повідомлення поліції та UJ (02.04.2026)</span></a>
-<a class="nav-link" href="/docs/Postanowienie-Berus-4138-1.Ds.104.2026-14_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Постанова прокурор-доповідач (14.04.2026) — відмова</span></a>
-<a class="nav-link" href="/docs/zazalenie_FINAL_19_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Скарга на постанову прокурор-доповідач (19.04.2026)</span></a>
-<a class="nav-link" href="/docs/skarga_do_prokuratora_nadrzednego_19_04_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Скарга до вищестоящого прокурора (19.04.2026)</span></a>
-<a class="nav-link" href="/docs/Zarzadzenie-Berus-przyjecie-srodka-odwolawczego-24_04_2026.jpg" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Розпорядження про прийняття засобу оскарження (24.04.2026)</span></a>
-<a class="nav-link" href="/docs/Odpowiedz-UJ-inf-publ-75.0162.67.2026-28_07_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Відповідь UJ на запит про інформацію (28.07.2026)</span></a>
-<a class="nav-link" href="/docs/Wezwanie-UJ-usuniecie-naruszenia-29_07_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Вимога усунути порушення права (29.07.2026)</span></a>
-<a class="nav-link" href="/docs/Uzupelnienie-odpowiedzi-UJ-75.0162.67.2026-29_07_2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Доповнення відповіді UJ (29.07.2026)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab priority-tab" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="wniosek-kontrola-ncn" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">Запит про контроль</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Запит про наглядову перевірку (30.07.2026)</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">Вступ і правова підстава</span></a>
-<a class="nav-link" href="/docs/Dokumentacja-NCN-konflikty-interesow-2026.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Документація — конфлікти інтересів NCN/UJ (PDF, 13 с.)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#uj-inaction" role="menuitem"><span class="nav-uk">Ректор UJ / NCN</span></a>
-</div>
-</div>
-<div class="sub-nav-tab priority-tab align-right" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="list-otwarty" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Відкритий лист до Прем'єр-міністра та Міністра</span></div>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">Текст відкритого листа</span></a>
-<a class="nav-link" href="/docs/list_otwarty_kilarski_2026-07-13.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Відкритий лист — повний PDF (13.07.2026)</span></a>
-<a class="nav-link" href="#case" role="menuitem"><span class="nav-uk">Повернутися до вступу справи</span></a>
-</div>
-</div>
-<div class="sub-nav-tab align-right" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="wyrok-kafkowski" href="#wyrok-kafkowski" role="menuitem"><span class="nav-uk">Кафкіанський вирок</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Справа I C 1671/22 — апеляцію відхилено без мого відома</span></div>
-<a class="nav-link" href="#wyrok-kafkowski" role="menuitem"><span class="nav-uk">Що я знаю і чого не знав</span></a>
-<a class="nav-link" href="#wyrok-kafkowski-komornik" role="menuitem"><span class="nav-uk">Що вже зробив виконавець</span></a>
-<a class="nav-link" href="#wyrok-kafkowski-sad" role="menuitem"><span class="nav-uk">Що постановив окружний суд</span></a>
-<a class="nav-link" href="#wyrok-kafkowski-reakcja" role="menuitem"><span class="nav-uk">Правова реакція — 5 документів</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab align-right" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="komornik" href="#komornik" role="menuitem"><span class="nav-uk">ВИКОНАВЕЦЬ</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Незаконна виконавча справа Km 834/26</span></div>
-<a class="nav-link" href="#komornik" role="menuitem"><span class="nav-uk">Що сталося — 14 травня 2026</span></a>
-<a class="nav-link" href="#komornik-analiza" role="menuitem"><span class="nav-uk">Правовий аналіз — 8 порушень</span></a>
-<a class="nav-link" href="#komornik-kontekst" role="menuitem"><span class="nav-uk">Контекст: Генрих, NCN, Лора Бандура-Морган</span></a>
-<a class="nav-link" href="#komornik-pisma" role="menuitem"><span class="nav-uk">Подані листи (15 травня 2026)</span></a>
-<div class="sub-nav-dropdown-title nav-link" style="margin-top:8px;border-top:1px solid rgba(0,0,0,0.08);padding-top:8px"><span class="nav-uk">Дивіться також</span></div>
-<a class="nav-link" href="#wniosek-kontrola-ncn" role="menuitem"><span class="nav-uk">🔴 Запит про контроль: NCN та UJ</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">📜 Відкритий лист до Прем'єр-міністра та Міністра</span></a>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">💙 Допомога українцям</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">🎵 Культурні аналогії ;)</span></a>
-</div>
-</div>
-<div class="sub-nav-tab priority-tab-yellow align-right" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="kulturowe-analogie" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">Культурні аналогії ;)</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Культурні аналогії — плейлист</span></div>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">Вступ і повний плейлист</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">#01 Wpływy i chamstwo — Mia Hipnosis</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">#02 Całujcie mnie... — Tuwim / Hryń</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">#03 Reduta Ordona — Mickiewicz</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">#05 Potęga smaku — Herbert / Gintrowski</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">#09 Spać, nic więcej — Obywatel G.C.</span></a>
-<a class="nav-link" href="#kulturowe-analogie" role="menuitem"><span class="nav-uk">#10 I Am Not Done — Rob Bailey</span></a>
-</div>
-</div>
-<div class="sub-nav-tab priority-tab-blue align-right" role="none">
-<a aria-expanded="false" aria-haspopup="true" class="sub-nav-link nav-link" data-subnav-tab="ukraina" href="#ukraina" role="menuitem"><span class="nav-uk">Допомога українцям</span></a>
-<div class="sub-nav-dropdown" role="menu">
-<div class="sub-nav-dropdown-title nav-link"><span class="nav-uk">Допомога українцям — документи та акції</span></div>
-<a class="nav-link" href="#ukraina" role="menuitem"><span class="nav-uk">Вступ до розділу</span></a>
-<a class="nav-link" href="/docs/plakat_pomoc_ukraina_A4.pdf" rel="noopener noreferrer" role="menuitem" target="_blank"><span class="nav-uk">Плакат A4 — допомога Україні (PDF)</span></a>
-<a class="nav-link" href="#list-otwarty" role="menuitem"><span class="nav-uk">Відкритий лист (контекст)</span></a>
-</div>
-</div>
-</div>
-</nav>
+
 <!-- SUB-NAV ROW 2 removed in M18: Prokuratura O.-W. content moved
      into Prokuratura/NIK section, Sędzia 400k content moved into
      Courts (Sądy) section. -->
@@ -3478,6 +3319,13 @@ body { background: #fafaf8 !important; color: #14142b !important; }
 </section>
 <!-- ====== KOMORNIK — PRIORYTETOWA SEKCJA ====== -->
 <main id="main-content">
+<!-- ==========================================
+     SECTION: HOME HUB (odtluszczenie 2026-08-20)
+     Tylko strona glowna PL. Na pozostalych stronach usuwana przez build.py.
+     Tresc: streszczenie sprawy, jeden cytat, szesc kafli dzialow,
+     skrocona chronologia (8 dat), krotka nota o autorze.
+     ========================================== -->
+
 <!-- ==========================================
      SECTION: CASE SUMMARY
      ========================================== -->
@@ -5336,7 +5184,7 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
 <span>Відвідування: <span id="gc-counter-uk">—</span></span>
 </div>
-</div>
+<nav aria-label="Stopka" class="footer-links"><a href="/uk/skorowidz/">Full archive — index</a> · <a href="/nagrania/">Recordings 1–7</a> · <a href="/sprostowania/">Corrections</a></nav></div>
 </div>
 </footer>
 <script>
@@ -5741,5 +5589,16 @@ SECTION: BLOCKI CYNGIEL — e-mail Anetty Pszczołowskiej (WUM) z 11.03.2022
   window.addEventListener('scroll', update, { passive: true });
 })();
 </script>
-</body>
+<script>
+(function(){
+  var btn = document.getElementById('mobile-menu-btn');
+  var nav = document.getElementById('nav-links');
+  if (!btn || !nav) return;
+  function close(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && nav.classList.contains('open')) { close(); btn.focus(); }
+  });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
+})();
+</script></body>
 </html>
