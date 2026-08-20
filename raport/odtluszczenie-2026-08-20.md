@@ -283,6 +283,8 @@ Commity (logiczne, w kolejności):
 4. `3d52723` — Zadania 1–5: przebudowa wygenerowanych stron
 5. `e3bef86` — Zadanie 6: testy, naprawa składni JS witryny, raport końcowy
 6. `9d88f79` — Zadanie 6: zapis kodów odpowiedzi 46 adresów (46 × 200, zero 404)
+7. `c778ff9` — raport: uzupełnienie listy commitów i adresu gałęzi
+8. `68ca1ad` — Nagranie 6 + szybkość: poprawka opisu rozmowy i przyspieszenie witryny
 
 Gałąź jest wypchnięta na GitHub:
 https://github.com/LudvigBoltzmann/KorupcjaNCN/tree/odtluszczenie-2026-08
@@ -318,3 +320,81 @@ bliskiego treści — i jedyne, które wymagają Twojego podpisu.
 
 Po scaleniu na `main` workflow `build-pages` przebuduje strony automatycznie
 (źródło i generator są w commitach), więc nie trzeba nic uruchamiać ręcznie.
+
+## 11. Aneks z 20 sierpnia 2026 r. (wieczór): szybkość i Nagranie 6
+
+Na Twoje polecenie: „Nagranie 6 po prostu opuść… ważniejsze, by strona działała
+jak najszybciej… popraw, że dzwoniła ona do mnie".
+
+### 11a. Nagranie 6 — zrobione
+
+- **Opis poprawiony we wszystkich pięciu wersjach językowych:** to osoba NN
+  zadzwoniła do Ciebie — ze swojego telefonu komórkowego z Krakowa na Twoją
+  komórkę, gdy przebywałeś w Jareniówce; stąd zakłócenia w nagraniu. Wcześniejsze
+  zdanie („NN dzwoni do dr. Kilarskiego z Jareniówki") było odwrotnością faktu.
+- **Dwa nowe wpisy w /sprostowania/ z datą 20 sierpnia 2026 r.** — bez cichej
+  korekty: jeden o kierunku rozmowy (`#errata-nagranie-6-kierunek-rozmowy`),
+  drugi o tym, że plik audio nie jest publikowany i może być duplikatem innej
+  rozmowy (`#errata-nagranie-6-plik`).
+- **Komunikat przy odtwarzaczu nie obiecuje już terminu.** Brzmi: „Plik audio
+  tego nagrania nie jest publikowany — nie mam pewności, czy nie jest duplikatem
+  innej z opublikowanych rozmów. Opis tematyczny i numeracja pozostają bez zmian"
+  plus link do noty. Metryczka podstrony: data „nieustalona (plik audio
+  niepublikowany)".
+- **Numeracji nie zmieniono.** Nagranie zostaje jako 6 na stronie i 9 w dokumencie
+  analizy; tabela przeliczenia bez zmian. Gdy ustalisz, co zawierało, wystarczy
+  wgrać plik i usunąć jedno zdanie z noty.
+
+### 11b. Szybkość — co zrobiłem
+
+| Zmiana | Efekt |
+| --- | --- |
+| Wspólny arkusz stylów (93 KB) wyniesiony do `assets/site-*.css` | przeglądarka pobiera go **raz dla całej witryny**, potem z pamięci |
+| Skrypty (6 KB) wyniesione do `assets/site-*.js` z `defer` | nie blokują renderowania, też z cache |
+| Fonty Inter i Source Serif 4 hostowane lokalnie (`assets/fonts/`) | **zero zapytań do fonts.googleapis.com i fonts.gstatic.com**, brak blokującego arkusza z obcego serwera, `font-display: swap`; pliki zmienne odduplikowane (28 reguł → 12 plików) |
+| Osadzone odtwarzacze YouTube → zasłona z przyciskiem | na home 1, na stronie kulturowych analogii 9, na wersjach językowych 10 — **przed kliknięciem strona nie kontaktuje się z YouTube w ogóle**; oszczędność ok. 600 KB i kilkunastu zapytań na film; miniatura filmu dokumentalnego jest lokalna (58 KB) |
+| Wszystkie obrazy: `loading="lazy"`, `decoding="async"` | przeglądarka nie ściąga tego, czego nie widać |
+
+Waga plików HTML (to, co przeglądarka pobiera przy każdym wejściu):
+
+| Strona | Przed | Po |
+| --- | --- | --- |
+| Strona główna | 249,8 KB | **46,8 KB** (−81%) |
+| /nagrania/6/ | — | 31,3 KB |
+| /sprostowania/ | 145,7 KB | 29,8 KB |
+| /kulturowe-analogie/ | — | 33,7 KB |
+| /en/ | 342,5 KB | 227,4 KB |
+
+Pierwsze wejście na stronę główną: 46,8 KB HTML + 93 KB CSS + 6 KB JS + fonty
+(pobierane tylko te potrzebne do polskich znaków) + 104 KB obrazów.
+**Każde następne wejście na dowolną podstronę to już tylko ok. 30–47 KB** — styl,
+skrypty i fonty są w pamięci przeglądarki. Wcześniej każda strona ciągnęła
+150–250 KB od nowa, plus arkusz z Google i pełny odtwarzacz YouTube.
+
+Serwer GitHub Pages wysyła te pliki skompresowane (gzip), więc realny transfer
+jest jeszcze około pięciokrotnie mniejszy.
+
+### 11c. Czytelność
+
+Akapity i listy w treści są teraz wyrównane do lewej (nagłówki zostały
+wyśrodkowane jak dotąd). To była propozycja z punktu 5.6 — długie transkrypcje
+wyśrodkowane męczą oko. Cofnięcie to usunięcie jednego bloku w `EXTRA_CSS`.
+
+### 11d. Czego nadal nie ruszyłem
+
+1. **Pliku Nagrania 6 nie przywróciłem** — zgodnie z Twoją decyzją zostaje
+   nieopublikowany. Jest w historii Git (obiekt `a1d3b20`), więc nic nie przepadło.
+2. **Nagrania 4 i 6 z numeracji dokumentu** wciąż bez podstron (brak Twojego opisu).
+3. **Wersje /en/, /fr/, /de/, /uk/ nadal jednostronicowe**; etykiety menu w /de/,
+   /fr/, /uk/ pozostają angielskie.
+4. **Dalsze przyspieszenie jest możliwe**, ale wymaga Twojej zgody: obcięcie fontów
+   tylko do znaków faktycznie używanych (z ok. 350 KB do ok. 40 KB), rezygnacja
+   z jednej z trzech grubości Inter, oraz minifikacja arkusza stylów. Nie robiłem
+   tego, bo każda z tych rzeczy może subtelnie zmienić wygląd.
+5. **Rozbieżność E z punktu 6 jest już usunięta** — to była właśnie ta sprawa
+   z kierunkiem rozmowy w Nagraniu 6.
+
+Testy po tych zmianach: build bez błędów, `tools/verify.py` — 0 błędów (12 grup
+kontroli), 46 adresów × 200, brak przewijania w poziomie przy 375/768/1440 px,
+menu mobilne otwierane Enterem i Spacją oraz zamykane Escapem, klik na zasłonę
+filmu uruchamia odtwarzacz z autoodtwarzaniem.
