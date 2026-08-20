@@ -1,0 +1,24 @@
+{
+  "file": "index.html",
+  "bytes": 147140,
+  "html_chars": 146066,
+  "text_chars": 6632,
+  "text_words": 945,
+  "section_count": 2,
+  "sections": [
+    {
+      "id": "",
+      "class": "hero",
+      "title": "Korupcja w Narodowym Centrum Nauki — archiwum dowodów sygnalisty",
+      "chars": 367,
+      "words": 54
+    },
+    {
+      "id": "home-hub",
+      "class": "section",
+      "title": "Co dokumentuje to archiwum",
+      "chars": 5750,
+      "words": 811
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+RAPORT WERYFIKACJI — KorupcjaNCN, Pakiet B
+Katalog: /home/user/workspace/repo
+Stron sprawdzanych: 39 (5 jezykowych + 4 hubow + 18 podstron tresci + 7 nagran + 5 skorowidzow) + 404.html
+
+1. Parsowanie stron i unikalnosc atrybutow id
+---------------------------------------------
+  OK    index.html — parsuje sie, 19 unikalnych id
+  OK    en/index.html — parsuje sie, 58 unikalnych id
+  OK    fr/index.html — parsuje sie, 56 unikalnych id
+  OK    de/index.html — parsuje sie, 56 unikalnych id
+  OK    uk/index.html — parsuje sie, 56 unikalnych id
+  OK    nagrania/index.html — parsuje sie, 17 unikalnych id
+  OK    postepowania/index.html — parsuje sie, 17 unikalnych id
+  OK    instytucje/index.html — parsuje sie, 17 unikalnych id
+  OK    o-mnie/index.html — parsuje sie, 17 unikalnych id
+  OK    sprostowania/index.html — parsuje sie, 19 unikalnych id
+  OK    wniosek-o-kontrole-ncn/index.html — parsuje sie, 18 unikalnych id
+  OK    sprawa-komornika/index.html — parsuje sie, 21 unikalnych id
+  OK    wyrok-kafkowski/index.html — parsuje sie, 21 unikalnych id
+  OK    bezczynnosc-uj/index.html — parsuje sie, 19 unikalnych id
+  OK    blocki-babik-liana/index.html — parsuje sie, 21 unikalnych id
+  OK    maszynowe-recenzje-ncn/index.html — parsuje sie, 18 unikalnych id
+  OK    dokumenty/index.html — parsuje sie, 18 unikalnych id
+  OK    sprawy-sadowe/index.html — parsuje sie, 19 unikalnych id
+  OK    prokuratura/index.html — parsuje sie, 18 unikalnych id
+  OK    wprowadzenie/index.html — parsuje sie, 18 unikalnych id
+  OK    chronologia/index.html — parsuje sie, 18 unikalnych id
+  OK    cv/index.html — parsuje sie, 19 unikalnych id
+  OK    wum-blocki-cyngiel/index.html — parsuje sie, 18 unikalnych id
+  OK    list-otwarty/index.html — parsuje sie, 18 unikalnych id
+  OK    pomoc-ukraincom/index.html — parsuje sie, 18 unikalnych id
+  OK    kulturowe-analogie/index.html — parsuje sie, 18 unikalnych id
+  OK    dyskusja/index.html — parsuje sie, 18 unikalnych id
+  OK    nagrania/1/index.html — parsuje sie, 19 unikalnych id
+  OK    nagrania/2/index.html — parsuje sie, 19 unikalnych id
+  OK    nagrania/3/index.html — parsuje sie, 19 unikalnych id
+  OK    nagrania/4/index.html — parsuje sie, 18 unikalnych id
+  OK    nagrania/5/index.html — parsuje sie, 19 unikalnych id
+  OK    nagrania/6/index.html — parsuje sie, 18 unikalnych id
+  OK    nagrania/7/index.html — parsuje sie, 18 unikalnych id
+  OK    skorowidz/index.html — parsuje sie, 17 unikalnych id
+  OK    en/skorowidz/index.html — parsuje sie, 17 unikalnych id
+  OK    fr/skorowidz/index.html — parsuje sie, 17 unikalnych id
+  OK    de/skorowidz/index.html — parsuje sie, 17 unikalnych id
+  OK    uk/skorowidz/index.html — parsuje sie, 17 unikalnych id
+  OK    404.html — parsuje sie, 0 unikalnych id
+
+2. title / canonical / description / <html lang>
+------------------------------------------------
+  OK    index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/
+  OK    en/index.html — lang=en, canonical=https://whistleblower.witekkilarski.org/en/
+  OK    fr/index.html — lang=fr, canonical=https://whistleblower.witekkilarski.org/fr/
+  OK    de/index.html — lang=de, canonical=https://whistleblower.witekkilarski.org/de/
+  OK    uk/index.html — lang=uk, canonical=https://whistleblower.witekkilarski.org/uk/
+  OK    nagrania/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/
+  OK    postepowania/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/postepowania/
+  OK    instytucje/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/instytucje/
+  OK    o-mnie/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/o-mnie/
+  OK    sprostowania/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/sprostowania/
+  OK    wniosek-o-kontrole-ncn/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/
+  OK    sprawa-komornika/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/sprawa-komornika/
+  OK    wyrok-kafkowski/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/wyrok-kafkowski/
+  OK    bezczynnosc-uj/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/bezczynnosc-uj/
+  OK    blocki-babik-liana/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/blocki-babik-liana/
+  OK    maszynowe-recenzje-ncn/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/
+  OK    dokumenty/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/dokumenty/
+  OK    sprawy-sadowe/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/sprawy-sadowe/
+  OK    prokuratura/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/prokuratura/
+  OK    wprowadzenie/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/wprowadzenie/
+  OK    chronologia/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/chronologia/
+  OK    cv/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/cv/
+  OK    wum-blocki-cyngiel/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/
+  OK    list-otwarty/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/list-otwarty/
+  OK    pomoc-ukraincom/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/pomoc-ukraincom/
+  OK    kulturowe-analogie/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/kulturowe-analogie/
+  OK    dyskusja/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/dyskusja/
+  OK    nagrania/1/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/1/
+  OK    nagrania/2/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/2/
+  OK    nagrania/3/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/3/
+  OK    nagrania/4/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/4/
+  OK    nagrania/5/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/5/
+  OK    nagrania/6/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/6/
+  OK    nagrania/7/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/nagrania/7/
+  OK    skorowidz/index.html — lang=pl, canonical=https://whistleblower.witekkilarski.org/skorowidz/
+  OK    en/skorowidz/index.html — lang=en, canonical=https://whistleblower.witekkilarski.org/en/skorowidz/
+  OK    fr/skorowidz/index.html — lang=fr, canonical=https://whistleblower.witekkilarski.org/fr/skorowidz/
+  OK    de/skorowidz/index.html — lang=de, canonical=https://whistleblower.witekkilarski.org/de/skorowidz/
+  OK    uk/skorowidz/index.html — lang=uk, canonical=https://whistleblower.witekkilarski.org/uk/skorowidz/
+
+3. Jeden jezyk blokow .lang-block na stronie
+--------------------------------------------
+  OK    index.html — 3 blokow, wylacznie data-lang=pl
+  OK    en/index.html — 42 blokow, wylacznie data-lang=en
+  OK    fr/index.html — 42 blokow, wylacznie data-lang=fr
+  OK    de/index.html — 42 blokow, wylacznie data-lang=de
+  OK    uk/index.html — 42 blokow, wylacznie data-lang=uk
+  OK    nagrania/index.html — 1 blokow, wylacznie data-lang=pl
+  OK    postepowania/index.html — 1 blokow, wylacznie data-lang=pl
+  OK    instytucje/index.html — 1 blokow, wylacznie data-lang=pl
+  OK    o-mnie/index.html — 1 blokow, wylacznie data-lang=pl
+  OK    sprostowania/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    wniosek-o-kontrole-ncn/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    sprawa-komornika/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    wyrok-kafkowski/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    bezczynnosc-uj/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    blocki-babik-liana/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    maszynowe-recenzje-ncn/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    dokumenty/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    sprawy-sadowe/index.html — 3 blokow, wylacznie data-lang=pl
+  OK    prokuratura/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    wprowadzenie/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    chronologia/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    cv/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    wum-blocki-cyngiel/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    list-otwarty/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    pomoc-ukraincom/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    kulturowe-analogie/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    dyskusja/index.html — 3 blokow, wylacznie data-lang=pl
+  OK    nagrania/1/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    nagrania/2/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    nagrania/3/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    nagrania/4/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    nagrania/5/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    nagrania/6/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    nagrania/7/index.html — 2 blokow, wylacznie data-lang=pl
+  OK    skorowidz/index.html — 1 blokow, wylacznie data-lang=pl
+  OK    en/skorowidz/index.html — 1 blokow, wylacznie data-lang=en
+  OK    fr/skorowidz/index.html — 1 blokow, wylacznie data-lang=fr
+  OK    de/skorowidz/index.html — 1 blokow, wylacznie data-lang=de
+  OK    uk/skorowidz/index.html — 1 blokow, wylacznie data-lang=uk
+
+4. Lokalne linki wskazuja istniejace pliki
+------------------------------------------
+  OK    sprawdzono 2512 odwolan — wszystkie pliki istnieja
+
+5. Kotwice #... maja odpowiadajace id na tej samej stronie
+----------------------------------------------------------
+  OK    index.html — brak osieroconych kotwic
+  OK    en/index.html — brak osieroconych kotwic
+  OK    fr/index.html — brak osieroconych kotwic
+  OK    de/index.html — brak osieroconych kotwic
+  OK    uk/index.html — brak osieroconych kotwic
+  OK    nagrania/index.html — brak osieroconych kotwic
+  OK    postepowania/index.html — brak osieroconych kotwic
+  OK    instytucje/index.html — brak osieroconych kotwic
+  OK    o-mnie/index.html — brak osieroconych kotwic
+  OK    sprostowania/index.html — brak osieroconych kotwic
+  OK    wniosek-o-kontrole-ncn/index.html — brak osieroconych kotwic
+  OK    sprawa-komornika/index.html — brak osieroconych kotwic
+  OK    wyrok-kafkowski/index.html — brak osieroconych kotwic
+  OK    bezczynnosc-uj/index.html — brak osieroconych kotwic
+  OK    blocki-babik-liana/index.html — brak osieroconych kotwic
+  OK    maszynowe-recenzje-ncn/index.html — brak osieroconych kotwic
+  OK    dokumenty/index.html — brak osieroconych kotwic
+  OK    sprawy-sadowe/index.html — brak osieroconych kotwic
+  OK    prokuratura/index.html — brak osieroconych kotwic
+  OK    wprowadzenie/index.html — brak osieroconych kotwic
+  OK    chronologia/index.html — brak osieroconych kotwic
+  OK    cv/index.html — brak osieroconych kotwic
+  OK    wum-blocki-cyngiel/index.html — brak osieroconych kotwic
+  OK    list-otwarty/index.html — brak osieroconych kotwic
+  OK    pomoc-ukraincom/index.html — brak osieroconych kotwic
+  OK    kulturowe-analogie/index.html — brak osieroconych kotwic
+  OK    dyskusja/index.html — brak osieroconych kotwic
+  OK    nagrania/1/index.html — brak osieroconych kotwic
+  OK    nagrania/2/index.html — brak osieroconych kotwic
+  OK    nagrania/3/index.html — brak osieroconych kotwic
+  OK    nagrania/4/index.html — brak osieroconych kotwic
+  OK    nagrania/5/index.html — brak osieroconych kotwic
+  OK    nagrania/6/index.html — brak osieroconych kotwic
+  OK    nagrania/7/index.html — brak osieroconych kotwic
+  OK    skorowidz/index.html — brak osieroconych kotwic
+  OK    en/skorowidz/index.html — brak osieroconych kotwic
+  OK    fr/skorowidz/index.html — brak osieroconych kotwic
+  OK    de/skorowidz/index.html — brak osieroconych kotwic
+  OK    uk/skorowidz/index.html — brak osieroconych kotwic
+  OK    404.html — brak osieroconych kotwic
+
+6. Rozmiary plikow
+------------------
+        index.html PRZED (src/index.src.html):   1208.8 KB
+        index.html PO  (strona glowna PL)    :    143.7 KB  (11.9% zrodla)
+        en/index.html                             322.3 KB
+        fr/index.html                             306.5 KB
+        de/index.html                             305.6 KB
+        uk/index.html                             351.8 KB
+        nagrania/index.html                       124.5 KB
+        postepowania/index.html                   123.9 KB
+        instytucje/index.html                     123.5 KB
+        o-mnie/index.html                         123.6 KB
+        sprostowania/index.html                   125.9 KB
+        wniosek-o-kontrole-ncn/index.html         126.4 KB
+        sprawa-komornika/index.html               154.2 KB
+        wyrok-kafkowski/index.html                131.1 KB
+        bezczynnosc-uj/index.html                 135.3 KB
+        blocki-babik-liana/index.html             137.0 KB
+        maszynowe-recenzje-ncn/index.html         132.0 KB
+        dokumenty/index.html                      134.8 KB
+        sprawy-sadowe/index.html                  138.3 KB
+        prokuratura/index.html                    140.6 KB
+        wprowadzenie/index.html                   125.5 KB
+        chronologia/index.html                    126.0 KB
+        cv/index.html                             125.8 KB
+        wum-blocki-cyngiel/index.html             126.2 KB
+        list-otwarty/index.html                   125.0 KB
+        pomoc-ukraincom/index.html                124.7 KB
+        kulturowe-analogie/index.html             129.9 KB
+        dyskusja/index.html                       123.4 KB
+        nagrania/1/index.html                     130.3 KB
+        nagrania/2/index.html                     128.9 KB
+        nagrania/3/index.html                     128.6 KB
+        nagrania/4/index.html                     126.6 KB
+        nagrania/5/index.html                     128.0 KB
+        nagrania/6/index.html                     128.3 KB
+        nagrania/7/index.html                     129.7 KB
+        skorowidz/index.html                      136.2 KB
+        en/skorowidz/index.html                   136.1 KB
+        fr/skorowidz/index.html                   136.7 KB
+        de/skorowidz/index.html                   136.4 KB
+        uk/skorowidz/index.html                   140.6 KB
+        404.html                                    3.5 KB
+        sitemap.xml                                11.2 KB
+
+7. Klaster hreflang (5 stron jezykowych x 6 wpisow)
+---------------------------------------------------
+  OK    index.html — 6 wpisow, wszystkie URL-e zgodne
+  OK    en/index.html — 6 wpisow, wszystkie URL-e zgodne
+  OK    fr/index.html — 6 wpisow, wszystkie URL-e zgodne
+  OK    de/index.html — 6 wpisow, wszystkie URL-e zgodne
+  OK    uk/index.html — 6 wpisow, wszystkie URL-e zgodne
+  OK    nagrania/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    postepowania/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    instytucje/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    o-mnie/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    sprostowania/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    wniosek-o-kontrole-ncn/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    sprawa-komornika/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    wyrok-kafkowski/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    bezczynnosc-uj/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    blocki-babik-liana/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    maszynowe-recenzje-ncn/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    dokumenty/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    sprawy-sadowe/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    prokuratura/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    wprowadzenie/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    chronologia/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    cv/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    wum-blocki-cyngiel/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    list-otwarty/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    pomoc-ukraincom/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    kulturowe-analogie/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    dyskusja/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/1/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/2/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/3/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/4/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/5/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/6/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    nagrania/7/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    skorowidz/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    en/skorowidz/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    fr/skorowidz/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    de/skorowidz/index.html — brak hreflang (zgodnie ze specyfikacja)
+  OK    uk/skorowidz/index.html — brak hreflang (zgodnie ze specyfikacja)
+
+8. Brak pozostalosci #pl/#en w hreflang i sitemap.xml
+-----------------------------------------------------
+  OK    sitemap.xml — 39 URL-i, bez fragmentow
+  OK    hreflang na stronach jezykowych — bez fragmentow #pl/#en
+
+9. Kontrole dodatkowe (audio, JS, robots, 404, przelacznik jezyka)
+------------------------------------------------------------------
+  OK    brak martwych linkow audio na wszystkich 39 stronach
+  OK    JavaScript i przelacznik jezyka — poprawne na wszystkich stronach
+  OK    robots.txt — Sitemap obecny, nic nie blokuje /docs/
+  OK    404.html — noindex, linki do strony glownej, hubów i podstron
+
+10. Nawigacja — dokladnie 6 zakladek, kazda klikalna, jeden rzad
+----------------------------------------------------------------
+  OK    menu — 6 klikalnych zakladek na wszystkich 39 stronach, bez drugiego rzedu
+
+11. Hierarchia naglowkow (jeden H1 na stronie)
+----------------------------------------------
+  OK    kazda z 39 stron ma dokladnie jeden H1
+
+12. Podstrony nagran (metryczka, numeracja, nawigacja)
+------------------------------------------------------
+  OK    nagrania/1/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+  OK    nagrania/2/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+  OK    nagrania/3/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+  OK    nagrania/4/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+  OK    nagrania/5/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+  OK    nagrania/6/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+  OK    nagrania/7/index.html — metryczka, nota o numeracji, nawigacja, bez autoplay
+
+PODSUMOWANIE
+------------
+  Bledow: 0 — raport czysty.

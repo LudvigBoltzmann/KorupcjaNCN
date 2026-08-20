@@ -629,7 +629,8 @@ EXTRA_CSS = """
 @media (min-width:901px){.mobile-menu-btn{display:none !important;}}
 
 /* --- STRONA GLOWNA: kolumna tekstu, cytat, kafle, chronologia --- */
-#home-hub{max-width:820px;margin:0 auto;padding-left:var(--space-5);padding-right:var(--space-5);}
+#home-hub{max-width:900px;margin:0 auto;padding-left:var(--space-5);padding-right:var(--space-5);
+  text-align:left;}
 #home-hub h2{margin-top:var(--space-12);}
 #home-hub > .lang-block > h2:first-of-type{margin-top:0;}
 #home-hub p{max-width:70ch;}
@@ -639,7 +640,7 @@ EXTRA_CSS = """
   background:#fef9f0;border-radius:4px;}
 .home-quote p{font-size:var(--text-lg);font-style:italic;margin:0 0 var(--space-3);}
 .home-quote footer{font-style:normal;font-size:var(--text-sm);color:var(--color-text-muted);}
-.hub-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+.hub-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:var(--space-5);margin:var(--space-6) 0 var(--space-4);text-align:left;}
 .hub-card{border:1px solid var(--color-border);border-radius:8px;padding:var(--space-5);
   background:var(--color-surface,#fff);}
@@ -885,10 +886,14 @@ def transform_scripts(soup):
         hits["header_height"] += n
 
         # Straznik null dla menu mobilnego (przycisk + lista linkow).
+        # UWAGA (2026-08-20): poprzednia wersja wzorca konczyla dopasowanie na
+        # pierwszym "});" wewnatrz petli forEach, wiec wstawiony nawias
+        # klamrowy trafial w srodek wywolania i psul CALY skrypt (7,2 KB JS
+        # nie wykonywal sie w ogole). Wzorzec obejmuje teraz oba domkniecia.
         match = re.search(
             r"([ \t]*mobileMenuBtn\.addEventListener\('click'.*?\n[ \t]*\}\);\n"
             r"[ \t]*// Close mobile menu when nav link is clicked\n"
-            r"[ \t]*navLinks\.querySelectorAll.*?\n[ \t]*\}\);\n)",
+            r"[ \t]*navLinks\.querySelectorAll.*?\n[ \t]*\}\);\n[ \t]*\}\);\n)",
             new, re.S)
         if match:
             new = (new[:match.start()]
@@ -1936,6 +1941,43 @@ def all_generated_paths():
     return paths
 
 
+def check_inline_js(paths=None):
+    """Kazdy skrypt inline musi byc poprawnym JavaScriptem.
+
+    Kontrola dodana 20 sierpnia 2026 r. po wykryciu, ze wstawiany automatycznie
+    straznik null psul skladnie glownego skryptu witryny. Wymaga polecenia
+    `node`; jesli go nie ma, kontrola jest pomijana z komunikatem.
+    """
+    node = shutil.which("node")
+    if not node:
+        print("  (pomijam kontrole skladni JS — brak polecenia `node`)")
+        return
+    import subprocess
+    import tempfile
+    problems = []
+    for rel in (paths or all_generated_paths()):
+        with open(os.path.join(ROOT, rel), encoding="utf-8") as fh:
+            soup = BeautifulSoup(fh.read(), "html.parser")
+        for i, script in enumerate(soup.find_all("script")):
+            if script.get("src") or script.get("type") == "application/ld+json":
+                continue
+            code = script.string or ""
+            if not code.strip():
+                continue
+            with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False,
+                                             encoding="utf-8") as tmp:
+                tmp.write(code)
+                name = tmp.name
+            res = subprocess.run([node, "--check", name],
+                                 capture_output=True, text=True)
+            os.unlink(name)
+            if res.returncode:
+                first = (res.stderr.strip().splitlines() or ["?"])[0]
+                problems.append("%s: skrypt #%d — %s" % (rel, i, first))
+    expect(not problems,
+           "niepoprawny JavaScript (%d): %s" % (len(problems), "; ".join(problems[:6])))
+
+
 def check_no_broken_links():
     """Kontrola koncowa: kazdy lokalny odnosnik ma istniejacy plik, kazda
     kotwica #... ma odpowiadajace id na tej samej stronie."""
@@ -1991,6 +2033,7 @@ def main():
     written.append(build_404())
     check_robots()
     check_no_broken_links()
+    check_inline_js()
 
     print("Zbudowano (%s):" % BUILD_DATE)
     for path in written:
