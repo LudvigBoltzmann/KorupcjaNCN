@@ -13,7 +13,7 @@ Stron sprawdzanych: 39 (5 jezykowych + 4 hubow + 18 podstron tresci + 7 nagran +
   OK    postepowania/index.html — parsuje sie, 17 unikalnych id
   OK    instytucje/index.html — parsuje sie, 17 unikalnych id
   OK    o-mnie/index.html — parsuje sie, 17 unikalnych id
-  OK    sprostowania/index.html — parsuje sie, 19 unikalnych id
+  OK    sprostowania/index.html — parsuje sie, 21 unikalnych id
   OK    wniosek-o-kontrole-ncn/index.html — parsuje sie, 18 unikalnych id
   OK    sprawa-komornika/index.html — parsuje sie, 21 unikalnych id
   OK    wyrok-kafkowski/index.html — parsuje sie, 21 unikalnych id
@@ -131,7 +131,7 @@ Stron sprawdzanych: 39 (5 jezykowych + 4 hubow + 18 podstron tresci + 7 nagran +
 
 4. Lokalne linki wskazuja istniejace pliki
 ------------------------------------------
-  OK    sprawdzono 2512 odwolan — wszystkie pliki istnieja
+  OK    sprawdzono 2639 odwolan — wszystkie pliki istnieja
 
 5. Kotwice #... maja odpowiadajace id na tej samej stronie
 ----------------------------------------------------------
@@ -178,46 +178,46 @@ Stron sprawdzanych: 39 (5 jezykowych + 4 hubow + 18 podstron tresci + 7 nagran +
 
 6. Rozmiary plikow
 ------------------
-        index.html PRZED (src/index.src.html):   1208.8 KB
-        index.html PO  (strona glowna PL)    :    143.7 KB  (11.9% zrodla)
-        en/index.html                             322.3 KB
-        fr/index.html                             306.5 KB
-        de/index.html                             305.6 KB
-        uk/index.html                             351.8 KB
-        nagrania/index.html                       124.5 KB
-        postepowania/index.html                   123.9 KB
-        instytucje/index.html                     123.5 KB
-        o-mnie/index.html                         123.6 KB
-        sprostowania/index.html                   125.9 KB
-        wniosek-o-kontrole-ncn/index.html         126.4 KB
-        sprawa-komornika/index.html               154.2 KB
-        wyrok-kafkowski/index.html                131.1 KB
-        bezczynnosc-uj/index.html                 135.3 KB
-        blocki-babik-liana/index.html             137.0 KB
-        maszynowe-recenzje-ncn/index.html         132.0 KB
-        dokumenty/index.html                      134.8 KB
-        sprawy-sadowe/index.html                  138.3 KB
-        prokuratura/index.html                    140.6 KB
-        wprowadzenie/index.html                   125.5 KB
-        chronologia/index.html                    126.0 KB
-        cv/index.html                             125.8 KB
-        wum-blocki-cyngiel/index.html             126.2 KB
-        list-otwarty/index.html                   125.0 KB
-        pomoc-ukraincom/index.html                124.7 KB
-        kulturowe-analogie/index.html             129.9 KB
-        dyskusja/index.html                       123.4 KB
-        nagrania/1/index.html                     130.3 KB
-        nagrania/2/index.html                     128.9 KB
-        nagrania/3/index.html                     128.6 KB
-        nagrania/4/index.html                     126.6 KB
-        nagrania/5/index.html                     128.0 KB
-        nagrania/6/index.html                     128.3 KB
-        nagrania/7/index.html                     129.7 KB
-        skorowidz/index.html                      136.2 KB
-        en/skorowidz/index.html                   136.1 KB
-        fr/skorowidz/index.html                   136.7 KB
-        de/skorowidz/index.html                   136.4 KB
-        uk/skorowidz/index.html                   140.6 KB
+        index.html PRZED (src/index.src.html):   1211.0 KB
+        index.html PO  (strona glowna PL)    :     46.8 KB  (3.9% zrodla)
+        en/index.html                             227.0 KB
+        fr/index.html                             211.2 KB
+        de/index.html                             210.2 KB
+        uk/index.html                             256.9 KB
+        nagrania/index.html                        26.8 KB
+        postepowania/index.html                    26.2 KB
+        instytucje/index.html                      25.7 KB
+        o-mnie/index.html                          25.9 KB
+        sprostowania/index.html                    29.5 KB
+        wniosek-o-kontrole-ncn/index.html          28.7 KB
+        sprawa-komornika/index.html                56.5 KB
+        wyrok-kafkowski/index.html                 33.4 KB
+        bezczynnosc-uj/index.html                  37.7 KB
+        blocki-babik-liana/index.html              39.5 KB
+        maszynowe-recenzje-ncn/index.html          34.4 KB
+        dokumenty/index.html                       37.2 KB
+        sprawy-sadowe/index.html                   40.5 KB
+        prokuratura/index.html                     42.9 KB
+        wprowadzenie/index.html                    27.8 KB
+        chronologia/index.html                     28.2 KB
+        cv/index.html                              28.2 KB
+        wum-blocki-cyngiel/index.html              28.5 KB
+        list-otwarty/index.html                    27.3 KB
+        pomoc-ukraincom/index.html                 27.0 KB
+        kulturowe-analogie/index.html              33.4 KB
+        dyskusja/index.html                        25.7 KB
+        nagrania/1/index.html                      32.6 KB
+        nagrania/2/index.html                      31.2 KB
+        nagrania/3/index.html                      30.9 KB
+        nagrania/4/index.html                      28.9 KB
+        nagrania/5/index.html                      30.3 KB
+        nagrania/6/index.html                      31.0 KB
+        nagrania/7/index.html                      32.0 KB
+        skorowidz/index.html                       38.4 KB
+        en/skorowidz/index.html                    38.4 KB
+        fr/skorowidz/index.html                    39.0 KB
+        de/skorowidz/index.html                    38.7 KB
+        uk/skorowidz/index.html                    42.8 KB
         404.html                                    3.5 KB
         sitemap.xml                                11.2 KB
 

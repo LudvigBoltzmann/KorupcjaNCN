@@ -20,6 +20,7 @@ Wymagania: Python 3 + beautifulsoup4 (parser html.parser — bez lxml).
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -361,16 +362,17 @@ RECORDINGS = [
     },
     {
         "n": 6, "id": "rec-6", "slug": "nagrania/6",
-        "short": "Nagranie 6 — telefon osoby NN",
-        "date": "16 grudnia 2023 r. (data pliku źródłowego)",
-        "people": "osoba NN i dr Witold Kilarski (rozmowa telefoniczna)",
-        "length": "nieustalony — plik audio niedostępny",
+        "short": "Nagranie 6 — telefon osoby NN do mnie",
+        "date": "nieustalona (plik audio niepublikowany)",
+        "people": "osoba NN dzwoni z Krakowa na komórkę dr. Witolda Kilarskiego "
+                  "przebywającego w Jareniówce",
+        "length": "nieustalony — plik audio niepublikowany",
         "analiza": "9",
         "title": "Nagranie 6 — telefon osoby NN do dr. Kilarskiego "
                  "| Dr Witold Kilarski",
-        "desc": "Nagranie 6: telefon osoby NN do dr. Kilarskiego — eskalacja konfliktu "
+        "desc": "Nagranie 6: osoba NN dzwoni do dr. Kilarskiego — eskalacja konfliktu "
                 "z prof. Marcinem Drągiem, stanowisko prof. Melody Swartz i decyzja "
-                "o drodze sądowej. Plik audio chwilowo niedostępny.",
+                "o drodze sądowej. Plik audio nie jest publikowany.",
     },
     {
         "n": 7, "id": "rec-7", "slug": "nagrania/7",
@@ -575,13 +577,31 @@ AUDIO_RENAMES = [
 ]
 
 MISSING_AUDIO = "docs/9.-Lara-tel-do-mnie-Jareniowki_AUD-20231216-WA0001.m4a"
+
+# Punkt 8 + decyzja autora z 20 sierpnia 2026 r.: pliku nie publikujemy i nie
+# obiecujemy terminu; opis nagrania i numeracja zostaja bez zmian.
 MISSING_AUDIO_NOTE = {
-    "pl": "Plik audio tego nagrania jest chwilowo niedostępny — zostanie ponownie opublikowany.",
-    "en": "The audio file for this recording is temporarily unavailable and will be republished.",
-    "fr": "Le fichier audio de cet enregistrement est temporairement indisponible et sera republié.",
-    "de": "Die Audiodatei dieser Aufnahme ist derzeit nicht verfügbar und wird erneut veröffentlicht.",
-    "uk": "Аудіофайл цього запису тимчасово недоступний і буде опублікований повторно.",
+    "pl": ("Plik audio tego nagrania nie jest publikowany — nie mam pewności, "
+           "czy nie jest duplikatem innej z opublikowanych rozmów. Opis tematyczny "
+           "i numeracja pozostają bez zmian. ",
+           "Zob. notę w Sprostowaniach (20 sierpnia 2026 r.)"),
+    "en": ("The audio file for this recording is not published — it may be a duplicate "
+           "of one of the conversations already online. The topical description and "
+           "the numbering stay unchanged. ",
+           "See the note in Corrections (20 August 2026)"),
+    "fr": ("Le fichier audio de cet enregistrement n'est pas publié — il peut s'agir "
+           "d'un doublon d'une conversation déjà en ligne. La description thématique "
+           "et la numérotation restent inchangées. ",
+           "Voir la note dans les Rectifications (20 août 2026)"),
+    "de": ("Die Audiodatei dieser Aufnahme wird nicht veröffentlicht — sie kann ein "
+           "Duplikat eines bereits veröffentlichten Gesprächs sein. Beschreibung und "
+           "Numerierung bleiben unverändert. ",
+           "Siehe die Notiz in den Korrekturen (20. August 2026)"),
+    "uk": ("Аудіофайл цього запису не публікується — можливо, це дублікат іншої "
+           "вже опублікованої розмови. Опис і нумерація залишаються без змін. ",
+           "Див. нотатку в Розділі виправлень (20 серпня 2026 р.)"),
 }
+MISSING_AUDIO_NOTE_URL = BASE + "/sprostowania/#errata-nagranie-6-plik"
 
 NAV_LANG_CLASSES = {"nav-" + l for l in LANGS}
 
@@ -699,6 +719,71 @@ main .comments-section h1{font-family:var(--font-serif);font-size:var(--text-2xl
 main > section{margin-bottom:var(--space-12);}
 main p{max-width:78ch;}
 main .section p,main .interview-section p{line-height:1.7;}
+
+/* Akapity i listy czytamy od lewej (naglowki zostaja wysrodkowane jak dotad):
+   dlugie transkrypcje wysrodkowane sa mecznie trudne do czytania. */
+main .section p,main .section li,main .interview-section p,main .interview-section li,
+main .komornik-section p,main .komornik-section li,main .listotwarty-section p,
+main .listotwarty-section li,main .ukraina-section p,main .ukraina-section li,
+main .kultura-section p,main .kultura-section li,main blockquote,
+main .footnote-meta,main .przypis-sprostowanie,main .redaction-note{text-align:left;}
+main .section p,main .interview-section p,main .komornik-section p{margin-left:auto;margin-right:auto;}
+
+/* --- FILM: zaslona zamiast osadzonego odtwarzacza (szybkosc + prywatnosc) --- */
+.yt-facade{position:relative;display:block;width:100%;padding:0;border:0;
+  background:#000;cursor:pointer;border-radius:6px;overflow:hidden;line-height:0;}
+.yt-facade img{width:100%;height:auto;display:block;opacity:0.92;transition:opacity 0.2s;}
+.yt-facade:hover img,.yt-facade:focus-visible img{opacity:1;}
+.yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:68px;height:48px;border-radius:8px;background:rgba(200,30,30,0.92);
+  display:flex;align-items:center;justify-content:center;}
+.yt-facade .yt-play::after{content:"";display:block;width:0;height:0;
+  border-left:18px solid #fff;border-top:11px solid transparent;
+  border-bottom:11px solid transparent;margin-left:4px;}
+.yt-facade .yt-caption{position:absolute;left:0;right:0;bottom:0;
+  font-family:var(--font-sans);font-size:var(--text-xs);line-height:1.4;color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));padding:24px 12px 10px;
+  text-align:left;}
+.yt-facade:focus-visible{outline:2px solid #ffd166;outline-offset:2px;}
+.yt-facade-plain{padding-bottom:56.25%;height:0;
+  background:linear-gradient(160deg,#1c1c2e,#2c2c44);}
+.yt-facade-plain .yt-caption{background:none;padding:12px;bottom:auto;top:60%;
+  font-size:var(--text-sm);}
+"""
+
+# Film dokumentalny: zaslona (facade) zamiast osadzonego odtwarzacza YouTube.
+# Do kliknięcia strona nie wysyla zadnego zapytania do YouTube — miniatura jest
+# lokalna. Zero skryptow firm trzecich i zero ciasteczek przed kliknieciem.
+YT_EMBED_MARK = "youtube.com/embed"
+YT_THUMB = "docs/yt-Z7DH_iRY78w.jpg"
+YT_FACADE_LABEL = {
+    "pl": ("Odtwórz film dokumentalny", "Kliknięcie uruchamia odtwarzacz YouTube"),
+    "en": ("Play the documentary", "Clicking loads the YouTube player"),
+    "fr": ("Lire le documentaire", "Le clic charge le lecteur YouTube"),
+    "de": ("Dokumentarfilm abspielen", "Ein Klick lädt den YouTube-Player"),
+    "uk": ("Відтворити документальний фільм", "Натискання завантажить плеєр YouTube"),
+}
+
+YT_FACADE_JS = """
+(function(){
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.yt-facade');
+    if (!btn) return;
+    var src = btn.getAttribute('data-yt');
+    if (!src) return;
+    var box = document.createElement('div');
+    box.style.cssText = 'position:relative;padding-bottom:56.25%;height:0;overflow:hidden';
+    var f = document.createElement('iframe');
+    f.src = src + (src.indexOf('?') > -1 ? '&' : '?') + 'autoplay=1';
+    f.title = btn.getAttribute('aria-label') || 'video';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('frameborder','0');
+    f.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%';
+    box.appendChild(f);
+    btn.replaceWith(box);
+  });
+})();
 """
 
 # Menu mobilne: Escape zamyka, aria-expanded utrzymane (WCAG 2.1.1).
@@ -772,9 +857,15 @@ def replace_missing_audio(soup):
             "role": "note",
             "aria-label": "Audio unavailable",
         })
-        note.string = MISSING_AUDIO_NOTE[lang]
+        text, link_label = MISSING_AUDIO_NOTE[lang]
+        note.append(text)
+        link = soup.new_tag("a", href=MISSING_AUDIO_NOTE_URL)
+        link.string = link_label
+        note.append(link)
         audio.replace_with(note)
-        note.insert_before(Comment(" TODO: wgrac plik 9 "))
+        note.insert_before(Comment(" plik audio nagrania 6 nieopublikowany "
+                                   "(decyzja autora, 20 sierpnia 2026) "))
+
 
 
 # --------------------------------------------------------------------------
@@ -1454,7 +1545,161 @@ def collect_section_id_map(raw):
     return id_to_url
 
 
+# --------------------------------------------------------------------------
+# Szybkosc: CSS i duze skrypty do plikow zewnetrznych (cache przegladarki)
+# --------------------------------------------------------------------------
+
+ASSET_DIR = "assets"
+_ASSETS = {}
+
+
+def _store_asset(content, suffix):
+    """Zapisuje tresc jako plik z odciskiem w nazwie; zwraca adres.
+
+    Ten sam arkusz stylow i te same skrypty maja na kazdej stronie identyczna
+    tresc, wiec powstaje jeden plik, ktory przegladarka pobiera RAZ i trzyma
+    w pamieci podrecznej dla calej witryny.
+    """
+    key = (suffix, content)
+    if key in _ASSETS:
+        return _ASSETS[key]
+    digest = hashlib.sha1(content.encode("utf-8")).hexdigest()[:10]
+    rel = "%s/site-%s.%s" % (ASSET_DIR, digest, suffix)
+    out = os.path.join(ROOT, rel)
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "w", encoding="utf-8") as fh:
+        fh.write(content)
+    _ASSETS[key] = BASE + "/" + rel
+    return _ASSETS[key]
+
+
+# Skrypty, ktore MUSZA zostac w kodzie strony (wykonuja sie przed renderowaniem
+# albo przekierowuja) — nie wolno ich odkladac atrybutem defer.
+INLINE_ONLY_JS_MARKS = ("location.replace", "setLanguage")
+EXTERNALIZE_JS_MIN = 1500
+EXTERNALIZE_CSS_MIN = 4000
+
+
+def externalize_assets(soup):
+    for style in list(soup.find_all("style")):
+        css = style.string or ""
+        if len(css) < EXTERNALIZE_CSS_MIN:
+            continue
+        link = soup.new_tag("link", href=_store_asset(css, "css"))
+        link["rel"] = "stylesheet"
+        style.replace_with(link)
+
+    for script in list(soup.find_all("script")):
+        if script.get("src") or script.get("type") == "application/ld+json":
+            continue
+        code = script.string or ""
+        if len(code) < EXTERNALIZE_JS_MIN:
+            continue
+        if any(mark in code for mark in INLINE_ONLY_JS_MARKS):
+            continue
+        new = soup.new_tag("script", src=_store_asset(code, "js"))
+        new["defer"] = ""
+        script.replace_with(new)
+
+
+# Fonty: hostowane lokalnie (assets/fonts/), zero zapytan do Google.
+FONTS_CSS = "assets/fonts/fonts.css"
+
+
+def localize_fonts(soup):
+    """Usuwa odwolania do fonts.googleapis.com / fonts.gstatic.com.
+
+    Arkusz Google Fonts blokuje renderowanie strony i wymaga dwoch dodatkowych
+    polaczen do obcego serwera. Te same fonty (Inter, Source Serif 4 — licencja
+    OFL) leza teraz w repozytorium; pobiera je `tools/pobierz_fonty.py`.
+    """
+    removed = 0
+    for link in list(soup.find_all("link", href=True)):
+        if "fonts.googleapis.com" in link["href"] or "fonts.gstatic.com" in link["href"]:
+            link.decompose()
+            removed += 1
+    if not soup.find("link", href=BASE + "/" + FONTS_CSS):
+        local = soup.new_tag("link", href=BASE + "/" + FONTS_CSS)
+        local["rel"] = "stylesheet"
+        anchor = soup.head.find("link", attrs={"rel": ["canonical"]}) or soup.head
+        if anchor is soup.head:
+            soup.head.append(local)
+        else:
+            anchor.insert_before(local)
+    return removed
+
+
+def local_thumb_for(video_id):
+    rel = "docs/yt-%s.jpg" % video_id
+    return rel if os.path.exists(os.path.join(ROOT, rel)) else None
+
+
+def youtube_facade(soup, lang):
+    """Osadzony odtwarzacz YouTube -> zaslona z przyciskiem odtwarzania.
+
+    Przed kliknieciem strona nie kontaktuje sie z YouTube w ogole: zaden skrypt
+    firmy trzeciej, zadne ciasteczko, zadne ~600 KB odtwarzacza na film.
+    Gdy w `docs/` jest lokalna miniatura (`docs/yt-<id>.jpg`), zaslona ja
+    pokazuje; w przeciwnym razie jest ciemnym kafelkiem z tytulem — nadal bez
+    zadnego zapytania na zewnatrz. Po kliknieciu film startuje normalnie.
+    """
+    label, hint = YT_FACADE_LABEL[lang]
+    replaced = 0
+    for frame in list(soup.find_all("iframe")):
+        src = (frame.get("src") or "")
+        if YT_EMBED_MARK not in src:
+            continue
+        title = (frame.get("title") or "").strip()
+        video_id = src.split("/embed/", 1)[1].split("?", 1)[0].strip("/")
+        thumb = local_thumb_for(video_id)
+
+        btn = soup.new_tag("button", type="button")
+        btn["class"] = ["yt-facade"] if thumb else ["yt-facade", "yt-facade-plain"]
+        btn["data-yt"] = src
+        btn["aria-label"] = "%s%s" % (label, (": " + title) if title else "")
+        if thumb:
+            img = soup.new_tag("img", src=thumb, alt="")
+            img["width"] = "960"
+            img["height"] = "540"
+            img["loading"] = "lazy"
+            img["decoding"] = "async"
+            btn.append(img)
+        play = soup.new_tag("span")
+        play["class"] = ["yt-play"]
+        play["aria-hidden"] = "true"
+        btn.append(play)
+        caption = soup.new_tag("span")
+        caption["class"] = ["yt-caption"]
+        caption.string = title or ("%s — %s" % (label, hint))
+        btn.append(caption)
+
+        wrapper = frame.parent
+        frame.replace_with(btn)
+        if wrapper is not None and wrapper.name == "div" and \
+                "padding-bottom:56.25%" in (wrapper.get("style") or ""):
+            wrapper.replace_with(btn)
+        replaced += 1
+
+    if replaced:
+        script = soup.new_tag("script")
+        script.string = YT_FACADE_JS
+        soup.body.append(script)
+
+
+def speed_polish(soup):
+    """Drobne poprawki wydajnosci: leniwe obrazy i asynchroniczne dekodowanie."""
+    for img in soup.find_all("img"):
+        if not img.get("loading"):
+            img["loading"] = "lazy"
+        if not img.get("decoding"):
+            img["decoding"] = "async"
+
+
 def finish(soup, path):
+    youtube_facade(soup, soup.html.get("lang", "pl"))
+    localize_fonts(soup)
+    speed_polish(soup)
+    externalize_assets(soup)
     absolutize_assets(soup)
     logo = soup.find("a", class_="header-logo")
     if logo is not None:
@@ -2011,6 +2256,14 @@ def check_no_broken_links():
 
 
 def main():
+    # Czyscimy tylko pliki generowane (site-*.css / site-*.js).
+    # assets/fonts/ zostaje — to zasoby staler, pobierane osobno.
+    assets = os.path.join(ROOT, ASSET_DIR)
+    if os.path.isdir(assets):
+        for name in os.listdir(assets):
+            if name.startswith("site-"):
+                os.unlink(os.path.join(assets, name))
+
     raw = load_source()
     id_to_url = collect_section_id_map(raw)
     anchor_map = collect_old_anchors(raw, id_to_url)
