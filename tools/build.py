@@ -1580,11 +1580,92 @@ EXTERNALIZE_JS_MIN = 1500
 EXTERNALIZE_CSS_MIN = 4000
 
 
+def minify_css(css):
+    """Zachowawcza minifikacja arkusza stylow.
+
+    Usuwa komentarze i zbedne biale znaki, nie ruszajac niczego wewnatrz
+    cudzyslowow ani wewnatrz nawiasow (calc(), media queries, rgba()) — tam
+    spacje maja znaczenie. Nie zmienia ani jednej wlasnosci i ani jednego
+    selektora; przy niezgodnosci licznikow build przerywa prace.
+    """
+    out = []
+    i = 0
+    n = len(css)
+    depth_paren = 0
+    while i < n:
+        ch = css[i]
+        # komentarze
+        if ch == "/" and css.startswith("/*", i):
+            end = css.find("*/", i + 2)
+            i = n if end == -1 else end + 2
+            continue
+        # napisy w cudzyslowach — kopiujemy bez zmian
+        if ch in "\"'":
+            quote = ch
+            j = i + 1
+            while j < n:
+                if css[j] == "\\":
+                    j += 2
+                    continue
+                if css[j] == quote:
+                    j += 1
+                    break
+                j += 1
+            out.append(css[i:j])
+            i = j
+            continue
+        if ch == "(":
+            depth_paren += 1
+            out.append(ch)
+            i += 1
+            continue
+        if ch == ")":
+            depth_paren = max(0, depth_paren - 1)
+            out.append(ch)
+            i += 1
+            continue
+        if ch in " \t\r\n\f":
+            j = i
+            while j < n and css[j] in " \t\r\n\f":
+                j += 1
+            nxt = css[j] if j < n else ""
+            prev = out[-1][-1] if out and out[-1] else ""
+            if depth_paren:
+                # wewnatrz nawiasow spacja moze byc znaczaca (calc)
+                out.append(" ")
+            elif nxt in "{},;>" or prev in "{},;:>" or nxt == "":
+                pass
+            else:
+                out.append(" ")
+            i = j
+            continue
+        out.append(ch)
+        i += 1
+
+    text = "".join(out)
+    text = re.sub(r";+\}", "}", text)
+    text = re.sub(r"\}\s*", "}", text)
+    return text.strip()
+
+
+def _css_shape(css):
+    """Odcisk struktury arkusza: liczba blokow i deklaracji (do kontroli)."""
+    stripped = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    stripped = re.sub(r"([\"'])(?:\\.|(?!\1).)*\1", '""', stripped, flags=re.S)
+    return (stripped.count("{"), stripped.count("}"),
+            len([d for d in re.split(r"[;{}]", stripped) if ":" in d]))
+
+
 def externalize_assets(soup):
     for style in list(soup.find_all("style")):
         css = style.string or ""
         if len(css) < EXTERNALIZE_CSS_MIN:
             continue
+        small = minify_css(css)
+        expect(_css_shape(small) == _css_shape(css),
+               "minifikacja CSS zmienila strukture arkusza: %s vs %s"
+               % (_css_shape(small), _css_shape(css)))
+        css = small
         link = soup.new_tag("link", href=_store_asset(css, "css"))
         link["rel"] = "stylesheet"
         style.replace_with(link)

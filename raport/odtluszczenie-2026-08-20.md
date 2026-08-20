@@ -285,6 +285,8 @@ Commity (logiczne, w kolejności):
 6. `9d88f79` — Zadanie 6: zapis kodów odpowiedzi 46 adresów (46 × 200, zero 404)
 7. `c778ff9` — raport: uzupełnienie listy commitów i adresu gałęzi
 8. `68ca1ad` — Nagranie 6 + szybkość: poprawka opisu rozmowy i przyspieszenie witryny
+9. `86527f8` — raport: aneks o Nagraniu 6 i przyspieszeniu witryny
+10. (ten commit) — obcięcie fontów do używanych znaków i minifikacja arkusza stylów
 
 Gałąź jest wypchnięta na GitHub:
 https://github.com/LudvigBoltzmann/KorupcjaNCN/tree/odtluszczenie-2026-08
@@ -398,3 +400,73 @@ Testy po tych zmianach: build bez błędów, `tools/verify.py` — 0 błędów (
 kontroli), 46 adresów × 200, brak przewijania w poziomie przy 375/768/1440 px,
 menu mobilne otwierane Enterem i Spacją oraz zamykane Escapem, klik na zasłonę
 filmu uruchamia odtwarzacz z autoodtwarzaniem.
+
+## 12. Aneks drugi (20 sierpnia 2026 r., popołudnie): obcięte fonty i zminifikowany arkusz stylów
+
+Na Twoje polecenie: „Obetnij jeszcze fonty i zminifikuj arkusz stylów".
+
+### 12a. Fonty — obcięte
+
+`tools/pobierz_fonty.py` robi teraz trzy rzeczy zamiast jednej:
+
+1. pobiera z Google te same pliki co dotąd (krój pisma bez zmian: Inter
+   i Source Serif 4, licencja OFL),
+2. **zawęża osie fontów zmiennych**: pliki Google zawierają całą rodzinę grubości
+   100–900 oraz osobną oś rozmiaru optycznego 8–60 pt, a witryna używa grubości
+   400/500/600 (Inter) i 400/600/700 (Source Serif). Oś rozmiaru optycznego jest
+   przypięta do wartości domyślnej 20, zakres grubości zawężony,
+3. **obcina każdy plik do znaków, które faktycznie występują na witrynie** plus
+   stały zapas (podstawowa łacina, polskie, francuskie i niemieckie znaki
+   diakrytyczne, typografia — pauzy, cudzysłowy „ ", …, strzałki — oraz cyrylica
+   ukraińska dla wersji /uk/). Razem 503 znaki; sprawdzane jest, czy dany znak
+   naprawdę jest w foncie.
+
+| Fonty | Przed | Po |
+| --- | --- | --- |
+| Wszystkie pliki w repozytorium | 671,5 KB (12 plików) | **136,4 KB (9 plików)** — −80% |
+| Co ściąga polski czytelnik (maksymalnie) | ok. 440 KB | **98,5 KB** |
+| Zapytania do fonts.googleapis.com / gstatic | 2 połączenia + arkusz blokujący | **0** |
+
+Sprawdzone w przeglądarce: polskie znaki (ą ć ę ł ń ó ś ź ż) i ukraińska
+cyrylica renderują się właściwym krojem, `document.fonts.status = "loaded"`,
+21 reguł @font-face.
+
+### 12b. Arkusz stylów — zminifikowany
+
+Minifikacja jest **zachowawcza i sprawdzana przez build**: usuwane są komentarze
+i zbędne białe znaki, ale nic wewnątrz cudzysłowów ani wewnątrz nawiasów
+(`calc()`, `@media (min-width: 768px)`, `rgba()`) nie jest ruszane — tam spacje
+mają znaczenie. Po minifikacji build porównuje liczbę bloków i deklaracji
+z wersją źródłową; przy jakiejkolwiek różnicy przerywa pracę i nic nie zapisuje.
+
+| Arkusz stylów | Przed | Po |
+| --- | --- | --- |
+| `assets/site-*.css` | 93,4 KB | **67,9 KB** (−27%) |
+
+Wszystkie 28 zapytań `@media` i 4 wyrażenia `calc()` przeszły bez zmian.
+Sprawdzone w przeglądarce: identyczny wygląd (te same kroje, rozmiary, obramowania
+kafli 1 px / promień 8 px, tło cytatu, sticky nagłówek, dwie kolumny kafli
+przy 1280 px, jedna przy 375 px).
+
+### 12c. Bilans wagi po wszystkich zmianach
+
+Pierwsze wejście na stronę główną (bez obrazów): **225,6 KB** — 46,8 KB HTML
++ 67,9 KB CSS + 6,1 KB JS + 6,3 KB deklaracji fontów + maks. 98,5 KB samych
+fontów. Każda następna podstrona to **30–47 KB**, bo styl, skrypty i fonty
+są już w pamięci przeglądarki. Serwer wysyła to skompresowane (gzip), więc
+realny transfer jest jeszcze kilkukrotnie mniejszy.
+
+Dla porównania stan na `main`: 249,8 KB samego HTML strony głównej za każdym
+wejściem, plus arkusz z Google Fonts (dwa dodatkowe połączenia, ok. 440 KB
+fontów), plus pełny odtwarzacz YouTube ładowany od razu (ok. 600 KB).
+
+### 12d. Co można cofnąć jednym ruchem
+
+- Minifikacja: usunięcie wywołania `minify_css` w `externalize_assets`.
+- Obcięcie fontów: `AXIS_LIMITS = {}` w `tools/pobierz_fonty.py` i ponowne
+  uruchomienie skryptu (wróci pełny zakres grubości i rozmiarów optycznych).
+- Cały pakiet: `bash raport/przywroc-stan-przed.sh`.
+
+Testy po tych zmianach: build bez błędów (z kontrolą struktury CSS
+i składni JS), `tools/verify.py` — 0 błędów, 46 adresów × 200, brak przewijania
+w poziomie przy 375/768/1440 px, menu mobilne działa Enterem, Spacją i Escapem.
