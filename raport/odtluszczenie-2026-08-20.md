@@ -286,7 +286,8 @@ Commity (logiczne, w kolejności):
 7. `c778ff9` — raport: uzupełnienie listy commitów i adresu gałęzi
 8. `68ca1ad` — Nagranie 6 + szybkość: poprawka opisu rozmowy i przyspieszenie witryny
 9. `86527f8` — raport: aneks o Nagraniu 6 i przyspieszeniu witryny
-10. (ten commit) — obcięcie fontów do używanych znaków i minifikacja arkusza stylów
+10. `5049db5` — obcięcie fontów do używanych znaków i minifikacja arkusza stylów
+11. (21 sierpnia) — audyt i poprawki: wymiary obrazów, hierarchia nagłówków, nawigacja w działach, data aktualizacji, JSON-LD nagrań (opis: `raport/audyt-2026-08-21.md`)
 
 Gałąź jest wypchnięta na GitHub:
 https://github.com/LudvigBoltzmann/KorupcjaNCN/tree/odtluszczenie-2026-08
@@ -470,3 +471,23 @@ fontów), plus pełny odtwarzacz YouTube ładowany od razu (ok. 600 KB).
 Testy po tych zmianach: build bez błędów (z kontrolą struktury CSS
 i składni JS), `tools/verify.py` — 0 błędów, 46 adresów × 200, brak przewijania
 w poziomie przy 375/768/1440 px, menu mobilne działa Enterem, Spacją i Escapem.
+
+## 13. Aneks trzeci (21 sierpnia 2026 r.): audyt i poprawki
+
+Pełny opis: `raport/audyt-2026-08-21.md`. W skrócie:
+
+**Naprawione:** 251 obrazów bez podanych wymiarów (strona przestała skakać przy
+wczytywaniu), 20 luk w hierarchii nagłówków na 40 stronach (wygląd bez zmian,
+poprawiona struktura dla czytników ekranu i wyszukiwarek), brak nawigacji
+„poprzednia / następna" na podstronach innych niż nagrania, brak daty
+aktualizacji archiwum w stopce, brak danych o nagraniach dla wyszukiwarek
+(JSON-LD `AudioObject` z rzeczywistym czasem trwania), `preload` dwóch
+najważniejszych plików fontów, rysowanie długich stron partiami.
+
+**Znalezione, nietknięte — do Twojej decyzji:** martwy link
+`https://www.pnitt.wum.edu.pl` (nie odpowiada, występuje w pięciu miejscach)
+oraz sześć plików w `docs/`, do których nie prowadzi żaden odnośnik (w tym dwa
+nagrania z numeracji dokumentu, czekające na Twój opis).
+
+**Stan:** build bez błędów, `verify.py` 0 błędów, 46 adresów × 200,
+0 obrazów bez wymiarów, 0 przeskoków nagłówków, strona główna 47,2 KB.

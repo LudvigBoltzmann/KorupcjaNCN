@@ -40,7 +40,7 @@ SRC = os.path.join(ROOT, "src", "index.src.html")
 
 BASE = ""
 SITE = "https://whistleblower.witekkilarski.org"
-BUILD_DATE = "2026-08-20"
+BUILD_DATE = "2026-08-21"
 PUBLISHED = "2026-03-03"
 
 LANGS = ["pl", "en", "fr", "de", "uk"]
@@ -302,6 +302,7 @@ RECORDINGS = [
         "date": "29 maja 2020 r.",
         "people": "osoba NN i dr Witold Kilarski",
         "length": "ok. 1 godz. 2 min",
+        "seconds": 3735,
         "analiza": "1",
         "title": "Nagranie 1 (29 maja 2020) — rozmowa z osobą NN po ultimatum "
                  "| Dr Witold Kilarski",
@@ -315,6 +316,7 @@ RECORDINGS = [
         "date": "2 czerwca 2020 r.",
         "people": "osoba NN i dyrektor NCN Zbigniew Błocki",
         "length": "ok. 1 godz. 36 min",
+        "seconds": 5750,
         "analiza": "2",
         "title": "Nagranie 2 (2 czerwca 2020) — spotkanie osoby NN z dyrektorem NCN "
                  "| Dr Witold Kilarski",
@@ -328,6 +330,7 @@ RECORDINGS = [
         "date": "4 czerwca 2020 r.",
         "people": "osoba NN i dyrektor NCN Zbigniew Błocki",
         "length": "ok. 1 godz. 52 min",
+        "seconds": 6750,
         "analiza": "3",
         "title": "Nagranie 3 (4 czerwca 2020) — trzecia rozmowa ze Zbigniewem Błockim "
                  "| Dr Witold Kilarski",
@@ -341,6 +344,7 @@ RECORDINGS = [
         "date": "10 października 2020 r.",
         "people": "osoba NN i dr Witold Kilarski",
         "length": "ok. 45 min",
+        "seconds": 2700,
         "analiza": "5",
         "title": "Nagranie 4 (10 października 2020) — osoba NN o chęci odejścia z NCN "
                  "| Dr Witold Kilarski",
@@ -353,6 +357,7 @@ RECORDINGS = [
         "date": "20 marca 2021 r.",
         "people": "osoba NN i dr Witold Kilarski",
         "length": "ok. 2 godz. 21 min (dwie części)",
+        "seconds": 8494,
         "analiza": "7 i 8",
         "title": "Nagranie 5 (20 marca 2021) — jedna rozmowa w dwóch częściach "
                  "| Dr Witold Kilarski",
@@ -380,6 +385,7 @@ RECORDINGS = [
         "date": "30 września 2021 r.",
         "people": "osoba NN i dr Witold Kilarski",
         "length": "ok. 40 min",
+        "seconds": 2400,
         "analiza": "10",
         "title": "Nagranie 7 (30 września 2021) — mechanizm zniszczenia "
                  "| Dr Witold Kilarski",
@@ -729,6 +735,28 @@ main .kultura-section p,main .kultura-section li,main blockquote,
 main .footnote-meta,main .przypis-sprostowanie,main .redaction-note{text-align:left;}
 main .section p,main .interview-section p,main .komornik-section p{margin-left:auto;margin-right:auto;}
 
+/* Naglowki przesuniete o jeden poziom w gore (hierarchia H1/H2/H3 na
+   podstronach) zachowuja dotychczasowy wyglad — zmienia sie tylko znaczenie
+   semantyczne dla czytnikow ekranu i wyszukiwarek. */
+main h2.as-h3{font-family:var(--font-serif);font-size:var(--text-xl);
+  font-weight:600;line-height:1.25;margin-top:var(--space-8);
+  margin-bottom:var(--space-4);color:var(--color-text);}
+main h3.as-h4,main h2.as-h4{font-family:var(--font-sans);font-size:1em;
+  font-weight:700;margin:0 0 6px;color:#8a0f0f;}
+main h4.as-h5,main h3.as-h5{font-family:var(--font-sans);font-size:0.95em;
+  font-weight:700;margin:0 0 6px;color:var(--color-text);}
+
+/* Dlugie strony (transkrypcje, sprawa komornika): przegladarka rysuje sekcje
+   dopiero, gdy sa potrzebne. Przy druku wylaczone, zeby nic nie znikalo. */
+main .interview-section,main .komornik-section{content-visibility:auto;
+  contain-intrinsic-size:auto 1400px;}
+@media print{main .interview-section,main .komornik-section{
+  content-visibility:visible;}}
+
+/* Data ostatniej aktualizacji w stopce. */
+.footer-updated{font-size:var(--text-xs);color:var(--color-footer-muted,#9aa);
+  margin:var(--space-3) 0 0;}
+
 /* --- FILM: zaslona zamiast osadzonego odtwarzacza (szybkosc + prywatnosc) --- */
 .yt-facade{position:relative;display:block;width:100%;padding:0;border:0;
   background:#000;cursor:pointer;border-radius:6px;overflow:hidden;line-height:0;}
@@ -1066,6 +1094,15 @@ def set_head(soup, *, lang, title, description, page_url, hreflang_cluster, keep
     set_meta_content(soup, "property", "og:locale", OG_LOCALE[lang])
     set_meta_content(soup, "name", "twitter:title", title)
     set_meta_content(soup, "name", "twitter:description", description)
+
+    # Podglad zdjec w wynikach wyszukiwania (bez zmiany indeksowania).
+    robots = head.find("meta", attrs={"name": "robots"})
+    if robots is not None:
+        parts = [p.strip() for p in (robots.get("content") or "").split(",") if p.strip()]
+        for extra in ("max-image-preview:large", "max-snippet:-1"):
+            if extra not in parts:
+                parts.append(extra)
+        robots["content"] = ", ".join(parts)
 
     # keywords: ~90 fraz w zrodle — usuwamy calkowicie (wariant preferowany).
     for tag in head.find_all("meta", attrs={"name": "keywords"}):
@@ -1419,6 +1456,22 @@ def install_nav(soup, lang, current=None):
     soup.body.append(script)
 
 
+UPDATED_LABEL = {
+    "pl": "Ostatnia aktualizacja archiwum: %s",
+    "en": "Archive last updated: %s",
+    "fr": "Dernière mise à jour des archives : %s",
+    "de": "Archiv zuletzt aktualisiert: %s",
+    "uk": "Архів оновлено: %s",
+}
+UPDATED_HUMAN = {
+    "pl": "21 sierpnia 2026 r.",
+    "en": "21 August 2026",
+    "fr": "21 août 2026",
+    "de": "21. August 2026",
+    "uk": "21 серпня 2026 р.",
+}
+
+
 def install_footer_links(soup, lang):
     footer = soup.find("footer", class_="site-footer")
     expect(footer is not None, "brak stopki")
@@ -1435,6 +1488,14 @@ def install_footer_links(soup, lang):
         nav.append(a)
     block.append(nav)
 
+    updated = soup.new_tag("p")
+    updated["class"] = ["footer-updated"]
+    time_tag = soup.new_tag("time", datetime=BUILD_DATE)
+    time_tag.string = UPDATED_HUMAN[lang]
+    updated.append(UPDATED_LABEL[lang].split("%s")[0])
+    updated.append(time_tag)
+    block.append(updated)
+
 
 def strip_inpage_navs(soup):
     """Usuwa wewnatrzstronowe rzedy zakladek (.section-nav, .section-jumpnav)."""
@@ -1445,13 +1506,37 @@ def strip_inpage_navs(soup):
     return removed
 
 
+HEADING_RE = re.compile(r"^h[1-6]$")
+
+
 def promote_first_heading(container):
-    """Pierwszy <h2> podstrony staje sie <h1> (hierarchia H1/H2/H3)."""
+    """Pierwszy <h2> podstrony staje sie <h1> (kazda strona ma jeden H1)."""
     heading = container.find("h2")
-    if heading is not None:
-        heading.name = "h1"
-        return heading.get_text(" ", strip=True)
-    return None
+    if heading is None:
+        return None
+    heading.name = "h1"
+    return heading.get_text(" ", strip=True)
+
+
+def normalize_headings(container):
+    """Likwiduje luki w hierarchii naglowkow (np. H1 -> H3 albo H2 -> H4).
+
+    Naglowek, ktory przeskakuje poziom, jest obnizany do najblizszego
+    dozwolonego, a jego dotychczasowy WYGLAD zachowuje klasa `as-hN`
+    (reguly w EXTRA_CSS). Czytnik ekranu i wyszukiwarka widza poprawna
+    strukture, czytelnik nie widzi zadnej zmiany.
+    """
+    changed = 0
+    previous = 0
+    for tag in list(container.find_all(HEADING_RE)):
+        level = int(tag.name[1])
+        if previous and level > previous + 1:
+            tag["class"] = (tag.get("class") or []) + ["as-h%d" % level]
+            level = previous + 1
+            tag.name = "h%d" % level
+            changed += 1
+        previous = level
+    return changed
 
 
 def build_breadcrumb_for(soup, label, hub_slug=None):
@@ -1687,6 +1772,35 @@ def externalize_assets(soup):
 FONTS_CSS = "assets/fonts/fonts.css"
 
 
+# Dwa pliki fontow, ktore sa potrzebne od razu na kazdej stronie (tekst
+# lacinski): wskazujemy je przegladarce z wyprzedzeniem, zeby nie czekala
+# na pobranie arkusza fonts.css przed rozpoczeciem sciagania fontu.
+PRELOAD_FONT_PATTERNS = ("Inter-latin-", "SourceSerif4-latin-")
+
+
+def preload_fonts(soup):
+    fonts_dir = os.path.join(ROOT, "assets", "fonts")
+    if not os.path.isdir(fonts_dir):
+        return
+    picked = []
+    for name in sorted(os.listdir(fonts_dir)):
+        if not name.endswith(".woff2"):
+            continue
+        if any(name.startswith(p) for p in PRELOAD_FONT_PATTERNS) and \
+                "latin-ext" not in name:
+            picked.append(name)
+    for name in picked[:2]:
+        href = BASE + "/assets/fonts/" + name
+        if soup.find("link", attrs={"rel": ["preload"], "href": href}):
+            continue
+        link = soup.new_tag("link", href=href)
+        link["rel"] = "preload"
+        link["as"] = "font"
+        link["type"] = "font/woff2"
+        link["crossorigin"] = "anonymous"
+        soup.head.insert(0, link)
+
+
 def localize_fonts(soup):
     """Usuwa odwolania do fonts.googleapis.com / fonts.gstatic.com.
 
@@ -1767,18 +1881,50 @@ def youtube_facade(soup, lang):
         soup.body.append(script)
 
 
+IMAGE_SIZES_FILE = os.path.join(ROOT, "tools", "rozmiary-obrazow.json")
+_IMAGE_SIZES = None
+
+
+def image_sizes():
+    global _IMAGE_SIZES
+    if _IMAGE_SIZES is None:
+        try:
+            with open(IMAGE_SIZES_FILE, encoding="utf-8") as fh:
+                _IMAGE_SIZES = json.load(fh)
+        except FileNotFoundError:
+            _IMAGE_SIZES = {}
+    return _IMAGE_SIZES
+
+
 def speed_polish(soup):
-    """Drobne poprawki wydajnosci: leniwe obrazy i asynchroniczne dekodowanie."""
+    """Leniwe obrazy, asynchroniczne dekodowanie i prawdziwe wymiary.
+
+    Wpisanie width/height likwiduje „skakanie” tekstu podczas wczytywania
+    obrazow (Cumulative Layout Shift) — przegladarka od razu wie, ile miejsca
+    zarezerwowac. Rozmiary pochodza z tools/rozmiary-obrazow.json
+    (skrypt tools/zmierz_obrazy.py).
+    """
+    sizes = image_sizes()
     for img in soup.find_all("img"):
         if not img.get("loading"):
             img["loading"] = "lazy"
         if not img.get("decoding"):
             img["decoding"] = "async"
+        if img.get("width") and img.get("height"):
+            continue
+        src = (img.get("src") or "").strip().lstrip("/")
+        if src.startswith(BASE.lstrip("/") + "/") and BASE:
+            src = src[len(BASE.lstrip("/")) + 1:]
+        dims = sizes.get(src)
+        if dims:
+            img["width"] = str(dims[0])
+            img["height"] = str(dims[1])
 
 
 def finish(soup, path):
     youtube_facade(soup, soup.html.get("lang", "pl"))
     localize_fonts(soup)
+    preload_fonts(soup)
     speed_polish(soup)
     externalize_assets(soup)
     absolutize_assets(soup)
@@ -1827,6 +1973,10 @@ def build_language_page(raw, lang, id_to_url, anchor_map=None):
             hub.decompose()
         update_graph_for_language(soup, lang, page_url, {})
 
+    # Na stronach jezykowych czesc sekcji lezy poza <main>, wiec hierarchie
+    # naglowkow porzadkujemy w calym <body>.
+    normalize_headings(soup.body)
+
     install_nav(soup, lang, current="sprawa")
     install_footer_links(soup, lang)
 
@@ -1863,7 +2013,46 @@ def put_ld(soup, data):
     soup.head.append(ld)
 
 
-def build_content_page(raw, page, id_to_url, extra_top=None, extra_bottom=None):
+def hub_order(slug):
+    """Kolejnosc podstron w obrebie dzialu (do nawigacji poprzednia/nastepna)."""
+    group = GROUP_OF_SLUG.get(slug)
+    if group == "nagrania":
+        return [r["slug"] for r in RECORDINGS]
+    if group == "sprawa":
+        return ["wprowadzenie", "chronologia"]
+    if group in HUB_BY_SLUG:
+        return list(HUB_BY_SLUG[group]["items"])
+    return []
+
+
+def build_page_prevnext(soup, slug):
+    """Nawigacja „poprzednia / nastepna strona dzialu” — spojnie na wszystkich
+    podstronach, nie tylko przy nagraniach."""
+    order = hub_order(slug)
+    if slug not in order or len(order) < 2:
+        return None
+    idx = order.index(slug)
+    nav = soup.new_tag("nav")
+    nav["class"] = ["rec-prevnext"]
+    nav["aria-label"] = "Nawigacja w obrębie działu"
+    if idx > 0:
+        a = soup.new_tag("a", href=BASE + "/" + order[idx - 1] + "/")
+        a.string = "← poprzednia: %s" % page_short(order[idx - 1])
+        nav.append(a)
+    group = GROUP_OF_SLUG.get(slug)
+    if group in HUB_BY_SLUG:
+        hub = soup.new_tag("a", href=BASE + "/" + group + "/")
+        hub.string = "Wszystkie: %s" % HUB_BY_SLUG[group]["short"]
+        nav.append(hub)
+    if idx < len(order) - 1:
+        a = soup.new_tag("a", href=BASE + "/" + order[idx + 1] + "/")
+        a.string = "następna: %s →" % page_short(order[idx + 1])
+        nav.append(a)
+    return nav
+
+
+def build_content_page(raw, page, id_to_url, extra_top=None, extra_bottom=None,
+                       extra_ld=None):
     """Podstrona z trescia przeniesiona ze strony glownej — HTML kopiowany 1:1."""
     page_url = SITE + "/" + page["slug"] + "/"
     soup, main = page_chrome(raw, page["title"], page["desc"], page_url,
@@ -1878,6 +2067,7 @@ def build_content_page(raw, page, id_to_url, extra_top=None, extra_bottom=None):
 
     strip_inpage_navs(section_tag)
     headline = promote_first_heading(section_tag) or page["short"]
+    normalize_headings(section_tag)
 
     main.clear()
     group = GROUP_OF_SLUG.get(page["slug"])
@@ -1887,9 +2077,16 @@ def build_content_page(raw, page, id_to_url, extra_top=None, extra_bottom=None):
     main.append(section_tag)
     for node in (extra_bottom or []):
         main.append(node)
+    if not extra_bottom:
+        prevnext = build_page_prevnext(soup, page["slug"])
+        if prevnext is not None:
+            main.append(prevnext)
     main.append(build_related(soup, page["slug"]))
 
-    put_ld(soup, section_ld(page, headline))
+    data = section_ld(page, headline)
+    if extra_ld:
+        data["@graph"].append(extra_ld)
+    put_ld(soup, data)
     install_nav(soup, "pl", current=nav_current_for(page["slug"]))
     install_footer_links(soup, "pl")
     rewrite_anchors(soup, id_to_url=id_to_url)
@@ -1945,9 +2142,23 @@ def build_recording_page(raw, rec, id_to_url):
         a.string = "następne: %s →" % after["short"]
         prevnext.append(a)
 
+    audio_ld = {
+        "@type": "AudioObject",
+        "name": rec["short"],
+        "description": rec["desc"],
+        "inLanguage": "pl",
+        "isAccessibleForFree": True,
+        "url": SITE + "/" + rec["slug"] + "/",
+    }
+    if rec.get("seconds"):
+        hours, rest = divmod(int(rec["seconds"]), 3600)
+        minutes, seconds = divmod(rest, 60)
+        audio_ld["duration"] = "PT%dH%dM%dS" % (hours, minutes, seconds)
+
     return build_content_page(raw, rec, id_to_url,
                              extra_top=[meta, note],
-                             extra_bottom=[prevnext])
+                             extra_bottom=[prevnext],
+                             extra_ld=audio_ld)
 
 
 def hub_items(hub):
