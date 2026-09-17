@@ -324,6 +324,10 @@
   mobileMenuBtn.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
   mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+  if (isOpen) {
+    const firstLink = navLinks.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
   });
   // Close mobile menu when nav link is clicked
   navLinks.querySelectorAll('.nav-link').forEach(link => {
