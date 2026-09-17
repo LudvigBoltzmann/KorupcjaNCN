@@ -1,0 +1,192 @@
+{
+  "file": "index.html",
+  "bytes": 255779,
+  "html_chars": 251773,
+  "text_chars": 56668,
+  "text_words": 8323,
+  "section_count": 26,
+  "sections": [
+    {
+      "id": "",
+      "class": "hero",
+      "title": "Dr Witold Kilarski",
+      "chars": 302,
+      "words": 45
+    },
+    {
+      "id": "case",
+      "class": "section",
+      "title": "Korupcja w Narodowym Centrum Nauki",
+      "chars": 2353,
+      "words": 319
+    },
+    {
+      "id": "prokuratura-ochonska",
+      "class": "section",
+      "title": "Odmowa wszczęcia śledztwa przez prokuraturę",
+      "chars": 542,
+      "words": 70
+    },
+    {
+      "id": "interview",
+      "class": "interview-section",
+      "title": "Rozmowa z osobą NN",
+      "chars": 4872,
+      "words": 733
+    },
+    {
+      "id": "interview-3-4",
+      "class": "interview-section",
+      "title": "Rozmowa 2 — spotkanie osoby NN z dyrektorem NCN Zbigniewem Błockim — wtorek 2 czerwca 2020",
+      "chars": 3970,
+      "words": 567
+    },
+    {
+      "id": "interview-4",
+      "class": "interview-section",
+      "title": "Rozmowa 3 — „rozmowa ze Zbigniewem Blockim\" — czwartek 4 czerwca 2020",
+      "chars": 3594,
+      "words": 553
+    },
+    {
+      "id": "rec-4",
+      "class": "interview-section",
+      "title": "Nagranie 4 — 10 października 2020: NN o chęci odejścia z NCN",
+      "chars": 2505,
+      "words": 360
+    },
+    {
+      "id": "rec-5a",
+      "class": "interview-section",
+      "title": "Nagranie 5 (20 marca 2021) — jedna rozmowa w dwóch częściach",
+      "chars": 3472,
+      "words": 511
+    },
+    {
+      "id": "rec-6",
+      "class": "interview-section",
+      "title": "Nagranie 6 — telefon NN do mnie, gdy byłem w Jareniówce",
+      "chars": 3900,
+      "words": 564
+    },
+    {
+      "id": "rec-7",
+      "class": "interview-section",
+      "title": "Nagranie 7 — 30 września 2021: mechanizm zniszczenia Witolda",
+      "chars": 5257,
+      "words": 799
+    },
+    {
+      "id": "courts",
+      "class": "section",
+      "title": "Ukarany sygnalista, nie skorumpowani urzędnicy",
+      "chars": 892,
+      "words": 124
+    },
+    {
+      "id": "documents",
+      "class": "section",
+      "title": "Kluczowe dowody",
+      "chars": 785,
+      "words": 101
+    },
+    {
+      "id": "uj-inaction",
+      "class": "section",
+      "title": "Bezczynność Uniwersytetu Jagiellońskiego (marzec 2026 – lipiec 2026)",
+      "chars": 1029,
+      "words": 145
+    },
+    {
+      "id": "sprawa-blocki-babik-liana",
+      "class": "section",
+      "title": "Sprawa przeciwko byłemu dyrektorowi NCN Zbigniewowi Błockiemu, prof. Wiesławowi Babikowi (UJ) oraz wicedyrektorowi NCN Marcinowi Lianie",
+      "chars": 1143,
+      "words": 153
+    },
+    {
+      "id": "blocki-cyngiel",
+      "class": "section",
+      "title": "WUM odcina mnie po piśmie Dyrektora NCN — jeden e-mail, który mówi wszystko",
+      "chars": 2450,
+      "words": 356
+    },
+    {
+      "id": "mudelsee",
+      "class": "section",
+      "title": "NCN ignoruje seryjne (maszynowe) pisanie recenzji — sprawa Manfreda Mudelsee",
+      "chars": 982,
+      "words": 127
+    },
+    {
+      "id": "timeline",
+      "class": "section",
+      "title": "Kluczowe daty",
+      "chars": 1194,
+      "words": 168
+    },
+    {
+      "id": "about",
+      "class": "section",
+      "title": "Dr Witold Kilarski",
+      "chars": 1017,
+      "words": 144
+    },
+    {
+      "id": "wniosek-kontrola-ncn",
+      "class": "listotwarty-section",
+      "title": "Wniosek o kontrolę w trybie nadzoru nad Narodowym Centrum Nauki i Uniwersytetem Jagiellońskim",
+      "chars": 1613,
+      "words": 233
+    },
+    {
+      "id": "list-otwarty",
+      "class": "listotwarty-section",
+      "title": "Do Prezesa Rady Ministrów Donalda Tuska i Ministra Sprawiedliwości Waldemara Żurka",
+      "chars": 1885,
+      "words": 242
+    },
+    {
+      "id": "ukraina",
+      "class": "ukraina-section",
+      "title": "Jestem dla Was — każdego, kto czuje się zastraszany",
+      "chars": 1835,
+      "words": 292
+    },
+    {
+      "id": "kulturowe-analogie",
+      "class": "kultura-section",
+      "title": "Czasem pieśń mówi więcej niż akta sądowe",
+      "chars": 2198,
+      "words": 364
+    },
+    {
+      "id": "wyrok-kafkowski",
+      "class": "komornik-section",
+      "title": "Wyrok w trybie kafkowskim. Sprawa I C 1671/22 — apelacja odrzucona bez mojej wiedzy, komornik już ściąga pieniądze",
+      "chars": 865,
+      "words": 141
+    },
+    {
+      "id": "komornik",
+      "class": "komornik-section",
+      "title": "Sprawa komornika — represja wobec sygnalisty",
+      "chars": 1531,
+      "words": 222
+    },
+    {
+      "id": "comments",
+      "class": "section comments-section",
+      "title": "Dyskusja",
+      "chars": 228,
+      "words": 31
+    },
+    {
+      "id": "sprostowania",
+      "class": "section",
+      "title": "Sprostowania i korekty",
+      "chars": 370,
+      "words": 52
+    }
+  ]
+}

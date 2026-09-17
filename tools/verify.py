@@ -19,7 +19,8 @@ from urllib.parse import unquote, urlparse
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build import BASE, LANGS, LANG_URL, SECTIONS, SITE, HTML_LANG  # noqa: E402
+from build import (BASE, LANGS, LANG_URL, SECTIONS, SITE, HTML_LANG,  # noqa: E402
+                   CONTENT_PAGES, RECORDINGS, HUBS, NAV_TABS, sitemap_slugs)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -28,7 +29,11 @@ NATIVE_FRAGMENTS = {"", "top"}
 
 PAGES = [("index.html", "pl")]
 PAGES += [("%s/index.html" % l, l) for l in LANGS if l != "pl"]
-PAGES += [("%s/index.html" % s["slug"], "pl") for s in SECTIONS]
+PAGES += [("%s/index.html" % h["slug"], "pl") for h in HUBS]
+PAGES += [("%s/index.html" % p["slug"], "pl") for p in CONTENT_PAGES]
+PAGES += [("%s/index.html" % r["slug"], "pl") for r in RECORDINGS]
+PAGES += [("skorowidz/index.html", "pl")]
+PAGES += [("%s/skorowidz/index.html" % l, l) for l in LANGS if l != "pl"]
 
 LANG_PAGES = ["index.html"] + ["%s/index.html" % l for l in LANGS if l != "pl"]
 
@@ -247,14 +252,14 @@ def check_no_hash_leftovers(rep):
         rep.fail("sitemap.xml zawiera URL-e z fragmentami: %s" % hashed[:5])
         bad = True
     locs = re.findall(r"<loc>([^<]+)</loc>", sitemap)
-    expected = len(SECTIONS) + 5
+    expected = len(sitemap_slugs()) + 5
     if len(locs) != expected:
         rep.fail("sitemap.xml: %d URL-i (oczekiwano %d)" % (len(locs), expected))
         bad = True
     else:
         rep.ok("sitemap.xml — %d URL-i, bez fragmentow" % len(locs))
     expected_locs = [LANG_URL[l] for l in LANGS] + \
-                    ["%s/%s/" % (SITE, s["slug"]) for s in SECTIONS]
+                    ["%s/%s/" % (SITE, slug) for slug, _p in sitemap_slugs()]
     if locs and locs != expected_locs:
         rep.fail("sitemap.xml: nieoczekiwana lista URL-i")
         bad = True
@@ -280,7 +285,7 @@ def check_extras(rep):
         for needle, count in hits.items():
             rep.fail("martwy link audio nadal obecny (%d stron): %s" % (count, needle))
     else:
-        rep.ok("brak martwych linkow audio na wszystkich %d stronach" % (len(SECTIONS) + 5))
+        rep.ok("brak martwych linkow audio na wszystkich %d stronach" % len(PAGES))
 
     for path, _lang in PAGES:
         raw, soup = load(path)
@@ -325,16 +330,90 @@ def check_extras(rep):
         rep.fail("404.html bez meta robots=noindex")
     else:
         links = {a["href"] for a in soup.find_all("a", href=True)}
-        needed = {BASE + "/" + s["slug"] + "/" for s in SECTIONS} | {BASE + "/"}
+        needed = {BASE + "/" + s["slug"] + "/" for s in CONTENT_PAGES} | \
+                 {BASE + "/" + h["slug"] + "/" for h in HUBS} | {BASE + "/"}
         if not needed.issubset(links):
             rep.fail("404.html: brak linkow do %s" % sorted(needed - links))
         else:
-            rep.ok("404.html — noindex, linki do strony glownej i 8 stron sekcyjnych")
+            rep.ok("404.html — noindex, linki do strony glownej, hubów i podstron")
 
     for path, _lang in PAGES:
         raw, soup = load(path)
         if soup.find("base") is not None:
             rep.fail("%s: znaleziono tag <base>" % path)
+
+
+def check_navigation(rep):
+    """10. Menu: dokladnie szesc klikalnych zakladek, zaden drugi rzad."""
+    rep.head("10. Nawigacja — dokladnie 6 zakladek, kazda klikalna, jeden rzad")
+    expected_keys = [key for key, _href, _labels in NAV_TABS]
+    for path, lang in PAGES:
+        raw, soup = load(path)
+        nav = soup.find("nav", id="nav-links")
+        problems = []
+        if nav is None:
+            problems.append("brak nav#nav-links")
+        else:
+            links = nav.find_all("a", recursive=False)
+            if len(links) != 6:
+                problems.append("%d zakladek (oczekiwano 6)" % len(links))
+            if [a.get("data-nav") for a in links] != expected_keys:
+                problems.append("inna kolejnosc/zestaw zakladek")
+            for a in links:
+                href = (a.get("href") or "").strip()
+                if not href or href.startswith("#"):
+                    problems.append("zakladka bez wlasnego adresu: %r" % href)
+                label = a.get_text(" ", strip=True)
+                for forbidden in ("Blocki cyngiel", "maszynowe recenzje",
+                                  "Nagranie ", "List otwarty"):
+                    if forbidden.lower() in label.lower():
+                        problems.append("zabroniona etykieta menu: %s" % label)
+        if soup.find("nav", class_="sub-nav") is not None:
+            problems.append("pozostal drugi rzad zakladek (nav.sub-nav)")
+        if "nav.classList.contains('open')" not in raw:
+            problems.append("brak obslugi Escape dla menu mobilnego")
+        if problems:
+            rep.fail("%s: %s" % (path, "; ".join(problems)))
+    if not rep.lines[-1].startswith("  BLAD"):
+        rep.ok("menu — 6 klikalnych zakladek na wszystkich %d stronach, "
+               "bez drugiego rzedu" % len(PAGES))
+
+
+def check_headings(rep):
+    """11. Hierarchia naglowkow: dokladnie jeden H1 na stronie."""
+    rep.head("11. Hierarchia naglowkow (jeden H1 na stronie)")
+    bad = 0
+    for path, _lang in PAGES:
+        raw, soup = load(path)
+        h1 = soup.find_all("h1")
+        if len(h1) != 1:
+            rep.fail("%s: %d naglowkow H1" % (path, len(h1)))
+            bad += 1
+    if not bad:
+        rep.ok("kazda z %d stron ma dokladnie jeden H1" % len(PAGES))
+
+
+def check_recordings(rep):
+    """12. Podstrony nagran: metryczka, nota o numeracji, poprzednie/nastepne."""
+    rep.head("12. Podstrony nagran (metryczka, numeracja, nawigacja)")
+    for rec in RECORDINGS:
+        path = "%s/index.html" % rec["slug"]
+        raw, soup = load(path)
+        problems = []
+        if soup.find("ul", class_="rec-meta") is None:
+            problems.append("brak metryczki (data/uczestnicy/czas)")
+        if "errata-numeracja-nagran" not in raw:
+            problems.append("brak linku do noty o numeracji")
+        nav = soup.find("nav", class_="rec-prevnext")
+        if nav is None:
+            problems.append("brak nawigacji poprzednie/nastepne")
+        for audio in soup.find_all("audio"):
+            if audio.has_attr("autoplay"):
+                problems.append("odtwarzacz z autoplay")
+        if problems:
+            rep.fail("%s: %s" % (path, "; ".join(problems)))
+        else:
+            rep.ok("%s — metryczka, nota o numeracji, nawigacja, bez autoplay" % path)
 
 
 def main():
@@ -343,8 +422,9 @@ def main():
     rep = Report()
     rep.lines.append("RAPORT WERYFIKACJI — KorupcjaNCN, Pakiet B")
     rep.lines.append("Katalog: %s" % ROOT)
-    rep.lines.append("Stron sprawdzanych: %d (5 jezykowych + 8 sekcyjnych) + 404.html"
-                     % len(PAGES))
+    rep.lines.append("Stron sprawdzanych: %d (5 jezykowych + %d hubow + %d podstron "
+                     "tresci + %d nagran + 5 skorowidzow) + 404.html"
+                     % (len(PAGES), len(HUBS), len(CONTENT_PAGES), len(RECORDINGS)))
 
     check_parsing_and_ids(rep)
     check_head_uniqueness(rep)
@@ -355,6 +435,9 @@ def main():
     check_hreflang(rep)
     check_no_hash_leftovers(rep)
     check_extras(rep)
+    check_navigation(rep)
+    check_headings(rep)
+    check_recordings(rep)
 
     rep.head("PODSUMOWANIE")
     if rep.errors:
