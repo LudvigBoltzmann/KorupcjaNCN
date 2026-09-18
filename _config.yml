@@ -1,0 +1,8 @@
+# Keep working files in Git, but do not serve them as public website pages.
+# Evidence files under docs/ remain published unchanged.
+exclude:
+  - src
+  - tools
+  - backup
+  - raport
+  - site-content.json

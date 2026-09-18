@@ -11,6 +11,7 @@ Kod wyjscia 0 = raport bez bledow.
 from __future__ import annotations
 
 import os
+import json
 import re
 import sys
 from collections import Counter
@@ -438,6 +439,47 @@ def check_recordings(rep):
             rep.ok("%s — metryczka, nota o numeracji, nawigacja, bez autoplay" % path)
 
 
+def check_publication_hygiene(rep):
+    from site_hygiene import EXCLUDE_PATHS
+    rep.head("13. Higiena publikacji i zgodnosc metadanych z odtwarzaczami")
+    with open(os.path.join(ROOT, "_config.yml"), encoding="utf-8") as fh:
+        config = fh.read()
+    for item in EXCLUDE_PATHS:
+        if "- " + item not in config:
+            rep.fail("brak wylaczenia z publikacji: %s" % item)
+    if re.search(r"^\s*-\s*docs/?\s*$", config, re.M):
+        rep.fail("dokumenty docs/ zostaly wylaczone z publikacji")
+    before = rep.errors
+    for path, _lang in PAGES:
+        _, soup = load(path)
+        graph = []
+        for script in soup.select('script[type="application/ld+json"]'):
+            data = json.loads(script.string)
+            graph.extend(data.get("@graph", [data]))
+        if any(n.get("@type") == "FAQPage" for n in graph):
+            rep.fail("%s: pozostal niewidoczny FAQ" % path)
+        audios = [n for n in graph if n.get("@type") == "AudioObject"]
+        players = soup.find_all("audio")
+        actual = set()
+        for audio in players:
+            source = audio.find("source", src=True)
+            src = audio.get("src") or (source.get("src") if source else None)
+            if src:
+                actual.add(SITE + src if src.startswith("/") else src)
+        claimed = {n.get("contentUrl") for n in audios}
+        if claimed != actual or len(audios) != len(players):
+            rep.fail("%s: metadane audio nie odpowiadaja odtwarzaczom" % path)
+        for node in graph:
+            if node.get("@type") == "Article" and "datePublished" in node:
+                rep.fail("%s: odziedziczona niezweryfikowana data publikacji" % path)
+        for a in soup.find_all("a", href=True):
+            if any(a["href"].startswith(BASE + "/" + item + "/")
+                   or a["href"] == BASE + "/" + item for item in EXCLUDE_PATHS):
+                rep.fail("%s: link do pliku wykluczonego z publikacji" % path)
+    if rep.errors == before:
+        rep.ok("pliki robocze wykluczone; brak starego FAQ; audio zgodne z trescia")
+
+
 def main():
     out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
         os.path.dirname(ROOT), "verify-report.txt")
@@ -460,6 +502,7 @@ def main():
     check_navigation(rep)
     check_headings(rep)
     check_recordings(rep)
+    check_publication_hygiene(rep)
 
     rep.head("PODSUMOWANIE")
     if rep.errors:

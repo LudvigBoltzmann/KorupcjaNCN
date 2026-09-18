@@ -30,6 +30,7 @@ from collections import Counter
 from urllib.parse import unquote, urlparse
 
 from bs4 import BeautifulSoup, Comment
+from site_hygiene import clean_metadata
 
 # --------------------------------------------------------------------------
 # Konfiguracja
@@ -1967,6 +1968,8 @@ def finish(soup, path):
     lang = soup.html.get("lang", "pl")
     localize_navigation(soup, lang)
     youtube_facade(soup, soup.html.get("lang", "pl"))
+    absolutize_assets(soup)
+    clean_metadata(soup)
     localize_fonts(soup)
     preload_fonts(soup)
     speed_polish(soup)
@@ -2396,20 +2399,13 @@ def build_sitemap():
         lines.append("  <url>")
         lines.append("    <loc>%s</loc>" % LANG_URL[lang])
         lines.append("    <lastmod>%s</lastmod>" % BUILD_DATE)
-        lines.append("    <changefreq>%s</changefreq>"
-                     % ("weekly" if lang == "pl" else "monthly"))
-        lines.append("    <priority>%s</priority>" % ("1.0" if lang == "pl" else "0.8"))
         lines.extend(cluster)
-        if lang == "pl":
-            lines.append(VIDEO_BLOCK.rstrip("\n"))
         lines.append("  </url>")
 
     for slug, priority in sitemap_slugs():
         lines.append("  <url>")
         lines.append("    <loc>%s/%s/</loc>" % (SITE, slug))
         lines.append("    <lastmod>%s</lastmod>" % BUILD_DATE)
-        lines.append("    <changefreq>monthly</changefreq>")
-        lines.append("    <priority>%s</priority>" % priority)
         lines.append("  </url>")
 
     lines.append("</urlset>")

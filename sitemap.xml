@@ -5,37 +5,16 @@
   <url>
     <loc>https://whistleblower.witekkilarski.org/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/"/>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/Z7DH_iRY78w/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Korupcja w Narodowym Centrum Nauki (NCN) — Whistleblower documentary</video:title>
-      <video:description>Documentary about corruption at Poland's National Science Centre (NCN). Dr Witold Kilarski exposes blackmail, nepotism, and cover-up by NCN Director Zbigniew Błocki.</video:description>
-      <video:content_loc>https://www.youtube.com/watch?v=Z7DH_iRY78w</video:content_loc>
-      <video:player_loc>https://www.youtube.com/embed/Z7DH_iRY78w</video:player_loc>
-      <video:duration>192</video:duration>
-      <video:publication_date>2026-03-03</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>Narodowe Centrum Nauki</video:tag>
-      <video:tag>NCN</video:tag>
-      <video:tag>korupcja</video:tag>
-      <video:tag>sygnalista</video:tag>
-      <video:tag>whistleblower</video:tag>
-      <video:tag>Zbigniew Błocki</video:tag>
-      <video:category>News &amp; Politics</video:category>
-    </video:video>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/en/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/"/>
@@ -46,8 +25,6 @@
   <url>
     <loc>https://whistleblower.witekkilarski.org/fr/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/"/>
@@ -58,8 +35,6 @@
   <url>
     <loc>https://whistleblower.witekkilarski.org/de/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/"/>
@@ -70,8 +45,6 @@
   <url>
     <loc>https://whistleblower.witekkilarski.org/uk/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/"/>
@@ -82,205 +55,137 @@
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/postepowania/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/instytucje/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/o-mnie/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprostowania/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprawa-komornika/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wyrok-kafkowski/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/bezczynnosc-uj/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/blocki-babik-liana/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/dokumenty/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprawy-sadowe/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/prokuratura/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wprowadzenie/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/chronologia/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/cv/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/list-otwarty/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/pomoc-ukraincom/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/kulturowe-analogie/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/dyskusja/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/1/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/2/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/3/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/4/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/5/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/6/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/7/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/en/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/fr/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/de/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/uk/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
 </urlset>
