@@ -38,7 +38,9 @@ jobs:
         run: python3 tools/build.py
 
       - name: Verify
-        run: python3 tools/verify.py verify-report.txt
+        run: |
+          python3 tools/verify.py verify-report.txt
+          python3 tools/verify_multilingual.py
 
       - name: Commit and push if changed
         run: |

@@ -55,137 +55,1501 @@
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/postepowania/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/postepowania/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/instytucje/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/instytucje/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/o-mnie/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprostowania/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprawa-komornika/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wyrok-kafkowski/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/bezczynnosc-uj/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/blocki-babik-liana/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/dokumenty/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/sprawy-sadowe/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/prokuratura/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wprowadzenie/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/chronologia/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/chronologia/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/cv/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/cv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/cv/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/cv/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/list-otwarty/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/pomoc-ukraincom/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/kulturowe-analogie/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/dyskusja/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/1/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/2/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/3/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/4/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/5/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/6/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/nagrania/7/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/en/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/fr/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/de/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
   </url>
   <url>
     <loc>https://whistleblower.witekkilarski.org/uk/skorowidz/</loc>
     <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/skorowidz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/skorowidz/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/postepowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/instytucje/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/o-mnie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/sprostowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/wniosek-o-kontrole-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/sprawa-komornika/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/wyrok-kafkowski/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/bezczynnosc-uj/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/blocki-babik-liana/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/maszynowe-recenzje-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/dokumenty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/sprawy-sadowe/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/prokuratura/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/wprowadzenie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/chronologia/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/cv/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/cv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/cv/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/cv/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/wum-blocki-cyngiel/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/list-otwarty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/pomoc-ukraincom/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/kulturowe-analogie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/dyskusja/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/1/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/2/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/3/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/4/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/5/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/6/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/en/nagrania/7/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/postepowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/instytucje/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/o-mnie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/sprostowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/wniosek-o-kontrole-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/sprawa-komornika/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/wyrok-kafkowski/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/bezczynnosc-uj/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/blocki-babik-liana/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/maszynowe-recenzje-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/dokumenty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/sprawy-sadowe/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/prokuratura/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/wprowadzenie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/chronologia/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/cv/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/cv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/cv/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/cv/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/wum-blocki-cyngiel/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/list-otwarty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/pomoc-ukraincom/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/kulturowe-analogie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/dyskusja/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/1/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/2/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/3/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/4/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/5/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/6/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/fr/nagrania/7/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/postepowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/instytucje/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/o-mnie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/sprostowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/wniosek-o-kontrole-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/sprawa-komornika/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/wyrok-kafkowski/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/bezczynnosc-uj/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/blocki-babik-liana/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/maszynowe-recenzje-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/dokumenty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/sprawy-sadowe/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/prokuratura/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/wprowadzenie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/chronologia/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/cv/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/cv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/cv/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/cv/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/wum-blocki-cyngiel/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/list-otwarty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/pomoc-ukraincom/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/kulturowe-analogie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/dyskusja/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/1/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/2/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/3/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/4/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/5/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/6/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/de/nagrania/7/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/postepowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/postepowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/postepowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/instytucje/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/instytucje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/instytucje/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/o-mnie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/o-mnie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/o-mnie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/sprostowania/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprostowania/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprostowania/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/wniosek-o-kontrole-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wniosek-o-kontrole-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wniosek-o-kontrole-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/sprawa-komornika/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawa-komornika/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawa-komornika/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/wyrok-kafkowski/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wyrok-kafkowski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wyrok-kafkowski/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/bezczynnosc-uj/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/bezczynnosc-uj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/bezczynnosc-uj/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/blocki-babik-liana/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/blocki-babik-liana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/blocki-babik-liana/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/maszynowe-recenzje-ncn/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/maszynowe-recenzje-ncn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/maszynowe-recenzje-ncn/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/dokumenty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dokumenty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dokumenty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/sprawy-sadowe/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/sprawy-sadowe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/sprawy-sadowe/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/prokuratura/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/prokuratura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/prokuratura/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/wprowadzenie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wprowadzenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wprowadzenie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/chronologia/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/chronologia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/chronologia/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/cv/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/cv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/cv/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/cv/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/wum-blocki-cyngiel/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/wum-blocki-cyngiel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/wum-blocki-cyngiel/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/list-otwarty/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/list-otwarty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/list-otwarty/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/pomoc-ukraincom/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/pomoc-ukraincom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/pomoc-ukraincom/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/kulturowe-analogie/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/kulturowe-analogie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/kulturowe-analogie/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/dyskusja/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/dyskusja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/dyskusja/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/1/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/1/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/1/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/2/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/2/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/3/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/3/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/3/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/4/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/4/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/4/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/5/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/5/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/5/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/6/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/6/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/6/"/>
+  </url>
+  <url>
+    <loc>https://whistleblower.witekkilarski.org/uk/nagrania/7/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whistleblower.witekkilarski.org/en/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://whistleblower.witekkilarski.org/fr/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://whistleblower.witekkilarski.org/de/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://whistleblower.witekkilarski.org/uk/nagrania/7/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whistleblower.witekkilarski.org/nagrania/7/"/>
   </url>
 </urlset>

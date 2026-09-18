@@ -31,6 +31,7 @@ from urllib.parse import unquote, urlparse
 
 from bs4 import BeautifulSoup, Comment
 from site_hygiene import clean_metadata
+from multilingual import build_translations, page_slugs
 
 # --------------------------------------------------------------------------
 # Konfiguracja
@@ -2406,6 +2407,13 @@ def build_sitemap():
         lines.append("  <url>")
         lines.append("    <loc>%s/%s/</loc>" % (SITE, slug))
         lines.append("    <lastmod>%s</lastmod>" % BUILD_DATE)
+        parts = slug.split("/", 1)
+        local_slug = parts[1] if parts[0] in LANGS[1:] else slug
+        for other in LANGS + ["x-default"]:
+            language = "pl" if other == "x-default" else other
+            prefix = "" if language == "pl" else language + "/"
+            lines.append('    <xhtml:link rel="alternate" hreflang="%s" href="%s/%s%s/"/>'
+                         % (other, SITE, prefix, local_slug))
         lines.append("  </url>")
 
     lines.append("</urlset>")
@@ -2476,6 +2484,8 @@ def sitemap_slugs():
     out += [(r["slug"], "0.7") for r in RECORDINGS]
     out += [("skorowidz", "0.5")]
     out += [("%s/skorowidz" % l, "0.4") for l in LANGS if l != "pl"]
+    translated = [h["slug"] for h in HUBS] + [p["slug"] for p in CONTENT_PAGES + RECORDINGS]
+    out += [(lang + "/" + slug, "0.7") for lang in LANGS[1:] for slug in translated]
     return out
 
 
@@ -2532,6 +2542,7 @@ def check_inline_js(paths=None):
     import subprocess
     import tempfile
     problems = []
+    checked_code = set()
     for rel in (paths or all_generated_paths()):
         with open(os.path.join(ROOT, rel), encoding="utf-8") as fh:
             soup = BeautifulSoup(fh.read(), "html.parser")
@@ -2541,6 +2552,9 @@ def check_inline_js(paths=None):
             code = script.string or ""
             if not code.strip():
                 continue
+            if code in checked_code:
+                continue
+            checked_code.add(code)
             with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False,
                                              encoding="utf-8") as tmp:
                 tmp.write(code)
@@ -2614,6 +2628,7 @@ def main():
         written.append(build_recording_page(raw, rec, id_to_url))
     for lang in LANGS:
         written.append(build_skorowidz_page(raw, lang, id_to_url))
+    written.extend(build_translations(sys.modules[__name__]))
     written.append(build_sitemap())
     written.append(build_404())
     check_robots()

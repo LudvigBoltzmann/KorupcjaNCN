@@ -1,5 +1,22 @@
 # tools — generowanie stron witryny
 
+## Stan od 18 września 2026: pięć pełnych wersji językowych
+
+Każdy język ma 31 stron: krótką stronę główną, cztery huby,
+18 stron tematycznych, siedem nagrań oraz skorowidz. Łącznie 155 adresów
+w sitemapie; strona 404 nie jest indeksowana.
+
+`multilingual.py` dzieli istniejące tłumaczenia z `src/index.src.html`.
+Nie tworzy nowych tłumaczeń podczas budowania. Uzupełnienia sprostowań i OCTOPUS
+są zapisane w `src/translations/`. Kotwice starych długich stron prowadzą
+do nowych podstron. Przełącznik języka oraz hreflang wskazują odpowiedniki
+tej samej podstrony, nie zawsze stronę główną.
+
+Po zmianach uruchom także `python3 tools/verify_multilingual.py`.
+Test sprawdza zachowanie istniejącego tekstu, skrócenie stron głównych,
+kompletność nowych sprostowań/OCTOPUS i kotwice między stronami.
+Poniższe sekcje dokumentują również wcześniejsze etapy rozwoju generatora.
+
 Witryna jest generowana z **jednego** pliku źródłowego: `src/index.src.html`
 (pięciojęzyczny monolit z blokami `<div class="lang-block" data-lang="…">`).
 

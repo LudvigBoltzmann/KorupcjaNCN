@@ -35,6 +35,8 @@ PAGES += [("%s/index.html" % p["slug"], "pl") for p in CONTENT_PAGES]
 PAGES += [("%s/index.html" % r["slug"], "pl") for r in RECORDINGS]
 PAGES += [("skorowidz/index.html", "pl")]
 PAGES += [("%s/skorowidz/index.html" % l, l) for l in LANGS if l != "pl"]
+PAGES += [(lang + "/" + p["slug"] + "/index.html", lang)
+          for lang in LANGS[1:] for p in HUBS + CONTENT_PAGES + RECORDINGS]
 
 LANG_PAGES = ["index.html"] + ["%s/index.html" % l for l in LANGS if l != "pl"]
 
@@ -208,10 +210,14 @@ def check_sizes(rep):
 
 
 def check_hreflang(rep):
-    rep.head("7. Klaster hreflang (5 stron jezykowych x 6 wpisow)")
-    expected = {l: LANG_URL[l] for l in LANGS}
-    expected["x-default"] = LANG_URL["pl"]
-    for path in LANG_PAGES:
+    rep.head("7. Wzajemne wersje jezykowe kazdej podstrony")
+    for path, lang in PAGES:
+        slug = os.path.dirname(path)
+        if lang != "pl":
+            slug = slug[len(lang):].strip("/")
+        expected = {l: SITE + "/" + (l + "/" if l != "pl" else "") +
+                    (slug + "/" if slug else "") for l in LANGS}
+        expected["x-default"] = expected["pl"]
         raw, soup = load(path)
         found = {}
         duplicated = []
@@ -226,14 +232,9 @@ def check_hreflang(rep):
             rep.fail("%s: klaster niezgodny: %s" % (path, found))
         else:
             rep.ok("%s — 6 wpisow, wszystkie URL-e zgodne" % path)
-    for path, _lang in PAGES[len(LANG_PAGES):]:
-        raw, soup = load(path)
-        count = len(soup.find_all("link", attrs={"rel": ["alternate"]}))
-        if count:
-            rep.fail("%s: strona sekcyjna nie powinna miec hreflang (%d wpisow)"
-                     % (path, count))
-        else:
-            rep.ok("%s — brak hreflang (zgodnie ze specyfikacja)" % path)
+        links=soup.select(".lang-switcher a")
+        if {a.get("hreflang"): SITE+a["href"] for a in links} != {k:v for k,v in expected.items() if k!="x-default"}:
+            rep.fail("%s: przelacznik nie prowadzi do odpowiednikow strony" % path)
 
 
 def check_no_hash_leftovers(rep):
@@ -377,7 +378,7 @@ def check_navigation(rep):
         if lang != "pl":
             prefix = BASE + "/" + lang + "/"
             for a in soup.find_all("a", href=True):
-                if "lang-btn" in (a.get("class") or []):
+                if "lang-btn" in (a.get("class") or []) or a.get("data-original"):
                     continue
                 href = a["href"]
                 parsed = urlparse(href)
