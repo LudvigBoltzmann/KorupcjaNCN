@@ -347,6 +347,7 @@ def check_navigation(rep):
     """10. Menu: dokladnie szesc klikalnych zakladek, zaden drugi rzad."""
     rep.head("10. Nawigacja — dokladnie 6 zakladek, kazda klikalna, jeden rzad")
     expected_keys = [key for key, _href, _labels in NAV_TABS]
+    target_ids = {}
     for path, lang in PAGES:
         raw, soup = load(path)
         nav = soup.find("nav", id="nav-links")
@@ -372,6 +373,27 @@ def check_navigation(rep):
             problems.append("pozostal drugi rzad zakladek (nav.sub-nav)")
         if "nav.classList.contains('open')" not in raw:
             problems.append("brak obslugi Escape dla menu mobilnego")
+        if lang != "pl":
+            prefix = BASE + "/" + lang + "/"
+            for a in soup.find_all("a", href=True):
+                if "lang-btn" in (a.get("class") or []):
+                    continue
+                href = a["href"]
+                parsed = urlparse(href)
+                if parsed.scheme or parsed.netloc or not parsed.path:
+                    continue
+                if parsed.path.startswith(BASE + "/docs/") or parsed.path == BASE + "/animation-en.html":
+                    continue
+                if not parsed.path.startswith(prefix):
+                    problems.append("link opuszcza wybrany jezyk: %s" % href)
+                    continue
+                if parsed.fragment and parsed.fragment not in NATIVE_FRAGMENTS:
+                    target_path = url_to_path(href)
+                    if target_path not in target_ids:
+                        _, target_soup = load(target_path)
+                        target_ids[target_path] = {e["id"] for e in target_soup.find_all(id=True)}
+                    if unquote(parsed.fragment) not in target_ids[target_path]:
+                        problems.append("brak przetlumaczonego celu: %s" % href)
         if problems:
             rep.fail("%s: %s" % (path, "; ".join(problems)))
     if not rep.lines[-1].startswith("  BLAD"):

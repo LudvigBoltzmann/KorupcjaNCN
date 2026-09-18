@@ -501,31 +501,35 @@ SKOROWIDZ_META = {
            "видалено — лише переміщено."),
 }
 
-# Dokladnie szesc zakladek menu (Zadanie 3). Etykiety PL dokladnie jak
-# w zleceniu. Dla jezykow bez tlumaczenia etykiet uzywamy wersji angielskiej
-# (odnotowane w raporcie).
+# Six sections; translated versions currently retain their full single page.
 NAV_TABS = [
-    ("sprawa", BASE + "/", {"pl": "Sprawa", "en": "Case", "fr": "Case",
-                            "de": "Case", "uk": "Case"}),
+    ("sprawa", BASE + "/", {"pl": "Sprawa", "en": "Case", "fr": "L’affaire",
+                            "de": "Der Fall", "uk": "Справа"}),
     ("nagrania", BASE + "/nagrania/", {"pl": "Nagrania", "en": "Recordings",
-                                       "fr": "Recordings", "de": "Recordings",
-                                       "uk": "Recordings"}),
+                                       "fr": "Enregistrements", "de": "Aufnahmen",
+                                       "uk": "Записи"}),
     ("dokumenty", BASE + "/dokumenty/", {"pl": "Dokumenty", "en": "Documents",
-                                         "fr": "Documents", "de": "Documents",
-                                         "uk": "Documents"}),
+                                         "fr": "Documents", "de": "Dokumente",
+                                         "uk": "Документи"}),
     ("postepowania", BASE + "/postepowania/", {"pl": "Postępowania",
                                                "en": "Proceedings",
-                                               "fr": "Proceedings",
-                                               "de": "Proceedings",
-                                               "uk": "Proceedings"}),
+                                               "fr": "Procédures",
+                                               "de": "Verfahren",
+                                               "uk": "Провадження"}),
     ("instytucje", BASE + "/instytucje/", {"pl": "Instytucje", "en": "Institutions",
                                            "fr": "Institutions",
-                                           "de": "Institutions",
-                                           "uk": "Institutions"}),
+                                           "de": "Institutionen",
+                                           "uk": "Установи"}),
     ("o-mnie", BASE + "/o-mnie/", {"pl": "O mnie", "en": "About me",
-                                   "fr": "About me", "de": "About me",
-                                   "uk": "About me"}),
+                                   "fr": "À propos", "de": "Über mich",
+                                   "uk": "Про мене"}),
 ]
+
+LANG_NAV_ANCHORS = {
+    "sprawa": "case", "nagrania": "interview", "dokumenty": "documents",
+    "postepowania": "prokuratura-ochonska", "instytucje": "mudelsee",
+    "o-mnie": "about",
+}
 
 FOOTER_LINKS = {
     "pl": [(BASE + "/skorowidz/", "Pełne archiwum — skorowidz"),
@@ -535,15 +539,15 @@ FOOTER_LINKS = {
     "en": [(BASE + "/en/skorowidz/", "Full archive — index"),
            (BASE + "/nagrania/", "Recordings 1–7"),
            (BASE + "/sprostowania/", "Corrections")],
-    "fr": [(BASE + "/fr/skorowidz/", "Full archive — index"),
-           (BASE + "/nagrania/", "Recordings 1–7"),
-           (BASE + "/sprostowania/", "Corrections")],
-    "de": [(BASE + "/de/skorowidz/", "Full archive — index"),
-           (BASE + "/nagrania/", "Recordings 1–7"),
-           (BASE + "/sprostowania/", "Corrections")],
-    "uk": [(BASE + "/uk/skorowidz/", "Full archive — index"),
-           (BASE + "/nagrania/", "Recordings 1–7"),
-           (BASE + "/sprostowania/", "Corrections")],
+    "fr": [(BASE + "/fr/skorowidz/", "Archives complètes · index"),
+           (BASE + "/nagrania/", "Enregistrements 1–7"),
+           (BASE + "/sprostowania/", "Rectifications")],
+    "de": [(BASE + "/de/skorowidz/", "Vollständiges Archiv · Index"),
+           (BASE + "/nagrania/", "Aufnahmen 1–7"),
+           (BASE + "/sprostowania/", "Korrekturen")],
+    "uk": [(BASE + "/uk/skorowidz/", "Повний архів · покажчик"),
+           (BASE + "/nagrania/", "Записи 1–7"),
+           (BASE + "/sprostowania/", "Виправлення")],
 }
 
 # Wszystkie strony PL z trescia (dawne SECTIONS + sekcje przeniesione).
@@ -1437,6 +1441,8 @@ def install_nav(soup, lang, current=None):
     expect(nav is not None, "brak nav#nav-links")
     nav.clear()
     for key, href, labels in NAV_TABS:
+        if lang != "pl":
+            href = LANG_PATH[lang] + "#" + LANG_NAV_ANCHORS[key]
         a = soup.new_tag("a", href=href)
         a["class"] = ["nav-link"]
         a["data-nav"] = key
@@ -1922,7 +1928,44 @@ def speed_polish(soup):
             img["height"] = str(dims[1])
 
 
+def localize_navigation(soup, lang):
+    """Keep navigation within the chosen language, not the Polish section pages.
+
+    Original documents and deliberate language-switch links are never rewritten.
+    Translated section text lives at /<language>/#<section>; indexes are separate.
+    """
+    if lang == "pl":
+        return
+    home = LANG_PATH[lang]
+    targets = {BASE + "/" + p["slug"] + "/": p["id"]
+               for p in CONTENT_PAGES + RECORDINGS}
+    targets.update({BASE + "/" + key + "/": anchor
+                    for key, anchor in LANG_NAV_ANCHORS.items()
+                    if key != "sprawa"})
+    for a in soup.find_all("a", href=True):
+        if "lang-btn" in (a.get("class") or []):
+            continue
+        href = a["href"]
+        parsed = urlparse(href)
+        if parsed.scheme and parsed.netloc not in {
+                "whistleblower.witekkilarski.org", "witekkilarski.org",
+                "www.witekkilarski.org"}:
+            continue
+        if parsed.netloc and not parsed.scheme:
+            continue
+        path = parsed.path
+        if path in {BASE + "/", BASE + "/index.html"}:
+            a["href"] = home + ("#" + parsed.fragment if parsed.fragment else "")
+        elif path == BASE + "/skorowidz/":
+            a["href"] = home + "skorowidz/"
+        elif path in targets:
+            # Inner anchors may be Polish-only; the translated section always exists.
+            a["href"] = home + "#" + targets[path]
+
+
 def finish(soup, path):
+    lang = soup.html.get("lang", "pl")
+    localize_navigation(soup, lang)
     youtube_facade(soup, soup.html.get("lang", "pl"))
     localize_fonts(soup)
     preload_fonts(soup)
@@ -1931,7 +1974,7 @@ def finish(soup, path):
     absolutize_assets(soup)
     logo = soup.find("a", class_="header-logo")
     if logo is not None:
-        logo["href"] = BASE + "/"
+        logo["href"] = LANG_PATH.get(lang, BASE + "/")
     out = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(out) or ROOT, exist_ok=True)
     with open(out, "w", encoding="utf-8") as fh:
